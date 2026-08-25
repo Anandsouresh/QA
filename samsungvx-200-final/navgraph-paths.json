@@ -1,0 +1,5183 @@
+{
+  "entry_node": "N001",
+  "target": "https://www.samsungvx.com/",
+  "paths": [
+    {
+      "node_id": "N001",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 0,
+      "steps": []
+    },
+    {
+      "node_id": "N002",
+      "url": "https://vxt.samsung.com/contact-us",
+      "title": "vxt.samsung.com",
+      "node_type": "boundary",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Contact Us'",
+          "selector": "[data-testid=\"dashboard_contactus\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N003",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 Default Workspace .st0{opacity:0.8;}",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click '.st0{opacity:0.8;}'",
+          "selector": "[data-testid=\"icon_arrow_down\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N004",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N005",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Content'",
+          "selector": "#dashboard_contentCard",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N006",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Playlist'",
+          "selector": "#dashboard_playlistCard",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N007",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Schedule'",
+          "selector": "#dashboard_scheduleCard",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N008",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New",
+      "node_type": "dropdown",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_screen_newbtn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N009",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New",
+      "node_type": "dropdown",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_content_newbtn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N010",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New",
+      "node_type": "dropdown",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_playlist_newbtn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N011",
+      "url": "https://www.samsungvx.com/settings/subscription/A8308934-7569-41CA-A254-92A185ADD97C",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N012",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 Plan Notice",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Plan Notice'",
+          "selector": "[data-testid=\"dashboard_plan_exclamation0\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N013",
+      "url": "https://www.samsungvx.com/settings/editHome",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'editHome'",
+          "selector": "[data-testid=\"dashboard_editbtn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N014",
+      "url": "https://www.samsungvx.com/vxtlabs",
+      "title": "Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'VXT Labs'",
+          "selector": "[data-testid=\"dashboard_vxt_lab\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N015",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 Notification",
+      "node_type": "dropdown",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Notification'",
+          "selector": "#notificationIconId",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N016",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 souresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.com",
+      "node_type": "dropdown",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'souresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.com'",
+          "selector": "[data-testid=\"dashboard_profile\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N017",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 chatbot",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'chatbot'",
+          "selector": "#startChatBtn",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N018",
+      "url": "https://www.samsungvx.com/terms",
+      "title": "Terms and Conditions | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Terms and Conditions'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N019",
+      "url": "https://www.samsungvx.com/privacy",
+      "title": "Privacy Policy | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Privacy Policy'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N020",
+      "url": "https://www.samsungvx.com/cookie",
+      "title": "Cookie Policy | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Cookie Policy'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N021",
+      "url": "https://www.samsungvx.com/euda",
+      "title": "Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'EU Data Act'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N022",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS \u2014 Add Screen",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Screen'",
+          "selector": "#screen_page_pc_btn_add_screen",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N023",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS \u2014 CHITNU TEAMDefault Workspace",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'",
+          "selector": "#place_wrap",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N024",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS \u2014 Screen",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "[data-testid=\"navbar_li_screen\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N025",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Content'",
+          "selector": "[data-testid=\"navbar_li_content\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N026",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Playlist'",
+          "selector": "[data-testid=\"navbar_li_playlist\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N027",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Schedule'",
+          "selector": "[data-testid=\"navbar_li_schedule\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N028",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Channel'",
+          "selector": "[data-testid=\"navbar_li_channel\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N029",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "#navbar_leftControl2",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N030",
+      "url": "https://www.samsungvx.com/apps",
+      "title": "Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'AppsN'",
+          "selector": "[data-testid=\"navbar_li_apps\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N031",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N032",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 or",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Contentsand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N033",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 2 contents",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '2 contents'",
+          "selector": "[data-testid=\"FcmsCheckBoxWrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N034",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 Add Content",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "#content_toolbar_pc_topbtn_Add",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N035",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"content_sort\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N036",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 more",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"content_page_toolbar_btnmore\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N037",
+      "url": "https://www.samsungvx.com/content/68F70613-D754-402E-84FE-38D3F2E63961",
+      "title": "Content | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvasCanvasCanvas'",
+          "selector": "#content_card_div_test_2 >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N038",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 CanvasCanvas",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvas'",
+          "selector": "#content_card_div_test_2 > div._tag-list-container_1r1vx_1._tags-inline-grower_1c00t_1:nth-of-type(1) > div._tags-inline-container_1r1vx_9:nth-of-type(2) > span.chip.chip-chkbox >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N039",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 Search Contentsor",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'and'",
+          "selector": "[data-testid=\"and_or_toggle\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N040",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N041",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 Search Playlistsand",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Playlistsand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N042",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 1 playlist",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '1 playlist'",
+          "selector": "[data-testid=\"FcmsCheckBoxWrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N043",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 New Playlist",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "[data-testid=\"playlist_newplaylist\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N044",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"playlist_sort\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N045",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 more",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"playlist_toolbar_more\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N046",
+      "url": "https://www.samsungvx.com/playlist/113561F7-FA56-49A8-A0B4-90050FD6C284",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "#playlistCard_0 > div.image_info.list_view:nth-of-type(3) > div.con_name02.list_view:nth-of-type(1)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N047",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 GeneralGeneral",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'GeneralGeneral'",
+          "selector": "div.image_info.list_view:nth-of-type(3) > div.chip_wrap.list_view:nth-of-type(3) > ul > div._tag-list-container_1r1vx_1._tags-inline-grower_1c00t_1 > div._tags-inline-container_1r1vx_9:nth-of-type(2) > span.chip.chip-chkbox",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N048",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N049",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 Search Schedulesand",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Schedulesand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N050",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 1 schedule",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '1 schedule'",
+          "selector": "[data-testid=\"schedule_fcmsCheckbox\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N051",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 New Schedule",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Schedule'",
+          "selector": "[data-testid=\"schedule_new_schedule_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N052",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"schedule_date_or_name_sort\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N053",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 more",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"schedule_fcmsmore_btn\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N054",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N055",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 GeneralGeneral",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'GeneralGeneral'",
+          "selector": "div.image_info.list_view:nth-of-type(3) > div.chip_wrap.list_view > ul > div._tag-list-container_1r1vx_1._tags-inline-grower_1c00t_1 > div._tags-inline-container_1r1vx_9:nth-of-type(2) > span.chip.chip-chkbox",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N056",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New \u2014 Add Screen",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_screen_newbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Screen'",
+          "selector": "[data-testid=\"dashboard_screen_addbtn_addscreen\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N057",
+      "url": "https://www.samsungvx.com/playlist/create",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_playlist_newbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"dashboard_playlist_addbtn_general\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N058",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'screen'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N059",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'content'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N060",
+      "url": "https://www.samsungvx.com/settings",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"setting_general\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N061",
+      "url": "https://www.samsungvx.com/settings/subscription/A8308934-7569-41CA-A254-92A185ADD97C",
+      "title": "Settings | Samsung VXT CMS \u2014 More",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'More'",
+          "selector": "#ModalFooter_btnMore",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N062",
+      "url": "https://www.samsungvx.com/settings/organization",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Organization'",
+          "selector": "[data-testid=\"setting_organization\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N063",
+      "url": "https://www.samsungvx.com/settings/place",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Workspace'",
+          "selector": "[data-testid=\"setting_place\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N064",
+      "url": "https://www.samsungvx.com/settings/user",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'User'",
+          "selector": "[data-testid=\"setting_user\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N065",
+      "url": "https://www.samsungvx.com/settings/subscription",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Plan'",
+          "selector": "[data-testid=\"setting_plan\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N066",
+      "url": "https://www.samsungvx.com/settings/tag",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"setting_tag\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N067",
+      "url": "https://www.samsungvx.com/settings/event",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Event'",
+          "selector": "[data-testid=\"setting_event\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N068",
+      "url": "https://www.samsungvx.com/settings/screenPreset",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N069",
+      "url": "https://www.samsungvx.com/settings/emergencyAlert",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Emergency Alert'",
+          "selector": "[data-testid=\"setting_alert\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N070",
+      "url": "https://www.samsungvx.com/settings/activityLog",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Activity Log'",
+          "selector": "[data-testid=\"setting_activityLog\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N071",
+      "url": "https://www.samsungvx.com/settings/subscription/A8308934-7569-41CA-A254-92A185ADD97C",
+      "title": "Settings | Samsung VXT CMS \u2014 Add Workspace",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Workspace'",
+          "selector": "[data-testid=\"setting_plan_details_add_workspace\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N072",
+      "url": "https://www.samsungvx.com/settings/subscription/A8308934-7569-41CA-A254-92A185ADD97C",
+      "title": "Settings | Samsung VXT CMS \u2014 Finish Trial",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Finish Trial'",
+          "selector": "[data-testid=\"icon_close\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N073",
+      "url": "https://www.samsungvx.com/settings/editHome",
+      "title": "Settings | Samsung VXT CMS \u2014 Mobile View",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'editHome'",
+          "selector": "[data-testid=\"dashboard_editbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Mobile View'",
+          "selector": "[data-testid=\"icon_ic_mobile\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N074",
+      "url": "https://www.samsungvx.com/settings/editHome",
+      "title": "Settings | Samsung VXT CMS \u2014 Deactivated-",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'editHome'",
+          "selector": "[data-testid=\"dashboard_editbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Normal-'",
+          "selector": "[data-testid=\"dashboard_quickglance_normal\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N075",
+      "url": "https://www.samsungvx.com/settings/editHome",
+      "title": "Settings | Samsung VXT CMS \u2014 Reset All",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'editHome'",
+          "selector": "[data-testid=\"dashboard_editbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Reset All'",
+          "selector": "[data-testid=\"reset-dashboard-button\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N076",
+      "url": "https://www.samsungvx.com/settings/subscription/A8308934-7569-41CA-A254-92A185ADD97C",
+      "title": "Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'editHome'",
+          "selector": "[data-testid=\"dashboard_editbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Cancel'",
+          "selector": "role=button[name=\"Cancel\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N077",
+      "url": "https://www.samsungvx.com/vxtlabs",
+      "title": "Samsung VXT CMS \u2014 ShadowGen",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'VXT Labs'",
+          "selector": "[data-testid=\"dashboard_vxt_lab\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'NEW'",
+          "selector": "[data-testid=\"icon_posLabel\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N078",
+      "url": "https://www.samsungvx.com/vxtlabs",
+      "title": "Samsung VXT CMS \u2014 Image Generator",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'VXT Labs'",
+          "selector": "[data-testid=\"dashboard_vxt_lab\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'img'",
+          "selector": "div.MuiBox-root:nth-of-type(3) > div.swiper.swiper-initialized > div.swiper-wrapper:nth-of-type(1) > div.swiper-slide.swiper-slide-next:nth-of-type(2) > div.MuiPaper-root.MuiPaper-outlined > div.MuiCardMedia-root:nth-of-type(3)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N079",
+      "url": "https://www.samsungvx.com/vxtlabs",
+      "title": "Samsung VXT CMS \u2014 AI CorpPost",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'VXT Labs'",
+          "selector": "[data-testid=\"dashboard_vxt_lab\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'img'",
+          "selector": "div.MuiBox-root:nth-of-type(3) > div.swiper.swiper-initialized > div.swiper-wrapper:nth-of-type(1) > div.swiper-slide:nth-of-type(5) > div.MuiPaper-root.MuiPaper-outlined > div.MuiCardMedia-root:nth-of-type(3)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N080",
+      "url": "https://www.samsungvx.com/vxtlabs",
+      "title": "Samsung VXT CMS \u2014 ShadowGenSamsung VXT Canvas enables you to create the shadow effects effortlessly",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'VXT Labs'",
+          "selector": "[data-testid=\"dashboard_vxt_lab\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'ShadowGenSamsung VXT Canvas enables you to create the shadow effects effortlessly'",
+          "selector": "div.MuiBox-root:nth-of-type(3) > div.swiper.swiper-initialized > div.swiper-wrapper:nth-of-type(1) > div.swiper-slide.swiper-slide-active:nth-of-type(1) > div.MuiPaper-root.MuiPaper-outlined > div.MuiCardContent-root:nth-of-type(4)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N081",
+      "url": "https://www.samsungvx.com/settings",
+      "title": "Settings | Samsung VXT CMS \u2014 Register Phone Number",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'souresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.com'",
+          "selector": "[data-testid=\"dashboard_profile\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Settings'",
+          "selector": "[data-testid=\"dashboard_setting\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N082",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Add Screen'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N083",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS \u2014 Samsung Screen",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Add Screen'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Samsung Screen'",
+          "selector": "[data-testid=\"screen_addscreen_smg_screen\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N084",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N085",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Screen'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N086",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N087",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS \u2014 Search Channelsand",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Channelsand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N088",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS \u2014 1 channel",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '1 channel'",
+          "selector": "[data-testid=\"FcmsCheckBoxWrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N089",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS \u2014 New Channel",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Channel'",
+          "selector": "[data-testid=\"channel_fcms_new_channel_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N090",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"channel_sort\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N091",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS \u2014 more",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"channel_fcmsmoreButton_btn_more\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N092",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N093",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS \u2014 GeneralGeneral",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'GeneralGeneral'",
+          "selector": "#channelCardInfo > div._tag-list-container_1r1vx_1._tags-inline-grower_1c00t_1:nth-of-type(1) > div._tags-inline-container_1r1vx_9:nth-of-type(2) > span.chip.chip-chkbox",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N094",
+      "url": "https://www.samsungvx.com/apps",
+      "title": "Samsung VXT CMS \u2014 AI StudioAI StudioGen AI",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'AppsN'",
+          "selector": "[data-testid=\"navbar_li_apps\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'AI StudioAI StudioGen AI'",
+          "selector": "div > div.swiper.swiper-initialized > div.swiper-wrapper:nth-of-type(1) > div.swiper-slide.swiper-slide-next:nth-of-type(2) > div > div._app-info_fjwgk_1:nth-of-type(1)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N095",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 or \u2014 CanvasCanvas",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Contentsand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvas'",
+          "selector": "div.search_field.fcms_simple_bar > div.advanced_wrap:nth-of-type(2) > div.advanced_option.active > div:nth-of-type(1) > div.filter-options-wrapper:nth-of-type(2) > span.chip.chip-chkbox:nth-of-type(1)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N096",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 more \u2014 Export",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"content_page_toolbar_btnmore\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Export'",
+          "selector": "[data-testid=\"content_page_toolbar_btnmore_export\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N097",
+      "url": "https://www.samsungvx.com/content/68F70613-D754-402E-84FE-38D3F2E63961",
+      "title": "Content | Samsung VXT CMS \u2014 Set to Screens",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvasCanvasCanvas'",
+          "selector": "#content_card_div_test_2 >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Set to Screens'",
+          "selector": "role=button[name=\"Set to Screens\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N098",
+      "url": "https://www.samsungvx.com/content/68F70613-D754-402E-84FE-38D3F2E63961",
+      "title": "Content | Samsung VXT CMS \u2014 more",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvasCanvasCanvas'",
+          "selector": "#content_card_div_test_2 >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"content_detail_more_button\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N099",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 CanvasCanvas \u2014 CanvasCanvasand",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvas'",
+          "selector": "#content_card_div_test_2 > div._tag-list-container_1r1vx_1._tags-inline-grower_1c00t_1:nth-of-type(1) > div._tags-inline-container_1r1vx_9:nth-of-type(2) > span.chip.chip-chkbox >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvasand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N100",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 Search Contentsor \u2014 Canvas",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Contentsand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'CanvasCanvas'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N101",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 Search Playlistsand \u2014 General",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Playlistsand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"search_systemtag_30\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N102",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 more \u2014 Export",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"playlist_toolbar_more\"] >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Export'",
+          "selector": "[data-testid=\"playlist_toolbar_more_export\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N103",
+      "url": "https://www.samsungvx.com/playlist/113561F7-FA56-49A8-A0B4-90050FD6C284",
+      "title": "Playlist | Samsung VXT CMS \u2014 more",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "#playlistCard_0 > div.image_info.list_view:nth-of-type(3) > div.con_name02.list_view:nth-of-type(1)",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"playlist_detail_toolbar_more\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N104",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 GeneralGeneral \u2014 GeneralGeneraland",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'GeneralGeneral'",
+          "selector": "div.image_info.list_view:nth-of-type(3) > div.chip_wrap.list_view:nth-of-type(3) > ul > div._tag-list-container_1r1vx_1._tags-inline-grower_1c00t_1 > div._tags-inline-container_1r1vx_9:nth-of-type(2) > span.chip.chip-chkbox",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'GeneralGeneraland'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N105",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 Search Schedulesand \u2014 General",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Schedulesand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"search_systemtag_52\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N106",
+      "url": "https://www.samsungvx.com/schedule/create",
+      "title": "Schedule | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Schedule'",
+          "selector": "[data-testid=\"schedule_new_schedule_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"schedule_genral_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N107",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 more \u2014 Export",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"schedule_fcmsmore_btn\"] >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Export'",
+          "selector": "[data-testid=\"schedule_fcmsmore_btn_export\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N108",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 Add Content",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "[data-testid=\"schedule_add_content_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N109",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 more",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"schedule_fcmsmore_button\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N110",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 August 2026Week 34",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'August 2026Week 34'",
+          "selector": "#schedule_date_sort",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N111",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'span'",
+          "selector": "div.date_select:nth-of-type(1) > div.tag_area:nth-of-type(2) > div.visible_tag_wrapper:nth-of-type(2) > div.edit_tags_container > div.add_tag_icon:nth-of-type(1) > span.icon_add.ga-button-action-class",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N112",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 listitem",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'listitem'",
+          "selector": "[data-testid=\"schedule_list_view_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N113",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'logo'",
+          "selector": "#container > header > div._head_logo_1ijv6_14:nth-of-type(1)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N114",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 Rename",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Rename'",
+          "selector": "[data-testid=\"name_edit_icon\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N115",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New \u2014 Add Screen \u2014 Virtual Screen",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_screen_newbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Screen'",
+          "selector": "[data-testid=\"dashboard_screen_addbtn_addscreen\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Virtual Screen'",
+          "selector": "[data-testid=\"screen_addscreen_virtual_screen\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N116",
+      "url": "https://www.samsungvx.com/playlist/create",
+      "title": "Playlist | Samsung VXT CMS \u2014 Add Content",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_playlist_newbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"dashboard_playlist_addbtn_general\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "[data-testid=\"playlist_newplaylist_general_addcontent\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N117",
+      "url": "https://www.samsungvx.com/playlist/create",
+      "title": "Playlist | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_playlist_newbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"dashboard_playlist_addbtn_general\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'span'",
+          "selector": "#playlistDetail_tagList > div.tag_info_wrap.hd-border-bottom > div.edit_tags_container > div.add_tag_icon > span.icon_add.ga-button-action-class",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N118",
+      "url": "https://www.samsungvx.com/settings/techInquiry",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Tech Inquiry'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N119",
+      "url": "https://www.samsungvx.com/settings/techInquiry",
+      "title": "Settings | Samsung VXT CMS \u2014 Tech Inquiry Permissions",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Tech Inquiry'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tech Inquiry Permissions'",
+          "selector": "role=button[name=\"Tech Inquiry Permissions\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N120",
+      "url": "https://www.samsungvx.com/settings/techInquiryNew",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Tech Inquiry'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Inquiry'",
+          "selector": "role=button[name=\"New Inquiry\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N121",
+      "url": "https://www.samsungvx.com/settings/organization",
+      "title": "Settings | Samsung VXT CMS \u2014 Customization",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Organization'",
+          "selector": "[data-testid=\"setting_organization\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Customization'",
+          "selector": "[data-testid=\"settings_organization_customizatoin\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N122",
+      "url": "https://www.samsungvx.com/settings/organization",
+      "title": "Settings | Samsung VXT CMS \u2014 Preset",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Organization'",
+          "selector": "[data-testid=\"setting_organization\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Preset'",
+          "selector": "[data-testid=\"settings_organization_preset\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N123",
+      "url": "https://www.samsungvx.com/settings/organization",
+      "title": "Settings | Samsung VXT CMS \u2014 Tag",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Organization'",
+          "selector": "[data-testid=\"setting_organization\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"settings_organization_tag\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N124",
+      "url": "https://www.samsungvx.com/settings/organization",
+      "title": "Settings | Samsung VXT CMS \u2014 Scheduling",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Organization'",
+          "selector": "[data-testid=\"setting_organization\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Scheduling'",
+          "selector": "[data-testid=\"settings_organization_scheduling\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N125",
+      "url": "https://www.samsungvx.com/settings/organization",
+      "title": "Settings | Samsung VXT CMS \u2014 Add",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Organization'",
+          "selector": "[data-testid=\"setting_organization\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add'",
+          "selector": "#add_phone_number",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N126",
+      "url": "https://www.samsungvx.com/settings/place",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N127",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N128",
+      "url": "https://www.samsungvx.com/settings/user",
+      "title": "Settings | Samsung VXT CMS \u2014 Owner",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'User'",
+          "selector": "[data-testid=\"setting_user\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Owner'",
+          "selector": "[data-testid=\"setting_user_liItem_owner\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N129",
+      "url": "https://www.samsungvx.com/settings/user",
+      "title": "Settings | Samsung VXT CMS \u2014 Pending",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'User'",
+          "selector": "[data-testid=\"setting_user\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Pending'",
+          "selector": "[data-testid=\"setting_user_liItem_pending\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N130",
+      "url": "https://www.samsungvx.com/settings/subscription",
+      "title": "Settings | Samsung VXT CMS \u2014 Additional Plan",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Plan'",
+          "selector": "[data-testid=\"setting_plan\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Additional Plan'",
+          "selector": "[data-testid=\"setting_plan_additional\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N131",
+      "url": "https://www.samsungvx.com/settings/tag/78935",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"setting_tag\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default TagsetRegion, Location, Subject, Others'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N132",
+      "url": "https://www.samsungvx.com/settings/event/create",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Event'",
+          "selector": "[data-testid=\"setting_event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Event'",
+          "selector": "role=button[name=\"New Event\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N133",
+      "url": "https://www.samsungvx.com/settings/screenPreset",
+      "title": "Settings | Samsung VXT CMS \u2014 Certificate",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Certificate'",
+          "selector": "[data-testid=\"setting_screen_present_certificate\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N134",
+      "url": "https://www.samsungvx.com/settings/screenPreset",
+      "title": "Settings | Samsung VXT CMS \u2014 Screen Software",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Software'",
+          "selector": "[data-testid=\"setting_screen_present_screen_software\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N135",
+      "url": "https://www.samsungvx.com/settings/screenPreset",
+      "title": "Settings | Samsung VXT CMS \u2014 New Profile",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Profile'",
+          "selector": "role=button[name=\"New Profile\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N136",
+      "url": "https://www.samsungvx.com/settings/emergencyAlert/create",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Emergency Alert'",
+          "selector": "[data-testid=\"setting_alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Emergency Alert'",
+          "selector": "role=button[name=\"New Emergency Alert\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N137",
+      "url": "https://www.samsungvx.com/settings/activityLog",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Activity Log'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N138",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS \u2014 Search Channelsand \u2014 General",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Channelsand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"search_systemtag_142\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N139",
+      "url": "https://www.samsungvx.com/channel/create",
+      "title": "Channel | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Channel'",
+          "selector": "[data-testid=\"channel_fcms_new_channel_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"channel_fcms_general_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N140",
+      "url": "https://www.samsungvx.com/channel",
+      "title": "Channel | Samsung VXT CMS \u2014 more \u2014 Export",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"channel_fcmsmoreButton_btn_more\"] >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Export'",
+          "selector": "#fcms-more-button_li_COM_IDS_BTN_EXPORT",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N141",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS \u2014 more",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"channel_fcmsmoreButton_btn_more\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N142",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS \u2014 Set to Screens",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Set to Screens'",
+          "selector": "#channelDetail_general_set2ScreensBtn",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N143",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS \u2014 Add Channel",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Channel'",
+          "selector": "#channelDetail_addContentBtn",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N144",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS \u2014 span",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'span'",
+          "selector": "#channelDetail_tagList > div.tag_info_wrap.hd-border-bottom > div.edit_tags_container > div.add_tag_icon > span.icon_add.ga-button-action-class",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N145",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS \u2014 span",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'span'",
+          "selector": "#info_inner > div.topbtn_con:nth-of-type(1) > ul.tab_wrap.col2 > li.ga-button-action-class:nth-of-type(2) > span",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N146",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 Search Contentsor \u2014 Canvas \u2014 CanvasCanvasor",
+      "node_type": "dropdown",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvas'",
+          "selector": "#content_card_div_test_2 > div._tag-list-container_1r1vx_1._tags-inline-grower_1c00t_1:nth-of-type(1) > div._tags-inline-container_1r1vx_9:nth-of-type(2) > span.chip.chip-chkbox >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'CanvasCanvasand'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N147",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"content_page_toolbar_btnmore\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Export'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N148",
+      "url": "https://www.samsungvx.com/content/68F70613-D754-402E-84FE-38D3F2E63961",
+      "title": "Content | Samsung VXT CMS \u2014 Set to Screens \u2014 Search Screensand",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvasCanvasCanvas'",
+          "selector": "#content_card_div_test_2 >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Set to Screens'",
+          "selector": "role=button[name=\"Set to Screens\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Screensand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N149",
+      "url": "https://www.samsungvx.com/content/68F70613-D754-402E-84FE-38D3F2E63961",
+      "title": "Content | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvasCanvasCanvas'",
+          "selector": "#content_card_div_test_2 >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'more'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N150",
+      "url": "https://www.samsungvx.com/content/68F70613-D754-402E-84FE-38D3F2E63961",
+      "title": "Content | Samsung VXT CMS \u2014 Content Journey Map",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvasCanvasCanvas'",
+          "selector": "#content_card_div_test_2 >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'more'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Content Journey Map'",
+          "selector": "#fcms-more-button_li_VX_SID_CMS_CEMAY_CONTENT_JOURNEY_MAP",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N151",
+      "url": "https://www.samsungvx.com/playlist/113561F7-FA56-49A8-A0B4-90050FD6C284",
+      "title": "Playlist | Samsung VXT CMS \u2014 more \u2014 Content Journey Map",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "#playlistCard_0 > div.image_info.list_view:nth-of-type(3) > div.con_name02.list_view:nth-of-type(1)",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"playlist_detail_toolbar_more\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Content Journey Map'",
+          "selector": "[data-testid=\"playlist_new_general_more_cjmap\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N152",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 GeneralGeneral \u2014 GeneralGeneraland \u2014 Sync Play",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Playlist'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'GeneralGeneral'",
+          "selector": "div.image_info.list_view:nth-of-type(3) > div.chip_wrap.list_view:nth-of-type(3) > ul > div._tag-list-container_1r1vx_1._tags-inline-grower_1c00t_1 > div._tags-inline-container_1r1vx_9:nth-of-type(2) > span.chip.chip-chkbox",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'GeneralGeneraland'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Sync Play'",
+          "selector": "[data-testid=\"search_systemtag_31\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N153",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 more \u2014 Content Journey Map",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'more'",
+          "selector": "[data-testid=\"schedule_fcmsmore_button\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Content Journey Map'",
+          "selector": "[data-testid=\"schedule_fcms_content_journey_map\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N154",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 listitem \u2014 23:00 - 23:59Untitled CanvasDaily",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'listitem'",
+          "selector": "[data-testid=\"schedule_list_view_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '23:00 - 23:59Untitled CanvasDaily'",
+          "selector": "#contents_wrap > div.contents_box > div.calendar_wrap:nth-of-type(2) > div.new_sche_con.schedule_list_view:nth-of-type(2) > div.new_sche_wrap:nth-of-type(5) > div.new_sche_list.isPast:nth-of-type(2)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N155",
+      "url": "https://www.samsungvx.com/schedule/762F114F-BFD2-4E57-A53B-13830C719FBB",
+      "title": "Schedule | Samsung VXT CMS \u2014 listitem \u2014 Daily",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Schedule'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click '20Aug'",
+          "selector": "#scheduleCard_leftCon",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'listitem'",
+          "selector": "[data-testid=\"schedule_list_view_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'img'",
+          "selector": "#screenImage",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N156",
+      "url": "https://www.samsungvx.com/settings/techInquiryNew",
+      "title": "Settings | Samsung VXT CMS \u2014 Register Phone Number",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Tech Inquiry'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Inquiry'",
+          "selector": "role=button[name=\"New Inquiry\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Register Phone Number'",
+          "selector": "div:nth-of-type(2) > div.techInquiryContent > div:nth-of-type(2) > div > span.flex_center:nth-of-type(2) > span",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N157",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 Rename",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "header > div._head_area_1ijv6_59:nth-of-type(3) > div._on_1ijv6_195 > div:nth-of-type(3) > h2.title_h2_class.ellipsis > span",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N158",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 User",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'User'",
+          "selector": "[data-testid=\"settings_workspace_user\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N159",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 Customization",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Customization'",
+          "selector": "[data-testid=\"settings_workspace_customization\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N160",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 Preset",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Preset'",
+          "selector": "[data-testid=\"settings_workspace_preset\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N161",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 Scheduling",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Scheduling'",
+          "selector": "[data-testid=\"settings_workspace_scheduling\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N162",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 More",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'More'",
+          "selector": "[data-testid=\"Workspace_top_option\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N163",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"dashboard_plan_exclamationundefined\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N164",
+      "url": "https://www.samsungvx.com/settings/user",
+      "title": "Settings | Samsung VXT CMS \u2014 Owner \u2014 Role",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'User'",
+          "selector": "[data-testid=\"setting_user\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Owner'",
+          "selector": "[data-testid=\"setting_user_liItem_owner\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Role'",
+          "selector": "[data-testid=\"setting_user_liItem_role\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N165",
+      "url": "https://www.samsungvx.com/settings/user",
+      "title": "Settings | Samsung VXT CMS \u2014 Pending \u2014 Invite User",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'User'",
+          "selector": "[data-testid=\"setting_user\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Pending'",
+          "selector": "[data-testid=\"setting_user_liItem_pending\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Invite User'",
+          "selector": "[data-testid=\"setting_user_btn_invite_user\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N166",
+      "url": "https://www.samsungvx.com/settings/subscription",
+      "title": "Settings | Samsung VXT CMS \u2014 Additional Plan \u2014 Register Activation Code",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Plan'",
+          "selector": "[data-testid=\"setting_plan\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Additional Plan'",
+          "selector": "[data-testid=\"setting_plan_additional\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Register Activation Code'",
+          "selector": "[data-testid=\"setting_plan_register_activation_code\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N167",
+      "url": "https://www.samsungvx.com/settings/tag/78935",
+      "title": "Settings | Samsung VXT CMS \u2014 Rename",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"setting_tag\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default TagsetRegion, Location, Subject, Others'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Tagset'",
+          "selector": "header > div._head_area_1ijv6_59:nth-of-type(3) > div._on_1ijv6_195 > div:nth-of-type(2) > h2.title_h2_class.ellipsis > span",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N168",
+      "url": "https://www.samsungvx.com/settings/tag/78935",
+      "title": "Settings | Samsung VXT CMS \u2014 checkbox",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"setting_tag\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default TagsetRegion, Location, Subject, Others'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'checkbox'",
+          "selector": "div.account.account-contents-wrap > div.contents_box.tagset_workspace > div:nth-of-type(3) > div > div > input",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N169",
+      "url": "https://www.samsungvx.com/settings/tag/78935",
+      "title": "Settings | Samsung VXT CMS \u2014 Add Workspace",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"setting_tag\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default TagsetRegion, Location, Subject, Others'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Workspace'",
+          "selector": "[data-testid=\"setting_tag_details_add_workspace\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N170",
+      "url": "https://www.samsungvx.com/settings/tag/78935",
+      "title": "Settings | Samsung VXT CMS \u2014 Change Color",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"setting_tag\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default TagsetRegion, Location, Subject, Others'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Change Color'",
+          "selector": "[data-testid=\"icon_common_category\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N171",
+      "url": "https://www.samsungvx.com/settings/tag/78935",
+      "title": "Settings | Samsung VXT CMS \u2014 Others",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"setting_tag\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default TagsetRegion, Location, Subject, Others'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Region'",
+          "selector": "[data-testid=\"setting_tag_details_rename\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N172",
+      "url": "https://www.samsungvx.com/settings/tag/78935",
+      "title": "Settings | Samsung VXT CMS \u2014 div",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag'",
+          "selector": "[data-testid=\"setting_tag\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default TagsetRegion, Location, Subject, Others'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"setting_tag_details_add_tag\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N173",
+      "url": "https://www.samsungvx.com/settings/event/create",
+      "title": "Settings | Samsung VXT CMS \u2014 ASCII",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Event'",
+          "selector": "[data-testid=\"setting_event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Event'",
+          "selector": "role=button[name=\"New Event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Save'",
+          "selector": "[data-testid=\"setting_event_new_add_save\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N174",
+      "url": "https://www.samsungvx.com/settings/event/create",
+      "title": "Settings | Samsung VXT CMS \u2014 Weather",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Event'",
+          "selector": "[data-testid=\"setting_event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Event'",
+          "selector": "role=button[name=\"New Event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Weather'",
+          "selector": "#event_type_weather",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N175",
+      "url": "https://www.samsungvx.com/settings/event/create",
+      "title": "Settings | Samsung VXT CMS \u2014 Crowd Count",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Event'",
+          "selector": "[data-testid=\"setting_event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Event'",
+          "selector": "role=button[name=\"New Event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Crowd Count'",
+          "selector": "#event_type_crowd",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N176",
+      "url": "https://www.samsungvx.com/settings/event/create",
+      "title": "Settings | Samsung VXT CMS \u2014 Network",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Event'",
+          "selector": "[data-testid=\"setting_event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Event'",
+          "selector": "role=button[name=\"New Event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Network'",
+          "selector": "#event_type_network",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N177",
+      "url": "https://www.samsungvx.com/settings/event/create",
+      "title": "Settings | Samsung VXT CMS \u2014 Add",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Event'",
+          "selector": "[data-testid=\"setting_event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Event'",
+          "selector": "role=button[name=\"New Event\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add'",
+          "selector": "[data-testid=\"setting_event_select_add_wokspace\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N178",
+      "url": "https://www.samsungvx.com/settings/screenPreset",
+      "title": "Settings | Samsung VXT CMS \u2014 Certificate \u2014 New Certificate",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Certificate'",
+          "selector": "[data-testid=\"setting_screen_present_certificate\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Certificate'",
+          "selector": "role=button[name=\"New Certificate\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N179",
+      "url": "https://www.samsungvx.com/settings/screenPreset",
+      "title": "Settings | Samsung VXT CMS \u2014 Screen Software \u2014 New Screen Software",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Software'",
+          "selector": "[data-testid=\"setting_screen_present_screen_software\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Screen Software'",
+          "selector": "role=button[name=\"New Screen Software\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N180",
+      "url": "https://www.samsungvx.com/settings/screenPreset/profile/SIGNAGE",
+      "title": "Settings | Samsung VXT CMS \u2014 New Profile",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Profile'",
+          "selector": "role=button[name=\"New Profile\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Signage'",
+          "selector": "[data-testid=\"setting_screen_present_screen_profile_new_profile_select_signage\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N181",
+      "url": "https://www.samsungvx.com/settings/emergencyAlert/create",
+      "title": "Settings | Samsung VXT CMS \u2014 Add content",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Emergency Alert'",
+          "selector": "[data-testid=\"setting_alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Emergency Alert'",
+          "selector": "role=button[name=\"New Emergency Alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add content'",
+          "selector": "[data-testid=\"setting_emergency_alert_new_add_content\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N182",
+      "url": "https://www.samsungvx.com/settings/emergencyAlert/create",
+      "title": "Settings | Samsung VXT CMS \u2014 Add Workspace",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Emergency Alert'",
+          "selector": "[data-testid=\"setting_alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Emergency Alert'",
+          "selector": "role=button[name=\"New Emergency Alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Workspace'",
+          "selector": "[data-testid=\"setting_emergency_alert_new_add_workspace\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N183",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS \u2014 Set to Screens \u2014 div",
+      "node_type": "page",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Set to Screens'",
+          "selector": "#channelDetail_general_set2ScreensBtn",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"selectScreen_sort\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N184",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS \u2014 span \u2014 button",
+      "node_type": "dropdown",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'span'",
+          "selector": "#info_inner > div.topbtn_con:nth-of-type(1) > ul.tab_wrap.col2 > li.ga-button-action-class:nth-of-type(2) > span",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'button'",
+          "selector": "li > div.w100 > ul > li.flex_center_between:nth-of-type(1) > div > button.btn_icon.btn32",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N185",
+      "url": "https://www.samsungvx.com/content/68F70613-D754-402E-84FE-38D3F2E63961",
+      "title": "Content | Samsung VXT CMS \u2014 Set to Screens \u2014 Search Screensand \u2014 Deactivated",
+      "node_type": "page",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Content'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CanvasCanvasCanvasCanvas'",
+          "selector": "#content_card_div_test_2 >> nth=0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Set to Screens'",
+          "selector": "role=button[name=\"Set to Screens\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Screensand'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Deactivated'",
+          "selector": "div.search_field.fcms_simple_bar > div:nth-of-type(1) > div.favorites-wrapper:nth-of-type(2) > div.filter-more-button:nth-of-type(1) > div:nth-of-type(1) > span.ellipsis.user-select-none:nth-of-type(1)",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N186",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 Customization \u2014 div",
+      "node_type": "dropdown",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Customization'",
+          "selector": "[data-testid=\"settings_workspace_customization\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"icon_expand\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N187",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 Preset \u2014 Add Profile",
+      "node_type": "dropdown",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Preset'",
+          "selector": "[data-testid=\"settings_workspace_preset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'A screen profile is a pre-defined set of screen configurations.Please add a profile and set as default to apply it automatically when screens are added.'",
+          "selector": "#workspaceDetail_swiperSlideprofileCard",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N188",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 Preset \u2014 div",
+      "node_type": "dropdown",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Preset'",
+          "selector": "[data-testid=\"settings_workspace_preset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'The certificate authorizes connection to the user's custom system, such as secured Wi-Fi or PMS.Please add certificates and set them as default to apply automat'",
+          "selector": "#workspaceDetail_swiperSlidecertificateCard",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N189",
+      "url": "https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89",
+      "title": "Settings | Samsung VXT CMS \u2014 Preset \u2014 div",
+      "node_type": "dropdown",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Default Workspace'",
+          "selector": "#FcmsTable_liItemContents0",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Preset'",
+          "selector": "[data-testid=\"settings_workspace_preset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "#workspaceDetail_swiperSlidefirmwareCard > div.new_card:nth-of-type(1) > div > div.addcardcomp",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N190",
+      "url": "https://www.samsungvx.com/settings/user",
+      "title": "Settings | Samsung VXT CMS \u2014 Owner \u2014 Role \u2014 Tag-Bound Role",
+      "node_type": "page",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'User'",
+          "selector": "[data-testid=\"setting_user\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Owner'",
+          "selector": "[data-testid=\"setting_user_liItem_owner\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Role'",
+          "selector": "[data-testid=\"setting_user_liItem_role\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Tag-Bound Role'",
+          "selector": "div._tab_comp_w4n70_1.contents_2dep:nth-of-type(1) > div.scrl_tab.scrlTab:nth-of-type(1) > ul.tabs > li.ga-button-action-class:nth-of-type(2) > span > div.flex_center.gap6px",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N191",
+      "url": "https://www.samsungvx.com/settings/screenPreset/certificate/create",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Certificate'",
+          "selector": "[data-testid=\"setting_screen_present_certificate\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Certificate'",
+          "selector": "role=button[name=\"New Certificate\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Signage'",
+          "selector": "[data-testid=\"setting_screen_present_certificate_new_select\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N192",
+      "url": "https://www.samsungvx.com/settings/screenPreset/firmware/create",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Software'",
+          "selector": "[data-testid=\"setting_screen_present_screen_software\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Screen Software'",
+          "selector": "role=button[name=\"New Screen Software\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Signage'",
+          "selector": "[data-testid=\"setting_screen_present_screen_software_new_select\"] >> nth=0",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N193",
+      "url": "https://www.samsungvx.com/settings/screenPreset/profile/SIGNAGE",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Profile'",
+          "selector": "role=button[name=\"New Profile\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Signage'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N194",
+      "url": "https://www.samsungvx.com/settings/screenPreset/profile/SIGNAGE",
+      "title": "Settings | Samsung VXT CMS \u2014 Add Workspace",
+      "node_type": "dropdown",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Profile'",
+          "selector": "role=button[name=\"New Profile\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Signage'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Workspace'",
+          "selector": "[data-testid=\"setting_screen_present_profile_select_add_wokspace\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N195",
+      "url": "https://www.samsungvx.com/settings/emergencyAlert/create",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Emergency Alert'",
+          "selector": "[data-testid=\"setting_alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Emergency Alert'",
+          "selector": "role=button[name=\"New Emergency Alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Add Workspace'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N196",
+      "url": "https://www.samsungvx.com/settings/emergencyAlert/create",
+      "title": "Settings | Samsung VXT CMS \u2014 Cancel",
+      "node_type": "page",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Emergency Alert'",
+          "selector": "[data-testid=\"setting_alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Emergency Alert'",
+          "selector": "role=button[name=\"New Emergency Alert\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Add Workspace'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Cancel'",
+          "selector": "[data-testid=\"setting_emergency_alert_new_add_workspace_close\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N197",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Set to Screens'",
+          "selector": "#channelDetail_general_set2ScreensBtn",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'div'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N198",
+      "url": "https://www.samsungvx.com/channel/023BE4FA-B5DC-4CB4-8369-0566D4D130C6",
+      "title": "Channel | Samsung VXT CMS \u2014 Search Screensor",
+      "node_type": "page",
+      "hops": 6,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Screen'",
+          "selector": "#dashboard_screenCard",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Channel'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CH 1CH 2New Channel2 channelsGeneralGeneralGeneralGeneral'",
+          "selector": "[data-testid=\"channelCard_0\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Set to Screens'",
+          "selector": "#channelDetail_general_set2ScreensBtn",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'div'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Search Screensor'",
+          "selector": "[data-testid=\"search_input_wrapper\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N199",
+      "url": "https://www.samsungvx.com/settings/screenPreset/firmware/create",
+      "title": "Settings | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Software'",
+          "selector": "[data-testid=\"setting_screen_present_screen_software\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Screen Software'",
+          "selector": "role=button[name=\"New Screen Software\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Signage'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N200",
+      "url": "https://www.samsungvx.com/settings/screenPreset/firmware/create",
+      "title": "Settings | Samsung VXT CMS \u2014 New Screen Software",
+      "node_type": "page",
+      "hops": 6,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'PROAllocation 3Used 0Available 3'",
+          "selector": "#dashboard_planCard",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Preset'",
+          "selector": "[data-testid=\"setting_screenPreset\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Screen Software'",
+          "selector": "[data-testid=\"setting_screen_present_screen_software\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Screen Software'",
+          "selector": "role=button[name=\"New Screen Software\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click 'Signage'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Screen Software'",
+          "selector": "header > div._head_area_1ijv6_59:nth-of-type(3) > div._on_1ijv6_195 > div:nth-of-type(2) > h2.title_h2_class.ellipsis > span",
+          "input_value": null
+        }
+      ]
+    }
+  ]
+}

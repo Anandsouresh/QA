@@ -1,0 +1,185 @@
+{
+  "tool": "qagen 0.1.0",
+  "mode": "crawl-only",
+  "started_at": "2026-08-09T19:26:38.830941+00:00",
+  "config": {
+    "target": {
+      "url": "https://www.samsungvx.com/",
+      "depth": 0,
+      "same_origin_only": true,
+      "include_paths": [],
+      "exclude_paths": [
+        "/logout",
+        "/signout"
+      ],
+      "id_collapse_exceptions": []
+    },
+    "auth": {
+      "storage_state": "secrets\\samsungvx.json",
+      "verify_selector": null,
+      "verify_timeout_ms": 5000
+    },
+    "crawl": {
+      "max_pages": 25,
+      "max_navigations": null,
+      "max_clicks": 200,
+      "max_wall_clock_seconds": 900,
+      "max_clicks_per_state": 30,
+      "max_states_per_url": 3,
+      "max_consecutive_no_new_states": 100,
+      "settle_timeout_ms": 3000,
+      "hydration_timeout_ms": 10000,
+      "stability_ms": 400,
+      "hydration_min_elements": 1,
+      "loader_timeout_ms": 15000,
+      "loader_selectors": [],
+      "post_loader_wait_ms": 5000,
+      "action_timeout_ms": 8000,
+      "nav_timeout_ms": 20000,
+      "probe_search": true,
+      "search_probe_term": "qa"
+    },
+    "interaction": {
+      "policy": "safe_click",
+      "deny_text": [
+        "delete",
+        "remove",
+        "destroy",
+        "erase",
+        "drop",
+        "pay",
+        "purchase",
+        "checkout",
+        "buy",
+        "subscribe",
+        "order",
+        "submit",
+        "confirm",
+        "approve",
+        "publish",
+        "send",
+        "logout",
+        "log out",
+        "sign out",
+        "deactivate",
+        "disable account",
+        "cancel subscription",
+        "reset",
+        "revoke",
+        "archive",
+        "merge",
+        "transfer"
+      ],
+      "deny_selectors": [
+        "[data-destructive]",
+        "[data-testid*='delete' i]",
+        ".btn-danger"
+      ],
+      "allow_selectors": [],
+      "dismiss_consent": true,
+      "consent_vocab": [
+        "accept all",
+        "accept cookies",
+        "allow all",
+        "got it",
+        "i agree",
+        "agree",
+        "consent",
+        "understood",
+        "ok, got it",
+        "allow cookies"
+      ]
+    },
+    "llm": {
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "effort": "high",
+      "max_tokens": 16000,
+      "cache_system_prompt": true,
+      "max_cases_per_page": 12
+    },
+    "output": {
+      "dir": "vx-probe",
+      "formats": [
+        "markdown",
+        "json",
+        "xlsx",
+        "graph"
+      ],
+      "save_page_models": true,
+      "save_summaries": false,
+      "save_screenshots": true,
+      "save_html": true,
+      "screenshot_full_page": true,
+      "action_log": true
+    },
+    "browser": {
+      "headless": true,
+      "viewport_width": 1440,
+      "viewport_height": 900,
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36 QAGen/0.1",
+      "block_mutations": true,
+      "slow_mo_ms": 0
+    }
+  },
+  "auth_status": "ok",
+  "finished_at": "2026-08-09T19:27:59.763671+00:00",
+  "duration_seconds": 80.9,
+  "crawl": {
+    "states_discovered": 2,
+    "graph_nodes": 3,
+    "graph_edges": 2,
+    "actionable_elements": 38,
+    "total_elements": 38,
+    "boundaries": [
+      {
+        "origin": "vxt.samsung.com",
+        "url": "https://vxt.samsung.com/contact-us",
+        "reason": "external origin",
+        "triggered_by": "Contact Us"
+      }
+    ],
+    "unexplored_at_stop": 0,
+    "budgets": {
+      "pages_visited": 1,
+      "navigations": 1,
+      "max_pages": 25,
+      "clicks_made": 1,
+      "max_clicks": 200,
+      "elapsed_seconds": 65.1,
+      "max_wall_clock_seconds": 900,
+      "consecutive_no_new_states": 0,
+      "stop_reason": null
+    },
+    "skipped_elements": [
+      {
+        "url": "https://www.samsungvx.com/",
+        "element": "button 'Buy Now'",
+        "reason": "destructive action, never clicked"
+      },
+      {
+        "url": "https://www.samsungvx.com/",
+        "element": "link 'Contact Us'",
+        "reason": "external origin, recorded as boundary"
+      }
+    ],
+    "observations": [],
+    "blocked_mutations": [
+      "POST https://cognito-identity.eu-central-1.amazonaws.com/",
+      "POST https://www.samsungvx.com/api/ums/E601D846-FBA2-41E2-A00D-02657F08B3F4/8AD89E5C-90FE-4F44-8A8C-F78707191F89/chat/start"
+    ]
+  },
+  "generation": {
+    "skipped": true
+  },
+  "outputs": [
+    "vx-probe\\navgraph.json",
+    "vx-probe\\navgraph.mmd",
+    "vx-probe\\navgraph.dot",
+    "vx-probe\\navgraph-paths.json",
+    "vx-probe\\states.md",
+    "vx-probe\\navgraph.html",
+    "vx-probe\\pages\\a5aeff8f80f6b6c4a60b.json",
+    "vx-probe\\pages\\6548af6bb43d14317264.json"
+  ]
+}

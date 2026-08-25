@@ -1,0 +1,44 @@
+{
+  "entry_node": "N001",
+  "target": "https://www.samsungvx.com/",
+  "paths": [
+    {
+      "node_id": "N001",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 0,
+      "steps": []
+    },
+    {
+      "node_id": "N002",
+      "url": "https://vxt.samsung.com/contact-us",
+      "title": "vxt.samsung.com",
+      "node_type": "boundary",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Contact Us'",
+          "selector": "[data-testid=\"dashboard_contactus\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N003",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'chatbot'",
+          "selector": "#startChatBtn",
+          "input_value": null
+        }
+      ]
+    }
+  ]
+}

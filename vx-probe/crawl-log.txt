@@ -1,0 +1,10 @@
+    time  event              detail
+--------  ------------------ ------------------------------------------------------------
+     0.0  navigate           -> https://www.samsungvx.com/ (depth 0)
+    27.2  state_found        N001  https://www.samsungvx.com/  (17 elements, 0 forms, depth 0)
+    27.2  action             N001  click generic_button 'chatbot'  [#startChatBtn]
+    49.9  outcome            N001  'chatbot' -> in_page_state  (mutating)  [0.0s]
+    50.0  action_done        N001  'chatbot' took 22.9s
+    60.5  restore            N001  FAILED (escape/back/goto)
+    60.5  budget             pages=1/25 clicks=1/200 navs=1 elapsed=60.5s
+    60.5  finished           crawl completed (frontier empty)

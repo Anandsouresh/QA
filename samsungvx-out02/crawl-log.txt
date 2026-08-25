@@ -1,0 +1,1011 @@
+    time  event              detail
+--------  ------------------ ------------------------------------------------------------
+     0.0  navigate           -> https://www.samsungvx.com/ (depth 0)
+    73.6  state_found        N001  https://www.samsungvx.com/  (29 elements, 0 forms, depth 0)
+    73.6  action             N001  click generic_button 'Buy Now'  [role=button[name="Buy Now"]]
+   100.3  outcome            N001  'Buy Now' -> no_change  (inert)  [0.0s]
+   100.3  action_done        N001  'Buy Now' took 26.7s
+   104.5  restore            N001  ok via escape/back/goto
+   104.5  action             N001  click generic_button 'chatbot'  [#startChatBtn]
+   144.9  outcome            N001  'chatbot' -> in_page_state  (mutating)  [0.0s]
+   148.8  overlay_open       N003 revealed 1 item(s) via 'chatbot'
+   148.8  action             N003  click generic_button 'Minimize'  [#closeChatBtn]
+   186.2  outcome            N003  'Minimize' -> in_page_state  [0.0s]
+   186.2  action_done        N001  'chatbot' took 81.7s
+   190.6  restore            N001  ok via escape/back/goto
+   190.6  action             N001  click generic_button 'editHome'  [[data-testid="dashboard_editbtn"]]
+   219.5  outcome            N001  'editHome' -> navigation  [0.0s]
+   219.5  action_done        N001  'editHome' took 28.8s
+   228.4  restore            N001  ok via escape/back/goto
+   228.4  action             N001  click generic_button 'refresh'  [#refreshScreenBtn]
+   256.5  outcome            N001  'refresh' -> no_change  (inert)  [0.0s]
+   256.5  action_done        N001  'refresh' took 28.2s
+   260.8  restore            N001  ok via escape/back/goto
+   260.8  action             N001  click inferred_clickable '(unnamed)'  [[data-testid="dashboard_playlist_newbtn"]]
+   298.3  outcome            N001  'inferred_clickable' -> in_page_state  [0.0s]
+   298.6  overlay_open       N005 revealed 5 item(s) via 'div'
+   298.6  action             N005  click inferred_clickable '(unnamed)'  [#root > div.add-btn-popover:nth-of-type(4) > ul.select-ul.openNew-list > li.ga-button-action-class:nth-of-type(2) > span]
+   349.5  outcome            N005  'inferred_clickable' -> in_page_state  [0.0s]
+   383.5  action             N005  click inferred_clickable '(unnamed)'  [#root > div.add-btn-popover:nth-of-type(4) > ul.select-ul.openNew-list > li.ga-button-action-class:nth-of-type(3) > span]
+   400.5  outcome            N005  'inferred_clickable' -> navigation  [0.0s]
+   465.8  action             N005  click inferred_clickable 'General'  [[data-testid="dashboard_playlist_addbtn_general"]]
+   498.5  outcome            N005  'General' -> navigation  [0.0s]
+   564.9  action             N005  click inferred_clickable 'Sync Play'  [[data-testid="dashboard_playlist_addbtn_syncplay"]]
+   615.9  outcome            N005  'Sync Play' -> in_page_state  [0.0s]
+   647.7  action             N005  click inferred_clickable 'Takeover Sync Play'  [[data-testid="dashboard_playlist_addbtn_takeoversyncplay"]]
+   680.6  outcome            N005  'Takeover Sync Play' -> navigation  [0.0s]
+   680.6  action_done        N001  'inferred_clickable' took 419.8s
+   685.3  restore            N001  ok via escape/back/goto
+   685.3  action             N001  click inferred_clickable '(unnamed)'  [[data-testid="dashboard_schedule_newbtn"]]
+   713.1  outcome            N001  'inferred_clickable' -> no_change  (inert)  [0.0s]
+   713.1  action_done        N001  'inferred_clickable' took 27.8s
+   717.4  restore            N001  ok via escape/back/goto
+   717.4  action             N001  click inferred_clickable '(unnamed)'  [#planCard_item0 > div > div.home-card-header:nth-of-type(1) > div.ga-button-action-class > div._dot_comp_18hso_1.bg-green:nth-of-type(1)]
+   742.7  outcome            N001  'inferred_clickable' -> navigation  [0.0s]
+   742.7  action_done        N001  'inferred_clickable' took 25.3s
+   747.4  restore            N001  ok via escape/back/goto
+   747.4  action             N001  click inferred_clickable '(unnamed)'  [[data-testid="icon_badge_trial"]]
+   771.8  outcome            N001  'inferred_clickable' -> navigation  [0.0s]
+   771.8  action_done        N001  'inferred_clickable' took 24.5s
+   776.5  restore            N001  ok via escape/back/goto
+   776.5  action             N001  click inferred_clickable '.st0{opacity:0.8;}'  [[data-testid="icon_arrow_down"]]
+   814.8  outcome            N001  '.st0{opacity:0.8;}' -> in_page_state  [0.0s]
+   818.0  overlay_open       N010 revealed 3 item(s) via '.st0{opacity:0.8;}'
+   818.0  action             N010  click inferred_clickable '(unnamed)'  [[data-testid="icon_arrow_up"]]
+   858.0  outcome            N010  'inferred_clickable' -> in_page_state  [0.0s]
+   890.0  action             N010  click inferred_clickable 'Default Workspace'  [[data-testid="dashboard_workspace_change"]]
+   929.1  outcome            N010  'Default Workspace' -> in_page_state  [0.0s]
+   960.9  action             N010  click inferred_clickable 'Default Workspace'  [[data-testid="dashboardPlaces_liPlaces_Item0"]]
+   997.9  outcome            N010  'Default Workspace' -> in_page_state  [0.0s]
+   997.9  action_done        N001  '.st0{opacity:0.8;}' took 221.4s
+  1002.1  restore            N001  ok via escape/back/goto
+  1002.1  action             N001  click inferred_clickable 'Allocation 3'  [role=listitem[name="Allocation 3"]]
+  1002.1  action_done        N001  'Allocation 3' took 0.0s
+  1006.3  restore            N001  ok via escape/back/goto
+  1006.3  action             N001  click inferred_clickable 'Allocation 3Used 0Available 3'  [[data-testid="dashboard_curr_plan0"]]
+  1032.3  outcome            N001  'Allocation 3Used 0Available 3' -> navigation  [0.0s]
+  1032.3  action_done        N001  'Allocation 3Used 0Available 3' took 26.0s
+  1036.9  restore            N001  ok via escape/back/goto
+  1036.9  action             N001  click inferred_clickable 'Apps'  [role=listitem[name="Apps"]]
+  1036.9  action_done        N001  'Apps' took 0.0s
+  1041.1  restore            N001  ok via escape/back/goto
+  1041.1  action             N001  click inferred_clickable 'Available 3'  [role=listitem[name="Available 3"]]
+  1041.1  action_done        N001  'Available 3' took 0.0s
+  1045.3  restore            N001  ok via escape/back/goto
+  1045.3  action             N001  click inferred_clickable 'content'  [#contentCard_defaultImg]
+  1055.2  outcome            N001  'content' -> navigation  [0.0s]
+  1055.2  action_done        N001  'content' took 9.9s
+  1059.8  restore            N001  FAILED (escape/back/goto)
+  1059.8  navigate           -> https://www.samsungvx.com/terms (depth 1)
+  1077.3  state_found        N012  https://www.samsungvx.com/terms  (9 elements, 0 forms, depth 1)
+  1077.3  skip               button 'Buy Now'  -- already exercised on N001
+  1077.3  skip               button 'chatbot'  -- already exercised on N001
+  1077.3  action             N012  click inferred_clickable '(unnamed)'  [[data-testid="icon_notific_solidation"]]
+  1078.8  outcome            N012  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  1078.8  action_done        N012  'inferred_clickable' took 1.6s
+  1079.0  restore            N012  ok via escape/back/goto
+  1079.0  action             N012  click inferred_clickable 'logo'  [#header_logo]
+  1095.8  outcome            N012  'logo' -> navigation  [0.0s]
+  1095.8  action_done        N012  'logo' took 16.8s
+  1100.3  restore            N012  ok via escape/back/goto
+  1100.3  navigate           -> https://www.samsungvx.com/privacy (depth 1)
+  1133.7  state_found        N014  https://www.samsungvx.com/privacy  (9 elements, 0 forms, depth 1)
+  1133.7  skip               button 'Buy Now'  -- already exercised on N001
+  1133.7  skip               button 'chatbot'  -- already exercised on N001
+  1133.7  action             N014  click inferred_clickable '(unnamed)'  [#alarmId > div.notific]
+  1150.2  outcome            N014  'inferred_clickable' -> in_page_state  [0.0s]
+  1152.3  overlay_open       N015 revealed 8 item(s) via 'div'
+  1152.3  action             N015  click generic_button '(unnamed)'  [#notiFilterStateId > button.btn_icon]
+  1165.7  outcome            N015  'generic_button' -> in_page_state  [0.0s]
+  1178.1  overlay_lost       N015 could not be re-opened; 7 item(s) left unexercised
+  1178.1  action_done        N014  'inferred_clickable' took 44.4s
+  1188.9  restore            N014  FAILED (escape/back/goto)
+  1188.9  navigate           -> https://www.samsungvx.com/cookie (depth 1)
+  1211.1  state_found        N017  https://www.samsungvx.com/cookie  (9 elements, 0 forms, depth 1)
+  1211.1  skip               button 'Buy Now'  -- already exercised on N001
+  1211.1  skip               button 'chatbot'  -- already exercised on N001
+  1211.1  skip               div ''  -- already exercised on N012
+  1211.1  skip               div 'logo'  -- already exercised on N012
+  1211.1  navigate           -> https://www.samsungvx.com/euda (depth 1)
+  1229.7  state_found        N018  https://www.samsungvx.com/euda  (9 elements, 0 forms, depth 1)
+  1229.7  skip               button 'Buy Now'  -- already exercised on N001
+  1229.7  skip               button 'chatbot'  -- already exercised on N001
+  1229.7  skip               div ''  -- already exercised on N012
+  1229.7  skip               div 'logo'  -- already exercised on N012
+  1229.7  navigate           -> https://www.samsungvx.com/settings/editHome (depth 1)
+  1293.3  state_found        N004  https://www.samsungvx.com/settings/edithome  (41 elements, 0 forms, depth 1)
+  1293.3  action             N004  click radio 'Logo'  [#title-settings-logo]
+  1320.0  outcome            N004  'Logo' -> file_chooser  (upload)  [0.0s]
+  1320.4  action_done        N004  'Logo' took 27.1s
+  1325.2  restore            N004  ok via escape/back/goto
+  1325.2  action             N004  click radio 'Organization Name'  [#title-settings-organization-name]
+  1352.9  outcome            N004  'Organization Name' -> no_change  (inert)  [0.0s]
+  1352.9  action_done        N004  'Organization Name' took 27.6s
+  1357.1  restore            N004  ok via escape/back/goto
+  1357.1  action             N004  click generic_button '(unnamed)'  [div > div.selected:nth-of-type(1) > div.settings-tab > div:nth-of-type(2) > div.center-wrapper.image-picker:nth-of-type(2) > button.image-picker-add]
+  1384.7  outcome            N004  'generic_button' -> file_chooser  (upload)  [0.0s]
+  1384.7  action_done        N004  'generic_button' took 27.6s
+  1388.9  restore            N004  ok via escape/back/goto
+  1388.9  action             N004  click generic_button '(unnamed)'  [[data-testid="reset-dashboard-button"]]
+  1435.7  outcome            N004  'generic_button' -> in_page_state  [0.0s]
+  1437.9  overlay_open       N019 revealed 2 item(s) via 'button'
+  1437.9  action             N019  click generic_button 'No'  [role=button[name="No"]]
+  1483.7  outcome            N019  'No' -> in_page_state  [0.0s]
+  1515.5  action             N019  click generic_button 'Yes'  [role=button[name="Yes"]]
+  1563.2  outcome            N019  'Yes' -> in_page_state  [0.0s]
+  1563.2  action_done        N004  'generic_button' took 174.3s
+  1567.5  restore            N004  ok via escape/back/goto
+  1567.5  action             N004  click generic_button 'Apps'  [role=button[name="Apps"]]
+  1595.0  outcome            N004  'Apps' -> no_change  (inert)  [0.0s]
+  1595.0  action_done        N004  'Apps' took 27.6s
+  1599.5  restore            N004  ok via escape/back/goto
+  1599.5  action             N004  click generic_button 'Cancel'  [role=button[name="Cancel"]]
+  1601.2  outcome            N004  'Cancel' -> navigation  [0.0s]
+  1601.2  action_done        N004  'Cancel' took 1.7s
+  1636.3  restore            N004  FAILED (escape/back/goto)
+  1636.3  navigate           -> https://www.samsungvx.com/playlist/sync/create (depth 1)
+  1688.4  state_found        N021  https://www.samsungvx.com/playlist/sync/create  (31 elements, 0 forms, depth 1)
+  1688.4  action             N021  click generic_button '(unnamed)'  [[data-testid="playlist_new_general_preview"]]
+  1698.4  action_done        N021  'generic_button' took 10.0s
+  1698.6  restore            N021  ok via escape/back/goto
+  1698.6  action             N021  click generic_button 'Add Content'  [[data-testid="playlist_newplaylist_general_addcontent"]]
+  1708.7  action_done        N021  'Add Content' took 10.0s
+  1708.8  restore            N021  ok via escape/back/goto
+  1708.8  skip               button 'Buy Now'  -- already exercised on N001
+  1708.8  skip               button 'chatbot'  -- already exercised on N001
+  1708.8  action             N021  click generic_button 'more'  [[data-testid="playlist_detail_toolbar_more"]]
+  1718.9  action_done        N021  'more' took 10.0s
+  1719.1  restore            N021  ok via escape/back/goto
+  1719.1  action             N021  click generic_button 'Playlist'  [role=button[name="Playlist"]]
+  1729.1  action_done        N021  'Playlist' took 10.0s
+  1729.3  restore            N021  ok via escape/back/goto
+  1729.3  action             N021  click generic_button 'Save'  [[data-testid="playlist_new_general_save"]]
+  1739.3  action_done        N021  'Save' took 10.0s
+  1739.5  restore            N021  ok via escape/back/goto
+  1739.5  action             N021  click generic_button 'Set to Screens'  [[data-testid="playlist_new_general_set2screen"]]
+  1749.5  action_done        N021  'Set to Screens' took 10.0s
+  1749.7  restore            N021  ok via escape/back/goto
+  1749.7  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_back"]]
+  1759.7  action_done        N021  'inferred_clickable' took 10.0s
+  1759.9  restore            N021  ok via escape/back/goto
+  1759.9  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="name_edit_icon"]]
+  1769.9  action_done        N021  'inferred_clickable' took 10.0s
+  1770.1  restore            N021  ok via escape/back/goto
+  1770.1  skip               div ''  -- already exercised on N012
+  1770.1  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_screen"]]
+  1780.1  action_done        N021  'inferred_clickable' took 10.0s
+  1780.2  restore            N021  ok via escape/back/goto
+  1780.2  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_contents"]]
+  1790.3  action_done        N021  'inferred_clickable' took 10.0s
+  1790.5  restore            N021  ok via escape/back/goto
+  1790.5  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_playlist"]]
+  1800.5  action_done        N021  'inferred_clickable' took 10.0s
+  1800.7  restore            N021  ok via escape/back/goto
+  1800.7  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_schedule"]]
+  1810.7  action_done        N021  'inferred_clickable' took 10.0s
+  1810.9  restore            N021  ok via escape/back/goto
+  1810.9  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_channel"]]
+  1820.9  action_done        N021  'inferred_clickable' took 10.0s
+  1821.1  restore            N021  ok via escape/back/goto
+  1821.1  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_badge_p"]]
+  1831.1  action_done        N021  'inferred_clickable' took 10.0s
+  1831.3  restore            N021  ok via escape/back/goto
+  1831.3  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_ic_apps"]]
+  1841.3  action_done        N021  'inferred_clickable' took 10.0s
+  1841.5  restore            N021  ok via escape/back/goto
+  1841.5  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_tooltip"]]
+  1851.5  action_done        N021  'inferred_clickable' took 10.0s
+  1851.7  restore            N021  ok via escape/back/goto
+  1851.7  action             N021  click inferred_clickable '(unnamed)'  [#playlistDetail_weight > div:nth-of-type(2) > div.toggle_switch > label > span.toggle_track.ga-button-action-class]
+  1861.7  action_done        N021  'inferred_clickable' took 10.0s
+  1861.9  restore            N021  ok via escape/back/goto
+  1861.9  action             N021  click inferred_clickable '(unnamed)'  [[data-testid="icon_circleplus"]]
+  1871.9  action_done        N021  'inferred_clickable' took 10.0s
+  1872.1  restore            N021  ok via escape/back/goto
+  1872.1  skip               div '.st0{opacity:0.8;}'  -- already exercised on N001
+  1872.1  action             N021  click inferred_clickable 'Apps'  [[data-testid="navbar_li_apps"]]
+  1882.1  action_done        N021  'Apps' took 10.0s
+  1882.3  restore            N021  ok via escape/back/goto
+  1882.3  action             N021  click inferred_clickable 'Channel'  [[data-testid="navbar_li_channel"]]
+  1892.3  action_done        N021  'Channel' took 10.0s
+  1892.5  restore            N021  ok via escape/back/goto
+  1892.5  action             N021  click inferred_clickable 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'  [#place_wrap]
+  1902.5  action_done        N021  'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}' took 10.0s
+  1902.7  restore            N021  ok via escape/back/goto
+  1902.7  action             N021  click inferred_clickable 'Content'  [[data-testid="navbar_li_content"]]
+  1912.7  action_done        N021  'Content' took 10.0s
+  1912.9  restore            N021  ok via escape/back/goto
+  1912.9  action             N021  click inferred_clickable 'Info'  [role=listitem[name="Info"]]
+  1912.9  action_done        N021  'Info' took 0.0s
+  1913.1  restore            N021  ok via escape/back/goto
+  1913.1  action             N021  click inferred_clickable 'logo'  [#container > header > div._head_logo_1ijv6_14:nth-of-type(1)]
+  1923.1  action_done        N021  'logo' took 10.0s
+  1923.3  restore            N021  ok via escape/back/goto
+  1923.3  action             N021  click inferred_clickable 'Playlist'  [[data-testid="navbar_li_playlist"]]
+  1933.8  action_done        N021  'Playlist' took 10.5s
+  1934.0  restore            N021  ok via escape/back/goto
+  1934.0  action             N021  click inferred_clickable 'Schedule'  [[data-testid="navbar_li_schedule"]]
+  1944.0  action_done        N021  'Schedule' took 10.0s
+  1944.2  restore            N021  ok via escape/back/goto
+  1944.2  action             N021  click inferred_clickable 'Screen'  [[data-testid="navbar_li_screen"]]
+  1954.2  action_done        N021  'Screen' took 10.0s
+  1954.4  restore            N021  ok via escape/back/goto
+  1954.5  navigate           -> https://www.samsungvx.com/playlist/create (depth 1)
+  1995.0  state_found        N008  https://www.samsungvx.com/playlist/create  (32 elements, 0 forms, depth 1)
+  1995.0  skip               button ''  -- already exercised on N021
+  1995.0  skip               button 'Add Content'  -- already exercised on N021
+  1995.0  skip               button 'Buy Now'  -- already exercised on N001
+  1995.0  skip               button 'chatbot'  -- already exercised on N001
+  1995.0  skip               button 'more'  -- already exercised on N021
+  1995.0  skip               button 'Save'  -- already exercised on N021
+  1995.0  skip               button 'Set to Screens'  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               span ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N012
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               span ''  -- already exercised on N021
+  1995.0  skip               div ''  -- already exercised on N021
+  1995.0  skip               div '.st0{opacity:0.8;}'  -- already exercised on N001
+  1995.0  action             N008  click inferred_clickable 'AppsN'  [[data-testid="navbar_li_apps"]]
+  2020.7  outcome            N008  'AppsN' -> navigation  [0.0s]
+  2020.7  action_done        N008  'AppsN' took 25.7s
+  2021.3  restore            N008  ok via escape/back/goto
+  2021.3  skip               listitem 'Channel'  -- already exercised on N021
+  2021.3  skip               div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'  -- already exercised on N021
+  2021.3  skip               listitem 'Content'  -- already exercised on N021
+  2021.3  action             N008  click inferred_clickable 'GeneralGeneral'  [div.tab_container > div.tab_content:nth-of-type(1) > div.info_table:nth-of-type(1) > ul.info_section > li.info_txt.flex_center:nth-of-type(2) > span.chip.chip-chkbox]
+  2024.2  outcome            N008  'GeneralGeneral' -> no_change  (inert)  [0.0s]
+  2024.2  action_done        N008  'GeneralGeneral' took 2.9s
+  2024.4  restore            N008  ok via escape/back/goto
+  2024.4  skip               listitem 'Info'  -- already exercised on N021
+  2024.4  skip               div 'logo'  -- already exercised on N021
+  2024.4  action             N008  click inferred_clickable 'N'  [#navbar_li_apps > div:nth-of-type(2) > div._menu-suffix-icon_1gcwv_1]
+  2024.4  action_done        N008  'N' took 0.0s
+  2024.6  restore            N008  ok via escape/back/goto
+  2024.6  skip               listitem 'Playlist'  -- already exercised on N021
+  2024.6  skip               listitem 'Schedule'  -- already exercised on N021
+  2024.6  skip               listitem 'Screen'  -- already exercised on N021
+  2024.6  navigate           -> https://www.samsungvx.com/playlist/sync/create (depth 1)
+  2063.4  state_duplicate    https://www.samsungvx.com/playlist/sync/create  fp=b074266420
+  2063.4  navigate           -> https://www.samsungvx.com/settings/subscription/A8308934-7569-41CA-A254-92A185ADD97C (depth 1)
+  2097.5  state_found        N009  https://www.samsungvx.com/settings/subscription/{id}  (32 elements, 0 forms, depth 1)
+  2097.5  action             N009  click generic_button '(unnamed)'  [#ModalFooter_btnMore]
+  2118.0  outcome            N009  'generic_button' -> in_page_state  [0.0s]
+  2120.1  overlay_open       N023 revealed 2 item(s) via 'button'
+  2120.1  action             N023  click inferred_clickable 'Lock Plan'  [[data-testid="button_Lock Plan"]]
+  2139.7  outcome            N023  'Lock Plan' -> in_page_state  (mutating)  [0.0s]
+  2142.9  action             N023  click inferred_clickable 'Merge Plan'  [[data-testid="button_Merge Plan"]]
+  2166.9  outcome            N023  'Merge Plan' -> in_page_state  [0.0s]
+  2169.0  action_done        N009  'generic_button' took 71.5s
+  2169.3  restore            N009  ok via escape/back/goto
+  2169.3  action             N009  click generic_button 'Add Workspace'  [[data-testid="setting_plan_details_add_workspace"]]
+  2195.6  outcome            N009  'Add Workspace' -> in_page_state  [0.0s]
+  2197.5  overlay_open       N025 revealed 4 item(s) via 'Add Workspace'
+  2197.5  action             N025  click generic_button 'Add'  [[data-testid="undefined_apply"]]
+  2210.9  action             N025  click generic_button 'Cancel'  [[data-testid="undefined_close"]]
+  2232.9  outcome            N025  'Cancel' -> in_page_state  [0.0s]
+  2236.4  action             N025  click inferred_clickable '(unnamed)'  [[data-testid="icon_close"]]
+  2258.3  outcome            N025  'inferred_clickable' -> in_page_state  [0.0s]
+  2261.7  action             N025  click inferred_clickable '(unnamed)'  [[data-testid="icon_search"]]
+  2264.8  outcome            N025  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  2264.8  action_done        N009  'Add Workspace' took 95.4s
+  2265.0  restore            N009  ok via escape/back/goto
+  2265.0  skip               button 'Buy Now'  -- already exercised on N001
+  2265.0  skip               button 'chatbot'  -- already exercised on N001
+  2265.0  action             N009  click inferred_clickable '(unnamed)'  [[data-testid="icon_back"] >> nth=0]
+  2284.7  outcome            N009  'inferred_clickable' -> navigation  [0.0s]
+  2284.7  action_done        N009  'inferred_clickable' took 19.7s
+  2289.2  restore            N009  ok via escape/back/goto
+  2289.2  skip               div ''  -- already exercised on N012
+  2289.2  action             N009  click inferred_clickable '(unnamed)'  [[data-testid="icon_badge_p"] >> nth=0]
+  2305.2  outcome            N009  'inferred_clickable' -> navigation  [0.0s]
+  2305.2  action_done        N009  'inferred_clickable' took 16.0s
+  2305.6  restore            N009  ok via escape/back/goto
+  2305.6  skip               div ''  -- already exercised on N009
+  2305.6  skip               div ''  -- already exercised on N009
+  2305.6  action             N009  click inferred_clickable '(unnamed)'  [[data-testid="icon_ic_new_window"]]
+  2330.8  outcome            N009  'inferred_clickable' -> navigation  [0.0s]
+  2330.8  action_done        N009  'inferred_clickable' took 25.1s
+  2335.4  restore            N009  ok via escape/back/goto
+  2335.4  action             N009  click inferred_clickable '(unnamed)'  [#PlanCard_cardPlan > li.card-dot:nth-of-type(2) > div:nth-of-type(1) > div.dot.green:nth-of-type(1)]
+  2338.5  outcome            N009  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  2338.5  action_done        N009  'inferred_clickable' took 3.1s
+  2338.7  restore            N009  ok via escape/back/goto
+  2338.7  action             N009  click inferred_clickable '0'  [role=listitem[name="0"]]
+  2338.7  action_done        N009  '0' took 0.0s
+  2338.9  restore            N009  ok via escape/back/goto
+  2338.9  action             N009  click inferred_clickable 'Activity Log'  [#settingNavbar_li_activityLog]
+  2359.5  outcome            N009  'Activity Log' -> navigation  [0.0s]
+  2359.5  action_done        N009  'Activity Log' took 20.6s
+  2359.9  restore            N009  ok via escape/back/goto
+  2359.9  action             N009  click inferred_clickable 'Allocation'  [#SubscriptionAllocTable_sortByAllocation]
+  2362.9  outcome            N009  'Allocation' -> no_change  (inert)  [0.0s]
+  2362.9  action_done        N009  'Allocation' took 2.9s
+  2363.1  restore            N009  ok via escape/back/goto
+  2363.1  action             N009  click inferred_clickable 'Default WorkspaceUsed: 0'  [role=listitem[name="Default WorkspaceUsed: 0"]]
+  2363.1  action_done        N009  'Default WorkspaceUsed: 0' took 0.0s
+  2363.3  restore            N009  ok via escape/back/goto
+  2363.3  action             N009  click inferred_clickable 'Edit Home'  [#settingNavbar_li_editHome]
+  2376.2  outcome            N009  'Edit Home' -> navigation  [0.0s]
+  2376.2  action_done        N009  'Edit Home' took 12.9s
+  2380.6  restore            N009  ok via escape/back/goto
+  2380.6  action             N009  click inferred_clickable 'Emergency Alert'  [#settingNavbar_li_alert]
+  2394.0  outcome            N009  'Emergency Alert' -> navigation  [0.0s]
+  2394.0  action_done        N009  'Emergency Alert' took 13.4s
+  2394.4  restore            N009  ok via escape/back/goto
+  2394.4  action             N009  click inferred_clickable 'Event'  [#settingNavbar_li_event]
+  2410.3  outcome            N009  'Event' -> navigation  [0.0s]
+  2410.3  action_done        N009  'Event' took 15.8s
+  2415.1  restore            N009  FAILED (escape/back/goto)
+  2415.1  navigate           -> https://www.samsungvx.com/settings/subscription/A8308934-7569-41CA-A254-92A185ADD97C (depth 1)
+  2445.5  state_duplicate    https://www.samsungvx.com/settings/subscription/{id}  fp=262d7cb3b9
+  2445.5  navigate           -> https://www.samsungvx.com/settings/subscription/A8308934-7569-41CA-A254-92A185ADD97C (depth 1)
+  2479.4  state_found        N030  https://www.samsungvx.com/settings/subscription/{id}  (22 elements, 0 forms, depth 1)
+  2479.4  skip               button ''  -- already exercised on N009
+  2479.4  skip               button 'Buy Now'  -- already exercised on N001
+  2479.4  skip               button 'chatbot'  -- already exercised on N001
+  2479.4  skip               div ''  -- already exercised on N009
+  2479.4  skip               div ''  -- already exercised on N012
+  2479.4  skip               div ''  -- already exercised on N009
+  2479.4  skip               div ''  -- already exercised on N009
+  2479.4  skip               div ''  -- already exercised on N009
+  2479.4  skip               div ''  -- already exercised on N009
+  2479.4  action             N030  click inferred_clickable '(unnamed)'  [#PlanCard_cardPlan > li.card-dot:nth-of-type(2) > div:nth-of-type(1) > div.dot.undefined:nth-of-type(1)]
+  2479.4  action_done        N030  'inferred_clickable' took 0.0s
+  2479.5  restore            N030  ok via escape/back/goto
+  2479.5  skip               listitem 'Activity Log'  -- already exercised on N009
+  2479.5  skip               listitem 'Edit Home'  -- already exercised on N009
+  2479.5  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  2479.5  skip               listitem 'Event'  -- already exercised on N009
+  2479.5  action             N030  click inferred_clickable 'General'  [#settingNavbar_li_general]
+  2499.0  outcome            N030  'General' -> navigation  [0.0s]
+  2499.0  action_done        N030  'General' took 19.4s
+  2499.4  restore            N030  ok via escape/back/goto
+  2499.4  action             N030  click inferred_clickable 'Organization'  [#settingNavbar_li_organization]
+  2521.2  outcome            N030  'Organization' -> navigation  [0.0s]
+  2521.2  action_done        N030  'Organization' took 21.9s
+  2521.7  restore            N030  ok via escape/back/goto
+  2521.7  action             N030  click inferred_clickable 'Plan'  [#settingNavbar_li_plan]
+  2539.5  outcome            N030  'Plan' -> navigation  [0.0s]
+  2539.5  action_done        N030  'Plan' took 17.8s
+  2540.0  restore            N030  ok via escape/back/goto
+  2540.0  action             N030  click inferred_clickable 'Screen Preset'  [#settingNavbar_li_screenPreset]
+  2553.7  outcome            N030  'Screen Preset' -> navigation  [0.0s]
+  2553.7  action_done        N030  'Screen Preset' took 13.8s
+  2554.1  restore            N030  ok via escape/back/goto
+  2554.1  action             N030  click inferred_clickable 'Tag'  [#settingNavbar_li_tag]
+  2571.0  outcome            N030  'Tag' -> navigation  [0.0s]
+  2571.0  action_done        N030  'Tag' took 16.8s
+  2571.4  restore            N030  ok via escape/back/goto
+  2571.4  action             N030  click inferred_clickable 'User'  [#settingNavbar_li_user]
+  2587.2  outcome            N030  'User' -> navigation  [0.0s]
+  2587.2  action_done        N030  'User' took 15.8s
+  2587.6  restore            N030  ok via escape/back/goto
+  2587.6  action             N030  click inferred_clickable 'Workspace'  [#settingNavbar_li_place]
+  2604.4  outcome            N030  'Workspace' -> navigation  [0.0s]
+  2604.4  action_done        N030  'Workspace' took 16.8s
+  2604.8  restore            N030  ok via escape/back/goto
+  2604.8  navigate           -> https://www.samsungvx.com/content (depth 1)
+  2620.2  state_found        N011  https://www.samsungvx.com/content  (6 elements, 0 forms, depth 1)
+  2620.2  action             N011  click generic_button 'Add Content'  [[data-testid="content_noData_btnAdd"]]
+  2624.4  outcome            N011  'Add Content' -> in_page_state  [0.0s]
+  2626.5  overlay_open       N038 revealed 7 item(s) via 'Add Content'
+  2626.5  action             N038  click generic_button 'Close'  [role=button[name="Close"]]
+  2630.0  outcome            N038  'Close' -> in_page_state  [0.0s]
+  2631.5  action             N038  click generic_button 'Drop the image, video and document files here.OpenClose'  [role=button[name="Drop the image, video and document files here.OpenClose"]]
+  2634.6  action             N038  click generic_button 'Open'  [#non_add]
+  2637.7  outcome            N038  'Open' -> file_chooser  (upload)  [0.0s]
+  2640.7  action             N038  click inferred_clickable 'My Device'  [#content_upload_tabDevice]
+  2643.8  outcome            N038  'My Device' -> no_change  (inert)  [0.0s]
+  2646.8  action             N038  click inferred_clickable 'Ticker'  [#content_upload_tabTicker]
+  2668.8  outcome            N038  'Ticker' -> in_page_state  [0.0s]
+  2672.5  action             N038  click inferred_clickable 'Web(HTML)'  [#content_upload_tabHtml]
+  2686.4  outcome            N038  'Web(HTML)' -> in_page_state  [0.0s]
+  2691.9  action             N038  click inferred_clickable 'Web(URL)'  [#content_upload_tabUrl]
+  2701.7  outcome            N038  'Web(URL)' -> in_page_state  [0.0s]
+  2703.8  action_done        N011  'Add Content' took 83.5s
+  2704.0  restore            N011  ok via escape/back/goto
+  2704.0  skip               button 'Buy Now'  -- already exercised on N001
+  2704.0  skip               button 'chatbot'  -- already exercised on N001
+  2704.0  action             N011  click generic_button 'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo'  [#container]
+  2707.2  outcome            N011  'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo' -> no_change  (inert)  [0.0s]
+  2707.2  action_done        N011  'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo' took 3.2s
+  2707.3  restore            N011  ok via escape/back/goto
+  2707.3  action             N011  click generic_button 'Create Content'  [[data-testid="content_noData_btnCreate"]]
+  2710.2  outcome            N011  'Create Content' -> no_change  (inert)  [0.0s]
+  2710.2  action_done        N011  'Create Content' took 2.9s
+  2710.4  restore            N011  ok via escape/back/goto
+  2710.4  action             N011  click inferred_clickable '(unnamed)'  [[data-testid="icon_refresh"]]
+  2720.4  action_done        N011  'inferred_clickable' took 10.0s
+  2720.6  restore            N011  ok via escape/back/goto
+  2720.6  navigate           -> https://www.samsungvx.com/ (depth 2)
+  2769.0  state_duplicate    https://www.samsungvx.com/  fp=b75848137f
+  2769.0  navigate           -> https://www.samsungvx.com/euda (depth 2)
+  2778.3  state_duplicate    https://www.samsungvx.com/euda  fp=b9728938df
+  2778.3  navigate           -> https://www.samsungvx.com/apps (depth 2)
+  2814.9  state_found        N042  https://www.samsungvx.com/apps  (155 elements, 0 forms, depth 2)
+  2814.9  skip               button 'Buy Now'  -- already exercised on N001
+  2814.9  skip               button 'chatbot'  -- already exercised on N001
+  2814.9  skip               div ''  -- already exercised on N012
+  2814.9  skip               div ''  -- already exercised on N021
+  2814.9  skip               div ''  -- already exercised on N021
+  2814.9  skip               div ''  -- already exercised on N021
+  2814.9  skip               div ''  -- already exercised on N021
+  2814.9  skip               div ''  -- already exercised on N021
+  2814.9  skip               div ''  -- already exercised on N021
+  2814.9  skip               div ''  -- already exercised on N021
+  2814.9  action             N042  click inferred_clickable '(unnamed)'  [div.swiper.swiper-initialized > div.swiper-wrapper:nth-of-type(1) > div.swiper-slide.swiper-slide-active:nth-of-type(1) > div > div._app-info_fjwgk_1:nth-of-type(1) > img._app-logo_1wr29_1]
+  2842.3  outcome            N042  'inferred_clickable' -> in_page_state  [0.0s]
+  2845.5  overlay_open       N043 revealed 8 item(s) via 'img'
+  2845.5  action             N043  click disclosure 'Africa'  [role=button[name="Africa"]]
+  2871.9  outcome            N043  'Africa' -> no_change  (inert)  [0.0s]
+  2882.1  overlay_lost       N043 could not be re-opened; 7 item(s) left unexercised
+  2882.1  action_done        N042  'inferred_clickable' took 67.2s
+  2885.5  restore            N042  FAILED (escape/back/goto)
+  2885.5  navigate           -> https://www.samsungvx.com/settings/techInquiry (depth 2)
+  2906.4  state_found        N044  https://www.samsungvx.com/settings/techinquiry  (21 elements, 0 forms, depth 2)
+  2906.4  skip               button 'Buy Now'  -- already exercised on N001
+  2906.4  skip               button 'chatbot'  -- already exercised on N001
+  2906.4  action             N044  click generic_button 'New Inquiry'  [role=button[name="New Inquiry"]]
+  2929.3  outcome            N044  'New Inquiry' -> navigation  [0.0s]
+  2929.3  action_done        N044  'New Inquiry' took 22.9s
+  2929.7  restore            N044  ok via escape/back/goto
+  2929.7  action             N044  click generic_button 'Tech Inquiry Permissions'  [role=button[name="Tech Inquiry Permissions"]]
+  2945.5  outcome            N044  'Tech Inquiry Permissions' -> in_page_state  [0.0s]
+  2947.6  overlay_open       N046 revealed 4 item(s) via 'Tech Inquiry Permissions'
+  2947.6  action             N046  click generic_button 'Cancel'  [#footer_rightPart_cancelBtn]
+  2959.9  outcome            N046  'Cancel' -> in_page_state  (mutating)  [0.0s]
+  2963.4  action             N046  click inferred_clickable '(unnamed)'  [#modal_pop_wrap > div.pop_ti._pop_ti_1e26u_2185:nth-of-type(1) > div]
+  2977.2  outcome            N046  'inferred_clickable' -> in_page_state  (mutating)  [0.0s]
+  2980.5  action             N046  click inferred_clickable 'All Users'  [[data-testid="select_default"] >> nth=0]
+  2983.5  outcome            N046  'All Users' -> no_change  (inert)  [0.0s]
+  2986.6  action             N046  click inferred_clickable 'Owner and Admin'  [[data-testid="select_default"] >> nth=0]
+  2989.6  outcome            N046  'Owner and Admin' -> no_change  (inert)  [0.0s]
+  2989.6  action_done        N044  'Tech Inquiry Permissions' took 60.0s
+  2989.8  restore            N044  ok via escape/back/goto
+  2989.8  skip               div ''  -- already exercised on N012
+  2989.8  skip               div ''  -- already exercised on N009
+  2989.8  skip               div ''  -- already exercised on N009
+  2989.8  skip               div ''  -- already exercised on N009
+  2989.8  skip               div ''  -- already exercised on N009
+  2989.8  skip               listitem 'Activity Log'  -- already exercised on N009
+  2989.8  skip               listitem 'Edit Home'  -- already exercised on N009
+  2989.8  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  2989.8  skip               listitem 'Event'  -- already exercised on N009
+  2989.8  skip               listitem 'General'  -- already exercised on N030
+  2989.8  skip               listitem 'Organization'  -- already exercised on N030
+  2989.8  skip               listitem 'Plan'  -- already exercised on N030
+  2989.8  skip               listitem 'Screen Preset'  -- already exercised on N030
+  2989.8  skip               listitem 'Tag'  -- already exercised on N030
+  2989.8  skip               listitem 'User'  -- already exercised on N030
+  2989.8  skip               listitem 'Workspace'  -- already exercised on N030
+  2989.8  navigate           -> https://www.samsungvx.com/settings/event (depth 2)
+  3014.2  state_found        N026  https://www.samsungvx.com/settings/event  (22 elements, 0 forms, depth 2)
+  3014.2  skip               button 'Buy Now'  -- already exercised on N001
+  3014.2  skip               button 'chatbot'  -- already exercised on N001
+  3014.2  action             N026  click generic_button 'Upgrade Now'  [role=button[name="Upgrade Now"]]
+  3029.5  outcome            N026  'Upgrade Now' -> in_page_state  [0.0s]
+  3031.6  overlay_open       N047 revealed 2 item(s) via 'Upgrade Now'
+  3031.6  action             N047  click generic_button 'Later'  [[data-testid="plan_dialog_later"]]
+  3045.9  outcome            N047  'Later' -> in_page_state  [0.0s]
+  3051.4  action             N047  click generic_button 'Upgrade Now'  [[data-testid="plan_dialog_upgrade_now"]]
+  3068.3  outcome            N047  'Upgrade Now' -> in_page_state  (mutating, error)  [0.0s]
+  3070.4  action_done        N026  'Upgrade Now' took 56.2s
+  3070.6  restore            N026  ok via escape/back/goto
+  3070.6  action             N026  click inferred_clickable '(unnamed)'  [[data-testid="setting_event_search_icon"]]
+  3073.8  outcome            N026  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  3073.8  action_done        N026  'inferred_clickable' took 3.2s
+  3073.9  restore            N026  ok via escape/back/goto
+  3073.9  skip               div ''  -- already exercised on N012
+  3073.9  skip               div ''  -- already exercised on N009
+  3073.9  skip               div ''  -- already exercised on N009
+  3073.9  skip               div ''  -- already exercised on N009
+  3073.9  skip               div ''  -- already exercised on N009
+  3073.9  skip               listitem 'Activity Log'  -- already exercised on N009
+  3073.9  skip               listitem 'Edit Home'  -- already exercised on N009
+  3073.9  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  3073.9  skip               listitem 'Event'  -- already exercised on N009
+  3073.9  skip               listitem 'General'  -- already exercised on N030
+  3073.9  skip               listitem 'Organization'  -- already exercised on N030
+  3073.9  skip               listitem 'Plan'  -- already exercised on N030
+  3073.9  skip               listitem 'Screen Preset'  -- already exercised on N030
+  3073.9  skip               listitem 'Tag'  -- already exercised on N030
+  3073.9  skip               listitem 'User'  -- already exercised on N030
+  3073.9  skip               listitem 'Workspace'  -- already exercised on N030
+  3106.7  navigate           -> https://www.samsungvx.com/settings/activityLog (depth 2)
+  3135.1  state_found        N027  https://www.samsungvx.com/settings/activitylog  (27 elements, 0 forms, depth 2)
+  3135.1  action             N027  click generic_button 'Apply'  [[data-testid="setting_activity_log_apply"]]
+  3136.5  outcome            N027  'Apply' -> no_change  (inert)  [0.0s]
+  3136.5  action_done        N027  'Apply' took 1.5s
+  3136.7  restore            N027  ok via escape/back/goto
+  3136.7  skip               button 'Buy Now'  -- already exercised on N001
+  3136.7  skip               button 'chatbot'  -- already exercised on N001
+  3136.7  action             N027  click inferred_clickable '(unnamed)'  [[data-testid="setting_activityLog_search_icon"]]
+  3138.1  outcome            N027  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  3138.1  action_done        N027  'inferred_clickable' took 1.3s
+  3138.3  restore            N027  ok via escape/back/goto
+  3138.3  skip               div ''  -- already exercised on N012
+  3138.3  skip               div ''  -- already exercised on N009
+  3138.3  skip               div ''  -- already exercised on N009
+  3138.3  skip               div ''  -- already exercised on N009
+  3138.3  skip               div ''  -- already exercised on N009
+  3138.3  skip               listitem 'Activity Log'  -- already exercised on N009
+  3138.3  skip               listitem 'Edit Home'  -- already exercised on N009
+  3138.3  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  3138.3  skip               listitem 'Event'  -- already exercised on N009
+  3138.3  skip               listitem 'General'  -- already exercised on N030
+  3138.3  skip               listitem 'Organization'  -- already exercised on N030
+  3138.3  skip               listitem 'Plan'  -- already exercised on N030
+  3138.3  skip               listitem 'Screen Preset'  -- already exercised on N030
+  3138.3  skip               listitem 'Tag'  -- already exercised on N030
+  3138.3  skip               listitem 'User'  -- already exercised on N030
+  3138.3  action             N027  click inferred_clickable 'When'  [#sortColumn >> nth=0]
+  3139.7  outcome            N027  'When' -> no_change  (inert)  [0.0s]
+  3139.7  action_done        N027  'When' took 1.4s
+  3139.8  restore            N027  ok via escape/back/goto
+  3139.8  action             N027  click inferred_clickable 'Where'  [#sortColumn >> nth=0]
+  3142.7  outcome            N027  'Where' -> no_change  (inert)  [0.0s]
+  3142.7  action_done        N027  'Where' took 2.8s
+  3142.9  restore            N027  ok via escape/back/goto
+  3142.9  skip               listitem 'Workspace'  -- already exercised on N030
+  3182.4  navigate           -> https://www.samsungvx.com/settings/editHome (depth 2)
+  3243.4  state_duplicate    https://www.samsungvx.com/settings/edithome  fp=294bdb1193
+  3243.4  navigate           -> https://www.samsungvx.com/settings/emergencyAlert (depth 2)
+  3267.4  state_found        N029  https://www.samsungvx.com/settings/emergencyalert  (20 elements, 0 forms, depth 2)
+  3267.4  skip               button 'Buy Now'  -- already exercised on N001
+  3267.4  skip               button 'chatbot'  -- already exercised on N001
+  3267.4  skip               button 'Upgrade Now'  -- already exercised on N026
+  3267.4  skip               div ''  -- already exercised on N012
+  3267.4  skip               div ''  -- already exercised on N009
+  3267.4  skip               div ''  -- already exercised on N009
+  3267.4  skip               div ''  -- already exercised on N009
+  3267.4  skip               div ''  -- already exercised on N009
+  3267.4  skip               listitem 'Activity Log'  -- already exercised on N009
+  3267.4  skip               listitem 'Edit Home'  -- already exercised on N009
+  3267.4  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  3267.4  skip               listitem 'Event'  -- already exercised on N009
+  3267.4  skip               listitem 'General'  -- already exercised on N030
+  3267.4  skip               listitem 'Organization'  -- already exercised on N030
+  3267.4  skip               listitem 'Plan'  -- already exercised on N030
+  3267.4  skip               listitem 'Screen Preset'  -- already exercised on N030
+  3267.4  skip               listitem 'Tag'  -- already exercised on N030
+  3267.4  skip               listitem 'User'  -- already exercised on N030
+  3267.4  skip               listitem 'Workspace'  -- already exercised on N030
+  3267.4  navigate           -> https://www.samsungvx.com/settings/event (depth 2)
+  3286.7  state_duplicate    https://www.samsungvx.com/settings/event  fp=25f82ba226
+  3286.7  navigate           -> https://www.samsungvx.com/settings (depth 2)
+  3311.0  state_found        N051  https://www.samsungvx.com/settings  (28 elements, 0 forms, depth 2)
+  3311.0  skip               button 'Buy Now'  -- already exercised on N001
+  3311.0  skip               button 'chatbot'  -- already exercised on N001
+  3311.0  skip               div ''  -- already exercised on N012
+  3311.0  skip               div ''  -- already exercised on N009
+  3311.0  skip               div ''  -- already exercised on N009
+  3311.0  skip               div ''  -- already exercised on N009
+  3311.0  skip               div ''  -- already exercised on N009
+  3311.0  action             N051  click inferred_clickable '(unnamed)'  [[data-testid="icon_phone"]]
+  3312.3  outcome            N051  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  3312.3  action_done        N051  'inferred_clickable' took 1.3s
+  3312.5  restore            N051  ok via escape/back/goto
+  3312.5  action             N051  click inferred_clickable '(unnamed)'  [[data-testid="icon_option_icon"]]
+  3313.8  outcome            N051  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  3313.8  action_done        N051  'inferred_clickable' took 1.3s
+  3314.0  restore            N051  ok via escape/back/goto
+  3314.0  action             N051  click inferred_clickable '2022-04-19'  [[data-testid="select-Date Format"]]
+  3317.0  outcome            N051  '2022-04-19' -> no_change  (inert)  [0.0s]
+  3317.0  action_done        N051  '2022-04-19' took 2.9s
+  3317.2  restore            N051  ok via escape/back/goto
+  3317.2  action             N051  click inferred_clickable '20:41'  [[data-testid="select-Time Format"]]
+  3320.0  outcome            N051  '20:41' -> no_change  (inert)  [0.0s]
+  3320.0  action_done        N051  '20:41' took 2.9s
+  3320.2  restore            N051  ok via escape/back/goto
+  3320.2  skip               listitem 'Activity Log'  -- already exercised on N009
+  3320.2  skip               listitem 'Edit Home'  -- already exercised on N009
+  3320.2  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  3320.2  action             N051  click inferred_clickable 'English'  [[data-testid="select-Language"]]
+  3323.0  outcome            N051  'English' -> no_change  (inert)  [0.0s]
+  3323.0  action_done        N051  'English' took 2.8s
+  3323.2  restore            N051  ok via escape/back/goto
+  3323.2  skip               listitem 'Event'  -- already exercised on N009
+  3323.2  action             N051  click inferred_clickable 'Exhibition'  [[data-testid="select-How did you hear about us?"]]
+  3326.1  outcome            N051  'Exhibition' -> no_change  (inert)  [0.0s]
+  3326.1  action_done        N051  'Exhibition' took 2.9s
+  3326.3  restore            N051  ok via escape/back/goto
+  3326.3  skip               listitem 'General'  -- already exercised on N030
+  3326.3  action             N051  click inferred_clickable 'Individual contributor'  [[data-testid="select-What is your role?"]]
+  3336.3  action_done        N051  'Individual contributor' took 10.0s
+  3336.5  restore            N051  ok via escape/back/goto
+  3336.5  action             N051  click inferred_clickable 'Mon'  [[data-testid="select-First Day of Week"]]
+  3346.5  action_done        N051  'Mon' took 10.0s
+  3346.6  restore            N051  ok via escape/back/goto
+  3346.6  skip               listitem 'Organization'  -- already exercised on N030
+  3346.6  skip               listitem 'Plan'  -- already exercised on N030
+  3346.6  action             N051  click inferred_clickable 'Register Phone Number'  [[data-testid="Settings_General_Register_Phone_Number"]]
+  3366.3  outcome            N051  'Register Phone Number' -> in_page_state  [0.0s]
+  3368.4  overlay_open       N031 revealed 2 item(s) via 'Register Phone Number'
+  3368.4  action             N031  click generic_button 'Cancel'  [[data-testid="settings_general_register_phone_cancel"]]
+  3384.7  outcome            N031  'Cancel' -> in_page_state  [0.0s]
+  3388.1  skip               div ''  -- already exercised on N025
+  3388.1  action_done        N051  'Register Phone Number' took 41.5s
+  3388.3  restore            N051  ok via escape/back/goto
+  3388.3  skip               listitem 'Screen Preset'  -- already exercised on N030
+  3388.3  skip               listitem 'Tag'  -- already exercised on N030
+  3388.3  skip               listitem 'User'  -- already exercised on N030
+  3388.3  skip               listitem 'Workspace'  -- already exercised on N030
+  3388.3  navigate           -> https://www.samsungvx.com/settings/organization (depth 2)
+  3416.8  state_found        N032  https://www.samsungvx.com/settings/organization  (35 elements, 1 forms, depth 2)
+  3416.8  action             N032  click generic_button 'Add'  [#add_phone_number]
+  3439.2  outcome            N032  'Add' -> in_page_state  [0.0s]
+  3441.3  overlay_open       N052 revealed 2 item(s) via 'Add'
+  3441.3  skip               button 'Cancel'  -- already exercised on N031
+  3441.3  skip               div ''  -- already exercised on N025
+  3441.3  action_done        N032  'Add' took 24.5s
+  3441.5  restore            N032  ok via escape/back/goto
+  3441.5  skip               button 'Buy Now'  -- already exercised on N001
+  3441.5  skip               button 'chatbot'  -- already exercised on N001
+  3441.5  skip               div ''  -- already exercised on N012
+  3441.5  skip               div ''  -- already exercised on N009
+  3441.5  skip               div ''  -- already exercised on N009
+  3441.5  skip               div ''  -- already exercised on N009
+  3441.5  skip               div ''  -- already exercised on N009
+  3441.5  skip               div ''  -- already exercised on N009
+  3441.5  skip               listitem 'Activity Log'  -- already exercised on N009
+  3441.5  action             N032  click inferred_clickable 'Customization'  [[data-testid="settings_organization_customizatoin"]]
+  3463.6  outcome            N032  'Customization' -> in_page_state  [0.0s]
+  3466.8  overlay_open       N053 revealed 8 item(s) via 'Customization'
+  3466.8  action             N053  click disclosure 'Admin Privilege ControlUpgrade Now'  [role=button[name="Admin Privilege ControlUpgrade Now"]]
+  3468.4  action             N053  click disclosure 'App Splash Logo'  [role=button[name="App Splash Logo"]]
+  3469.8  outcome            N053  'App Splash Logo' -> no_change  (inert)  [0.0s]
+  3472.9  action             N053  click disclosure 'Content Embargo & LifespanUpgrade Now'  [role=button[name="Content Embargo & LifespanUpgrade Now"]]
+  3475.8  action             N053  click disclosure 'Default Content'  [role=button[name="Default Content"]]
+  3478.9  outcome            N053  'Default Content' -> no_change  (inert)  [0.0s]
+  3482.0  action             N053  click disclosure 'Screen Custom FieldsUpgrade Now'  [role=button[name="Screen Custom FieldsUpgrade Now"]]
+  3485.0  action             N053  click generic_button 'Apply'  [role=button[name="Apply"]]
+  3498.2  skip               button 'Upgrade Now'  -- already exercised on N026
+  3498.2  skip               button 'Upgrade Now'  -- already exercised on N026
+  3498.2  action_done        N032  'Customization' took 56.7s
+  3502.0  restore            N032  ok via escape/back/goto
+  3502.0  skip               listitem 'Edit Home'  -- already exercised on N009
+  3502.0  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  3502.0  action             N032  click inferred_clickable 'Entertainment'  [[data-testid="select-Industry"]]
+  3506.9  outcome            N032  'Entertainment' -> no_change  (inert)  [0.0s]
+  3506.9  action_done        N032  'Entertainment' took 4.8s
+  3507.1  restore            N032  ok via escape/back/goto
+  3507.1  skip               listitem 'Event'  -- already exercised on N009
+  3507.1  skip               listitem 'General'  -- already exercised on N030
+  3507.1  action             N032  click inferred_clickable 'Information'  [[data-testid="settings_organization_information"]]
+  3510.1  outcome            N032  'Information' -> no_change  (inert)  [0.0s]
+  3510.1  action_done        N032  'Information' took 3.1s
+  3510.3  restore            N032  ok via escape/back/goto
+  3510.3  skip               listitem 'Organization'  -- already exercised on N030
+  3510.3  skip               listitem 'Plan'  -- already exercised on N030
+  3510.3  action             N032  click inferred_clickable 'Preset'  [[data-testid="settings_organization_preset"]]
+  3532.1  outcome            N032  'Preset' -> in_page_state  [0.0s]
+  3535.2  overlay_open       N054 revealed 8 item(s) via 'Preset'
+  3535.2  action             N054  click generic_button 'Upgrade Now'  [#WorkspaceScreen_Upgrade >> nth=0]
+  3556.6  outcome            N054  'Upgrade Now' -> in_page_state  [0.0s]
+  3560.3  skip               button 'Upgrade Now'  -- already exercised on N054
+  3560.3  skip               div ''  -- already exercised on N025
+  3560.3  action             N054  click inferred_clickable '(unnamed)'  [[data-testid="icon_question"] >> nth=0]
+  3563.4  outcome            N054  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  3566.4  skip               div ''  -- already exercised on N054
+  3566.4  action             N054  click inferred_clickable 'Android'  [role=listitem[name="Android"]]
+  3569.5  action             N054  click inferred_clickable 'BrightSign'  [role=listitem[name="BrightSign"]]
+  3572.5  action             N054  click inferred_clickable 'Do not show again.'  [div.simplebar-content > div._tab_content_y859n_1350.tab_content > div.MuiBox-root:nth-of-type(2) > label.MuiFormControlLabel-root.MuiFormControlLabel-labelPlacementEnd > span.MuiButtonBase-root.MuiCheckbox-root:nth-of-type(1) > span]
+  3582.5  action_done        N032  'Preset' took 72.2s
+  3586.2  restore            N032  FAILED (escape/back/goto)
+  3586.2  navigate           -> https://www.samsungvx.com/settings/subscription (depth 2)
+  3610.5  state_found        N033  https://www.samsungvx.com/settings/subscription  (38 elements, 0 forms, depth 2)
+  3610.5  skip               button 'Buy Now'  -- already exercised on N001
+  3610.5  skip               button 'chatbot'  -- already exercised on N001
+  3610.5  action             N033  click generic_button 'Register Activation Code'  [[data-testid="setting_plan_register_activation_code"]]
+  3631.9  outcome            N033  'Register Activation Code' -> in_page_state  [0.0s]
+  3634.0  overlay_open       N056 revealed 5 item(s) via 'Register Activation Code'
+  3634.0  skip               button 'Cancel'  -- already exercised on N046
+  3634.0  action             N056  click generic_button 'Register Now'  [#footer_rightPart_okBtn]
+  3647.0  skip               div ''  -- already exercised on N025
+  3647.0  skip               div '.st0{opacity:0.8;}'  -- already exercised on N001
+  3647.0  action             N056  click inferred_clickable '.st0{opacity:0.8;} How to get your activation code'  [role=listitem[name=".st0{opacity:0.8;} How to get your activation code"]]
+  3647.0  action_done        N033  'Register Activation Code' took 36.5s
+  3647.2  restore            N033  ok via escape/back/goto
+  3647.2  skip               div ''  -- already exercised on N012
+  3647.2  skip               div ''  -- already exercised on N009
+  3647.2  skip               div ''  -- already exercised on N009
+  3647.2  skip               div ''  -- already exercised on N009
+  3647.2  skip               div ''  -- already exercised on N009
+  3647.2  action             N033  click inferred_clickable '(unnamed)'  [#liItemContents0 > div]
+  3669.9  outcome            N033  'inferred_clickable' -> navigation  [0.0s]
+  3669.9  action_done        N033  'inferred_clickable' took 22.8s
+  3670.4  restore            N033  ok via escape/back/goto
+  3670.4  skip               div ''  -- already exercised on N001
+  3670.4  action             N033  click inferred_clickable '0'  [#liItemContents2]
+  3692.2  outcome            N033  '0' -> navigation  [0.0s]
+  3692.2  action_done        N033  '0' took 21.9s
+  3692.7  restore            N033  ok via escape/back/goto
+  3692.7  action             N033  click inferred_clickable '2026-10-01'  [#SubscriptionTable_nextPaymentDate]
+  3713.9  outcome            N033  '2026-10-01' -> navigation  [0.0s]
+  3713.9  action_done        N033  '2026-10-01' took 21.2s
+  3714.3  restore            N033  ok via escape/back/goto
+  3714.3  action             N033  click inferred_clickable '3'  [#liItemContents1]
+  3735.9  outcome            N033  '3' -> navigation  [0.0s]
+  3735.9  action_done        N033  '3' took 21.5s
+  3736.3  restore            N033  ok via escape/back/goto
+  3736.3  action             N033  click inferred_clickable '3'  [#liItemContents3]
+  3758.2  outcome            N033  '3' -> navigation  [0.0s]
+  3758.2  action_done        N033  '3' took 21.9s
+  3758.7  restore            N033  ok via escape/back/goto
+  3758.7  skip               listitem 'Activity Log'  -- already exercised on N009
+  3758.7  action             N033  click inferred_clickable 'Additional Plan'  [[data-testid="setting_plan_additional"]]
+  3772.4  outcome            N033  'Additional Plan' -> in_page_state  [0.0s]
+  3774.5  overlay_open       N057 revealed 1 item(s) via 'Additional Plan'
+  3774.5  action             N057  click inferred_clickable 'No Plans'  [[data-testid="No Plans"]]
+  3775.9  outcome            N057  'No Plans' -> no_change  (inert)  [0.0s]
+  3775.9  action_done        N033  'Additional Plan' took 17.2s
+  3779.0  restore            N033  FAILED (escape/back/goto)
+  3779.0  navigate           -> https://www.samsungvx.com/settings/screenPreset (depth 2)
+  3798.8  state_found        N034  https://www.samsungvx.com/settings/screenpreset  (23 elements, 0 forms, depth 2)
+  3798.8  skip               button 'Buy Now'  -- already exercised on N001
+  3798.8  skip               button 'chatbot'  -- already exercised on N001
+  3798.8  skip               button 'Upgrade Now'  -- already exercised on N026
+  3798.8  skip               div ''  -- already exercised on N012
+  3798.8  skip               div ''  -- already exercised on N009
+  3798.8  skip               div ''  -- already exercised on N009
+  3798.8  skip               div ''  -- already exercised on N009
+  3798.8  skip               div ''  -- already exercised on N009
+  3798.8  skip               listitem 'Activity Log'  -- already exercised on N009
+  3798.8  action             N034  click inferred_clickable 'Certificate'  [[data-testid="setting_screen_present_certificate"]]
+  3800.3  outcome            N034  'Certificate' -> no_change  (inert)  [0.0s]
+  3800.3  action_done        N034  'Certificate' took 1.4s
+  3800.5  restore            N034  ok via escape/back/goto
+  3800.5  skip               listitem 'Edit Home'  -- already exercised on N009
+  3800.5  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  3800.5  skip               listitem 'Event'  -- already exercised on N009
+  3800.5  skip               listitem 'General'  -- already exercised on N030
+  3800.5  skip               listitem 'Organization'  -- already exercised on N030
+  3800.5  skip               listitem 'Plan'  -- already exercised on N030
+  3800.5  skip               listitem 'Screen Preset'  -- already exercised on N030
+  3800.5  action             N034  click inferred_clickable 'Screen Profile'  [[data-testid="setting_screen_present_screen_profile"]]
+  3803.5  outcome            N034  'Screen Profile' -> no_change  (inert)  [0.0s]
+  3803.5  action_done        N034  'Screen Profile' took 3.1s
+  3803.7  restore            N034  ok via escape/back/goto
+  3803.7  action             N034  click inferred_clickable 'Screen Software'  [[data-testid="setting_screen_present_screen_software"]]
+  3806.6  outcome            N034  'Screen Software' -> no_change  (inert)  [0.0s]
+  3806.6  action_done        N034  'Screen Software' took 2.9s
+  3806.8  restore            N034  ok via escape/back/goto
+  3806.8  skip               listitem 'Tag'  -- already exercised on N030
+  3806.8  skip               listitem 'User'  -- already exercised on N030
+  3806.8  skip               listitem 'Workspace'  -- already exercised on N030
+  3806.8  navigate           -> https://www.samsungvx.com/settings/tag (depth 2)
+  3828.1  state_found        N035  https://www.samsungvx.com/settings/tag  (24 elements, 0 forms, depth 2)
+  3828.1  skip               button 'Buy Now'  -- already exercised on N001
+  3828.1  skip               button 'chatbot'  -- already exercised on N001
+  3828.1  action             N035  click inferred_clickable '(unnamed)'  [[data-testid="setting_tag_search_icon"]]
+  3829.4  outcome            N035  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  3829.4  action_done        N035  'inferred_clickable' took 1.4s
+  3829.6  restore            N035  ok via escape/back/goto
+  3829.6  skip               div ''  -- already exercised on N012
+  3829.6  skip               div ''  -- already exercised on N009
+  3829.6  skip               div ''  -- already exercised on N009
+  3829.6  skip               div ''  -- already exercised on N009
+  3829.6  skip               div ''  -- already exercised on N009
+  3829.6  skip               listitem 'Activity Log'  -- already exercised on N009
+  3829.6  action             N035  click inferred_clickable 'Default TagsetRegion, Location, Subject, Others'  [#FcmsTable_liItemContents0]
+  3851.0  outcome            N035  'Default TagsetRegion, Location, Subject, Others' -> navigation  [0.0s]
+  3851.0  action_done        N035  'Default TagsetRegion, Location, Subject, Others' took 21.4s
+  3855.0  restore            N035  FAILED (escape/back/goto)
+  3889.2  navigate           -> https://www.samsungvx.com/settings/user (depth 2)
+  3910.6  state_found        N036  https://www.samsungvx.com/settings/user  (31 elements, 0 forms, depth 2)
+  3910.6  skip               button 'Buy Now'  -- already exercised on N001
+  3910.6  skip               button 'chatbot'  -- already exercised on N001
+  3910.6  action             N036  click generic_button 'Invite User'  [[data-testid="setting_user_btn_invite_user"]]
+  3926.9  outcome            N036  'Invite User' -> in_page_state  (mutating)  [0.0s]
+  3929.0  overlay_open       N060 revealed 6 item(s) via 'Invite User'
+  3929.0  action             N060  click radio 'As Other Roles'  [#radio_label2]
+  3942.4  action             N060  click radio 'As Owner'  [#radio_label]
+  3955.6  action             N060  click generic_button 'Cancel'  [[data-testid="setting_user_new_invite_cancel"]]
+  3971.4  outcome            N060  'Cancel' -> in_page_state  (mutating)  [0.0s]
+  3974.8  action             N060  click generic_button 'Invite'  [[data-testid="setting_user_new_invite_ok"]]
+  3988.0  skip               div ''  -- already exercised on N025
+  3988.0  action             N060  click inferred_clickable 'Admin'  [#select]
+  3998.0  action_done        N036  'Invite User' took 87.4s
+  3998.1  restore            N036  ok via escape/back/goto
+  3998.1  action             N036  click generic_button 'more'  [#topOption_btn_more_options]
+  4014.0  outcome            N036  'more' -> in_page_state  (mutating)  [0.0s]
+  4016.1  overlay_open       N061 revealed 1 item(s) via 'more'
+  4016.1  action             N061  click inferred_clickable 'Export'  [#topOption_li_setting_user_more_export]
+  4032.4  outcome            N061  'Export' -> in_page_state  (mutating)  [0.0s]
+  4034.5  action_done        N036  'more' took 36.4s
+  4034.7  restore            N036  ok via escape/back/goto
+  4034.7  action             N036  click inferred_clickable '(unnamed)'  [[data-testid="setting_user_search_icon"]]
+  4037.9  outcome            N036  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  4037.9  action_done        N036  'inferred_clickable' took 3.2s
+  4038.1  restore            N036  ok via escape/back/goto
+  4038.1  skip               div ''  -- already exercised on N012
+  4038.1  skip               div ''  -- already exercised on N009
+  4038.1  skip               div ''  -- already exercised on N009
+  4038.1  skip               div ''  -- already exercised on N009
+  4038.1  skip               div ''  -- already exercised on N009
+  4038.1  skip               listitem 'Activity Log'  -- already exercised on N009
+  4038.1  skip               listitem 'Edit Home'  -- already exercised on N009
+  4038.1  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  4038.1  skip               listitem 'Event'  -- already exercised on N009
+  4038.1  skip               listitem 'General'  -- already exercised on N030
+  4038.1  action             N036  click inferred_clickable 'Member'  [[data-testid="setting_user_liItem_member"]]
+  4041.0  outcome            N036  'Member' -> blocked_mutation  (mutating)  [0.0s]
+  4041.0  action_done        N036  'Member' took 2.9s
+  4041.2  restore            N036  ok via escape/back/goto
+  4041.2  action             N036  click inferred_clickable 'No users.'  [[data-testid="No users."]]
+  4044.0  outcome            N036  'No users.' -> no_change  (inert)  [0.0s]
+  4044.0  action_done        N036  'No users.' took 2.8s
+  4044.2  restore            N036  ok via escape/back/goto
+  4044.2  skip               listitem 'Organization'  -- already exercised on N030
+  4044.2  action             N036  click inferred_clickable 'Owner'  [[data-testid="setting_user_liItem_owner"]]
+  4061.9  outcome            N036  'Owner' -> in_page_state  (mutating)  [0.0s]
+  4064.0  overlay_open       N063 revealed 1 item(s) via 'Owner'
+  4064.0  action             N063  click inferred_clickable '(unnamed)'  [[data-testid="icon_more"]]
+  4065.3  outcome            N063  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  4065.3  action_done        N036  'Owner' took 21.1s
+  4068.9  restore            N036  ok via escape/back/goto
+  4068.9  action             N036  click inferred_clickable 'Pending'  [[data-testid="setting_user_liItem_pending"]]
+  4086.4  outcome            N036  'Pending' -> in_page_state  [0.0s]
+  4088.9  overlay_open       N064 revealed 1 item(s) via 'Pending'
+  4088.9  action             N064  click inferred_clickable 'Date Sent'  [#FcmsTable_sortColumn >> nth=0]
+  4090.3  outcome            N064  'Date Sent' -> no_change  (inert)  [0.0s]
+  4090.3  action_done        N036  'Pending' took 21.4s
+  4094.1  restore            N036  FAILED (escape/back/goto)
+  4128.8  navigate           -> https://www.samsungvx.com/settings/place (depth 2)
+  4151.0  state_found        N037  https://www.samsungvx.com/settings/place  (34 elements, 0 forms, depth 2)
+  4151.0  skip               button 'Buy Now'  -- already exercised on N001
+  4151.0  skip               button 'chatbot'  -- already exercised on N001
+  4151.0  action             N037  click generic_button 'New Workspace'  [[data-testid="settings_workspace_new_add"]]
+  4152.4  outcome            N037  'New Workspace' -> blocked_mutation  (mutating)  [0.0s]
+  4152.4  action_done        N037  'New Workspace' took 1.4s
+  4152.6  restore            N037  ok via escape/back/goto
+  4152.6  action             N037  click inferred_clickable '(unnamed)'  [[data-testid="setting_place_search_icon"]]
+  4155.5  outcome            N037  'inferred_clickable' -> no_change  (inert)  [0.0s]
+  4155.5  action_done        N037  'inferred_clickable' took 2.9s
+  4155.7  restore            N037  ok via escape/back/goto
+  4155.7  skip               div ''  -- already exercised on N012
+  4155.7  skip               div ''  -- already exercised on N009
+  4155.7  skip               div ''  -- already exercised on N009
+  4155.7  skip               div ''  -- already exercised on N009
+  4155.7  skip               div ''  -- already exercised on N009
+  4155.7  action             N037  click inferred_clickable '0'  [#FcmsTable_liItemContents2]
+  4180.5  outcome            N037  '0' -> navigation  [0.0s]
+  4180.5  action_done        N037  '0' took 24.9s
+  4181.0  restore            N037  ok via escape/back/goto
+  4181.0  action             N037  click inferred_clickable '0'  [#FcmsTable_liItemContents4]
+  4204.8  outcome            N037  '0' -> navigation  [0.0s]
+  4204.8  action_done        N037  '0' took 23.9s
+  4205.3  restore            N037  ok via escape/back/goto
+  4205.3  action             N037  click inferred_clickable '0.00KB'  [#FcmsTable_liItemContents5]
+  4229.2  outcome            N037  '0.00KB' -> navigation  [0.0s]
+  4229.2  action_done        N037  '0.00KB' took 23.9s
+  4229.6  restore            N037  ok via escape/back/goto
+  4229.6  action             N037  click inferred_clickable '3'  [#FcmsTable_liItemContents1]
+  4253.5  outcome            N037  '3' -> navigation  [0.0s]
+  4253.5  action_done        N037  '3' took 24.0s
+  4254.0  restore            N037  ok via escape/back/goto
+  4254.0  action             N037  click inferred_clickable '3'  [#FcmsTable_liItemContents3]
+  4277.9  outcome            N037  '3' -> navigation  [0.0s]
+  4277.9  action_done        N037  '3' took 23.9s
+  4278.3  restore            N037  ok via escape/back/goto
+  4278.3  skip               listitem 'Activity Log'  -- already exercised on N009
+  4278.3  action             N037  click inferred_clickable 'Allocation'  [#FcmsTable_sortColumn >> nth=0]
+  4281.3  outcome            N037  'Allocation' -> no_change  (inert)  [0.0s]
+  4281.3  action_done        N037  'Allocation' took 3.0s
+  4281.5  restore            N037  ok via escape/back/goto
+  4281.5  action             N037  click inferred_clickable 'Available'  [#FcmsTable_sortColumn >> nth=0]
+  4284.3  outcome            N037  'Available' -> no_change  (inert)  [0.0s]
+  4284.3  action_done        N037  'Available' took 2.8s
+  4284.5  restore            N037  ok via escape/back/goto
+  4284.5  action             N037  click inferred_clickable 'Default Workspace'  [#FcmsTable_liItemContents0]
+  4308.3  outcome            N037  'Default Workspace' -> navigation  [0.0s]
+  4308.3  action_done        N037  'Default Workspace' took 23.8s
+  4308.7  restore            N037  ok via escape/back/goto
+  4308.7  skip               listitem 'Edit Home'  -- already exercised on N009
+  4308.7  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  4308.7  skip               listitem 'Event'  -- already exercised on N009
+  4308.7  skip               listitem 'General'  -- already exercised on N030
+  4308.7  skip               listitem 'Organization'  -- already exercised on N030
+  4308.7  skip               listitem 'Plan'  -- already exercised on N030
+  4308.7  skip               listitem 'Screen Preset'  -- already exercised on N030
+  4308.7  action             N037  click inferred_clickable 'Storage'  [#FcmsTable_sortColumn >> nth=0]
+  4311.7  outcome            N037  'Storage' -> no_change  (inert)  [0.0s]
+  4311.7  action_done        N037  'Storage' took 3.0s
+  4311.8  restore            N037  ok via escape/back/goto
+  4311.8  skip               listitem 'Tag'  -- already exercised on N030
+  4311.8  action             N037  click inferred_clickable 'Used'  [#FcmsTable_sortColumn >> nth=0]
+  4314.7  outcome            N037  'Used' -> no_change  (inert)  [0.0s]
+  4314.7  action_done        N037  'Used' took 2.9s
+  4314.9  restore            N037  ok via escape/back/goto
+  4314.9  skip               listitem 'User'  -- already exercised on N030
+  4314.9  action             N037  click inferred_clickable 'User'  [#FcmsTable_sortColumn >> nth=0]
+  4317.7  outcome            N037  'User' -> no_change  (inert)  [0.0s]
+  4317.7  action_done        N037  'User' took 2.8s
+  4317.9  restore            N037  ok via escape/back/goto
+  4317.9  skip               listitem 'Workspace'  -- already exercised on N030
+  4317.9  action             N037  click inferred_clickable 'Workspace'  [#FcmsTable_sortColumn >> nth=0]
+  4320.8  outcome            N037  'Workspace' -> no_change  (inert)  [0.0s]
+  4320.8  action_done        N037  'Workspace' took 2.8s
+  4320.9  restore            N037  ok via escape/back/goto
+  4353.9  navigate           -> https://www.samsungvx.com/settings/techInquiryNew (depth 3)
+  4385.8  state_found        N045  https://www.samsungvx.com/settings/techinquirynew  (32 elements, 0 forms, depth 3)
+  4385.8  skip               button 'Buy Now'  -- already exercised on N001
+  4385.8  skip               button 'chatbot'  -- already exercised on N001
+  4385.8  action             N045  click generic_button 'Drop the files here to attach.'  [role=button[name="Drop the files here to attach."]]
+  4387.2  outcome            N045  'Drop the files here to attach.' -> no_change  (inert)  [0.0s]
+  4387.2  action_done        N045  'Drop the files here to attach.' took 1.4s
+  4387.4  restore            N045  ok via escape/back/goto
+  4387.4  action             N045  click generic_button 'Open'  [role=button[name="Open"]]
+  4390.3  outcome            N045  'Open' -> file_chooser  (upload)  [0.0s]
+  4390.3  action_done        N045  'Open' took 3.0s
+  4390.5  restore            N045  ok via escape/back/goto
+  4390.5  action             N045  click generic_button 'Request'  [role=button[name="Request"]]
+  4400.5  action_done        N045  'Request' took 10.0s
+  4400.7  restore            N045  ok via escape/back/goto
+  4400.7  skip               div ''  -- already exercised on N009
+  4400.7  skip               div ''  -- already exercised on N009
+  4400.7  skip               div ''  -- already exercised on N012
+  4400.7  skip               div ''  -- already exercised on N009
+  4400.7  skip               div ''  -- already exercised on N009
+  4400.7  skip               div ''  -- already exercised on N009
+  4400.7  skip               div ''  -- already exercised on N009
+  4400.7  skip               div ''  -- already exercised on N051
+  4400.7  skip               listitem 'Activity Log'  -- already exercised on N009
+  4400.7  skip               listitem 'Edit Home'  -- already exercised on N009
+  4400.7  skip               listitem 'Emergency Alert'  -- already exercised on N009
+  4400.7  skip               listitem 'Event'  -- already exercised on N009
+  4400.7  skip               listitem 'General'  -- already exercised on N030
+  4400.7  skip               listitem 'Organization'  -- already exercised on N030
+  4400.7  skip               listitem 'Plan'  -- already exercised on N030
+  4400.7  action             N045  click inferred_clickable 'Register Phone Number'  [div:nth-of-type(2) > div.techInquiryContent > div:nth-of-type(2) > div > span.flex_center:nth-of-type(2) > span]
+  4426.5  outcome            N045  'Register Phone Number' -> in_page_state  [0.0s]
+  4428.5  overlay_open       N067 revealed 2 item(s) via 'Register Phone Number'
+  4428.5  skip               button 'Cancel'  -- already exercised on N031
+  4428.5  skip               div ''  -- already exercised on N025
+  4428.5  action_done        N045  'Register Phone Number' took 27.8s
+  4428.7  restore            N045  ok via escape/back/goto
+  4428.7  skip               listitem 'Screen Preset'  -- already exercised on N030
+  4428.7  action             N045  click inferred_clickable 'Select'  [[data-testid="select_default"] >> nth=0]
+  4430.1  outcome            N045  'Select' -> no_change  (inert)  [0.0s]
+  4430.1  action_done        N045  'Select' took 1.3s
+  4430.3  restore            N045  ok via escape/back/goto
+  4430.3  skip               div 'Select'  -- already exercised on N045
+  4430.3  skip               listitem 'Tag'  -- already exercised on N030
+  4430.3  skip               listitem 'User'  -- already exercised on N030
+  4430.3  skip               listitem 'Workspace'  -- already exercised on N030
+  4430.3  navigate           -> https://www.samsungvx.com/settings/tag/78935 (depth 3)
+  4458.0  state_found        N058  https://www.samsungvx.com/settings/tag/{id}  (33 elements, 0 forms, depth 3)
+  4458.0  action             N058  click checkbox '(unnamed)'  [div.account.account-contents-wrap > div.contents_box.tagset_workspace > div:nth-of-type(3) > div > div > input]
+  4476.8  outcome            N058  'checkbox' -> in_page_state  [0.0s]
+  4478.8  action_done        N058  'checkbox' took 20.9s
+  4482.6  restore            N058  FAILED (escape/back/goto)
+  4482.6  navigate           -> https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89 (depth 3)
+  4513.5  state_found        N065  https://www.samsungvx.com/settings/place/{id}  (40 elements, 0 forms, depth 3)
+  4513.5  skip               button 'Buy Now'  -- already exercised on N001
+  4513.5  skip               button 'chatbot'  -- already exercised on N001
+  4513.5  skip               button 'more'  -- already exercised on N036
+  4513.5  skip               div ''  -- already exercised on N009
+  4513.5  action             N065  click inferred_clickable '(unnamed)'  [header > div._head_area_1ijv6_59:nth-of-type(3) > div._on_1ijv6_195 > div:nth-of-type(3) > div._name_edit_wrap_1ijv6_326 > span._name_edit_open_1ijv6_333]
+  4533.9  outcome            N065  'inferred_clickable' -> in_page_state  [0.0s]
+  4536.0  action_done        N065  'inferred_clickable' took 22.5s
+  4540.5  restore            N065  FAILED (escape/back/goto)
+  4540.5  navigate           -> https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89 (depth 3)
+  4567.5  state_duplicate    https://www.samsungvx.com/settings/place/{id}  fp=204df71dc1
+  4567.5  navigate           -> https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89 (depth 3)
+  4595.0  state_duplicate    https://www.samsungvx.com/settings/place/{id}  fp=204df71dc1
+  4595.0  navigate           -> https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89 (depth 3)
+  4623.0  state_duplicate    https://www.samsungvx.com/settings/place/{id}  fp=204df71dc1
+  4623.0  navigate           -> https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89 (depth 3)
+  4650.4  state_duplicate    https://www.samsungvx.com/settings/place/{id}  fp=204df71dc1
+  4650.4  navigate           -> https://www.samsungvx.com/settings/place/8AD89E5C-90FE-4F44-8A8C-F78707191F89 (depth 3)
+  4681.0  state_duplicate    https://www.samsungvx.com/settings/place/{id}  fp=204df71dc1
+  4681.0  budget             pages=26/200 clicks=201/2000 navs=39 elapsed=4681.0s
+  4681.0  finished           crawl completed (frontier empty)

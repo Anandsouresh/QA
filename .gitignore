@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+qagen-out/
+demo-out/
+tmp*/
+secrets/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+samsungvx-200-final01/
+samsungvx-200-final02/
+samsungvx-200-final03/

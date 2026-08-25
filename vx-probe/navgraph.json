@@ -1,0 +1,147 @@
+{
+  "target": "https://www.samsungvx.com/",
+  "generated_at": "2026-08-09T19:26:54.691822Z",
+  "nodes": [
+    {
+      "id": "N001",
+      "fingerprint": "a5aeff8f80f6b6c4a60b",
+      "url": "https://www.samsungvx.com/",
+      "normalized_url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS",
+      "depth": 0,
+      "node_type": "page",
+      "element_count": 17,
+      "actionable_count": 17,
+      "dom_nodes": 344,
+      "form_ids": [],
+      "is_entry": true,
+      "visit_count": 1,
+      "screenshot": "artifacts/N001_a5aeff8f.png",
+      "html": "artifacts/N001_a5aeff8f.html",
+      "actions": [
+        "destructive: Buy Now [role=button[name=\"Buy Now\"]]",
+        "external_link: Contact Us [[data-testid=\"dashboard_contactus\"]] -> https://vxt.samsung.com/contact-us",
+        "generic_button: chatbot [#startChatBtn]",
+        "inferred_clickable: (unnamed) [#alarmId > div.notific]",
+        "inferred_clickable: Allocate Licenses [[data-testid=\"dashboard_planview0\"]]",
+        "inferred_clickable: Allocation -Used -Available - [[data-testid=\"dashboard_curr_plan0\"]]",
+        "inferred_clickable: Content [#dashboard_contentCard]",
+        "inferred_clickable: Cookie Policy [#root > div:nth-of-type(4) > div:nth-of-type(1) > p > span._link_ckbrd_50.ga-button-action-class:nth-of-type(4)]",
+        "inferred_clickable: Default Workspace [[data-testid=\"dashboard_workspace_change\"]]",
+        "inferred_clickable: Playlist [#dashboard_playlistCard]",
+        "inferred_clickable: Privacy Policy [#root > div:nth-of-type(4) > div:nth-of-type(1) > p > span._link_ckbrd_50.ga-button-action-class:nth-of-type(2)]",
+        "inferred_clickable: Schedule [#dashboard_scheduleCard]",
+        "inferred_clickable: Screen [#dashboard_screenCard]",
+        "nav_link: Cookie Policy [[data-testid=\"dashboard_cookies\"] >> nth=0] -> https://www.samsungvx.com/cookie",
+        "nav_link: EU Data Act [[data-testid=\"dashboard_cookies\"] >> nth=0] -> https://www.samsungvx.com/euda",
+        "nav_link: Privacy Policy [[data-testid=\"dashboard_privacy\"]] -> https://www.samsungvx.com/privacy",
+        "nav_link: Terms and Conditions [[data-testid=\"dashboard_terms\"]] -> https://www.samsungvx.com/terms"
+      ],
+      "not_exercised": []
+    },
+    {
+      "id": "N002",
+      "fingerprint": "boundary::vxt.samsung.com",
+      "url": "https://vxt.samsung.com/contact-us",
+      "normalized_url": "vxt.samsung.com",
+      "title": "vxt.samsung.com",
+      "depth": 0,
+      "node_type": "boundary",
+      "element_count": 0,
+      "actionable_count": 0,
+      "dom_nodes": 0,
+      "form_ids": [],
+      "is_entry": false,
+      "visit_count": 1,
+      "screenshot": null,
+      "html": null,
+      "actions": [],
+      "not_exercised": []
+    },
+    {
+      "id": "N003",
+      "fingerprint": "6548af6bb43d14317264",
+      "url": "https://www.samsungvx.com/",
+      "normalized_url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS",
+      "depth": 0,
+      "node_type": "page",
+      "element_count": 21,
+      "actionable_count": 21,
+      "dom_nodes": 461,
+      "form_ids": [],
+      "is_entry": false,
+      "visit_count": 1,
+      "screenshot": "artifacts/N003_6548af6b.png",
+      "html": "artifacts/N003_6548af6b.html",
+      "actions": [
+        "destructive: Buy Now [role=button[name=\"Buy Now\"]]",
+        "external_link: Contact Us [[data-testid=\"dashboard_contactus\"]] -> https://vxt.samsung.com/contact-us",
+        "generic_button: editHome [[data-testid=\"dashboard_editbtn\"]]",
+        "generic_button: Minimize [#closeChatBtn]",
+        "generic_button: refresh [#refreshScreenBtn]",
+        "inferred_clickable: (unnamed) [#alarmId > div.notific]",
+        "inferred_clickable: (unnamed) [#root > div:nth-of-type(4) > div.ga-button-action-class:nth-of-type(2)]",
+        "inferred_clickable: Allocation 3Used 0Available 3 [[data-testid=\"dashboard_curr_plan0\"]]",
+        "inferred_clickable: Apps [role=listitem[name=\"Apps\"]]",
+        "inferred_clickable: Content [#dashboard_contentCard]",
+        "inferred_clickable: Cookie Policy [#root > div:nth-of-type(4) > div:nth-of-type(1) > p > span._link_ckbrd_50.ga-button-action-class:nth-of-type(4)]",
+        "inferred_clickable: Default Workspace .st0{opacity:0.8;} [[data-testid=\"dashboard_workspace_change\"]]",
+        "inferred_clickable: logo [#header_logo]",
+        "inferred_clickable: Playlist [#dashboard_playlistCard]",
+        "inferred_clickable: Privacy Policy [#root > div:nth-of-type(4) > div:nth-of-type(1) > p > span._link_ckbrd_50.ga-button-action-class:nth-of-type(2)]",
+        "inferred_clickable: Schedule [#dashboard_scheduleCard]",
+        "inferred_clickable: Screen [#dashboard_screenCard]",
+        "nav_link: Cookie Policy [[data-testid=\"dashboard_cookies\"] >> nth=0] -> https://www.samsungvx.com/cookie",
+        "nav_link: EU Data Act [[data-testid=\"dashboard_cookies\"] >> nth=0] -> https://www.samsungvx.com/euda",
+        "nav_link: Privacy Policy [[data-testid=\"dashboard_privacy\"]] -> https://www.samsungvx.com/privacy",
+        "nav_link: Terms and Conditions [[data-testid=\"dashboard_terms\"]] -> https://www.samsungvx.com/terms"
+      ],
+      "not_exercised": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "E001",
+      "source": "N001",
+      "target": "N002",
+      "action": "click",
+      "label": "Click 'Contact Us'",
+      "selector": "[data-testid=\"dashboard_contactus\"]",
+      "element_role": "link",
+      "element_name": "Contact Us",
+      "input_value": null,
+      "outcome": "new_tab",
+      "annotations": [
+        "boundary"
+      ],
+      "reversible_by": "goto"
+    },
+    {
+      "id": "E002",
+      "source": "N001",
+      "target": "N003",
+      "action": "click",
+      "label": "Click 'chatbot'",
+      "selector": "#startChatBtn",
+      "element_role": "button",
+      "element_name": "chatbot",
+      "input_value": null,
+      "outcome": "in_page_state",
+      "annotations": [
+        "mutating"
+      ],
+      "reversible_by": "escape"
+    }
+  ],
+  "entry_node": "N001",
+  "boundaries": [
+    {
+      "origin": "vxt.samsung.com",
+      "url": "https://vxt.samsung.com/contact-us",
+      "reason": "external origin",
+      "triggered_by": "Contact Us"
+    }
+  ],
+  "unexplored": []
+}

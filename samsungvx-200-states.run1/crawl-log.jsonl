@@ -1,0 +1,337 @@
+{"t": 0.0, "event": "navigate", "detail": "-> https://www.samsungvx.com/ (depth 0)", "url": "https://www.samsungvx.com/", "depth": 0}
+{"t": 15.86, "event": "state_found", "detail": "N001  https://www.samsungvx.com/  (28 elements, 0 forms, depth 0)", "node": "N001", "url": "https://www.samsungvx.com/", "elements": 28, "forms": 0, "depth": 0}
+{"t": 15.86, "event": "action", "detail": "N001  click generic_button 'Buy Now'  [role=button[name=\"Buy Now\"]]", "node": "N001", "kind": "generic_button", "name": "Buy Now", "selector": "role=button[name=\"Buy Now\"]"}
+{"t": 21.25, "event": "outcome", "detail": "N001  'Buy Now' -> no_change  (inert)  [0.0s]", "node": "N001", "name": "Buy Now", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 21.25, "event": "action_done", "detail": "N001  'Buy Now' took 5.4s"}
+{"t": 25.42, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 25.42, "event": "action", "detail": "N001  click inferred_clickable '.st0{opacity:0.8;}'  [[data-testid=\"icon_arrow_down\"]]", "node": "N001", "kind": "inferred_clickable", "name": ".st0{opacity:0.8;}", "selector": "[data-testid=\"icon_arrow_down\"]"}
+{"t": 35.33, "event": "outcome", "detail": "N001  '.st0{opacity:0.8;}' -> in_page_state  [0.0s]", "node": "N001", "name": ".st0{opacity:0.8;}", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 35.39, "event": "overlay_open", "detail": "N003 revealed 3 item(s) via '.st0{opacity:0.8;}'"}
+{"t": 35.39, "event": "action", "detail": "N003  click inferred_clickable '(unnamed)'  [[data-testid=\"icon_arrow_up\"]]", "node": "N003", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "[data-testid=\"icon_arrow_up\"]"}
+{"t": 43.28, "event": "outcome", "detail": "N003  'inferred_clickable' -> in_page_state  [0.0s]", "node": "N003", "name": "inferred_clickable", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 52.94, "event": "action", "detail": "N003  click inferred_clickable 'Default Workspace'  [[data-testid=\"dashboard_workspace_change\"]]", "node": "N003", "kind": "inferred_clickable", "name": "Default Workspace", "selector": "[data-testid=\"dashboard_workspace_change\"]"}
+{"t": 60.81, "event": "outcome", "detail": "N003  'Default Workspace' -> in_page_state  [0.0s]", "node": "N003", "name": "Default Workspace", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 70.36, "event": "action", "detail": "N003  click inferred_clickable 'Default Workspace'  [[data-testid=\"dashboardPlaces_liPlaces_Item0\"]]", "node": "N003", "kind": "inferred_clickable", "name": "Default Workspace", "selector": "[data-testid=\"dashboardPlaces_liPlaces_Item0\"]"}
+{"t": 78.22, "event": "outcome", "detail": "N003  'Default Workspace' -> in_page_state  [0.0s]", "node": "N003", "name": "Default Workspace", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 78.22, "event": "action_done", "detail": "N001  '.st0{opacity:0.8;}' took 52.8s"}
+{"t": 82.41, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 82.41, "event": "action", "detail": "N001  click inferred_clickable 'New'  [[data-testid=\"dashboard_screen_newbtn\"]]", "node": "N001", "kind": "inferred_clickable", "name": "New", "selector": "[data-testid=\"dashboard_screen_newbtn\"]"}
+{"t": 90.72, "event": "outcome", "detail": "N001  'New' -> in_page_state  [0.0s]", "node": "N001", "name": "New", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 90.76, "event": "overlay_open", "detail": "N004 revealed 3 item(s) via 'New'"}
+{"t": 90.76, "event": "action", "detail": "N004  click inferred_clickable '(unnamed)'  [#root > div.add-btn-popover:nth-of-type(4) > ul.select-ul.openNew-list > li.ga-button-action-class:nth-of-type(2) > span]", "node": "N004", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "#root > div.add-btn-popover:nth-of-type(4) > ul.select-ul.openNew-list > li.ga-button-action-class:nth-of-type(2) > span"}
+{"t": 108.36, "event": "outcome", "detail": "N004  'inferred_clickable' -> in_page_state  [0.0s]", "node": "N004", "name": "inferred_clickable", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 118.03, "event": "action", "detail": "N004  click inferred_clickable 'Add Screen'  [[data-testid=\"dashboard_screen_addbtn_addscreen\"]]", "node": "N004", "kind": "inferred_clickable", "name": "Add Screen", "selector": "[data-testid=\"dashboard_screen_addbtn_addscreen\"]"}
+{"t": 135.56, "event": "outcome", "detail": "N004  'Add Screen' -> in_page_state  [0.0s]", "node": "N004", "name": "Add Screen", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 145.19, "event": "action", "detail": "N004  click inferred_clickable 'New Screen Wall'  [[data-testid=\"dashboard_screen_addbtn_newscreenwall\"]]", "node": "N004", "kind": "inferred_clickable", "name": "New Screen Wall", "selector": "[data-testid=\"dashboard_screen_addbtn_newscreenwall\"]"}
+{"t": 162.76, "event": "outcome", "detail": "N004  'New Screen Wall' -> in_page_state  [0.0s]", "node": "N004", "name": "New Screen Wall", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 162.76, "event": "action_done", "detail": "N001  'New' took 80.4s"}
+{"t": 166.97, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 166.97, "event": "action", "detail": "N001  click inferred_clickable 'New'  [[data-testid=\"dashboard_content_newbtn\"]]", "node": "N001", "kind": "inferred_clickable", "name": "New", "selector": "[data-testid=\"dashboard_content_newbtn\"]"}
+{"t": 174.86, "event": "outcome", "detail": "N001  'New' -> in_page_state  [0.0s]", "node": "N001", "name": "New", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 174.92, "event": "overlay_open", "detail": "N007 revealed 2 item(s) via 'New'"}
+{"t": 174.92, "event": "action", "detail": "N007  click inferred_clickable 'Add Content'  [[data-testid=\"dashboard_content_addbtn_addcontent\"]]", "node": "N007", "kind": "inferred_clickable", "name": "Add Content", "selector": "[data-testid=\"dashboard_content_addbtn_addcontent\"]"}
+{"t": 192.44, "event": "outcome", "detail": "N007  'Add Content' -> in_page_state  [0.0s]", "node": "N007", "name": "Add Content", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 192.44, "event": "url_state_cap", "detail": "https://www.samsungvx.com/  already has 6 states; not recording more"}
+{"t": 202.08, "event": "action", "detail": "N007  click inferred_clickable 'Create Content'  [[data-testid=\"dashboard_content_addbtn_createcontent\"]]", "node": "N007", "kind": "inferred_clickable", "name": "Create Content", "selector": "[data-testid=\"dashboard_content_addbtn_createcontent\"]"}
+{"t": 209.92, "event": "outcome", "detail": "N007  'Create Content' -> in_page_state  [0.0s]", "node": "N007", "name": "Create Content", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 209.92, "event": "action_done", "detail": "N001  'New' took 43.0s"}
+{"t": 214.11, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 214.11, "event": "action", "detail": "N001  click inferred_clickable 'New'  [[data-testid=\"dashboard_playlist_newbtn\"]]", "node": "N001", "kind": "inferred_clickable", "name": "New", "selector": "[data-testid=\"dashboard_playlist_newbtn\"]"}
+{"t": 222.78, "event": "outcome", "detail": "N001  'New' -> in_page_state  [0.0s]", "node": "N001", "name": "New", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 222.78, "event": "url_state_cap", "detail": "https://www.samsungvx.com/  already has 6 states; not recording more"}
+{"t": 222.78, "event": "action_done", "detail": "N001  'New' took 8.7s"}
+{"t": 233.3, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 233.3, "event": "action", "detail": "N001  click inferred_clickable 'New'  [[data-testid=\"dashboard_schedule_newbtn\"]]", "node": "N001", "kind": "inferred_clickable", "name": "New", "selector": "[data-testid=\"dashboard_schedule_newbtn\"]"}
+{"t": 238.72, "event": "outcome", "detail": "N001  'New' -> no_change  (inert)  [0.0s]", "node": "N001", "name": "New", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 238.72, "event": "action_done", "detail": "N001  'New' took 5.4s"}
+{"t": 242.92, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 242.92, "event": "action", "detail": "N001  click inferred_clickable 'screen'  [#screenCard_defaultImg]", "node": "N001", "kind": "inferred_clickable", "name": "screen", "selector": "#screenCard_defaultImg"}
+{"t": 251.8, "event": "outcome", "detail": "N001  'screen' -> navigation  [0.0s]", "node": "N001", "name": "screen", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 251.8, "event": "action_done", "detail": "N001  'screen' took 8.9s"}
+{"t": 258.36, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 258.36, "event": "action", "detail": "N001  click inferred_clickable 'content'  [#contentCard_defaultImg]", "node": "N001", "kind": "inferred_clickable", "name": "content", "selector": "#contentCard_defaultImg"}
+{"t": 261.98, "event": "outcome", "detail": "N001  'content' -> navigation  [0.0s]", "node": "N001", "name": "content", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 261.98, "event": "action_done", "detail": "N001  'content' took 3.6s"}
+{"t": 268.59, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 268.59, "event": "action", "detail": "N001  click inferred_clickable 'playlist'  [#playlistCard_defaultImg]", "node": "N001", "kind": "inferred_clickable", "name": "playlist", "selector": "#playlistCard_defaultImg"}
+{"t": 277.47, "event": "outcome", "detail": "N001  'playlist' -> navigation  [0.0s]", "node": "N001", "name": "playlist", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 277.47, "event": "action_done", "detail": "N001  'playlist' took 8.9s"}
+{"t": 284.25, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 284.25, "event": "action", "detail": "N001  click inferred_clickable 'schedule'  [#scheduleCard_defaultImg]", "node": "N001", "kind": "inferred_clickable", "name": "schedule", "selector": "#scheduleCard_defaultImg"}
+{"t": 293.14, "event": "outcome", "detail": "N001  'schedule' -> navigation  [0.0s]", "node": "N001", "name": "schedule", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 293.14, "event": "action_done", "detail": "N001  'schedule' took 8.9s"}
+{"t": 299.8, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 299.8, "event": "navigate", "detail": "-> https://www.samsungvx.com/terms (depth 1)", "url": "https://www.samsungvx.com/terms", "depth": 1}
+{"t": 303.51, "event": "state_found", "detail": "N012  https://www.samsungvx.com/terms  (9 elements, 0 forms, depth 1)", "node": "N012", "url": "https://www.samsungvx.com/terms", "elements": 9, "forms": 0, "depth": 1}
+{"t": 303.53, "event": "action", "detail": "N012  click inferred_clickable 'logo'  [#header_logo]", "node": "N012", "kind": "inferred_clickable", "name": "logo", "selector": "#header_logo"}
+{"t": 313.41, "event": "outcome", "detail": "N012  'logo' -> navigation  (mutating)  [0.0s]", "node": "N012", "name": "logo", "outcome": "navigation", "annotations": ["mutating"], "seconds": 0.0}
+{"t": 313.41, "event": "action_done", "detail": "N012  'logo' took 9.9s"}
+{"t": 317.81, "event": "restore", "detail": "N012  ok via escape/back/goto", "node": "N012", "ok": true, "how": "escape/back/goto"}
+{"t": 317.81, "event": "skip", "detail": "button 'Buy Now'  -- already exercised on N001", "url": "https://www.samsungvx.com/terms", "element": "button 'Buy Now'", "reason": "already exercised on N001"}
+{"t": 317.81, "event": "action", "detail": "N012  click inferred_clickable 'Notification'  [[data-testid=\"icon_notific_solidation\"]]", "node": "N012", "kind": "inferred_clickable", "name": "Notification", "selector": "[data-testid=\"icon_notific_solidation\"]"}
+{"t": 326.06, "event": "outcome", "detail": "N012  'Notification' -> in_page_state  (mutating)  [0.0s]", "node": "N012", "name": "Notification", "outcome": "in_page_state", "annotations": ["mutating"], "seconds": 0.0}
+{"t": 326.16, "event": "overlay_open", "detail": "N013 revealed 8 item(s) via 'Notification'"}
+{"t": 326.16, "event": "action", "detail": "N013  click generic_button 'Close'  [#footer_rightPart_okBtn]", "node": "N013", "kind": "generic_button", "name": "Close", "selector": "#footer_rightPart_okBtn"}
+{"t": 327.16, "event": "outcome", "detail": "N013  'Close' -> in_page_state  (mutating)  [0.0s]", "node": "N013", "name": "Close", "outcome": "in_page_state", "annotations": ["mutating"], "seconds": 0.0}
+{"t": 327.95, "event": "action", "detail": "N013  click generic_button 'Export All'  [#notiFilterStateId > button.btn_icon]", "node": "N013", "kind": "generic_button", "name": "Export All", "selector": "#notiFilterStateId > button.btn_icon"}
+{"t": 328.66, "event": "outcome", "detail": "N013  'Export All' -> blocked_mutation  (mutating)  [0.0s]", "node": "N013", "name": "Export All", "outcome": "blocked_mutation", "annotations": ["mutating"], "seconds": 0.0}
+{"t": 338.86, "event": "overlay_lost", "detail": "N013 could not be re-opened; 6 item(s) left unexercised"}
+{"t": 338.86, "event": "action_done", "detail": "N012  'Notification' took 21.0s"}
+{"t": 339.06, "event": "restore", "detail": "N012  ok via escape/back/goto", "node": "N012", "ok": true, "how": "escape/back/goto"}
+{"t": 339.06, "event": "action", "detail": "N012  click generic_button 'chatbot'  [#startChatBtn]", "node": "N012", "kind": "generic_button", "name": "chatbot", "selector": "#startChatBtn"}
+{"t": 340.16, "event": "outcome", "detail": "N012  'chatbot' -> in_page_state  (mutating)  [0.0s]", "node": "N012", "name": "chatbot", "outcome": "in_page_state", "annotations": ["mutating"], "seconds": 0.0}
+{"t": 340.22, "event": "overlay_open", "detail": "N014 revealed 1 item(s) via 'chatbot'"}
+{"t": 340.22, "event": "action", "detail": "N014  click generic_button 'Minimize'  [#closeChatBtn]", "node": "N014", "kind": "generic_button", "name": "Minimize", "selector": "#closeChatBtn"}
+{"t": 341.17, "event": "outcome", "detail": "N014  'Minimize' -> in_page_state  [0.0s]", "node": "N014", "name": "Minimize", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 341.17, "event": "action_done", "detail": "N012  'chatbot' took 2.1s"}
+{"t": 341.36, "event": "restore", "detail": "N012  ok via escape/back/goto", "node": "N012", "ok": true, "how": "escape/back/goto"}
+{"t": 341.36, "event": "navigate", "detail": "-> https://www.samsungvx.com/privacy (depth 1)", "url": "https://www.samsungvx.com/privacy", "depth": 1}
+{"t": 345.67, "event": "state_found", "detail": "N015  https://www.samsungvx.com/privacy  (10 elements, 0 forms, depth 1)", "node": "N015", "url": "https://www.samsungvx.com/privacy", "elements": 10, "forms": 0, "depth": 1}
+{"t": 345.67, "event": "action", "detail": "N015  click inferred_clickable 'Version 1.3'  [#select]", "node": "N015", "kind": "inferred_clickable", "name": "Version 1.3", "selector": "#select"}
+{"t": 346.22, "event": "outcome", "detail": "N015  'Version 1.3' -> no_change  (inert)  [0.0s]", "node": "N015", "name": "Version 1.3", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 346.22, "event": "action_done", "detail": "N015  'Version 1.3' took 0.5s"}
+{"t": 346.41, "event": "restore", "detail": "N015  ok via escape/back/goto", "node": "N015", "ok": true, "how": "escape/back/goto"}
+{"t": 346.41, "event": "skip", "detail": "div 'logo'  -- already exercised on N012", "url": "https://www.samsungvx.com/privacy", "element": "div 'logo'", "reason": "already exercised on N012"}
+{"t": 346.41, "event": "skip", "detail": "button 'Buy Now'  -- already exercised on N001", "url": "https://www.samsungvx.com/privacy", "element": "button 'Buy Now'", "reason": "already exercised on N001"}
+{"t": 346.41, "event": "skip", "detail": "div 'Notification'  -- already exercised on N012", "url": "https://www.samsungvx.com/privacy", "element": "div 'Notification'", "reason": "already exercised on N012"}
+{"t": 346.41, "event": "skip", "detail": "button 'chatbot'  -- already exercised on N012", "url": "https://www.samsungvx.com/privacy", "element": "button 'chatbot'", "reason": "already exercised on N012"}
+{"t": 346.41, "event": "navigate", "detail": "-> https://www.samsungvx.com/cookie (depth 1)", "url": "https://www.samsungvx.com/cookie", "depth": 1}
+{"t": 350.44, "event": "state_found", "detail": "N016  https://www.samsungvx.com/cookie  (9 elements, 0 forms, depth 1)", "node": "N016", "url": "https://www.samsungvx.com/cookie", "elements": 9, "forms": 0, "depth": 1}
+{"t": 350.44, "event": "skip", "detail": "div 'logo'  -- already exercised on N012", "url": "https://www.samsungvx.com/cookie", "element": "div 'logo'", "reason": "already exercised on N012"}
+{"t": 350.44, "event": "skip", "detail": "button 'Buy Now'  -- already exercised on N001", "url": "https://www.samsungvx.com/cookie", "element": "button 'Buy Now'", "reason": "already exercised on N001"}
+{"t": 350.44, "event": "skip", "detail": "div 'Notification'  -- already exercised on N012", "url": "https://www.samsungvx.com/cookie", "element": "div 'Notification'", "reason": "already exercised on N012"}
+{"t": 350.44, "event": "skip", "detail": "button 'chatbot'  -- already exercised on N012", "url": "https://www.samsungvx.com/cookie", "element": "button 'chatbot'", "reason": "already exercised on N012"}
+{"t": 350.44, "event": "navigate", "detail": "-> https://www.samsungvx.com/euda (depth 1)", "url": "https://www.samsungvx.com/euda", "depth": 1}
+{"t": 354.51, "event": "state_found", "detail": "N017  https://www.samsungvx.com/euda  (9 elements, 0 forms, depth 1)", "node": "N017", "url": "https://www.samsungvx.com/euda", "elements": 9, "forms": 0, "depth": 1}
+{"t": 354.51, "event": "skip", "detail": "div 'logo'  -- already exercised on N012", "url": "https://www.samsungvx.com/euda", "element": "div 'logo'", "reason": "already exercised on N012"}
+{"t": 354.51, "event": "skip", "detail": "button 'Buy Now'  -- already exercised on N001", "url": "https://www.samsungvx.com/euda", "element": "button 'Buy Now'", "reason": "already exercised on N001"}
+{"t": 354.51, "event": "skip", "detail": "div 'Notification'  -- already exercised on N012", "url": "https://www.samsungvx.com/euda", "element": "div 'Notification'", "reason": "already exercised on N012"}
+{"t": 354.51, "event": "skip", "detail": "button 'chatbot'  -- already exercised on N012", "url": "https://www.samsungvx.com/euda", "element": "button 'chatbot'", "reason": "already exercised on N012"}
+{"t": 354.51, "event": "navigate", "detail": "-> https://www.samsungvx.com/screen (depth 1)", "url": "https://www.samsungvx.com/screen", "depth": 1}
+{"t": 364.94, "event": "state_found", "detail": "N008  https://www.samsungvx.com/screen  (23 elements, 0 forms, depth 1)", "node": "N008", "url": "https://www.samsungvx.com/screen", "elements": 23, "forms": 0, "depth": 1}
+{"t": 364.94, "event": "action", "detail": "N008  click generic_button 'Add Screen'  [#screen_page_pc_btn_add_screen]", "node": "N008", "kind": "generic_button", "name": "Add Screen", "selector": "#screen_page_pc_btn_add_screen"}
+{"t": 385.98, "event": "outcome", "detail": "N008  'Add Screen' -> in_page_state  [0.0s]", "node": "N008", "name": "Add Screen", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 386.05, "event": "overlay_open", "detail": "N018 revealed 1 item(s) via 'Add Screen'"}
+{"t": 386.05, "event": "skip", "detail": "button 'Close'  -- already exercised on N013", "url": "https://www.samsungvx.com/screen", "element": "button 'Close'", "reason": "already exercised on N013"}
+{"t": 386.05, "event": "action_done", "detail": "N008  'Add Screen' took 21.1s"}
+{"t": 386.23, "event": "restore", "detail": "N008  ok via escape/back/goto", "node": "N008", "ok": true, "how": "escape/back/goto"}
+{"t": 386.23, "event": "skip", "detail": "div 'logo'  -- already exercised on N012", "url": "https://www.samsungvx.com/screen", "element": "div 'logo'", "reason": "already exercised on N012"}
+{"t": 386.23, "event": "skip", "detail": "button 'Buy Now'  -- already exercised on N001", "url": "https://www.samsungvx.com/screen", "element": "button 'Buy Now'", "reason": "already exercised on N001"}
+{"t": 386.23, "event": "skip", "detail": "div 'Notification'  -- already exercised on N012", "url": "https://www.samsungvx.com/screen", "element": "div 'Notification'", "reason": "already exercised on N012"}
+{"t": 386.23, "event": "action", "detail": "N008  click inferred_clickable 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'  [#place_wrap]", "node": "N008", "kind": "inferred_clickable", "name": "CHITNU TEAMDefault Workspace .st0{opacity:0.8;}", "selector": "#place_wrap"}
+{"t": 396.84, "event": "outcome", "detail": "N008  'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}' -> in_page_state  [0.0s]", "node": "N008", "name": "CHITNU TEAMDefault Workspace .st0{opacity:0.8;}", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 396.91, "event": "overlay_open", "detail": "N019 revealed 4 item(s) via 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'"}
+{"t": 396.91, "event": "skip", "detail": "div ''  -- already exercised on N003", "url": "https://www.samsungvx.com/screen", "element": "div ''", "reason": "already exercised on N003"}
+{"t": 396.91, "event": "action", "detail": "N019  click inferred_clickable '(unnamed)'  [#place_list > li.ga-button-action-class.selected > span.check_off:nth-of-type(2)]", "node": "N019", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "#place_list > li.ga-button-action-class.selected > span.check_off:nth-of-type(2)"}
+{"t": 404.72, "event": "outcome", "detail": "N019  'inferred_clickable' -> in_page_state  [0.0s]", "node": "N019", "name": "inferred_clickable", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 405.47, "event": "action", "detail": "N019  click inferred_clickable 'CHITNU TEAMDefault Workspace'  [#place_wrap]", "node": "N019", "kind": "inferred_clickable", "name": "CHITNU TEAMDefault Workspace", "selector": "#place_wrap"}
+{"t": 413.31, "event": "outcome", "detail": "N019  'CHITNU TEAMDefault Workspace' -> in_page_state  [0.0s]", "node": "N019", "name": "CHITNU TEAMDefault Workspace", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 414.05, "event": "action", "detail": "N019  click inferred_clickable 'Default Workspace'  [role=listitem[name=\"Default Workspace\"]]", "node": "N019", "kind": "inferred_clickable", "name": "Default Workspace", "selector": "role=listitem[name=\"Default Workspace\"]"}
+{"t": 414.05, "event": "action_done", "detail": "N008  'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}' took 27.8s"}
+{"t": 417.06, "event": "restore", "detail": "N008  ok via escape/back/goto", "node": "N008", "ok": true, "how": "escape/back/goto"}
+{"t": 417.06, "event": "action", "detail": "N008  click inferred_clickable '(unnamed)'  [[data-testid=\"icon_refresh\"]]", "node": "N008", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "[data-testid=\"icon_refresh\"]"}
+{"t": 427.14, "event": "action_done", "detail": "N008  'inferred_clickable' took 10.1s"}
+{"t": 427.33, "event": "restore", "detail": "N008  ok via escape/back/goto", "node": "N008", "ok": true, "how": "escape/back/goto"}
+{"t": 427.33, "event": "action", "detail": "N008  click inferred_clickable '.st0{opacity:0.8;}'  [[data-testid=\"icon_arrow_down\"] >> nth=0]", "node": "N008", "kind": "inferred_clickable", "name": ".st0{opacity:0.8;}", "selector": "[data-testid=\"icon_arrow_down\"] >> nth=0"}
+{"t": 437.34, "event": "action_done", "detail": "N008  '.st0{opacity:0.8;}' took 10.0s"}
+{"t": 437.53, "event": "restore", "detail": "N008  ok via escape/back/goto", "node": "N008", "ok": true, "how": "escape/back/goto"}
+{"t": 437.53, "event": "action", "detail": "N008  click inferred_clickable 'Screen'  [[data-testid=\"navbar_li_screen\"]]", "node": "N008", "kind": "inferred_clickable", "name": "Screen", "selector": "[data-testid=\"navbar_li_screen\"]"}
+{"t": 438.66, "event": "outcome", "detail": "N008  'Screen' -> no_change  (inert)  [0.0s]", "node": "N008", "name": "Screen", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 438.66, "event": "action_done", "detail": "N008  'Screen' took 1.1s"}
+{"t": 438.84, "event": "restore", "detail": "N008  ok via escape/back/goto", "node": "N008", "ok": true, "how": "escape/back/goto"}
+{"t": 438.84, "event": "action", "detail": "N008  click inferred_clickable '(unnamed)'  [[data-testid=\"icon_screen\"]]", "node": "N008", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "[data-testid=\"icon_screen\"]"}
+{"t": 448.86, "event": "action_done", "detail": "N008  'inferred_clickable' took 10.0s"}
+{"t": 449.03, "event": "restore", "detail": "N008  ok via escape/back/goto", "node": "N008", "ok": true, "how": "escape/back/goto"}
+{"t": 449.03, "event": "action", "detail": "N008  click inferred_clickable 'Content'  [[data-testid=\"navbar_li_content\"]]", "node": "N008", "kind": "inferred_clickable", "name": "Content", "selector": "[data-testid=\"navbar_li_content\"]"}
+{"t": 452.38, "event": "outcome", "detail": "N008  'Content' -> navigation  [0.0s]", "node": "N008", "name": "Content", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 452.38, "event": "action_done", "detail": "N008  'Content' took 3.3s"}
+{"t": 452.78, "event": "restore", "detail": "N008  ok via escape/back/goto", "node": "N008", "ok": true, "how": "escape/back/goto"}
+{"t": 452.78, "event": "navigate", "detail": "-> https://www.samsungvx.com/content (depth 1)", "url": "https://www.samsungvx.com/content", "depth": 1}
+{"t": 458.42, "event": "state_found", "detail": "N009  https://www.samsungvx.com/content  (6 elements, 0 forms, depth 1)", "node": "N009", "url": "https://www.samsungvx.com/content", "elements": 6, "forms": 0, "depth": 1}
+{"t": 458.42, "event": "action", "detail": "N009  click generic_button 'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo'  [#container]", "node": "N009", "kind": "generic_button", "name": "ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo", "selector": "#container"}
+{"t": 458.95, "event": "outcome", "detail": "N009  'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo' -> no_change  (inert)  [0.0s]", "node": "N009", "name": "ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 458.95, "event": "action_done", "detail": "N009  'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo' took 0.5s"}
+{"t": 459.12, "event": "restore", "detail": "N009  ok via escape/back/goto", "node": "N009", "ok": true, "how": "escape/back/goto"}
+{"t": 459.12, "event": "action", "detail": "N009  click generic_button 'Create Content'  [[data-testid=\"content_noData_btnCreate\"]]", "node": "N009", "kind": "generic_button", "name": "Create Content", "selector": "[data-testid=\"content_noData_btnCreate\"]"}
+{"t": 459.66, "event": "outcome", "detail": "N009  'Create Content' -> no_change  (inert)  [0.0s]", "node": "N009", "name": "Create Content", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 459.66, "event": "action_done", "detail": "N009  'Create Content' took 0.5s"}
+{"t": 459.84, "event": "restore", "detail": "N009  ok via escape/back/goto", "node": "N009", "ok": true, "how": "escape/back/goto"}
+{"t": 459.84, "event": "action", "detail": "N009  click generic_button 'Add Content'  [[data-testid=\"content_noData_btnAdd\"]]", "node": "N009", "kind": "generic_button", "name": "Add Content", "selector": "[data-testid=\"content_noData_btnAdd\"]"}
+{"t": 462.76, "event": "outcome", "detail": "N009  'Add Content' -> in_page_state  [0.0s]", "node": "N009", "name": "Add Content", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 462.81, "event": "overlay_open", "detail": "N020 revealed 7 item(s) via 'Add Content'"}
+{"t": 462.81, "event": "action", "detail": "N020  click generic_button 'Close'  [role=button[name=\"Close\"]]", "node": "N020", "kind": "generic_button", "name": "Close", "selector": "role=button[name=\"Close\"]"}
+{"t": 465.45, "event": "outcome", "detail": "N020  'Close' -> in_page_state  [0.0s]", "node": "N020", "name": "Close", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 466.22, "event": "action", "detail": "N020  click generic_button 'Drop the image, video and document files here.OpenClose'  [role=button[name=\"Drop the image, video and document files here.OpenClose\"]]", "node": "N020", "kind": "generic_button", "name": "Drop the image, video and document files here.OpenClose", "selector": "role=button[name=\"Drop the image, video and document files here.OpenClose\"]"}
+{"t": 466.97, "event": "action", "detail": "N020  click generic_button 'Open'  [#non_add]", "node": "N020", "kind": "generic_button", "name": "Open", "selector": "#non_add"}
+{"t": 467.53, "event": "outcome", "detail": "N020  'Open' -> file_chooser  (upload)  [0.0s]", "node": "N020", "name": "Open", "outcome": "file_chooser", "annotations": ["upload"], "seconds": 0.0}
+{"t": 468.26, "event": "action", "detail": "N020  click inferred_clickable 'My Device'  [#content_upload_tabDevice]", "node": "N020", "kind": "inferred_clickable", "name": "My Device", "selector": "#content_upload_tabDevice"}
+{"t": 468.84, "event": "outcome", "detail": "N020  'My Device' -> no_change  (inert)  [0.0s]", "node": "N020", "name": "My Device", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 469.59, "event": "action", "detail": "N020  click inferred_clickable 'Ticker'  [#content_upload_tabTicker]", "node": "N020", "kind": "inferred_clickable", "name": "Ticker", "selector": "#content_upload_tabTicker"}
+{"t": 479.83, "event": "outcome", "detail": "N020  'Ticker' -> in_page_state  [0.0s]", "node": "N020", "name": "Ticker", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 480.69, "event": "action", "detail": "N020  click inferred_clickable 'Web(HTML)'  [#content_upload_tabHtml]", "node": "N020", "kind": "inferred_clickable", "name": "Web(HTML)", "selector": "#content_upload_tabHtml"}
+{"t": 485.39, "event": "outcome", "detail": "N020  'Web(HTML)' -> in_page_state  [0.0s]", "node": "N020", "name": "Web(HTML)", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 486.23, "event": "action", "detail": "N020  click inferred_clickable 'Web(URL)'  [#content_upload_tabUrl]", "node": "N020", "kind": "inferred_clickable", "name": "Web(URL)", "selector": "#content_upload_tabUrl"}
+{"t": 489.66, "event": "outcome", "detail": "N020  'Web(URL)' -> in_page_state  [0.0s]", "node": "N020", "name": "Web(URL)", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 489.72, "event": "action_done", "detail": "N009  'Add Content' took 29.9s"}
+{"t": 489.91, "event": "restore", "detail": "N009  ok via escape/back/goto", "node": "N009", "ok": true, "how": "escape/back/goto"}
+{"t": 489.91, "event": "skip", "detail": "button 'Buy Now'  -- already exercised on N001", "url": "https://www.samsungvx.com/content", "element": "button 'Buy Now'", "reason": "already exercised on N001"}
+{"t": 489.91, "event": "skip", "detail": "div ''  -- already exercised on N008", "url": "https://www.samsungvx.com/content", "element": "div ''", "reason": "already exercised on N008"}
+{"t": 489.91, "event": "skip", "detail": "button 'chatbot'  -- already exercised on N012", "url": "https://www.samsungvx.com/content", "element": "button 'chatbot'", "reason": "already exercised on N012"}
+{"t": 489.91, "event": "navigate", "detail": "-> https://www.samsungvx.com/playlist (depth 1)", "url": "https://www.samsungvx.com/playlist", "depth": 1}
+{"t": 500.75, "event": "state_found", "detail": "N010  https://www.samsungvx.com/playlist  (23 elements, 0 forms, depth 1)", "node": "N010", "url": "https://www.samsungvx.com/playlist", "elements": 23, "forms": 0, "depth": 1}
+{"t": 500.75, "event": "action", "detail": "N010  click inferred_clickable 'New Playlist'  [[data-testid=\"playlist_newplaylist\"]]", "node": "N010", "kind": "inferred_clickable", "name": "New Playlist", "selector": "[data-testid=\"playlist_newplaylist\"]"}
+{"t": 509.38, "event": "outcome", "detail": "N010  'New Playlist' -> in_page_state  [0.0s]", "node": "N010", "name": "New Playlist", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 509.44, "event": "overlay_open", "detail": "N024 revealed 5 item(s) via 'New Playlist'"}
+{"t": 509.44, "event": "action", "detail": "N024  click inferred_clickable '(unnamed)'  [#select-wrap > ul.select-ul.on > li.ga-button-action-class:nth-of-type(2) > span]", "node": "N024", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "#select-wrap > ul.select-ul.on > li.ga-button-action-class:nth-of-type(2) > span"}
+{"t": 532.06, "event": "outcome", "detail": "N024  'inferred_clickable' -> in_page_state  [0.0s]", "node": "N024", "name": "inferred_clickable", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 532.92, "event": "action", "detail": "N024  click inferred_clickable '(unnamed)'  [#select-wrap > ul.select-ul.on > li.ga-button-action-class:nth-of-type(3) > span]", "node": "N024", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "#select-wrap > ul.select-ul.on > li.ga-button-action-class:nth-of-type(3) > span"}
+{"t": 542.31, "event": "outcome", "detail": "N024  'inferred_clickable' -> navigation  [0.0s]", "node": "N024", "name": "inferred_clickable", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 547.78, "event": "action", "detail": "N024  click inferred_clickable 'General'  [[data-testid=\"playlist_newplaylist_general\"]]", "node": "N024", "kind": "inferred_clickable", "name": "General", "selector": "[data-testid=\"playlist_newplaylist_general\"]"}
+{"t": 556.94, "event": "outcome", "detail": "N024  'General' -> navigation  [0.0s]", "node": "N024", "name": "General", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 561.17, "event": "action", "detail": "N024  click inferred_clickable 'Sync Play'  [[data-testid=\"playlist_newplaylist_syncplay\"]]", "node": "N024", "kind": "inferred_clickable", "name": "Sync Play", "selector": "[data-testid=\"playlist_newplaylist_syncplay\"]"}
+{"t": 582.97, "event": "outcome", "detail": "N024  'Sync Play' -> in_page_state  [0.0s]", "node": "N024", "name": "Sync Play", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 583.72, "event": "action", "detail": "N024  click inferred_clickable 'Takeover Sync Play'  [[data-testid=\"playlist_newplaylist_takeover_syncplay\"]]", "node": "N024", "kind": "inferred_clickable", "name": "Takeover Sync Play", "selector": "[data-testid=\"playlist_newplaylist_takeover_syncplay\"]"}
+{"t": 593.01, "event": "outcome", "detail": "N024  'Takeover Sync Play' -> navigation  [0.0s]", "node": "N024", "name": "Takeover Sync Play", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 593.01, "event": "action_done", "detail": "N010  'New Playlist' took 92.3s"}
+{"t": 593.42, "event": "restore", "detail": "N010  ok via escape/back/goto", "node": "N010", "ok": true, "how": "escape/back/goto"}
+{"t": 593.42, "event": "skip", "detail": "div 'logo'  -- already exercised on N012", "url": "https://www.samsungvx.com/playlist", "element": "div 'logo'", "reason": "already exercised on N012"}
+{"t": 593.42, "event": "skip", "detail": "button 'Buy Now'  -- already exercised on N001", "url": "https://www.samsungvx.com/playlist", "element": "button 'Buy Now'", "reason": "already exercised on N001"}
+{"t": 593.42, "event": "skip", "detail": "div 'Notification'  -- already exercised on N012", "url": "https://www.samsungvx.com/playlist", "element": "div 'Notification'", "reason": "already exercised on N012"}
+{"t": 593.42, "event": "skip", "detail": "div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'  -- already exercised on N008", "url": "https://www.samsungvx.com/playlist", "element": "div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'", "reason": "already exercised on N008"}
+{"t": 593.42, "event": "skip", "detail": "div ''  -- already exercised on N008", "url": "https://www.samsungvx.com/playlist", "element": "div ''", "reason": "already exercised on N008"}
+{"t": 593.42, "event": "skip", "detail": "div '.st0{opacity:0.8;}'  -- already exercised on N008", "url": "https://www.samsungvx.com/playlist", "element": "div '.st0{opacity:0.8;}'", "reason": "already exercised on N008"}
+{"t": 593.42, "event": "skip", "detail": "listitem 'Screen'  -- already exercised on N008", "url": "https://www.samsungvx.com/playlist", "element": "listitem 'Screen'", "reason": "already exercised on N008"}
+{"t": 593.42, "event": "skip", "detail": "div ''  -- already exercised on N008", "url": "https://www.samsungvx.com/playlist", "element": "div ''", "reason": "already exercised on N008"}
+{"t": 593.42, "event": "skip", "detail": "listitem 'Content'  -- already exercised on N008", "url": "https://www.samsungvx.com/playlist", "element": "listitem 'Content'", "reason": "already exercised on N008"}
+{"t": 593.42, "event": "navigate", "detail": "-> https://www.samsungvx.com/schedule (depth 1)", "url": "https://www.samsungvx.com/schedule", "depth": 1}
+{"t": 604.33, "event": "state_found", "detail": "N011  https://www.samsungvx.com/schedule  (23 elements, 0 forms, depth 1)", "node": "N011", "url": "https://www.samsungvx.com/schedule", "elements": 23, "forms": 0, "depth": 1}
+{"t": 604.33, "event": "action", "detail": "N011  click inferred_clickable 'New Schedule'  [[data-testid=\"schedule_new_schedule_btn\"]]", "node": "N011", "kind": "inferred_clickable", "name": "New Schedule", "selector": "[data-testid=\"schedule_new_schedule_btn\"]"}
+{"t": 612.56, "event": "outcome", "detail": "N011  'New Schedule' -> in_page_state  [0.0s]", "node": "N011", "name": "New Schedule", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 612.62, "event": "overlay_open", "detail": "N028 revealed 3 item(s) via 'New Schedule'"}
+{"t": 612.62, "event": "skip", "detail": "span ''  -- already exercised on N024", "url": "https://www.samsungvx.com/schedule", "element": "span ''", "reason": "already exercised on N024"}
+{"t": 612.62, "event": "action", "detail": "N028  click inferred_clickable 'General'  [[data-testid=\"schedule_genral_btn\"]]", "node": "N028", "kind": "inferred_clickable", "name": "General", "selector": "[data-testid=\"schedule_genral_btn\"]"}
+{"t": 621.88, "event": "outcome", "detail": "N028  'General' -> navigation  [0.0s]", "node": "N028", "name": "General", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 626.12, "event": "action", "detail": "N028  click inferred_clickable 'Sync Play'  [[data-testid=\"schedule_syncplay_btn\"]]", "node": "N028", "kind": "inferred_clickable", "name": "Sync Play", "selector": "[data-testid=\"schedule_syncplay_btn\"]"}
+{"t": 635.36, "event": "outcome", "detail": "N028  'Sync Play' -> navigation  [0.0s]", "node": "N028", "name": "Sync Play", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 635.36, "event": "action_done", "detail": "N011  'New Schedule' took 31.0s"}
+{"t": 638.39, "event": "restore", "detail": "N011  ok via escape/back/goto", "node": "N011", "ok": true, "how": "escape/back/goto"}
+{"t": 638.39, "event": "skip", "detail": "div 'logo'  -- already exercised on N012", "url": "https://www.samsungvx.com/schedule", "element": "div 'logo'", "reason": "already exercised on N012"}
+{"t": 638.39, "event": "skip", "detail": "button 'Buy Now'  -- already exercised on N001", "url": "https://www.samsungvx.com/schedule", "element": "button 'Buy Now'", "reason": "already exercised on N001"}
+{"t": 638.39, "event": "skip", "detail": "div 'Notification'  -- already exercised on N012", "url": "https://www.samsungvx.com/schedule", "element": "div 'Notification'", "reason": "already exercised on N012"}
+{"t": 638.39, "event": "skip", "detail": "div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'  -- already exercised on N008", "url": "https://www.samsungvx.com/schedule", "element": "div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'", "reason": "already exercised on N008"}
+{"t": 638.39, "event": "skip", "detail": "div ''  -- already exercised on N008", "url": "https://www.samsungvx.com/schedule", "element": "div ''", "reason": "already exercised on N008"}
+{"t": 638.39, "event": "skip", "detail": "div '.st0{opacity:0.8;}'  -- already exercised on N008", "url": "https://www.samsungvx.com/schedule", "element": "div '.st0{opacity:0.8;}'", "reason": "already exercised on N008"}
+{"t": 638.39, "event": "skip", "detail": "listitem 'Screen'  -- already exercised on N008", "url": "https://www.samsungvx.com/schedule", "element": "listitem 'Screen'", "reason": "already exercised on N008"}
+{"t": 638.39, "event": "skip", "detail": "div ''  -- already exercised on N008", "url": "https://www.samsungvx.com/schedule", "element": "div ''", "reason": "already exercised on N008"}
+{"t": 638.39, "event": "skip", "detail": "listitem 'Content'  -- already exercised on N008", "url": "https://www.samsungvx.com/schedule", "element": "listitem 'Content'", "reason": "already exercised on N008"}
+{"t": 638.39, "event": "navigate", "detail": "-> https://www.samsungvx.com/content (depth 2)", "url": "https://www.samsungvx.com/content", "depth": 2}
+{"t": 644.0, "event": "state_duplicate", "detail": "https://www.samsungvx.com/content  fp=9dfb1c0faa", "url": "https://www.samsungvx.com/content", "fingerprint": "9dfb1c0faa5d65def8b3"}
+{"t": 644.0, "event": "navigate", "detail": "-> https://www.samsungvx.com/playlist/sync/create (depth 2)", "url": "https://www.samsungvx.com/playlist/sync/create", "depth": 2}
+{"t": 671.42, "event": "state_found", "detail": "N030  https://www.samsungvx.com/playlist/sync/create  (33 elements, 0 forms, depth 2)", "node": "N030", "url": "https://www.samsungvx.com/playlist/sync/create", "elements": 33, "forms": 0, "depth": 2}
+{"t": 671.42, "event": "action", "detail": "N030  click generic_button '(unnamed)'  [[data-testid=\"playlist_new_general_preview\"]]", "node": "N030", "kind": "generic_button", "name": "(unnamed)", "selector": "[data-testid=\"playlist_new_general_preview\"]"}
+{"t": 681.44, "event": "action_done", "detail": "N030  'generic_button' took 10.0s"}
+{"t": 681.61, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 681.61, "event": "action", "detail": "N030  click generic_button 'more'  [[data-testid=\"playlist_detail_toolbar_more\"]]", "node": "N030", "kind": "generic_button", "name": "more", "selector": "[data-testid=\"playlist_detail_toolbar_more\"]"}
+{"t": 691.62, "event": "action_done", "detail": "N030  'more' took 10.0s"}
+{"t": 691.81, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 691.81, "event": "action", "detail": "N030  click generic_button 'Set to Screens'  [[data-testid=\"playlist_new_general_set2screen\"]]", "node": "N030", "kind": "generic_button", "name": "Set to Screens", "selector": "[data-testid=\"playlist_new_general_set2screen\"]"}
+{"t": 701.81, "event": "action_done", "detail": "N030  'Set to Screens' took 10.0s"}
+{"t": 702.0, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 702.0, "event": "action", "detail": "N030  click generic_button 'Save'  [[data-testid=\"playlist_new_general_save\"]]", "node": "N030", "kind": "generic_button", "name": "Save", "selector": "[data-testid=\"playlist_new_general_save\"]"}
+{"t": 712.01, "event": "action_done", "detail": "N030  'Save' took 10.0s"}
+{"t": 712.2, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 712.2, "event": "action", "detail": "N030  click generic_button 'Add Content'  [[data-testid=\"playlist_newplaylist_general_addcontent\"]]", "node": "N030", "kind": "generic_button", "name": "Add Content", "selector": "[data-testid=\"playlist_newplaylist_general_addcontent\"]"}
+{"t": 722.2, "event": "action_done", "detail": "N030  'Add Content' took 10.0s"}
+{"t": 722.39, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 722.39, "event": "action", "detail": "N030  click inferred_clickable 'Info'  [role=listitem[name=\"Info\"]]", "node": "N030", "kind": "inferred_clickable", "name": "Info", "selector": "role=listitem[name=\"Info\"]"}
+{"t": 722.39, "event": "action_done", "detail": "N030  'Info' took 0.0s"}
+{"t": 722.58, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 722.58, "event": "action", "detail": "N030  click generic_button 'Playlist'  [role=button[name=\"Playlist\"]]", "node": "N030", "kind": "generic_button", "name": "Playlist", "selector": "role=button[name=\"Playlist\"]"}
+{"t": 732.59, "event": "action_done", "detail": "N030  'Playlist' took 10.0s"}
+{"t": 732.76, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 732.76, "event": "action", "detail": "N030  click inferred_clickable 'GeneralGeneral'  [div.tab_container > div.tab_content:nth-of-type(1) > div.info_table:nth-of-type(1) > ul.info_section > li.info_txt.flex_center:nth-of-type(2) > span.chip.chip-chkbox]", "node": "N030", "kind": "inferred_clickable", "name": "GeneralGeneral", "selector": "div.tab_container > div.tab_content:nth-of-type(1) > div.info_table:nth-of-type(1) > ul.info_section > li.info_txt.flex_center:nth-of-type(2) > span.chip.chip-chkbox"}
+{"t": 742.78, "event": "action_done", "detail": "N030  'GeneralGeneral' took 10.0s"}
+{"t": 742.97, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 742.97, "event": "action", "detail": "N030  click inferred_clickable '(unnamed)'  [[data-testid=\"icon_tooltip\"]]", "node": "N030", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "[data-testid=\"icon_tooltip\"]"}
+{"t": 752.98, "event": "action_done", "detail": "N030  'inferred_clickable' took 10.0s"}
+{"t": 753.16, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 753.16, "event": "action", "detail": "N030  click inferred_clickable '(unnamed)'  [#playlistDetail_weight > div:nth-of-type(2) > div.toggle_switch > label > span.toggle_track.ga-button-action-class]", "node": "N030", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "#playlistDetail_weight > div:nth-of-type(2) > div.toggle_switch > label > span.toggle_track.ga-button-action-class"}
+{"t": 763.17, "event": "action_done", "detail": "N030  'inferred_clickable' took 10.0s"}
+{"t": 763.34, "event": "restore", "detail": "N030  ok via escape/back/goto", "node": "N030", "ok": true, "how": "escape/back/goto"}
+{"t": 763.34, "event": "navigate", "detail": "-> https://www.samsungvx.com/playlist/create (depth 2)", "url": "https://www.samsungvx.com/playlist/create", "depth": 2}
+{"t": 775.01, "event": "state_found", "detail": "N027  https://www.samsungvx.com/playlist/create  (32 elements, 0 forms, depth 2)", "node": "N027", "url": "https://www.samsungvx.com/playlist/create", "elements": 32, "forms": 0, "depth": 2}
+{"t": 775.01, "event": "skip", "detail": "button ''  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "button ''", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "skip", "detail": "button 'more'  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "button 'more'", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "skip", "detail": "button 'Set to Screens'  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "button 'Set to Screens'", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "skip", "detail": "button 'Save'  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "button 'Save'", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "skip", "detail": "button 'Add Content'  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "button 'Add Content'", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "skip", "detail": "listitem 'Info'  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "listitem 'Info'", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "skip", "detail": "span 'GeneralGeneral'  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "span 'GeneralGeneral'", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "skip", "detail": "div ''  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "div ''", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "skip", "detail": "span ''  -- already exercised on N030", "url": "https://www.samsungvx.com/playlist/create", "element": "span ''", "reason": "already exercised on N030"}
+{"t": 775.01, "event": "action", "detail": "N027  click inferred_clickable 'logo'  [#container > header > div._head_logo_1ijv6_14:nth-of-type(1)]", "node": "N027", "kind": "inferred_clickable", "name": "logo", "selector": "#container > header > div._head_logo_1ijv6_14:nth-of-type(1)"}
+{"t": 779.28, "event": "outcome", "detail": "N027  'logo' -> navigation  [0.0s]", "node": "N027", "name": "logo", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 779.28, "event": "action_done", "detail": "N027  'logo' took 4.3s"}
+{"t": 783.51, "event": "restore", "detail": "N027  ok via escape/back/goto", "node": "N027", "ok": true, "how": "escape/back/goto"}
+{"t": 783.51, "event": "navigate", "detail": "-> https://www.samsungvx.com/playlist/sync/create (depth 2)", "url": "https://www.samsungvx.com/playlist/sync/create", "depth": 2}
+{"t": 811.26, "event": "state_duplicate", "detail": "https://www.samsungvx.com/playlist/sync/create  fp=e42044275c", "url": "https://www.samsungvx.com/playlist/sync/create", "fingerprint": "e42044275c2cd204bbb2"}
+{"t": 811.26, "event": "navigate", "detail": "-> https://www.samsungvx.com/schedule/create (depth 2)", "url": "https://www.samsungvx.com/schedule/create", "depth": 2}
+{"t": 823.31, "event": "state_found", "detail": "N029  https://www.samsungvx.com/schedule/create  (34 elements, 0 forms, depth 2)", "node": "N029", "url": "https://www.samsungvx.com/schedule/create", "elements": 34, "forms": 0, "depth": 2}
+{"t": 823.31, "event": "action", "detail": "N029  click generic_button 'Add Content'  [[data-testid=\"schedule_add_content_btn\"]]", "node": "N029", "kind": "generic_button", "name": "Add Content", "selector": "[data-testid=\"schedule_add_content_btn\"]"}
+{"t": 848.56, "event": "outcome", "detail": "N029  'Add Content' -> in_page_state  [0.0s]", "node": "N029", "name": "Add Content", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 848.62, "event": "overlay_open", "detail": "N031 revealed 4 item(s) via 'Add Content'"}
+{"t": 848.62, "event": "action", "detail": "N031  click generic_button 'Cancel'  [[data-testid=\"schedule_content_popup_cancel_btn\"]]", "node": "N031", "kind": "generic_button", "name": "Cancel", "selector": "[data-testid=\"schedule_content_popup_cancel_btn\"]"}
+{"t": 857.28, "event": "outcome", "detail": "N031  'Cancel' -> in_page_state  [0.0s]", "node": "N031", "name": "Cancel", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 858.06, "event": "action", "detail": "N031  click generic_button 'OK'  [[data-testid=\"schedule_content_popup_ok_btn\"]]", "node": "N031", "kind": "generic_button", "name": "OK", "selector": "[data-testid=\"schedule_content_popup_ok_btn\"]"}
+{"t": 868.86, "event": "action", "detail": "N031  click inferred_clickable '(unnamed)'  [[data-testid=\"schedule_content_popup_add_btn\"]]", "node": "N031", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "[data-testid=\"schedule_content_popup_add_btn\"]"}
+{"t": 894.61, "event": "outcome", "detail": "N031  'inferred_clickable' -> in_page_state  [0.0s]", "node": "N031", "name": "inferred_clickable", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 904.91, "event": "overlay_lost", "detail": "N031 could not be re-opened; 1 item(s) left unexercised"}
+{"t": 904.91, "event": "action_done", "detail": "N029  'Add Content' took 81.6s"}
+{"t": 905.11, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 905.11, "event": "action", "detail": "N029  click generic_button 'Set to Screens'  [[data-testid=\"schedule_set2screen_btn\"]]", "node": "N029", "kind": "generic_button", "name": "Set to Screens", "selector": "[data-testid=\"schedule_set2screen_btn\"]"}
+{"t": 905.69, "event": "outcome", "detail": "N029  'Set to Screens' -> no_change  (inert)  [0.0s]", "node": "N029", "name": "Set to Screens", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 905.69, "event": "action_done", "detail": "N029  'Set to Screens' took 0.6s"}
+{"t": 905.88, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 905.88, "event": "action", "detail": "N029  click generic_button 'Save'  [[data-testid=\"schedule_save_btn\"]]", "node": "N029", "kind": "generic_button", "name": "Save", "selector": "[data-testid=\"schedule_save_btn\"]"}
+{"t": 906.44, "event": "outcome", "detail": "N029  'Save' -> no_change  (inert)  [0.0s]", "node": "N029", "name": "Save", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 906.44, "event": "action_done", "detail": "N029  'Save' took 0.6s"}
+{"t": 906.62, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 906.62, "event": "action", "detail": "N029  click generic_button 'more'  [[data-testid=\"schedule_fcmsmore_button\"]]", "node": "N029", "kind": "generic_button", "name": "more", "selector": "[data-testid=\"schedule_fcmsmore_button\"]"}
+{"t": 907.19, "event": "outcome", "detail": "N029  'more' -> no_change  (inert)  [0.0s]", "node": "N029", "name": "more", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 907.19, "event": "action_done", "detail": "N029  'more' took 0.6s"}
+{"t": 907.38, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 907.38, "event": "action", "detail": "N029  click inferred_clickable '(unnamed)'  [#schedule_prev_week_btn]", "node": "N029", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "#schedule_prev_week_btn"}
+{"t": 907.95, "event": "outcome", "detail": "N029  'inferred_clickable' -> no_change  (inert)  [0.0s]", "node": "N029", "name": "inferred_clickable", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 907.95, "event": "action_done", "detail": "N029  'inferred_clickable' took 0.6s"}
+{"t": 908.14, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 908.14, "event": "action", "detail": "N029  click inferred_clickable 'August 2026Week 34'  [#schedule_date_sort]", "node": "N029", "kind": "inferred_clickable", "name": "August 2026Week 34", "selector": "#schedule_date_sort"}
+{"t": 917.12, "event": "outcome", "detail": "N029  'August 2026Week 34' -> in_page_state  [0.0s]", "node": "N029", "name": "August 2026Week 34", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 917.19, "event": "overlay_open", "detail": "N033 revealed 8 item(s) via 'August 2026Week 34'"}
+{"t": 917.19, "event": "action", "detail": "N033  click inferred_clickable '1'  [#day_6 >> nth=0]", "node": "N033", "kind": "inferred_clickable", "name": "1", "selector": "#day_6 >> nth=0"}
+{"t": 925.83, "event": "outcome", "detail": "N033  '1' -> in_page_state  [0.0s]", "node": "N033", "name": "1", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 926.59, "event": "overlay_lost", "detail": "N033 could not be re-opened; 7 item(s) left unexercised"}
+{"t": 926.59, "event": "action_done", "detail": "N029  'August 2026Week 34' took 18.5s"}
+{"t": 929.64, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 929.64, "event": "action", "detail": "N029  click inferred_clickable '(unnamed)'  [#schedule_next_week_btn]", "node": "N029", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "#schedule_next_week_btn"}
+{"t": 931.09, "event": "outcome", "detail": "N029  'inferred_clickable' -> no_change  (inert)  [0.0s]", "node": "N029", "name": "inferred_clickable", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 931.09, "event": "action_done", "detail": "N029  'inferred_clickable' took 1.5s"}
+{"t": 931.28, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 931.28, "event": "action", "detail": "N029  click inferred_clickable '(unnamed)'  [[data-testid=\"schedule_icon_addTag\"]]", "node": "N029", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "[data-testid=\"schedule_icon_addTag\"]"}
+{"t": 944.81, "event": "outcome", "detail": "N029  'inferred_clickable' -> in_page_state  [0.0s]", "node": "N029", "name": "inferred_clickable", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 944.86, "event": "overlay_open", "detail": "N034 revealed 2 item(s) via 'div'"}
+{"t": 944.86, "event": "action", "detail": "N034  click inferred_clickable '(unnamed)'  [div.visible_tag_wrapper:nth-of-type(2) > div.edit_tags_container > div.add_tag_icon.width_100_percent:nth-of-type(1) > div.tag_help_class.is_first > span > span.icon_add.ga-button-action-class]", "node": "N034", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "div.visible_tag_wrapper:nth-of-type(2) > div.edit_tags_container > div.add_tag_icon.width_100_percent:nth-of-type(1) > div.tag_help_class.is_first > span > span.icon_add.ga-button-action-class"}
+{"t": 965.08, "event": "overlay_lost", "detail": "N034 could not be re-opened; 1 item(s) left unexercised"}
+{"t": 965.08, "event": "action_done", "detail": "N029  'inferred_clickable' took 33.8s"}
+{"t": 968.11, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 968.11, "event": "action", "detail": "N029  click generic_button 'Today'  [[data-testid=\"schedule_today_btn\"]]", "node": "N029", "kind": "generic_button", "name": "Today", "selector": "[data-testid=\"schedule_today_btn\"]"}
+{"t": 969.56, "event": "outcome", "detail": "N029  'Today' -> no_change  (inert)  [0.0s]", "node": "N029", "name": "Today", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 969.56, "event": "action_done", "detail": "N029  'Today' took 1.5s"}
+{"t": 969.75, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 969.75, "event": "action", "detail": "N029  click inferred_clickable '(unnamed)'  [[data-testid=\"schedule_month_view_btn\"]]", "node": "N029", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "[data-testid=\"schedule_month_view_btn\"]"}
+{"t": 970.31, "event": "outcome", "detail": "N029  'inferred_clickable' -> no_change  (inert)  [0.0s]", "node": "N029", "name": "inferred_clickable", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 970.31, "event": "action_done", "detail": "N029  'inferred_clickable' took 0.6s"}
+{"t": 970.5, "event": "restore", "detail": "N029  ok via escape/back/goto", "node": "N029", "ok": true, "how": "escape/back/goto"}
+{"t": 970.5, "event": "navigate", "detail": "-> https://www.samsungvx.com/schedule/create (depth 2)", "url": "https://www.samsungvx.com/schedule/create", "depth": 2}
+{"t": 982.19, "event": "state_duplicate", "detail": "https://www.samsungvx.com/schedule/create  fp=ea84ae78c5", "url": "https://www.samsungvx.com/schedule/create", "fingerprint": "ea84ae78c5000d10084e"}
+{"t": 982.19, "event": "budget", "detail": "pages=12/200 clicks=80/2000 navs=18 elapsed=982.2s", "pages_visited": 12, "navigations": 18, "max_pages": 200, "clicks_made": 80, "max_clicks": 2000, "elapsed_seconds": 982.2, "max_wall_clock_seconds": 10800, "consecutive_no_new_states": 1, "stop_reason": null}
+{"t": 982.19, "event": "finished", "detail": "crawl completed (frontier empty)"}

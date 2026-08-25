@@ -1,0 +1,339 @@
+    time  event              detail
+--------  ------------------ ------------------------------------------------------------
+     0.0  navigate           -> https://www.samsungvx.com/ (depth 0)
+    15.9  state_found        N001  https://www.samsungvx.com/  (28 elements, 0 forms, depth 0)
+    15.9  action             N001  click generic_button 'Buy Now'  [role=button[name="Buy Now"]]
+    21.2  outcome            N001  'Buy Now' -> no_change  (inert)  [0.0s]
+    21.2  action_done        N001  'Buy Now' took 5.4s
+    25.4  restore            N001  ok via escape/back/goto
+    25.4  action             N001  click inferred_clickable '.st0{opacity:0.8;}'  [[data-testid="icon_arrow_down"]]
+    35.3  outcome            N001  '.st0{opacity:0.8;}' -> in_page_state  [0.0s]
+    35.4  overlay_open       N003 revealed 3 item(s) via '.st0{opacity:0.8;}'
+    35.4  action             N003  click inferred_clickable '(unnamed)'  [[data-testid="icon_arrow_up"]]
+    43.3  outcome            N003  'inferred_clickable' -> in_page_state  [0.0s]
+    52.9  action             N003  click inferred_clickable 'Default Workspace'  [[data-testid="dashboard_workspace_change"]]
+    60.8  outcome            N003  'Default Workspace' -> in_page_state  [0.0s]
+    70.4  action             N003  click inferred_clickable 'Default Workspace'  [[data-testid="dashboardPlaces_liPlaces_Item0"]]
+    78.2  outcome            N003  'Default Workspace' -> in_page_state  [0.0s]
+    78.2  action_done        N001  '.st0{opacity:0.8;}' took 52.8s
+    82.4  restore            N001  ok via escape/back/goto
+    82.4  action             N001  click inferred_clickable 'New'  [[data-testid="dashboard_screen_newbtn"]]
+    90.7  outcome            N001  'New' -> in_page_state  [0.0s]
+    90.8  overlay_open       N004 revealed 3 item(s) via 'New'
+    90.8  action             N004  click inferred_clickable '(unnamed)'  [#root > div.add-btn-popover:nth-of-type(4) > ul.select-ul.openNew-list > li.ga-button-action-class:nth-of-type(2) > span]
+   108.4  outcome            N004  'inferred_clickable' -> in_page_state  [0.0s]
+   118.0  action             N004  click inferred_clickable 'Add Screen'  [[data-testid="dashboard_screen_addbtn_addscreen"]]
+   135.6  outcome            N004  'Add Screen' -> in_page_state  [0.0s]
+   145.2  action             N004  click inferred_clickable 'New Screen Wall'  [[data-testid="dashboard_screen_addbtn_newscreenwall"]]
+   162.8  outcome            N004  'New Screen Wall' -> in_page_state  [0.0s]
+   162.8  action_done        N001  'New' took 80.4s
+   167.0  restore            N001  ok via escape/back/goto
+   167.0  action             N001  click inferred_clickable 'New'  [[data-testid="dashboard_content_newbtn"]]
+   174.9  outcome            N001  'New' -> in_page_state  [0.0s]
+   174.9  overlay_open       N007 revealed 2 item(s) via 'New'
+   174.9  action             N007  click inferred_clickable 'Add Content'  [[data-testid="dashboard_content_addbtn_addcontent"]]
+   192.4  outcome            N007  'Add Content' -> in_page_state  [0.0s]
+   192.4  url_state_cap      https://www.samsungvx.com/  already has 6 states; not recording more
+   202.1  action             N007  click inferred_clickable 'Create Content'  [[data-testid="dashboard_content_addbtn_createcontent"]]
+   209.9  outcome            N007  'Create Content' -> in_page_state  [0.0s]
+   209.9  action_done        N001  'New' took 43.0s
+   214.1  restore            N001  ok via escape/back/goto
+   214.1  action             N001  click inferred_clickable 'New'  [[data-testid="dashboard_playlist_newbtn"]]
+   222.8  outcome            N001  'New' -> in_page_state  [0.0s]
+   222.8  url_state_cap      https://www.samsungvx.com/  already has 6 states; not recording more
+   222.8  action_done        N001  'New' took 8.7s
+   233.3  restore            N001  ok via escape/back/goto
+   233.3  action             N001  click inferred_clickable 'New'  [[data-testid="dashboard_schedule_newbtn"]]
+   238.7  outcome            N001  'New' -> no_change  (inert)  [0.0s]
+   238.7  action_done        N001  'New' took 5.4s
+   242.9  restore            N001  ok via escape/back/goto
+   242.9  action             N001  click inferred_clickable 'screen'  [#screenCard_defaultImg]
+   251.8  outcome            N001  'screen' -> navigation  [0.0s]
+   251.8  action_done        N001  'screen' took 8.9s
+   258.4  restore            N001  ok via escape/back/goto
+   258.4  action             N001  click inferred_clickable 'content'  [#contentCard_defaultImg]
+   262.0  outcome            N001  'content' -> navigation  [0.0s]
+   262.0  action_done        N001  'content' took 3.6s
+   268.6  restore            N001  ok via escape/back/goto
+   268.6  action             N001  click inferred_clickable 'playlist'  [#playlistCard_defaultImg]
+   277.5  outcome            N001  'playlist' -> navigation  [0.0s]
+   277.5  action_done        N001  'playlist' took 8.9s
+   284.2  restore            N001  ok via escape/back/goto
+   284.2  action             N001  click inferred_clickable 'schedule'  [#scheduleCard_defaultImg]
+   293.1  outcome            N001  'schedule' -> navigation  [0.0s]
+   293.1  action_done        N001  'schedule' took 8.9s
+   299.8  restore            N001  ok via escape/back/goto
+   299.8  navigate           -> https://www.samsungvx.com/terms (depth 1)
+   303.5  state_found        N012  https://www.samsungvx.com/terms  (9 elements, 0 forms, depth 1)
+   303.5  action             N012  click inferred_clickable 'logo'  [#header_logo]
+   313.4  outcome            N012  'logo' -> navigation  (mutating)  [0.0s]
+   313.4  action_done        N012  'logo' took 9.9s
+   317.8  restore            N012  ok via escape/back/goto
+   317.8  skip               button 'Buy Now'  -- already exercised on N001
+   317.8  action             N012  click inferred_clickable 'Notification'  [[data-testid="icon_notific_solidation"]]
+   326.1  outcome            N012  'Notification' -> in_page_state  (mutating)  [0.0s]
+   326.2  overlay_open       N013 revealed 8 item(s) via 'Notification'
+   326.2  action             N013  click generic_button 'Close'  [#footer_rightPart_okBtn]
+   327.2  outcome            N013  'Close' -> in_page_state  (mutating)  [0.0s]
+   328.0  action             N013  click generic_button 'Export All'  [#notiFilterStateId > button.btn_icon]
+   328.7  outcome            N013  'Export All' -> blocked_mutation  (mutating)  [0.0s]
+   338.9  overlay_lost       N013 could not be re-opened; 6 item(s) left unexercised
+   338.9  action_done        N012  'Notification' took 21.0s
+   339.1  restore            N012  ok via escape/back/goto
+   339.1  action             N012  click generic_button 'chatbot'  [#startChatBtn]
+   340.2  outcome            N012  'chatbot' -> in_page_state  (mutating)  [0.0s]
+   340.2  overlay_open       N014 revealed 1 item(s) via 'chatbot'
+   340.2  action             N014  click generic_button 'Minimize'  [#closeChatBtn]
+   341.2  outcome            N014  'Minimize' -> in_page_state  [0.0s]
+   341.2  action_done        N012  'chatbot' took 2.1s
+   341.4  restore            N012  ok via escape/back/goto
+   341.4  navigate           -> https://www.samsungvx.com/privacy (depth 1)
+   345.7  state_found        N015  https://www.samsungvx.com/privacy  (10 elements, 0 forms, depth 1)
+   345.7  action             N015  click inferred_clickable 'Version 1.3'  [#select]
+   346.2  outcome            N015  'Version 1.3' -> no_change  (inert)  [0.0s]
+   346.2  action_done        N015  'Version 1.3' took 0.5s
+   346.4  restore            N015  ok via escape/back/goto
+   346.4  skip               div 'logo'  -- already exercised on N012
+   346.4  skip               button 'Buy Now'  -- already exercised on N001
+   346.4  skip               div 'Notification'  -- already exercised on N012
+   346.4  skip               button 'chatbot'  -- already exercised on N012
+   346.4  navigate           -> https://www.samsungvx.com/cookie (depth 1)
+   350.4  state_found        N016  https://www.samsungvx.com/cookie  (9 elements, 0 forms, depth 1)
+   350.4  skip               div 'logo'  -- already exercised on N012
+   350.4  skip               button 'Buy Now'  -- already exercised on N001
+   350.4  skip               div 'Notification'  -- already exercised on N012
+   350.4  skip               button 'chatbot'  -- already exercised on N012
+   350.4  navigate           -> https://www.samsungvx.com/euda (depth 1)
+   354.5  state_found        N017  https://www.samsungvx.com/euda  (9 elements, 0 forms, depth 1)
+   354.5  skip               div 'logo'  -- already exercised on N012
+   354.5  skip               button 'Buy Now'  -- already exercised on N001
+   354.5  skip               div 'Notification'  -- already exercised on N012
+   354.5  skip               button 'chatbot'  -- already exercised on N012
+   354.5  navigate           -> https://www.samsungvx.com/screen (depth 1)
+   364.9  state_found        N008  https://www.samsungvx.com/screen  (23 elements, 0 forms, depth 1)
+   364.9  action             N008  click generic_button 'Add Screen'  [#screen_page_pc_btn_add_screen]
+   386.0  outcome            N008  'Add Screen' -> in_page_state  [0.0s]
+   386.0  overlay_open       N018 revealed 1 item(s) via 'Add Screen'
+   386.0  skip               button 'Close'  -- already exercised on N013
+   386.0  action_done        N008  'Add Screen' took 21.1s
+   386.2  restore            N008  ok via escape/back/goto
+   386.2  skip               div 'logo'  -- already exercised on N012
+   386.2  skip               button 'Buy Now'  -- already exercised on N001
+   386.2  skip               div 'Notification'  -- already exercised on N012
+   386.2  action             N008  click inferred_clickable 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'  [#place_wrap]
+   396.8  outcome            N008  'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}' -> in_page_state  [0.0s]
+   396.9  overlay_open       N019 revealed 4 item(s) via 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'
+   396.9  skip               div ''  -- already exercised on N003
+   396.9  action             N019  click inferred_clickable '(unnamed)'  [#place_list > li.ga-button-action-class.selected > span.check_off:nth-of-type(2)]
+   404.7  outcome            N019  'inferred_clickable' -> in_page_state  [0.0s]
+   405.5  action             N019  click inferred_clickable 'CHITNU TEAMDefault Workspace'  [#place_wrap]
+   413.3  outcome            N019  'CHITNU TEAMDefault Workspace' -> in_page_state  [0.0s]
+   414.0  action             N019  click inferred_clickable 'Default Workspace'  [role=listitem[name="Default Workspace"]]
+   414.0  action_done        N008  'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}' took 27.8s
+   417.1  restore            N008  ok via escape/back/goto
+   417.1  action             N008  click inferred_clickable '(unnamed)'  [[data-testid="icon_refresh"]]
+   427.1  action_done        N008  'inferred_clickable' took 10.1s
+   427.3  restore            N008  ok via escape/back/goto
+   427.3  action             N008  click inferred_clickable '.st0{opacity:0.8;}'  [[data-testid="icon_arrow_down"] >> nth=0]
+   437.3  action_done        N008  '.st0{opacity:0.8;}' took 10.0s
+   437.5  restore            N008  ok via escape/back/goto
+   437.5  action             N008  click inferred_clickable 'Screen'  [[data-testid="navbar_li_screen"]]
+   438.7  outcome            N008  'Screen' -> no_change  (inert)  [0.0s]
+   438.7  action_done        N008  'Screen' took 1.1s
+   438.8  restore            N008  ok via escape/back/goto
+   438.8  action             N008  click inferred_clickable '(unnamed)'  [[data-testid="icon_screen"]]
+   448.9  action_done        N008  'inferred_clickable' took 10.0s
+   449.0  restore            N008  ok via escape/back/goto
+   449.0  action             N008  click inferred_clickable 'Content'  [[data-testid="navbar_li_content"]]
+   452.4  outcome            N008  'Content' -> navigation  [0.0s]
+   452.4  action_done        N008  'Content' took 3.3s
+   452.8  restore            N008  ok via escape/back/goto
+   452.8  navigate           -> https://www.samsungvx.com/content (depth 1)
+   458.4  state_found        N009  https://www.samsungvx.com/content  (6 elements, 0 forms, depth 1)
+   458.4  action             N009  click generic_button 'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo'  [#container]
+   459.0  outcome            N009  'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo' -> no_change  (inert)  [0.0s]
+   459.0  action_done        N009  'ContentBuy Nowsouresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.comCHITNU TEAMDefault Workspace .st0{opacity:0.8;} ScreenCo' took 0.5s
+   459.1  restore            N009  ok via escape/back/goto
+   459.1  action             N009  click generic_button 'Create Content'  [[data-testid="content_noData_btnCreate"]]
+   459.7  outcome            N009  'Create Content' -> no_change  (inert)  [0.0s]
+   459.7  action_done        N009  'Create Content' took 0.5s
+   459.8  restore            N009  ok via escape/back/goto
+   459.8  action             N009  click generic_button 'Add Content'  [[data-testid="content_noData_btnAdd"]]
+   462.8  outcome            N009  'Add Content' -> in_page_state  [0.0s]
+   462.8  overlay_open       N020 revealed 7 item(s) via 'Add Content'
+   462.8  action             N020  click generic_button 'Close'  [role=button[name="Close"]]
+   465.5  outcome            N020  'Close' -> in_page_state  [0.0s]
+   466.2  action             N020  click generic_button 'Drop the image, video and document files here.OpenClose'  [role=button[name="Drop the image, video and document files here.OpenClose"]]
+   467.0  action             N020  click generic_button 'Open'  [#non_add]
+   467.5  outcome            N020  'Open' -> file_chooser  (upload)  [0.0s]
+   468.3  action             N020  click inferred_clickable 'My Device'  [#content_upload_tabDevice]
+   468.8  outcome            N020  'My Device' -> no_change  (inert)  [0.0s]
+   469.6  action             N020  click inferred_clickable 'Ticker'  [#content_upload_tabTicker]
+   479.8  outcome            N020  'Ticker' -> in_page_state  [0.0s]
+   480.7  action             N020  click inferred_clickable 'Web(HTML)'  [#content_upload_tabHtml]
+   485.4  outcome            N020  'Web(HTML)' -> in_page_state  [0.0s]
+   486.2  action             N020  click inferred_clickable 'Web(URL)'  [#content_upload_tabUrl]
+   489.7  outcome            N020  'Web(URL)' -> in_page_state  [0.0s]
+   489.7  action_done        N009  'Add Content' took 29.9s
+   489.9  restore            N009  ok via escape/back/goto
+   489.9  skip               button 'Buy Now'  -- already exercised on N001
+   489.9  skip               div ''  -- already exercised on N008
+   489.9  skip               button 'chatbot'  -- already exercised on N012
+   489.9  navigate           -> https://www.samsungvx.com/playlist (depth 1)
+   500.8  state_found        N010  https://www.samsungvx.com/playlist  (23 elements, 0 forms, depth 1)
+   500.8  action             N010  click inferred_clickable 'New Playlist'  [[data-testid="playlist_newplaylist"]]
+   509.4  outcome            N010  'New Playlist' -> in_page_state  [0.0s]
+   509.4  overlay_open       N024 revealed 5 item(s) via 'New Playlist'
+   509.4  action             N024  click inferred_clickable '(unnamed)'  [#select-wrap > ul.select-ul.on > li.ga-button-action-class:nth-of-type(2) > span]
+   532.1  outcome            N024  'inferred_clickable' -> in_page_state  [0.0s]
+   532.9  action             N024  click inferred_clickable '(unnamed)'  [#select-wrap > ul.select-ul.on > li.ga-button-action-class:nth-of-type(3) > span]
+   542.3  outcome            N024  'inferred_clickable' -> navigation  [0.0s]
+   547.8  action             N024  click inferred_clickable 'General'  [[data-testid="playlist_newplaylist_general"]]
+   556.9  outcome            N024  'General' -> navigation  [0.0s]
+   561.2  action             N024  click inferred_clickable 'Sync Play'  [[data-testid="playlist_newplaylist_syncplay"]]
+   583.0  outcome            N024  'Sync Play' -> in_page_state  [0.0s]
+   583.7  action             N024  click inferred_clickable 'Takeover Sync Play'  [[data-testid="playlist_newplaylist_takeover_syncplay"]]
+   593.0  outcome            N024  'Takeover Sync Play' -> navigation  [0.0s]
+   593.0  action_done        N010  'New Playlist' took 92.3s
+   593.4  restore            N010  ok via escape/back/goto
+   593.4  skip               div 'logo'  -- already exercised on N012
+   593.4  skip               button 'Buy Now'  -- already exercised on N001
+   593.4  skip               div 'Notification'  -- already exercised on N012
+   593.4  skip               div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'  -- already exercised on N008
+   593.4  skip               div ''  -- already exercised on N008
+   593.4  skip               div '.st0{opacity:0.8;}'  -- already exercised on N008
+   593.4  skip               listitem 'Screen'  -- already exercised on N008
+   593.4  skip               div ''  -- already exercised on N008
+   593.4  skip               listitem 'Content'  -- already exercised on N008
+   593.4  navigate           -> https://www.samsungvx.com/schedule (depth 1)
+   604.3  state_found        N011  https://www.samsungvx.com/schedule  (23 elements, 0 forms, depth 1)
+   604.3  action             N011  click inferred_clickable 'New Schedule'  [[data-testid="schedule_new_schedule_btn"]]
+   612.6  outcome            N011  'New Schedule' -> in_page_state  [0.0s]
+   612.6  overlay_open       N028 revealed 3 item(s) via 'New Schedule'
+   612.6  skip               span ''  -- already exercised on N024
+   612.6  action             N028  click inferred_clickable 'General'  [[data-testid="schedule_genral_btn"]]
+   621.9  outcome            N028  'General' -> navigation  [0.0s]
+   626.1  action             N028  click inferred_clickable 'Sync Play'  [[data-testid="schedule_syncplay_btn"]]
+   635.4  outcome            N028  'Sync Play' -> navigation  [0.0s]
+   635.4  action_done        N011  'New Schedule' took 31.0s
+   638.4  restore            N011  ok via escape/back/goto
+   638.4  skip               div 'logo'  -- already exercised on N012
+   638.4  skip               button 'Buy Now'  -- already exercised on N001
+   638.4  skip               div 'Notification'  -- already exercised on N012
+   638.4  skip               div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'  -- already exercised on N008
+   638.4  skip               div ''  -- already exercised on N008
+   638.4  skip               div '.st0{opacity:0.8;}'  -- already exercised on N008
+   638.4  skip               listitem 'Screen'  -- already exercised on N008
+   638.4  skip               div ''  -- already exercised on N008
+   638.4  skip               listitem 'Content'  -- already exercised on N008
+   638.4  navigate           -> https://www.samsungvx.com/content (depth 2)
+   644.0  state_duplicate    https://www.samsungvx.com/content  fp=9dfb1c0faa
+   644.0  navigate           -> https://www.samsungvx.com/playlist/sync/create (depth 2)
+   671.4  state_found        N030  https://www.samsungvx.com/playlist/sync/create  (33 elements, 0 forms, depth 2)
+   671.4  action             N030  click generic_button '(unnamed)'  [[data-testid="playlist_new_general_preview"]]
+   681.4  action_done        N030  'generic_button' took 10.0s
+   681.6  restore            N030  ok via escape/back/goto
+   681.6  action             N030  click generic_button 'more'  [[data-testid="playlist_detail_toolbar_more"]]
+   691.6  action_done        N030  'more' took 10.0s
+   691.8  restore            N030  ok via escape/back/goto
+   691.8  action             N030  click generic_button 'Set to Screens'  [[data-testid="playlist_new_general_set2screen"]]
+   701.8  action_done        N030  'Set to Screens' took 10.0s
+   702.0  restore            N030  ok via escape/back/goto
+   702.0  action             N030  click generic_button 'Save'  [[data-testid="playlist_new_general_save"]]
+   712.0  action_done        N030  'Save' took 10.0s
+   712.2  restore            N030  ok via escape/back/goto
+   712.2  action             N030  click generic_button 'Add Content'  [[data-testid="playlist_newplaylist_general_addcontent"]]
+   722.2  action_done        N030  'Add Content' took 10.0s
+   722.4  restore            N030  ok via escape/back/goto
+   722.4  action             N030  click inferred_clickable 'Info'  [role=listitem[name="Info"]]
+   722.4  action_done        N030  'Info' took 0.0s
+   722.6  restore            N030  ok via escape/back/goto
+   722.6  action             N030  click generic_button 'Playlist'  [role=button[name="Playlist"]]
+   732.6  action_done        N030  'Playlist' took 10.0s
+   732.8  restore            N030  ok via escape/back/goto
+   732.8  action             N030  click inferred_clickable 'GeneralGeneral'  [div.tab_container > div.tab_content:nth-of-type(1) > div.info_table:nth-of-type(1) > ul.info_section > li.info_txt.flex_center:nth-of-type(2) > span.chip.chip-chkbox]
+   742.8  action_done        N030  'GeneralGeneral' took 10.0s
+   743.0  restore            N030  ok via escape/back/goto
+   743.0  action             N030  click inferred_clickable '(unnamed)'  [[data-testid="icon_tooltip"]]
+   753.0  action_done        N030  'inferred_clickable' took 10.0s
+   753.2  restore            N030  ok via escape/back/goto
+   753.2  action             N030  click inferred_clickable '(unnamed)'  [#playlistDetail_weight > div:nth-of-type(2) > div.toggle_switch > label > span.toggle_track.ga-button-action-class]
+   763.2  action_done        N030  'inferred_clickable' took 10.0s
+   763.3  restore            N030  ok via escape/back/goto
+   763.3  navigate           -> https://www.samsungvx.com/playlist/create (depth 2)
+   775.0  state_found        N027  https://www.samsungvx.com/playlist/create  (32 elements, 0 forms, depth 2)
+   775.0  skip               button ''  -- already exercised on N030
+   775.0  skip               button 'more'  -- already exercised on N030
+   775.0  skip               button 'Set to Screens'  -- already exercised on N030
+   775.0  skip               button 'Save'  -- already exercised on N030
+   775.0  skip               button 'Add Content'  -- already exercised on N030
+   775.0  skip               listitem 'Info'  -- already exercised on N030
+   775.0  skip               span 'GeneralGeneral'  -- already exercised on N030
+   775.0  skip               div ''  -- already exercised on N030
+   775.0  skip               span ''  -- already exercised on N030
+   775.0  action             N027  click inferred_clickable 'logo'  [#container > header > div._head_logo_1ijv6_14:nth-of-type(1)]
+   779.3  outcome            N027  'logo' -> navigation  [0.0s]
+   779.3  action_done        N027  'logo' took 4.3s
+   783.5  restore            N027  ok via escape/back/goto
+   783.5  navigate           -> https://www.samsungvx.com/playlist/sync/create (depth 2)
+   811.3  state_duplicate    https://www.samsungvx.com/playlist/sync/create  fp=e42044275c
+   811.3  navigate           -> https://www.samsungvx.com/schedule/create (depth 2)
+   823.3  state_found        N029  https://www.samsungvx.com/schedule/create  (34 elements, 0 forms, depth 2)
+   823.3  action             N029  click generic_button 'Add Content'  [[data-testid="schedule_add_content_btn"]]
+   848.6  outcome            N029  'Add Content' -> in_page_state  [0.0s]
+   848.6  overlay_open       N031 revealed 4 item(s) via 'Add Content'
+   848.6  action             N031  click generic_button 'Cancel'  [[data-testid="schedule_content_popup_cancel_btn"]]
+   857.3  outcome            N031  'Cancel' -> in_page_state  [0.0s]
+   858.1  action             N031  click generic_button 'OK'  [[data-testid="schedule_content_popup_ok_btn"]]
+   868.9  action             N031  click inferred_clickable '(unnamed)'  [[data-testid="schedule_content_popup_add_btn"]]
+   894.6  outcome            N031  'inferred_clickable' -> in_page_state  [0.0s]
+   904.9  overlay_lost       N031 could not be re-opened; 1 item(s) left unexercised
+   904.9  action_done        N029  'Add Content' took 81.6s
+   905.1  restore            N029  ok via escape/back/goto
+   905.1  action             N029  click generic_button 'Set to Screens'  [[data-testid="schedule_set2screen_btn"]]
+   905.7  outcome            N029  'Set to Screens' -> no_change  (inert)  [0.0s]
+   905.7  action_done        N029  'Set to Screens' took 0.6s
+   905.9  restore            N029  ok via escape/back/goto
+   905.9  action             N029  click generic_button 'Save'  [[data-testid="schedule_save_btn"]]
+   906.4  outcome            N029  'Save' -> no_change  (inert)  [0.0s]
+   906.4  action_done        N029  'Save' took 0.6s
+   906.6  restore            N029  ok via escape/back/goto
+   906.6  action             N029  click generic_button 'more'  [[data-testid="schedule_fcmsmore_button"]]
+   907.2  outcome            N029  'more' -> no_change  (inert)  [0.0s]
+   907.2  action_done        N029  'more' took 0.6s
+   907.4  restore            N029  ok via escape/back/goto
+   907.4  action             N029  click inferred_clickable '(unnamed)'  [#schedule_prev_week_btn]
+   908.0  outcome            N029  'inferred_clickable' -> no_change  (inert)  [0.0s]
+   908.0  action_done        N029  'inferred_clickable' took 0.6s
+   908.1  restore            N029  ok via escape/back/goto
+   908.1  action             N029  click inferred_clickable 'August 2026Week 34'  [#schedule_date_sort]
+   917.1  outcome            N029  'August 2026Week 34' -> in_page_state  [0.0s]
+   917.2  overlay_open       N033 revealed 8 item(s) via 'August 2026Week 34'
+   917.2  action             N033  click inferred_clickable '1'  [#day_6 >> nth=0]
+   925.8  outcome            N033  '1' -> in_page_state  [0.0s]
+   926.6  overlay_lost       N033 could not be re-opened; 7 item(s) left unexercised
+   926.6  action_done        N029  'August 2026Week 34' took 18.5s
+   929.6  restore            N029  ok via escape/back/goto
+   929.6  action             N029  click inferred_clickable '(unnamed)'  [#schedule_next_week_btn]
+   931.1  outcome            N029  'inferred_clickable' -> no_change  (inert)  [0.0s]
+   931.1  action_done        N029  'inferred_clickable' took 1.5s
+   931.3  restore            N029  ok via escape/back/goto
+   931.3  action             N029  click inferred_clickable '(unnamed)'  [[data-testid="schedule_icon_addTag"]]
+   944.8  outcome            N029  'inferred_clickable' -> in_page_state  [0.0s]
+   944.9  overlay_open       N034 revealed 2 item(s) via 'div'
+   944.9  action             N034  click inferred_clickable '(unnamed)'  [div.visible_tag_wrapper:nth-of-type(2) > div.edit_tags_container > div.add_tag_icon.width_100_percent:nth-of-type(1) > div.tag_help_class.is_first > span > span.icon_add.ga-button-action-class]
+   965.1  overlay_lost       N034 could not be re-opened; 1 item(s) left unexercised
+   965.1  action_done        N029  'inferred_clickable' took 33.8s
+   968.1  restore            N029  ok via escape/back/goto
+   968.1  action             N029  click generic_button 'Today'  [[data-testid="schedule_today_btn"]]
+   969.6  outcome            N029  'Today' -> no_change  (inert)  [0.0s]
+   969.6  action_done        N029  'Today' took 1.5s
+   969.8  restore            N029  ok via escape/back/goto
+   969.8  action             N029  click inferred_clickable '(unnamed)'  [[data-testid="schedule_month_view_btn"]]
+   970.3  outcome            N029  'inferred_clickable' -> no_change  (inert)  [0.0s]
+   970.3  action_done        N029  'inferred_clickable' took 0.6s
+   970.5  restore            N029  ok via escape/back/goto
+   970.5  navigate           -> https://www.samsungvx.com/schedule/create (depth 2)
+   982.2  state_duplicate    https://www.samsungvx.com/schedule/create  fp=ea84ae78c5
+   982.2  budget             pages=12/200 clicks=80/2000 navs=18 elapsed=982.2s
+   982.2  finished           crawl completed (frontier empty)

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QAGen Fixture — Item</title>
+<style>body { font-family: system-ui, sans-serif; padding: 2rem; }</style>
+</head>
+<body>
+<h1>Item detail</h1>
+<nav aria-label="Main"><a href="/index.html">Home</a></nav>
+<p>Viewing item <span id="id">?</span>.</p>
+<button data-testid="item-favourite">Add to favourites</button>
+<script>
+  // Deliberately identical structure for every id: 50 URLs, one state.
+  const id = new URLSearchParams(location.search).get('id') || '?';
+  document.getElementById('id').textContent = id;
+</script>
+</body>
+</html>

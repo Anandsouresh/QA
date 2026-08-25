@@ -1,0 +1,128 @@
+# 200 states, depth 10 -- the full-coverage run.
+#
+# Elements are worked through in READING ORDER: top to bottom, left to right,
+# the way a person reads the screen. Content area first, then the header and
+# left menu (which are identical on every state).
+#
+# Budgets are deliberately loose -- the point is breadth, so the only real stop
+# is the 3h wall clock. Section cap 30 keeps any one area (Settings has eleven
+# menu items, each with sub-navigation) from taking the whole run.
+#
+# Headless on purpose: this runs for hours and should not own your screen.
+# The write-guard stays ON -- nothing is created, edited or deleted.
+target:
+  url: https://www.samsungvx.com/
+  depth: 20
+  same_origin_only: true
+  exclude_paths:
+  - /logout
+  - /signout
+  - /login
+  - /auth/**
+  id_collapse_exceptions: []
+auth:
+  storage_state: ./secrets/samsungvx.json
+  verify_selector: null
+crawl:
+  max_pages: 400
+  max_clicks: 2000
+  max_clicks_per_state: 200
+  max_wall_clock_seconds: 10800
+  settle_timeout_ms: 2000
+  hydration_timeout_ms: 6000
+  stability_ms: 400
+  hydration_min_elements: 4
+  loader_timeout_ms: 4000
+  post_loader_wait_ms: 800
+  loader_selectors: []
+  action_timeout_ms: 10000
+  nav_timeout_ms: 30000
+  # The persistent app frame, read off the captured DOM: the header, the two
+  # left menus (CMS and Settings), the workspace switcher, the tag explorer and
+  # the floating support chat. These are still extracted and still exercised
+  # once, but they rank below content-area actions -- so a state cut short by
+  # the budget loses furniture, not product.
+  # The app tags its own clickables for analytics, and that is the ONLY signal
+  # for controls it gives no role, no tabindex and no pointer cursor -- the
+  # profile avatar among them, which is the sole route to Settings.
+  extra_clickable_selectors:
+  - .ga-button-action-class
+  - '[ga_text_key]'
+  - '[data-ga]'
+  - '[data-analytics]'
+  - '[data-track]'
+  shell_selectors:
+  # Bare tokens, not '#id': the extractor prefers data-testid, so a selector
+  # arrives as [data-testid="navbar_li_screen"] or as #navbar_li_screen
+  # depending on the element. Substring matching catches both forms.
+  # Header controls the analytics rule surfaced. Without these they count as
+  # content, sort to the top of the reading order (y=23..31) and push the
+  # dashboard cards and their "+" buttons out of the per-state click budget.
+  - dashboard_buyplan
+  - dashboard_vxt_lab
+  - dashboard_profile
+  - header_logoImg
+  - select-wrap
+  - navbar_menuList
+  - navbar_li_
+  - settingNavbar
+  - cms_place
+  - place_wrap
+  - dashboard_workspace
+  - header_logo
+  - header_profile
+  - header_notific
+  - profile_detail
+  - profileOpera_
+  - notificationIconId
+  - icon_notific
+  - alarmId
+  - icon_vxt_labs
+  - icon_crown
+  - chatbot_start
+  - startChatBtn
+  - tagexplorer
+  - dashboard_terms
+  - dashboard_privacy
+  - dashboard_cookies
+  - dashboard_contactus
+  # Settings has eleven menu items each with its own sub-navigation; without a
+  # cap it took 43 of 63 states on the last run and /screen was never reached.
+  max_states_per_section: 50
+  # Work through each state the way a person reads it.
+  action_order: reading
+  content_before_frame: true
+  reading_band_px: 20
+  # Guarantees the left menu reaches the plan even when content fills the cap.
+  # Without it run 1 starved: frontier empty at 34 states, /settings at zero,
+  # and the left menu clicked twice in the entire crawl.
+  frame_reserve: 8
+  probe_search: false
+interaction:
+  policy: safe_click
+  deny_text:
+  - delete
+  - remove
+  - pay
+  - purchase
+  - submit
+  - confirm
+  - logout
+  - sign out
+  - deactivate
+  - cancel subscription
+  deny_selectors:
+  - '[data-destructive]'
+  - .btn-danger
+  allow_selectors: []
+  dismiss_consent: true
+output:
+  dir: ./samsungvx-200-states03
+  formats:
+  - graph
+  save_page_models: true
+browser:
+  headless: true
+  viewport_width: 1200
+  viewport_height: 900
+  block_mutations: true

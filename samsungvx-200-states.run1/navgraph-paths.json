@@ -1,0 +1,737 @@
+{
+  "entry_node": "N001",
+  "target": "https://www.samsungvx.com/",
+  "paths": [
+    {
+      "node_id": "N001",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 0,
+      "steps": []
+    },
+    {
+      "node_id": "N002",
+      "url": "https://vxt.samsung.com/contact-us",
+      "title": "vxt.samsung.com",
+      "node_type": "boundary",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'Contact Us'",
+          "selector": "[data-testid=\"dashboard_contactus\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N003",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 .st0{opacity:0.8;}",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click '.st0{opacity:0.8;}'",
+          "selector": "[data-testid=\"icon_arrow_down\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N004",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New",
+      "node_type": "dropdown",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_screen_newbtn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N005",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New \u2014 span",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_screen_newbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'span'",
+          "selector": "#root > div.add-btn-popover:nth-of-type(4) > ul.select-ul.openNew-list > li.ga-button-action-class:nth-of-type(2) > span",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N006",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New \u2014 Add Screen",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_screen_newbtn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Screen'",
+          "selector": "[data-testid=\"dashboard_screen_addbtn_addscreen\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N007",
+      "url": "https://www.samsungvx.com/",
+      "title": "HOME | Samsung VXT CMS \u2014 New",
+      "node_type": "dropdown",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'New'",
+          "selector": "[data-testid=\"dashboard_content_newbtn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N008",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'screen'",
+          "selector": "#screenCard_defaultImg",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N009",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'content'",
+          "selector": "#contentCard_defaultImg",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N010",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'playlist'",
+          "selector": "#playlistCard_defaultImg",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N011",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'schedule'",
+          "selector": "#scheduleCard_defaultImg",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N012",
+      "url": "https://www.samsungvx.com/terms",
+      "title": "Terms and Conditions | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Terms and Conditions'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N013",
+      "url": "https://www.samsungvx.com/terms",
+      "title": "Terms and Conditions | Samsung VXT CMS \u2014 Notification",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Terms and Conditions'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Notification'",
+          "selector": "[data-testid=\"icon_notific_solidation\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N014",
+      "url": "https://www.samsungvx.com/terms",
+      "title": "Terms and Conditions | Samsung VXT CMS \u2014 chatbot",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Terms and Conditions'",
+          "selector": "",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'chatbot'",
+          "selector": "#startChatBtn",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N015",
+      "url": "https://www.samsungvx.com/privacy",
+      "title": "Privacy Policy | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Privacy Policy'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N016",
+      "url": "https://www.samsungvx.com/cookie",
+      "title": "Cookie Policy | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'Cookie Policy'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N017",
+      "url": "https://www.samsungvx.com/euda",
+      "title": "Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 1,
+      "steps": [
+        {
+          "action": "navigate",
+          "label": "Click 'EU Data Act'",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N018",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS \u2014 Add Screen",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'screen'",
+          "selector": "#screenCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Screen'",
+          "selector": "#screen_page_pc_btn_add_screen",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N019",
+      "url": "https://www.samsungvx.com/screen",
+      "title": "Screen | Samsung VXT CMS \u2014 CHITNU TEAMDefault Workspace .st0{opacity:0.8;}",
+      "node_type": "page",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'screen'",
+          "selector": "#screenCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'",
+          "selector": "#place_wrap",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N020",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 Add Content",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'content'",
+          "selector": "#contentCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "[data-testid=\"content_noData_btnAdd\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N021",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 Add Content \u2014 Ticker",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'content'",
+          "selector": "#contentCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "[data-testid=\"content_noData_btnAdd\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Ticker'",
+          "selector": "#content_upload_tabTicker",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N022",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 Add Content \u2014 Web(HTML)",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'content'",
+          "selector": "#contentCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "[data-testid=\"content_noData_btnAdd\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Web(HTML)'",
+          "selector": "#content_upload_tabHtml",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N023",
+      "url": "https://www.samsungvx.com/content",
+      "title": "Content | Samsung VXT CMS \u2014 Add Content \u2014 Web(URL)",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'content'",
+          "selector": "#contentCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "[data-testid=\"content_noData_btnAdd\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Web(URL)'",
+          "selector": "#content_upload_tabUrl",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N024",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 New Playlist",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'playlist'",
+          "selector": "#playlistCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "[data-testid=\"playlist_newplaylist\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N025",
+      "url": "https://www.samsungvx.com/playlist",
+      "title": "Playlist | Samsung VXT CMS \u2014 New Playlist \u2014 span",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'playlist'",
+          "selector": "#playlistCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "[data-testid=\"playlist_newplaylist\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'span'",
+          "selector": "#select-wrap > ul.select-ul.on > li.ga-button-action-class:nth-of-type(2) > span",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N026",
+      "url": "https://www.samsungvx.com/playlist/sync/create",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'playlist'",
+          "selector": "#playlistCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "[data-testid=\"playlist_newplaylist\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'span'",
+          "selector": "#select-wrap > ul.select-ul.on > li.ga-button-action-class:nth-of-type(3) > span",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N027",
+      "url": "https://www.samsungvx.com/playlist/create",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'playlist'",
+          "selector": "#playlistCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "[data-testid=\"playlist_newplaylist\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"playlist_newplaylist_general\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N028",
+      "url": "https://www.samsungvx.com/schedule",
+      "title": "Schedule | Samsung VXT CMS \u2014 New Schedule",
+      "node_type": "dropdown",
+      "hops": 2,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'schedule'",
+          "selector": "#scheduleCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Schedule'",
+          "selector": "[data-testid=\"schedule_new_schedule_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N029",
+      "url": "https://www.samsungvx.com/schedule/create",
+      "title": "Schedule | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'schedule'",
+          "selector": "#scheduleCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Schedule'",
+          "selector": "[data-testid=\"schedule_new_schedule_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"schedule_genral_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N030",
+      "url": "https://www.samsungvx.com/playlist/sync/create",
+      "title": "Playlist | Samsung VXT CMS",
+      "node_type": "page",
+      "hops": 3,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'playlist'",
+          "selector": "#playlistCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Playlist'",
+          "selector": "[data-testid=\"playlist_newplaylist\"]",
+          "input_value": null
+        },
+        {
+          "action": "navigate",
+          "label": "Click ''",
+          "selector": "",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N031",
+      "url": "https://www.samsungvx.com/schedule/create",
+      "title": "Schedule | Samsung VXT CMS \u2014 Add Content",
+      "node_type": "dropdown",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'schedule'",
+          "selector": "#scheduleCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Schedule'",
+          "selector": "[data-testid=\"schedule_new_schedule_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"schedule_genral_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "[data-testid=\"schedule_add_content_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N032",
+      "url": "https://www.samsungvx.com/schedule/create",
+      "title": "Schedule | Samsung VXT CMS \u2014 Add Content \u2014 div",
+      "node_type": "dropdown",
+      "hops": 5,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'schedule'",
+          "selector": "#scheduleCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Schedule'",
+          "selector": "[data-testid=\"schedule_new_schedule_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"schedule_genral_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'Add Content'",
+          "selector": "[data-testid=\"schedule_add_content_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"schedule_content_popup_add_btn\"]",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N033",
+      "url": "https://www.samsungvx.com/schedule/create",
+      "title": "Schedule | Samsung VXT CMS \u2014 August 2026Week 34",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'schedule'",
+          "selector": "#scheduleCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Schedule'",
+          "selector": "[data-testid=\"schedule_new_schedule_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"schedule_genral_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'August 2026Week 34'",
+          "selector": "#schedule_date_sort",
+          "input_value": null
+        }
+      ]
+    },
+    {
+      "node_id": "N034",
+      "url": "https://www.samsungvx.com/schedule/create",
+      "title": "Schedule | Samsung VXT CMS \u2014 div",
+      "node_type": "page",
+      "hops": 4,
+      "steps": [
+        {
+          "action": "click",
+          "label": "Click 'schedule'",
+          "selector": "#scheduleCard_defaultImg",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'New Schedule'",
+          "selector": "[data-testid=\"schedule_new_schedule_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'General'",
+          "selector": "[data-testid=\"schedule_genral_btn\"]",
+          "input_value": null
+        },
+        {
+          "action": "click",
+          "label": "Click 'div'",
+          "selector": "[data-testid=\"schedule_icon_addTag\"]",
+          "input_value": null
+        }
+      ]
+    }
+  ]
+}

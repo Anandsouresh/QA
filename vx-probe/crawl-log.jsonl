@@ -1,0 +1,8 @@
+{"t": 0.0, "event": "navigate", "detail": "-> https://www.samsungvx.com/ (depth 0)", "url": "https://www.samsungvx.com/", "depth": 0}
+{"t": 27.17, "event": "state_found", "detail": "N001  https://www.samsungvx.com/  (17 elements, 0 forms, depth 0)", "node": "N001", "url": "https://www.samsungvx.com/", "elements": 17, "forms": 0, "depth": 0}
+{"t": 27.17, "event": "action", "detail": "N001  click generic_button 'chatbot'  [#startChatBtn]", "node": "N001", "kind": "generic_button", "name": "chatbot", "selector": "#startChatBtn"}
+{"t": 49.89, "event": "outcome", "detail": "N001  'chatbot' -> in_page_state  (mutating)  [0.0s]", "node": "N001", "name": "chatbot", "outcome": "in_page_state", "annotations": ["mutating"], "seconds": 0.0}
+{"t": 50.05, "event": "action_done", "detail": "N001  'chatbot' took 22.9s"}
+{"t": 60.52, "event": "restore", "detail": "N001  FAILED (escape/back/goto)", "node": "N001", "ok": false, "how": "escape/back/goto"}
+{"t": 60.52, "event": "budget", "detail": "pages=1/25 clicks=1/200 navs=1 elapsed=60.5s", "pages_visited": 1, "navigations": 1, "max_pages": 25, "clicks_made": 1, "max_clicks": 200, "elapsed_seconds": 60.5, "max_wall_clock_seconds": 900, "consecutive_no_new_states": 0, "stop_reason": null}
+{"t": 60.52, "event": "finished", "detail": "crawl completed (frontier empty)"}

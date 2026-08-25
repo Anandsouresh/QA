@@ -1,0 +1,143 @@
+{"t": 0.0, "event": "navigate", "detail": "-> http://127.0.0.1:59425/index.html (depth 0)", "url": "http://127.0.0.1:59425/index.html", "depth": 0}
+{"t": 4.36, "event": "state_found", "detail": "N001  http://127.0.0.1:59425/index.html  (74 elements, 2 forms, depth 0)", "node": "N001", "url": "http://127.0.0.1:59425/index.html", "elements": 74, "forms": 2, "depth": 0}
+{"t": 4.38, "event": "action", "detail": "N001  click generic_button 'Go'  [[data-testid=\"do-search\"]]", "node": "N001", "kind": "generic_button", "name": "Go", "selector": "[data-testid=\"do-search\"]"}
+{"t": 4.95, "event": "outcome", "detail": "N001  'Go' -> no_change  (inert)  [0.0s]", "node": "N001", "name": "Go", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 4.95, "event": "action_done", "detail": "N001  'Go' took 0.6s"}
+{"t": 5.17, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 5.17, "event": "action", "detail": "N001  click overlay_trigger 'Edit profile'  [[data-testid=\"open-modal\"]]", "node": "N001", "kind": "overlay_trigger", "name": "Edit profile", "selector": "[data-testid=\"open-modal\"]"}
+{"t": 7.61, "event": "outcome", "detail": "N001  'Edit profile' -> in_page_state  [0.0s]", "node": "N001", "name": "Edit profile", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 7.84, "event": "overlay_queued", "detail": "N003 revealed 3 item(s) via 'Edit profile'; queued for depth 1"}
+{"t": 7.84, "event": "action_done", "detail": "N001  'Edit profile' took 2.7s"}
+{"t": 8.05, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 8.05, "event": "action", "detail": "N001  click disclosure 'Show advanced'  [[data-testid=\"toggle-details\"]]", "node": "N001", "kind": "disclosure", "name": "Show advanced", "selector": "[data-testid=\"toggle-details\"]"}
+{"t": 11.44, "event": "outcome", "detail": "N001  'Show advanced' -> in_page_state  [0.0s]", "node": "N001", "name": "Show advanced", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 12.3, "event": "overlay_queued", "detail": "N004 revealed 1 item(s) via 'Show advanced'; queued for depth 1"}
+{"t": 12.5, "event": "action_done", "detail": "N001  'Show advanced' took 4.5s"}
+{"t": 14.95, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 14.95, "event": "action", "detail": "N001  click inferred_clickable 'Download report'  [[data-testid=\"download-report\"]]", "node": "N001", "kind": "inferred_clickable", "name": "Download report", "selector": "[data-testid=\"download-report\"]"}
+{"t": 15.55, "event": "outcome", "detail": "N001  'Download report' -> download  [0.0s]", "node": "N001", "name": "Download report", "outcome": "download", "annotations": [], "seconds": 0.0}
+{"t": 15.55, "event": "action_done", "detail": "N001  'Download report' took 0.6s"}
+{"t": 15.75, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 15.75, "event": "action", "detail": "N001  click generic_button 'Open help window'  [[data-testid=\"open-window\"]]", "node": "N001", "kind": "generic_button", "name": "Open help window", "selector": "[data-testid=\"open-window\"]"}
+{"t": 16.3, "event": "outcome", "detail": "N001  'Open help window' -> no_change  (inert)  [0.0s]", "node": "N001", "name": "Open help window", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 16.3, "event": "action_done", "detail": "N001  'Open help window' took 0.5s"}
+{"t": 16.48, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 16.48, "event": "action", "detail": "N001  click generic_button 'Save draft'  [[data-testid=\"show-toast\"]]", "node": "N001", "kind": "generic_button", "name": "Save draft", "selector": "[data-testid=\"show-toast\"]"}
+{"t": 17.03, "event": "outcome", "detail": "N001  'Save draft' -> no_change  (inert)  [0.0s]", "node": "N001", "name": "Save draft", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 17.03, "event": "action_done", "detail": "N001  'Save draft' took 0.5s"}
+{"t": 17.23, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 17.23, "event": "action", "detail": "N001  click inferred_clickable '(unnamed)'  [html > body > section:nth-of-type(3) > div:nth-of-type(2)]", "node": "N001", "kind": "inferred_clickable", "name": "(unnamed)", "selector": "html > body > section:nth-of-type(3) > div:nth-of-type(2)"}
+{"t": 17.88, "event": "outcome", "detail": "N001  'inferred_clickable' -> blocked_mutation  (mutating, error)  [0.0s]", "node": "N001", "name": "inferred_clickable", "outcome": "blocked_mutation", "annotations": ["mutating", "error"], "seconds": 0.0}
+{"t": 17.88, "event": "action_done", "detail": "N001  'inferred_clickable' took 0.6s"}
+{"t": 18.08, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 18.08, "event": "action", "detail": "N001  click generic_button 'Sync now'  [[data-testid=\"sync-now\"]]", "node": "N001", "kind": "generic_button", "name": "Sync now", "selector": "[data-testid=\"sync-now\"]"}
+{"t": 18.64, "event": "outcome", "detail": "N001  'Sync now' -> blocked_mutation  (mutating, error)  [0.0s]", "node": "N001", "name": "Sync now", "outcome": "blocked_mutation", "annotations": ["mutating", "error"], "seconds": 0.0}
+{"t": 18.64, "event": "action_done", "detail": "N001  'Sync now' took 0.6s"}
+{"t": 18.84, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 18.84, "event": "action", "detail": "N001  click inferred_clickable 'Screen'  [#card-screen]", "node": "N001", "kind": "inferred_clickable", "name": "Screen", "selector": "#card-screen"}
+{"t": 19.05, "event": "outcome", "detail": "N001  'Screen' -> navigation  [0.0s]", "node": "N001", "name": "Screen", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 19.05, "event": "action_done", "detail": "N001  'Screen' took 0.2s"}
+{"t": 21.77, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 21.77, "event": "action", "detail": "N001  click inferred_clickable 'Content'  [#card-content]", "node": "N001", "kind": "inferred_clickable", "name": "Content", "selector": "#card-content"}
+{"t": 21.92, "event": "outcome", "detail": "N001  'Content' -> navigation  [0.0s]", "node": "N001", "name": "Content", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 21.92, "event": "action_done", "detail": "N001  'Content' took 0.2s"}
+{"t": 24.7, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 24.7, "event": "action", "detail": "N001  click inferred_clickable 'Playlist'  [#card-playlist]", "node": "N001", "kind": "inferred_clickable", "name": "Playlist", "selector": "#card-playlist"}
+{"t": 24.83, "event": "outcome", "detail": "N001  'Playlist' -> navigation  [0.0s]", "node": "N001", "name": "Playlist", "outcome": "navigation", "annotations": [], "seconds": 0.0}
+{"t": 24.83, "event": "action_done", "detail": "N001  'Playlist' took 0.1s"}
+{"t": 27.55, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 27.55, "event": "action", "detail": "N001  click inferred_clickable 'New'  [#card-screen-add]", "node": "N001", "kind": "inferred_clickable", "name": "New", "selector": "#card-screen-add"}
+{"t": 29.89, "event": "outcome", "detail": "N001  'New' -> in_page_state  [0.0s]", "node": "N001", "name": "New", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 30.28, "event": "overlay_queued", "detail": "N006 revealed 2 item(s) via 'New'; queued for depth 1"}
+{"t": 30.28, "event": "action_done", "detail": "N001  'New' took 2.7s"}
+{"t": 30.53, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 30.53, "event": "action", "detail": "N001  click inferred_clickable 'New'  [#card-content-add]", "node": "N001", "kind": "inferred_clickable", "name": "New", "selector": "#card-content-add"}
+{"t": 33.02, "event": "outcome", "detail": "N001  'New' -> in_page_state  [0.0s]", "node": "N001", "name": "New", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 33.22, "event": "overlay_queued", "detail": "N006 revealed 2 item(s) via 'New'; queued for depth 1"}
+{"t": 33.22, "event": "action_done", "detail": "N001  'New' took 2.7s"}
+{"t": 33.44, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 33.44, "event": "action", "detail": "N001  click inferred_clickable 'New'  [#card-playlist-add]", "node": "N001", "kind": "inferred_clickable", "name": "New", "selector": "#card-playlist-add"}
+{"t": 35.86, "event": "outcome", "detail": "N001  'New' -> in_page_state  [0.0s]", "node": "N001", "name": "New", "outcome": "in_page_state", "annotations": [], "seconds": 0.0}
+{"t": 36.06, "event": "overlay_queued", "detail": "N006 revealed 2 item(s) via 'New'; queued for depth 1"}
+{"t": 36.06, "event": "action_done", "detail": "N001  'New' took 2.6s"}
+{"t": 36.25, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 36.25, "event": "action", "detail": "N001  click inferred_clickable 'Wrapped action'  [#wrapped-target]", "node": "N001", "kind": "inferred_clickable", "name": "Wrapped action", "selector": "#wrapped-target"}
+{"t": 36.84, "event": "outcome", "detail": "N001  'Wrapped action' -> no_change  (inert)  [0.0s]", "node": "N001", "name": "Wrapped action", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 36.84, "event": "action_done", "detail": "N001  'Wrapped action' took 0.6s"}
+{"t": 37.02, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 37.02, "event": "action", "detail": "N001  click generic_button 'Create'  [[data-testid=\"quick-add-submit\"]]", "node": "N001", "kind": "generic_button", "name": "Create", "selector": "[data-testid=\"quick-add-submit\"]"}
+{"t": 37.56, "event": "outcome", "detail": "N001  'Create' -> no_change  (inert)  [0.0s]", "node": "N001", "name": "Create", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 37.56, "event": "action_done", "detail": "N001  'Create' took 0.5s"}
+{"t": 37.78, "event": "restore", "detail": "N001  ok via escape/back/goto", "node": "N001", "ok": true, "how": "escape/back/goto"}
+{"t": 42.64, "event": "navigate", "detail": "-> http://127.0.0.1:59425/settings.html (depth 1)", "url": "http://127.0.0.1:59425/settings.html", "depth": 1}
+{"t": 43.94, "event": "state_found", "detail": "N005  http://127.0.0.1:59425/settings.html  (11 elements, 1 forms, depth 1)", "node": "N005", "url": "http://127.0.0.1:59425/settings.html", "elements": 11, "forms": 1, "depth": 1}
+{"t": 43.94, "event": "action", "detail": "N005  click checkbox 'Email me updates'  [role=checkbox[name=\"Email me updates\"]]", "node": "N005", "kind": "checkbox", "name": "Email me updates", "selector": "role=checkbox[name=\"Email me updates\"]"}
+{"t": 44.55, "event": "outcome", "detail": "N005  'Email me updates' -> no_change  (inert)  [0.0s]", "node": "N005", "name": "Email me updates", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 44.55, "event": "action_done", "detail": "N005  'Email me updates' took 0.6s"}
+{"t": 44.8, "event": "restore", "detail": "N005  ok via escape/back/goto", "node": "N005", "ok": true, "how": "escape/back/goto"}
+{"t": 44.8, "event": "action", "detail": "N005  click generic_button 'Save changes'  [[data-testid=\"save-profile\"]]", "node": "N005", "kind": "generic_button", "name": "Save changes", "selector": "[data-testid=\"save-profile\"]"}
+{"t": 45.45, "event": "outcome", "detail": "N005  'Save changes' -> no_change  (inert)  [0.0s]", "node": "N005", "name": "Save changes", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 45.45, "event": "action_done", "detail": "N005  'Save changes' took 0.7s"}
+{"t": 45.66, "event": "restore", "detail": "N005  ok via escape/back/goto", "node": "N005", "ok": true, "how": "escape/back/goto"}
+{"t": 45.66, "event": "action", "detail": "N005  click generic_button 'Cancel'  [[data-testid=\"cancel-profile\"]]", "node": "N005", "kind": "generic_button", "name": "Cancel", "selector": "[data-testid=\"cancel-profile\"]"}
+{"t": 46.22, "event": "outcome", "detail": "N005  'Cancel' -> no_change  (inert)  [0.0s]", "node": "N005", "name": "Cancel", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 46.22, "event": "action_done", "detail": "N005  'Cancel' took 0.6s"}
+{"t": 46.41, "event": "restore", "detail": "N005  ok via escape/back/goto", "node": "N005", "ok": true, "how": "escape/back/goto"}
+{"t": 46.41, "event": "action", "detail": "N005  click generic_button 'Apply'  [[data-testid=\"apply-referral\"]]", "node": "N005", "kind": "generic_button", "name": "Apply", "selector": "[data-testid=\"apply-referral\"]"}
+{"t": 46.97, "event": "outcome", "detail": "N005  'Apply' -> no_change  (inert)  [0.0s]", "node": "N005", "name": "Apply", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 46.97, "event": "action_done", "detail": "N005  'Apply' took 0.6s"}
+{"t": 47.17, "event": "restore", "detail": "N005  ok via escape/back/goto", "node": "N005", "ok": true, "how": "escape/back/goto"}
+{"t": 47.17, "event": "navigate", "detail": "-> http://127.0.0.1:59425/item.html?id=1 (depth 1)", "url": "http://127.0.0.1:59425/item.html?id=1", "depth": 1}
+{"t": 48.39, "event": "state_found", "detail": "N007  http://127.0.0.1:59425/item.html?id=%7Bid%7D  (2 elements, 0 forms, depth 1)", "node": "N007", "url": "http://127.0.0.1:59425/item.html?id=%7Bid%7D", "elements": 2, "forms": 0, "depth": 1}
+{"t": 48.39, "event": "action", "detail": "N007  click generic_button 'Add to favourites'  [[data-testid=\"item-favourite\"]]", "node": "N007", "kind": "generic_button", "name": "Add to favourites", "selector": "[data-testid=\"item-favourite\"]"}
+{"t": 48.95, "event": "outcome", "detail": "N007  'Add to favourites' -> no_change  (inert)  [0.0s]", "node": "N007", "name": "Add to favourites", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 48.95, "event": "action_done", "detail": "N007  'Add to favourites' took 0.6s"}
+{"t": 49.16, "event": "restore", "detail": "N007  ok via escape/back/goto", "node": "N007", "ok": true, "how": "escape/back/goto"}
+{"t": 49.16, "event": "navigate", "detail": "-> http://127.0.0.1:59425/index.html (depth 1)", "url": "http://127.0.0.1:59425/index.html", "depth": 1}
+{"t": 51.34, "event": "replay_ok", "detail": "re-opened via Edit profile"}
+{"t": 53.42, "event": "state_found", "detail": "N003  http://127.0.0.1:59425/index.html  (77 elements, 2 forms, depth 1)", "node": "N003", "url": "http://127.0.0.1:59425/index.html", "elements": 77, "forms": 2, "depth": 1}
+{"t": 53.42, "event": "skip", "detail": "button 'Go'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "button 'Go'", "reason": "already exercised on N001"}
+{"t": 53.42, "event": "action", "detail": "N003  click generic_button 'Save changes'  [[data-testid=\"modal-save\"]]", "node": "N003", "kind": "generic_button", "name": "Save changes", "selector": "[data-testid=\"modal-save\"]"}
+{"t": 54.03, "event": "outcome", "detail": "N003  'Save changes' -> blocked_mutation  (mutating, error)  [0.0s]", "node": "N003", "name": "Save changes", "outcome": "blocked_mutation", "annotations": ["mutating", "error"], "seconds": 0.0}
+{"t": 54.03, "event": "action_done", "detail": "N003  'Save changes' took 0.6s"}
+{"t": 55.59, "event": "restore", "detail": "N003  FAILED (escape/back/goto)", "node": "N003", "ok": false, "how": "escape/back/goto"}
+{"t": 61.91, "event": "navigate", "detail": "-> http://127.0.0.1:59425/index.html (depth 1)", "url": "http://127.0.0.1:59425/index.html", "depth": 1}
+{"t": 64.25, "event": "replay_ok", "detail": "re-opened via Show advanced"}
+{"t": 66.16, "event": "state_found", "detail": "N004  http://127.0.0.1:59425/index.html  (75 elements, 2 forms, depth 1)", "node": "N004", "url": "http://127.0.0.1:59425/index.html", "elements": 75, "forms": 2, "depth": 1}
+{"t": 66.16, "event": "skip", "detail": "button 'Go'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "button 'Go'", "reason": "already exercised on N001"}
+{"t": 66.16, "event": "skip", "detail": "button 'Edit profile'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "button 'Edit profile'", "reason": "already exercised on N001"}
+{"t": 66.16, "event": "skip", "detail": "button 'Show advanced'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "button 'Show advanced'", "reason": "already exercised on N001"}
+{"t": 66.16, "event": "action", "detail": "N004  click generic_button 'Recalculate totals'  [[data-testid=\"advanced-action\"]]", "node": "N004", "kind": "generic_button", "name": "Recalculate totals", "selector": "[data-testid=\"advanced-action\"]"}
+{"t": 66.7, "event": "outcome", "detail": "N004  'Recalculate totals' -> no_change  (inert)  [0.0s]", "node": "N004", "name": "Recalculate totals", "outcome": "no_change", "annotations": ["inert"], "seconds": 0.0}
+{"t": 66.7, "event": "action_done", "detail": "N004  'Recalculate totals' took 0.5s"}
+{"t": 66.91, "event": "restore", "detail": "N004  ok via escape/back/goto", "node": "N004", "ok": true, "how": "escape/back/goto"}
+{"t": 66.91, "event": "skip", "detail": "link 'Download report'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "link 'Download report'", "reason": "already exercised on N001"}
+{"t": 66.91, "event": "skip", "detail": "button 'Open help window'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "button 'Open help window'", "reason": "already exercised on N001"}
+{"t": 66.91, "event": "skip", "detail": "button 'Save draft'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "button 'Save draft'", "reason": "already exercised on N001"}
+{"t": 66.91, "event": "skip", "detail": "div ''  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "div ''", "reason": "already exercised on N001"}
+{"t": 66.91, "event": "skip", "detail": "button 'Sync now'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "button 'Sync now'", "reason": "already exercised on N001"}
+{"t": 66.91, "event": "skip", "detail": "div 'Screen'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "div 'Screen'", "reason": "already exercised on N001"}
+{"t": 66.91, "event": "skip", "detail": "div 'Content'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "div 'Content'", "reason": "already exercised on N001"}
+{"t": 66.91, "event": "skip", "detail": "div 'Playlist'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "div 'Playlist'", "reason": "already exercised on N001"}
+{"t": 66.91, "event": "skip", "detail": "div 'New'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "div 'New'", "reason": "already exercised on N001"}
+{"t": 66.92, "event": "skip", "detail": "div 'New'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "div 'New'", "reason": "already exercised on N001"}
+{"t": 66.92, "event": "skip", "detail": "div 'New'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "div 'New'", "reason": "already exercised on N001"}
+{"t": 66.92, "event": "skip", "detail": "div 'Wrapped action'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "div 'Wrapped action'", "reason": "already exercised on N001"}
+{"t": 66.92, "event": "skip", "detail": "button 'Create'  -- already exercised on N001", "url": "http://127.0.0.1:59425/index.html", "element": "button 'Create'", "reason": "already exercised on N001"}
+{"t": 79.2, "event": "navigate", "detail": "-> http://127.0.0.1:59425/settings.html (depth 1)", "url": "http://127.0.0.1:59425/settings.html", "depth": 1}
+{"t": 80.28, "event": "state_duplicate", "detail": "http://127.0.0.1:59425/settings.html  fp=449f1f8658", "url": "http://127.0.0.1:59425/settings.html", "fingerprint": "449f1f8658612f6cd63c"}
+{"t": 80.28, "event": "navigate", "detail": "-> http://127.0.0.1:59425/settings.html (depth 1)", "url": "http://127.0.0.1:59425/settings.html", "depth": 1}
+{"t": 81.36, "event": "state_duplicate", "detail": "http://127.0.0.1:59425/settings.html  fp=449f1f8658", "url": "http://127.0.0.1:59425/settings.html", "fingerprint": "449f1f8658612f6cd63c"}
+{"t": 81.36, "event": "navigate", "detail": "-> http://127.0.0.1:59425/settings.html (depth 1)", "url": "http://127.0.0.1:59425/settings.html", "depth": 1}
+{"t": 82.42, "event": "state_duplicate", "detail": "http://127.0.0.1:59425/settings.html  fp=449f1f8658", "url": "http://127.0.0.1:59425/settings.html", "fingerprint": "449f1f8658612f6cd63c"}
+{"t": 82.42, "event": "navigate", "detail": "-> http://127.0.0.1:59425/index.html (depth 1)", "url": "http://127.0.0.1:59425/index.html", "depth": 1}
+{"t": 84.67, "event": "replay_ok", "detail": "re-opened via New"}
+{"t": 86.58, "event": "url_state_cap", "detail": "http://127.0.0.1:59425/index.html  already has 8 states; not recording more"}
+{"t": 86.58, "event": "navigate", "detail": "-> http://127.0.0.1:59425/index.html (depth 1)", "url": "http://127.0.0.1:59425/index.html", "depth": 1}
+{"t": 88.75, "event": "replay_ok", "detail": "re-opened via New"}
+{"t": 90.45, "event": "url_state_cap", "detail": "http://127.0.0.1:59425/index.html  already has 8 states; not recording more"}
+{"t": 90.45, "event": "navigate", "detail": "-> http://127.0.0.1:59425/index.html (depth 1)", "url": "http://127.0.0.1:59425/index.html", "depth": 1}
+{"t": 92.91, "event": "replay_ok", "detail": "re-opened via New"}
+{"t": 94.62, "event": "url_state_cap", "detail": "http://127.0.0.1:59425/index.html  already has 8 states; not recording more"}
+{"t": 94.62, "event": "budget", "detail": "pages=5/12 clicks=26/60 navs=11 elapsed=94.6s", "pages_visited": 5, "navigations": 11, "max_pages": 12, "clicks_made": 26, "max_clicks": 60, "elapsed_seconds": 94.6, "max_wall_clock_seconds": 240, "consecutive_no_new_states": 0, "stop_reason": null}
+{"t": 94.62, "event": "finished", "detail": "crawl completed (frontier empty)"}

@@ -1,0 +1,601 @@
+{
+  "tool": "qagen 0.1.0",
+  "mode": "crawl-only",
+  "started_at": "2026-08-20T01:55:00.581575+00:00",
+  "config": {
+    "target": {
+      "url": "https://www.samsungvx.com/",
+      "depth": 10,
+      "same_origin_only": true,
+      "include_paths": [],
+      "exclude_paths": [
+        "/logout",
+        "/signout",
+        "/login",
+        "/auth/**"
+      ],
+      "id_collapse_exceptions": []
+    },
+    "auth": {
+      "storage_state": "secrets\\samsungvx.json",
+      "verify_selector": null,
+      "verify_timeout_ms": 5000
+    },
+    "crawl": {
+      "max_pages": 200,
+      "max_navigations": null,
+      "max_clicks": 2000,
+      "max_wall_clock_seconds": 10800,
+      "max_clicks_per_state": 10,
+      "max_states_per_url": 6,
+      "max_states_per_section": 30,
+      "shell_selectors": [
+        "navbar_menuList",
+        "navbar_li_",
+        "settingNavbar",
+        "cms_place",
+        "place_wrap",
+        "dashboard_workspace",
+        "header_logo",
+        "header_profile",
+        "header_notific",
+        "profile_detail",
+        "profileOpera_",
+        "notificationIconId",
+        "icon_notific",
+        "alarmId",
+        "icon_vxt_labs",
+        "icon_crown",
+        "chatbot_start",
+        "startChatBtn",
+        "tagexplorer",
+        "dashboard_terms",
+        "dashboard_privacy",
+        "dashboard_cookies",
+        "dashboard_contactus"
+      ],
+      "shell_min_urls": 3,
+      "max_consecutive_no_new_states": 100,
+      "settle_timeout_ms": 2000,
+      "hydration_timeout_ms": 6000,
+      "stability_ms": 400,
+      "hydration_min_elements": 4,
+      "loader_timeout_ms": 4000,
+      "loader_selectors": [],
+      "post_loader_wait_ms": 800,
+      "hover_naming": true,
+      "hover_naming_limit": 12,
+      "hover_settle_ms": 350,
+      "action_timeout_ms": 10000,
+      "nav_timeout_ms": 30000,
+      "max_overlay_items": 8,
+      "max_overlay_depth": 1,
+      "action_order": "reading",
+      "content_before_frame": true,
+      "reading_band_px": 20,
+      "probe_search": false,
+      "search_probe_term": "qa"
+    },
+    "interaction": {
+      "policy": "safe_click",
+      "deny_text": [
+        "delete",
+        "remove",
+        "pay",
+        "purchase",
+        "submit",
+        "confirm",
+        "logout",
+        "sign out",
+        "deactivate",
+        "cancel subscription"
+      ],
+      "deny_selectors": [
+        "[data-destructive]",
+        ".btn-danger"
+      ],
+      "allow_selectors": [],
+      "dismiss_consent": true,
+      "consent_vocab": [
+        "accept all",
+        "accept cookies",
+        "allow all",
+        "got it",
+        "i agree",
+        "agree",
+        "consent",
+        "understood",
+        "ok, got it",
+        "allow cookies"
+      ]
+    },
+    "llm": {
+      "provider": "claude",
+      "model": "claude-opus-5",
+      "effort": "high",
+      "max_tokens": 16000,
+      "cache_system_prompt": true,
+      "max_cases_per_page": 12
+    },
+    "output": {
+      "dir": "samsungvx-200-states",
+      "formats": [
+        "graph"
+      ],
+      "save_page_models": true,
+      "save_summaries": false,
+      "save_screenshots": true,
+      "save_html": true,
+      "screenshot_full_page": true,
+      "action_log": true
+    },
+    "browser": {
+      "headless": true,
+      "viewport_width": 1200,
+      "viewport_height": 900,
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36 QAGen/0.1",
+      "block_mutations": true,
+      "slow_mo_ms": 0
+    }
+  },
+  "auth_status": "ok",
+  "finished_at": "2026-08-20T02:11:25.433479+00:00",
+  "duration_seconds": 984.8,
+  "crawl": {
+    "states_discovered": 32,
+    "graph_nodes": 34,
+    "graph_edges": 80,
+    "actionable_elements": 864,
+    "total_elements": 864,
+    "boundaries": [
+      {
+        "origin": "vxt.samsung.com",
+        "url": "https://vxt.samsung.com/contact-us",
+        "reason": "external origin",
+        "triggered_by": "Contact Us"
+      }
+    ],
+    "unexplored_at_stop": 0,
+    "budgets": {
+      "pages_visited": 12,
+      "navigations": 18,
+      "max_pages": 200,
+      "clicks_made": 80,
+      "max_clicks": 2000,
+      "elapsed_seconds": 983.0,
+      "max_wall_clock_seconds": 10800,
+      "consecutive_no_new_states": 1,
+      "stop_reason": null
+    },
+    "skipped_elements": [
+      {
+        "url": "https://www.samsungvx.com/",
+        "element": "link 'Contact Us'",
+        "reason": "external origin, recorded as boundary"
+      },
+      {
+        "url": "https://www.samsungvx.com/terms",
+        "element": "link 'Contact Us'",
+        "reason": "external origin, recorded as boundary"
+      },
+      {
+        "url": "https://www.samsungvx.com/terms",
+        "element": "button 'Buy Now'",
+        "reason": "already exercised on N001"
+      },
+      {
+        "url": "https://www.samsungvx.com/privacy",
+        "element": "link 'Contact Us'",
+        "reason": "external origin, recorded as boundary"
+      },
+      {
+        "url": "https://www.samsungvx.com/privacy",
+        "element": "div 'logo'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/privacy",
+        "element": "button 'Buy Now'",
+        "reason": "already exercised on N001"
+      },
+      {
+        "url": "https://www.samsungvx.com/privacy",
+        "element": "div 'Notification'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/privacy",
+        "element": "button 'chatbot'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/cookie",
+        "element": "link 'Contact Us'",
+        "reason": "external origin, recorded as boundary"
+      },
+      {
+        "url": "https://www.samsungvx.com/cookie",
+        "element": "div 'logo'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/cookie",
+        "element": "button 'Buy Now'",
+        "reason": "already exercised on N001"
+      },
+      {
+        "url": "https://www.samsungvx.com/cookie",
+        "element": "div 'Notification'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/cookie",
+        "element": "button 'chatbot'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/euda",
+        "element": "link 'Contact Us'",
+        "reason": "external origin, recorded as boundary"
+      },
+      {
+        "url": "https://www.samsungvx.com/euda",
+        "element": "div 'logo'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/euda",
+        "element": "button 'Buy Now'",
+        "reason": "already exercised on N001"
+      },
+      {
+        "url": "https://www.samsungvx.com/euda",
+        "element": "div 'Notification'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/euda",
+        "element": "button 'chatbot'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "button 'Close'",
+        "reason": "already exercised on N013"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "div 'logo'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "button 'Buy Now'",
+        "reason": "already exercised on N001"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "div 'Notification'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "div ''",
+        "reason": "already exercised on N003"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "listitem 'Default Workspace'",
+        "reason": "element detached before click"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "div ''",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"icon_refresh\\\"]\").first\n    - locator resolved to <div id=\"icon_refresh\" data-testid=\"icon_refresh\" class=\"default_icon hover\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"ellipsis _p_name_wrap_p0i4l_31\">\u2026</div> from <div id=\"container\" data-list=\"true\" class=\"_container_1by8g_1 _grid_1by8g_13\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"ellipsis _p_name_wrap_p0i4l_31\">\u2026</div> from <div id=\"container\" data-list=\"true\" class=\"_container_1by8g_1 _grid_1by8g_13\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ellipsis _p_name_wrap_p0i4l_31\">\u2026</div> from <div id=\"container\" data-list=\"true\" class=\"_container_1by8g_1 _grid_1by8g_13\">\u2026</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "div '.st0{opacity:0.8;}'",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"icon_arrow_down\\\"]\").first.first\n    - locator resolved to <div id=\"icon_arrow_down\" class=\"default_icon pr4\" data-testid=\"icon_arrow_down\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - element is outside of the viewport\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - element is outside of the viewport\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - element is outside of the viewport\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/screen",
+        "element": "div ''",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"icon_screen\\\"]\").first\n    - locator resolved to <div id=\"icon_screen\" class=\"default_icon\" data-testid=\"icon_screen\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <li id=\"navbar_li_screen\" ga_text_key=\"COM_SID_SCREEN\" data-testid=\"navbar_li_screen\" class=\"ga-button-action-class page_list_menu _munulist_box_p0i4l_136 _active_p0i4l_155\">\u2026</li> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <li id=\"navbar_li_screen\" ga_text_key=\"COM_SID_SCREEN\" data-testid=\"navbar_li_screen\" class=\"ga-button-action-class page_list_menu _munulist_box_p0i4l_136 _active_p0i4l_155\">\u2026</li> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <li id=\"navbar_li_screen\" ga_text_key=\"COM_SID_SCREEN\" data-testid=\"navbar_li_screen\" class=\"ga-button-action-class page_list_menu _munulist_box_p0i4l_136 _active_p0i4l_155\">\u2026</li> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/content",
+        "element": "button 'Drop the image, video and document files here.OpenClose'",
+        "reason": "element detached before click"
+      },
+      {
+        "url": "https://www.samsungvx.com/content",
+        "element": "button 'Buy Now'",
+        "reason": "already exercised on N001"
+      },
+      {
+        "url": "https://www.samsungvx.com/content",
+        "element": "div ''",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/content",
+        "element": "button 'chatbot'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "div 'logo'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "button 'Buy Now'",
+        "reason": "already exercised on N001"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "div 'Notification'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "div ''",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "div '.st0{opacity:0.8;}'",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "listitem 'Screen'",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "div ''",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist",
+        "element": "listitem 'Content'",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "span ''",
+        "reason": "already exercised on N024"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "div 'logo'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "button 'Buy Now'",
+        "reason": "already exercised on N001"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "div 'Notification'",
+        "reason": "already exercised on N012"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "div 'CHITNU TEAMDefault Workspace .st0{opacity:0.8;}'",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "div ''",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "div '.st0{opacity:0.8;}'",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "listitem 'Screen'",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "div ''",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule",
+        "element": "listitem 'Content'",
+        "reason": "already exercised on N008"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "button ''",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"playlist_new_general_preview\\\"]\").first\n    - locator resolved to <button ga_text_key=\"COM_DID_VWL_PREVIEW\" class=\"blue ellipsis play_button_tooltip\" data-testid=\"playlist_new_general_preview\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "button 'more'",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"playlist_detail_toolbar_more\\\"]\").first\n    - locator resolved to <button aria-label=\"more\" ga_text_key=\"More\" id=\"fcmsMoreButton_btn_more\" class=\"option_icon more mr0 btn_icon\" data-testid=\"playlist_detail_toolbar_more\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "button 'Set to Screens'",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"playlist_new_general_set2screen\\\"]\").first\n    - locator resolved to <button id=\"playlistDetail_general_set2ScreensBtn\" data-testid=\"playlist_new_general_set2screen\" ga_text_key=\"VX_SID_CMS_CCAUG_SET_TO_SCREENS_ABBR_W9\" class=\"blue set_to_screen hd-blue play_button_tooltip ellipsis w100\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "button 'Save'",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"playlist_new_general_save\\\"]\").first\n    - locator resolved to <button ga_text_key=\"COM_BUTTON_SAVE\" class=\"blue readonly_tooltip w100\" id=\"playlistDetail_general_saveBtn\" data-testid=\"playlist_new_general_save\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "button 'Add Content'",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"playlist_newplaylist_general_addcontent\\\"]\").first\n    - locator resolved to <button class=\"blue add_content\" ga_text_key=\"COM_BUTTON_ADD_CONTENT_P\" id=\"playlistDetail_general_addContentBtn\" data-testid=\"playlist_newplaylist_general_addcontent\">\u2026</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "listitem 'Info'",
+        "reason": "element detached before click"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "button 'Playlist'",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"role=button[name=\\\"Playlist\\\"]\").first\n    - locator resolved to <li tabindex=\"0\" role=\"button\" aria-pressed=\"true\" aria-disabled=\"false\" aria-roledescription=\"sortable\" aria-describedby=\"DndDescribedBy-0\" class=\"_sortable-item-wrapper_974kn_1 _dragging_974kn_5 swiper-area swiper_arrow \">\u2026</li>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "span 'GeneralGeneral'",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"div.tab_container > div.tab_content:nth-of-type(1) > div.info_table:nth-of-type(1) > ul.info_section > li.info_txt.flex_center:nth-of-type(2) > span.chip.chip-chkbox\").first\n    - locator resolved to <span ga_text_key=\"General\" class=\"chip chip-chkbox chip-control ga-button-action-class system-tag chip_orange chip_line\">\u2026</span>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "div ''",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"icon_tooltip\\\"]\").first\n    - locator resolved to <div id=\"icon_tooltip\" class=\"default_icon\" data-testid=\"icon_tooltip\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/sync/create",
+        "element": "span ''",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"#playlistDetail_weight > div:nth-of-type(2) > div.toggle_switch > label > span.toggle_track.ga-button-action-class\").first\n    - locator resolved to <span ga_text_key=\"Embargo\" class=\"toggle_track ga-button-action-class\"></span>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <html lang=\"en\">\u2026</html> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <html lang=\"en\">\u2026</html> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "button ''",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "button 'more'",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "button 'Set to Screens'",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "button 'Save'",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "button 'Add Content'",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "listitem 'Info'",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "span 'GeneralGeneral'",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "div ''",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/playlist/create",
+        "element": "span ''",
+        "reason": "already exercised on N030"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule/create",
+        "element": "button 'OK'",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"schedule_content_popup_ok_btn\\\"]\").first\n    - locator resolved to <button ga_text_key=\"COM_SID_OK\" class=\"blue notReadOnly\" id=\"schedule_content_popup_ok_btn\" data-testid=\"schedule_content_popup_ok_btn\">OK</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"_modal_footer_rightbtns_1e26u_1235 bottom_area two_btn new_btn\">\u2026</div> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"_modal_footer_rightbtns_1e26u_1235 bottom_area two_btn new_btn\">\u2026</div> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"_modal_footer_rightbtns_1e26u_1235 bottom_area two_btn new_btn\">\u2026</div> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+      },
+      {
+        "url": "https://www.samsungvx.com/schedule/create",
+        "element": "span ''",
+        "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"div.visible_tag_wrapper:nth-of-type(2) > div.edit_tags_container > div.add_tag_icon.width_100_percent:nth-of-type(1) > div.tag_help_class.is_first > span > span.icon_add.ga-button-action-class\").first\n    - locator resolved to <span data-v-add-icon=\"true\" ga_text_key=\"add_tag_icon\" class=\"icon_add ga-button-action-class\">\u2026</span>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <input value=\"\" type=\"text\" maxlength=\"100\" autocomplete=\"off\" placeholder=\"Enter text.\" data-testid=\"FcmsEditTags_edit_new_tag\" class=\"edit_tag_input_text fcms-edit-tag-input\"/> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <input value=\"\" type=\"text\" maxlength=\"100\" autocomplete=\"off\" placeholder=\"Enter text.\" data-testid=\"FcmsEditTags_edit_new_tag\" class=\"edit_tag_input_text fcms-edit-tag-input\"/> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    4 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <input value=\"\" type=\"text\" maxlength=\"100\" autocomplete=\"off\" placeholder=\"Enter text.\" data-testid=\"FcmsEditTags_edit_new_tag\" class=\"edit_tag_input_text fcms-edit-tag-input\"/> intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"tag_category_card\">\u2026</div> from <div class=\"edit_tags_popup_wrapper\" data-testid=\"FcmsEditTags_schedule\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <input value=\"\" type=\"text\" maxlength=\"100\" autocomplete=\"off\" placeholder=\"Enter text.\" data-testid=\"FcmsEditTags_edit_new_tag\" class=\"edit_tag_input_text fcms-edit-tag-input\"/> intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <input value=\"\" type=\"text\" maxlength=\"100\" autocomplete=\"off\" placeholder=\"Enter text.\" data-testid=\"FcmsEditTags_edit_new_tag\" class=\"edit_tag_input_text fcms-edit-tag-input\"/> intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <input value=\"\" type=\"text\" maxlength=\"100\" autocomplete=\"off\" placeholder=\"Enter text.\" data-testid=\"FcmsEditTags_edit_new_tag\" class=\"edit_tag_input_text fcms-edit-tag-input\"/> intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"tag_category_card\">\u2026</div> from <div class=\"edit_tags_popup_wrapper\" data-testid=\"FcmsEditTags_schedule\">\u2026</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <input value=\"\" type=\"text\" maxlength=\"100\" autocomplete=\"off\" placeholder=\"Enter text.\" data-testid=\"FcmsEditTags_edit_new_tag\" class=\"edit_tag_input_text fcms-edit-tag-input\"/> intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n"
+      }
+    ],
+    "observations": [
+      {
+        "kind": "file_upload",
+        "detail": "accept=.bmp,.jpg,.jpeg,.png,.gif,.avi,.asf,.flv,.mkv,.mov,.mpg,.mpeg,.mp4,.mts,.m2ts,.vob,.vro,.wmv,.tp,.trp,.3gp,.ts,.svi,.doc,.ppt,.pdf multiple=True",
+        "triggered_by": "button 'Open'"
+      },
+      {
+        "kind": "native_dialog",
+        "detail": "confirm: Changes you made may not be saved. Are you sure you want to leave this page?",
+        "triggered_by": null
+      },
+      {
+        "kind": "native_dialog",
+        "detail": "beforeunload: ",
+        "triggered_by": null
+      },
+      {
+        "kind": "native_dialog",
+        "detail": "beforeunload: ",
+        "triggered_by": null
+      }
+    ],
+    "blocked_mutations": [
+      "POST https://www.google.com/measurement/conversion?random=1787191206319&cv=11&tid=G-X4EHB0T2FY&fst=1787191206319&fmt=8&en=button_click&gtm=45je68i1v9194122993z89188719262za20gzb9188719262zd9188719262xec&gcs=G111&gcd=13n3n3n3n5l1&dma=0&tag_exp=115938465~115938468~118869188~118897920~118897930~119367802~119367810~120315471~120385423&u_w=1200&u_h=900&url=https%3A%2F%2Fwww.samsungvx.com%2F&gacid=203784369.1787190911&frm=0&tiba=HOME%20%7C%20Samsung%20VXT%20CMS&npa=0&pscdl=noapi&auid=634304127.1787191206&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&rcb=14",
+      "POST https://www.google.com/measurement/conversion?random=1787191221233&cv=11&tid=G-X4EHB0T2FY&fst=1787191221233&fmt=8&en=button_click&gtm=45je68i1v9194122993z89188719262za20gzb9188719262zd9188719262xec&gcs=G111&gcd=13n3n3n3n5l1&dma=0&tag_exp=115938465~115938468~118869188~118897920~118897930~119367802~119367810~120315471~120385423&u_w=1200&u_h=900&url=https%3A%2F%2Fwww.samsungvx.com%2Fterms&gacid=203784369.1787190911&frm=0&tiba=Terms%20and%20Conditions%20%7C%20Samsung%20VXT%20CMS&npa=0&pscdl=noapi&auid=2002433983.1787191221&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=QA&rcb=14",
+      "POST https://www.google.com/measurement/conversion?random=1787191228647&cv=11&tid=G-X4EHB0T2FY&fst=1787191228647&fmt=8&en=button_click&gtm=45je68i1v9194122993z89188719262za20gzb9188719262zd9188719262xec&gcs=G111&gcd=13n3n3n3n5l1&dma=0&tag_exp=115938465~115938468~118869188~118897920~118897930~119367802~119367810~120315471~120385423&u_w=1200&u_h=900&url=https%3A%2F%2Fwww.samsungvx.com%2Fterms&gacid=203784369.1787190911&frm=0&tiba=Terms%20and%20Conditions%20%7C%20Samsung%20VXT%20CMS&npa=0&pscdl=noapi&auid=2002433983.1787191221&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=QA&rcb=14",
+      "POST https://www.google.com/measurement/conversion?random=1787191230537&cv=11&tid=G-X4EHB0T2FY&fst=1787191230537&fmt=8&en=button_click&gtm=45je68i1v9194122993z89188719262za20gzb9188719262zd9188719262xec&gcs=G111&gcd=13n3n3n3n5l1&dma=0&tag_exp=115938465~115938468~118869188~118897920~118897930~119367802~119367810~120315471~120385423&u_w=1200&u_h=900&url=https%3A%2F%2Fwww.samsungvx.com%2Fterms&gacid=203784369.1787190911&frm=0&tiba=Terms%20and%20Conditions%20%7C%20Samsung%20VXT%20CMS&npa=0&pscdl=noapi&auid=2002433983.1787191221&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=QA&rcb=14",
+      "POST https://www.google.com/measurement/conversion?random=1787191241537&cv=11&tid=G-X4EHB0T2FY&fst=1787191241537&fmt=8&en=button_click&gtm=45je68i1v9194122993z89188719262za20gzb9188719262zd9188719262xec&gcs=G111&gcd=13n3n3n3n5l1&dma=0&tag_exp=115938465~115938468~118869188~118897920~118897930~119367802~119367810~120315471~120385423&u_w=1200&u_h=900&url=https%3A%2F%2Fwww.samsungvx.com%2Fterms&gacid=203784369.1787190911&frm=0&tiba=Terms%20and%20Conditions%20%7C%20Samsung%20VXT%20CMS&npa=0&pscdl=noapi&auid=2002433983.1787191221&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=QA&rcb=14",
+      "POST https://www.samsungvx.com/api/ums/E601D846-FBA2-41E2-A00D-02657F08B3F4/8AD89E5C-90FE-4F44-8A8C-F78707191F89/chat/start"
+    ]
+  },
+  "generation": {
+    "skipped": true
+  },
+  "outputs": [
+    "samsungvx-200-states\\navgraph.json",
+    "samsungvx-200-states\\navgraph.mmd",
+    "samsungvx-200-states\\navgraph.dot",
+    "samsungvx-200-states\\navgraph-paths.json",
+    "samsungvx-200-states\\states.md",
+    "samsungvx-200-states\\navgraph.html",
+    "samsungvx-200-states\\pages\\b75848137fb3688b3a4d.json",
+    "samsungvx-200-states\\pages\\5780f48ce9fb55389740.json",
+    "samsungvx-200-states\\pages\\8d7af56f08106e23caac.json",
+    "samsungvx-200-states\\pages\\3226f7797730b592b184.json",
+    "samsungvx-200-states\\pages\\b1d552cc0d5711016d73.json",
+    "samsungvx-200-states\\pages\\d7ef7a8828bfd9f3e8f5.json",
+    "samsungvx-200-states\\pages\\5d156f059784a4cf3c57.json",
+    "samsungvx-200-states\\pages\\5a1ebc6c5ca4680cd4f9.json",
+    "samsungvx-200-states\\pages\\37254bb77698b674b504.json",
+    "samsungvx-200-states\\pages\\73bf039dee8dc7d2d17b.json",
+    "samsungvx-200-states\\pages\\cdd051e5618c69f01510.json",
+    "samsungvx-200-states\\pages\\b9728938dfd24ff05902.json",
+    "samsungvx-200-states\\pages\\6429ff82f515d970d866.json",
+    "samsungvx-200-states\\pages\\90004d10f21291216d8c.json",
+    "samsungvx-200-states\\pages\\7f063ef96b87db430c04.json",
+    "samsungvx-200-states\\pages\\9dfb1c0faa5d65def8b3.json",
+    "samsungvx-200-states\\pages\\ea05bf14dcc179697033.json",
+    "samsungvx-200-states\\pages\\2d37650f4ba99599f572.json",
+    "samsungvx-200-states\\pages\\2e47d2f04dfcbc289a42.json",
+    "samsungvx-200-states\\pages\\74a5c9501040fe284baf.json",
+    "samsungvx-200-states\\pages\\d514382c2a1e425cc79a.json",
+    "samsungvx-200-states\\pages\\69f55def840ddfdfa8c4.json",
+    "samsungvx-200-states\\pages\\11a45fccba13bd2b291d.json",
+    "samsungvx-200-states\\pages\\a21aaaae5dc21ad0abdd.json",
+    "samsungvx-200-states\\pages\\a24fcfd321a6fdfea7e6.json",
+    "samsungvx-200-states\\pages\\e42044275c2cd204bbb2.json",
+    "samsungvx-200-states\\pages\\b296084639060533b87c.json",
+    "samsungvx-200-states\\pages\\ea84ae78c5000d10084e.json",
+    "samsungvx-200-states\\pages\\733888c72fb682d41894.json",
+    "samsungvx-200-states\\pages\\2f6b8fb7d83770dc441d.json",
+    "samsungvx-200-states\\pages\\be2f490df494dc07c64f.json",
+    "samsungvx-200-states\\pages\\0475bb5e23cc36888d00.json"
+  ]
+}

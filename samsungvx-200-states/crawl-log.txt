@@ -1,0 +1,16 @@
+    time  event              detail
+--------  ------------------ ------------------------------------------------------------
+     0.0  navigate           -> https://www.samsungvx.com/ (depth 0)
+    39.6  state_found        N001  https://www.samsungvx.com/  (50 elements, 0 forms, depth 0)
+    39.6  action             N001  click inferred_clickable 'Buy Now'  [[data-testid="dashboard_buyplan"]]
+    45.2  outcome            N001  'Buy Now' -> no_change  (inert)  [0.0s]
+    45.2  action_done        N001  'Buy Now' took 5.6s
+    49.3  restore            N001  ok via escape/back/goto
+    49.3  action             N001  click inferred_clickable '(unnamed)'  [[data-testid="dashboard_vxt_lab"]]
+    67.7  outcome            N001  'inferred_clickable' -> navigation  [0.0s]
+    67.7  action_done        N001  'inferred_clickable' took 18.3s
+    72.1  restore            N001  ok via escape/back/goto
+    72.1  action             N001  click inferred_clickable 'souresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.com'  [[data-testid="dashboard_profile"]]
+    99.7  outcome            N001  'souresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.com' -> in_page_state  [0.0s]
+   101.3  overlay_open       N004 revealed 2 item(s) via 'souresh Anandsouresanand@gmail.comSettingsManualSign Outsouresh Anandsouresanand@gmail.com'
+   101.3  action             N004  click inferred_clickable 'Manual'  [[data-testid="dashboard_manual"]]

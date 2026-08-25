@@ -1,0 +1,108 @@
+target:
+  url: https://www.samsungvx.com/
+  depth: 10
+  same_origin_only: true
+  exclude_paths:
+  - /logout
+  - /signout
+  - /login
+  - /auth/**
+  id_collapse_exceptions: []
+auth:
+  storage_state: ./secrets/samsungvx.json
+  verify_selector: null
+crawl:
+  max_pages: 40
+  max_clicks: 100
+  max_clicks_per_state: 30
+  max_wall_clock_seconds: 200
+  settle_timeout_ms: 3000
+  hydration_timeout_ms: 8000
+  stability_ms: 600
+  hydration_min_elements: 4
+  loader_timeout_ms: 6000
+  post_loader_wait_ms: 2000
+  loader_selectors: []
+  action_timeout_ms: 10000
+  nav_timeout_ms: 30000
+  # The persistent app frame, read off the captured DOM: the header, the two
+  # left menus (CMS and Settings), the workspace switcher, the tag explorer and
+  # the floating support chat. These are still extracted and still exercised
+  # once, but they rank below content-area actions -- so a state cut short by
+  # the budget loses furniture, not product.
+  # The app tags its own clickables for analytics, and that is the ONLY signal
+  # for controls it gives no role, no tabindex and no pointer cursor -- the
+  # profile avatar among them, which is the sole route to Settings.
+  extra_clickable_selectors:
+  - .ga-button-action-class
+  - '[ga_text_key]'
+  - '[data-ga]'
+  - '[data-analytics]'
+  - '[data-track]'
+  shell_selectors:
+  # Bare tokens, not '#id': the extractor prefers data-testid, so a selector
+  # arrives as [data-testid="navbar_li_screen"] or as #navbar_li_screen
+  # depending on the element. Substring matching catches both forms.
+  # Header controls the analytics rule surfaced. Without these they count as
+  # content, sort to the top of the reading order (y=23..31) and push the
+  # dashboard cards and their "+" buttons out of the per-state click budget.
+  - dashboard_buyplan
+  - dashboard_vxt_lab
+  - dashboard_profile
+  - header_logoImg
+  - select-wrap
+  - navbar_menuList
+  - navbar_li_
+  - settingNavbar
+  - cms_place
+  - place_wrap
+  - dashboard_workspace
+  - header_logo
+  - header_profile
+  - header_notific
+  - profile_detail
+  - profileOpera_
+  - notificationIconId
+  - icon_notific
+  - alarmId
+  - icon_vxt_labs
+  - icon_crown
+  - chatbot_start
+  - startChatBtn
+  - tagexplorer
+  - dashboard_terms
+  - dashboard_privacy
+  - dashboard_cookies
+  - dashboard_contactus
+  # Settings has eleven menu items each with its own sub-navigation; without a
+  # cap it took 43 of 63 states on the last run and /screen was never reached.
+  max_states_per_section: 10
+  probe_search: true
+interaction:
+  policy: safe_click
+  deny_text:
+  - delete
+  - remove
+  - pay
+  - purchase
+  - submit
+  - confirm
+  - logout
+  - sign out
+  - deactivate
+  - cancel subscription
+  deny_selectors:
+  - '[data-destructive]'
+  - .btn-danger
+  allow_selectors: []
+  dismiss_consent: true
+output:
+  dir: ./samsungvx-fast
+  formats:
+  - graph
+  save_page_models: true
+browser:
+  headless: false
+  viewport_width: 1200
+  viewport_height: 900
+  block_mutations: true

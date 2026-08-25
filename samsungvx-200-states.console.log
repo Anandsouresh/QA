@@ -1,0 +1,354 @@
+Target: https://www.samsungvx.com/  depth=10
+Mode: crawl + graph only (no test-case generation)
+Output: samsungvx-200-states
+
+INFO    qagen.crawler      state N001  https://www.samsungvx.com/  (49 elements, 0 forms)
+INFO    qagen.crawler      state N013  https://www.samsungvx.com/terms  (12 elements, 0 forms)
+INFO    qagen.crawler      state N014  https://www.samsungvx.com/privacy  (13 elements, 0 forms)
+INFO    qagen.crawler      state N015  https://www.samsungvx.com/cookie  (12 elements, 0 forms)
+INFO    qagen.crawler      state N016  https://www.samsungvx.com/euda  (12 elements, 0 forms)
+INFO    qagen.crawler      state N003  https://www.samsungvx.com/vxtlabs  (30 elements, 0 forms)
+INFO    qagen.crawler      state N020  https://www.samsungvx.com/settings  (32 elements, 0 forms)
+INFO    qagen.crawler      state N007  https://www.samsungvx.com/screen  (52 elements, 0 forms)
+INFO    qagen.crawler      state N029  https://www.samsungvx.com/content  (68 elements, 0 forms)
+INFO    qagen.crawler      state N035  https://www.samsungvx.com/playlist  (68 elements, 0 forms)
+INFO    qagen.crawler      state N043  https://www.samsungvx.com/settings/techinquiry  (24 elements, 0 forms)
+INFO    qagen.crawler      state N051  https://www.samsungvx.com/settings/organization  (42 elements, 1 forms)
+INFO    qagen.crawler      state N022  https://www.samsungvx.com/settings/place  (37 elements, 0 forms)
+INFO    qagen.crawler      state N023  https://www.samsungvx.com/settings/user  (36 elements, 0 forms)
+INFO    qagen.crawler      state N024  https://www.samsungvx.com/settings/subscription  (41 elements, 0 forms)
+INFO    qagen.crawler      state N041  https://www.samsungvx.com/playlist/{id}  (47 elements, 0 forms)
+INFO    qagen.crawler      state N045  https://www.samsungvx.com/settings/techinquirynew  (35 elements, 0 forms)
+INFO    qagen.crawler      state N070  https://www.samsungvx.com/settings/tag  (28 elements, 0 forms)
+INFO    qagen.crawler      state N047  https://www.samsungvx.com/settings/event  (25 elements, 0 forms)
+INFO    qagen.crawler      state N048  https://www.samsungvx.com/settings/screenpreset  (26 elements, 0 forms)
+INFO    qagen.crawler      state N049  https://www.samsungvx.com/settings/emergencyalert  (23 elements, 0 forms)
+INFO    qagen.crawler      state N072  https://www.samsungvx.com/settings/activitylog  (35 elements, 0 forms)
+INFO    qagen.crawler      state N056  https://www.samsungvx.com/settings/place/{id}  (50 elements, 0 forms)
+INFO    qagen.crawler      state N057  https://www.samsungvx.com/settings/edithome  (50 elements, 0 forms)
+INFO    qagen.crawler      state N067  https://www.samsungvx.com/schedule  (48 elements, 0 forms)
+INFO    qagen.crawler      state N068  https://www.samsungvx.com/channel  (48 elements, 0 forms)
+INFO    qagen.crawler      state N090  https://www.samsungvx.com/schedule/create  (44 elements, 0 forms)
+INFO    qagen.crawler      state N096  https://www.samsungvx.com/channel/create  (41 elements, 0 forms)
+INFO    qagen.crawler      state N098  https://www.samsungvx.com/schedule  (47 elements, 0 forms)
+INFO    qagen.crawler      state N088  https://www.samsungvx.com/apps  (167 elements, 0 forms)
+                     Run summary                     
+ States discovered  83                               
+ Graph              99 nodes / 291 edges             
+ Elements           5187 actionable / 5187 extracted 
+ Clicks made        326                              
+ Elements skipped   228                              
+ Mutations blocked  24                               
+ Duration           3946.6s                          
+
+Wrote output to samsungvx-200-states
+                                                                               
+                               Discovered states                               
++-----------------------------------------------------------------------------+
+| ID     | Type     | Title        | URL           | Main | Act | Intr |  DOM |
+|--------+----------+--------------+---------------+------+-----+------+------|
+| N001 * | page     | HOME |       | https://www.… |   39 |  49 |   49 |  425 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N002   | boundary | vxt.samsung… | vxt.samsung.… |    0 |   0 |    0 |    - |
+| N003   | page     | Samsung VXT  | https://www.… |   28 |  30 |   30 |  516 |
+|        |          | CMS          |               |      |     |      |      |
+| N004   | dropdown | HOME |       | https://www.… |   42 |  52 |   52 |  437 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS —        |               |      |     |      |      |
+|        |          | souresh A    |               |      |     |      |      |
+| N005   | dropdown | Settings |   | https://www.… |   34 |  38 |   38 |  657 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Regis  |               |      |     |      |      |
+| N006   | page     | HOME |       | https://www.… |   38 |  50 |   50 |  564 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS —        |               |      |     |      |      |
+|        |          | Default W    |               |      |     |      |      |
+| N007   | page     | Screen |     | https://www.… |   27 |  52 |   52 |  551 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N008   | page     | Content |    | https://www.… |   49 |  71 |   71 |  690 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N009   | page     | Playlist |   | https://www.… |   24 |  70 |   70 |  671 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N010   | dropdown | HOME |       | https://www.… |   49 |  63 |   63 | 1167 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS —        |               |      |     |      |      |
+|        |          | Notificat    |               |      |     |      |      |
+| N011   | dropdown | HOME |       | https://www.… |   51 |  65 |   65 | 1260 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS —        |               |      |     |      |      |
+|        |          | Notificat    |               |      |     |      |      |
+| N012   | page     | HOME |       | https://www.… |   45 |  58 |   58 |  503 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS —        |               |      |     |      |      |
+|        |          | Notificat    |               |      |     |      |      |
+| N013   | page     | Terms and    | https://www.… |    0 |  12 |   12 |  166 |
+|        |          | Conditions | |               |      |     |      |      |
+|        |          | Samsung VXT  |               |      |     |      |      |
+| N014   | page     | Privacy      | https://www.… |    1 |  13 |   13 |  169 |
+|        |          | Policy |     |               |      |     |      |      |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N015   | page     | Cookie       | https://www.… |    0 |  12 |   12 |  166 |
+|        |          | Policy |     |               |      |     |      |      |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N016   | page     | Samsung VXT  | https://www.… |    0 |  12 |   12 |  166 |
+|        |          | CMS          |               |      |     |      |      |
+| N017   | page     | Samsung VXT  | https://www.… |    0 |   0 |    0 |   22 |
+|        |          | CMS          |               |      |     |      |      |
+| N018   | dropdown | Samsung VXT  | https://www.… |   28 |  33 |   33 |  448 |
+|        |          | CMS — NEW    |               |      |     |      |      |
+| N019   | dropdown | Samsung VXT  | https://www.… |   46 |  51 |   51 | 1104 |
+|        |          | CMS — img    |               |      |     |      |      |
+| N020   | page     | Settings |   | https://www.… |   27 |  32 |   32 |  537 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N021   | page     | Settings |   | https://www.… |   27 |  32 |   32 |  614 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N022   | page     | Settings |   | https://www.… |   15 |  37 |   37 |  588 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N023   | page     | Settings |   | https://www.… |   14 |  36 |   36 |  571 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N024   | page     | Settings |   | https://www.… |   19 |  41 |   41 |  587 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N025   | dropdown | Screen |     | https://www.… |    6 |  55 |   55 |  490 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Add    |               |      |     |      |      |
+|        |          | Scr          |               |      |     |      |      |
+| N026   | page     | Screen |     | https://www.… |    6 |  55 |   55 |  521 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Add    |               |      |     |      |      |
+|        |          | Scr          |               |      |     |      |      |
+| N027   | page     | Screen |     | https://www.… |    6 |  55 |   55 |  492 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Add    |               |      |     |      |      |
+|        |          | Scr          |               |      |     |      |      |
+| N028   | page     | Screen |     | https://www.… |    7 |  55 |   55 |  481 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — CHITNU |               |      |     |      |      |
+| N029   | page     | Content |    | https://www.… |   22 |  68 |   68 |  623 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N030   | dropdown | Content |    | https://www.… |   88 | 134 |  134 |  725 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Search |               |      |     |      |      |
+| N031   | page     | Content |    | https://www.… |   27 |  74 |   74 |  606 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Search |               |      |     |      |      |
+| N032   | dropdown | Content |    | https://www.… |   91 | 137 |  137 |  725 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Search |               |      |     |      |      |
+| N033   | page     | Content |    | https://www.… |   16 |  63 |   63 |  553 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Search |               |      |     |      |      |
+| N034   | page     | Content |    | https://www.… |   16 |  63 |   63 |  553 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Search |               |      |     |      |      |
+| N035   | page     | Playlist |   | https://www.… |   22 |  68 |   68 |  560 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N036   | dropdown | Playlist |   | https://www.… |   70 | 116 |  116 |  672 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Searc  |               |      |     |      |      |
+| N037   | page     | Playlist |   | https://www.… |   27 |  74 |   74 |  580 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Searc  |               |      |     |      |      |
+| N038   | page     | Playlist |   | https://www.… |   29 |  76 |   76 |  580 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Searc  |               |      |     |      |      |
+| N039   | page     | Playlist |   | https://www.… |   13 |  60 |   60 |  534 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Searc  |               |      |     |      |      |
+| N040   | page     | Playlist |   | https://www.… |   26 |  72 |   72 |  558 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — 1 pla  |               |      |     |      |      |
+| N041   | page     | Playlist |   | https://www.… |   20 |  47 |   47 |  546 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N042   | page     | Content |    | https://www.… |   22 |  68 |   68 |  631 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N043   | page     | Settings |   | https://www.… |    2 |  24 |   24 |  283 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N044   | dropdown | Settings |   | https://www.… |    7 |  30 |   30 |  340 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Tech   |               |      |     |      |      |
+| N045   | page     | Settings |   | https://www.… |   10 |  35 |   35 |  443 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N046   | page     | Settings |   | https://www.… |    4 |  27 |   27 |  355 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N047   | page     | Settings |   | https://www.… |    3 |  25 |   25 |  347 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N048   | page     | Settings |   | https://www.… |    4 |  26 |   26 |  356 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N049   | page     | Settings |   | https://www.… |    0 |  23 |   23 |  363 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N050   | page     | Settings |   | https://www.… |    7 |  29 |   29 |  385 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N051   | page     | Settings |   | https://www.… |   19 |  42 |   42 |  419 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N052   | page     | Settings |   | https://www.… |   25 |  53 |   53 |  896 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Custo  |               |      |     |      |      |
+| N053   | page     | Settings |   | https://www.… |   32 |  56 |   56 |  422 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Prese  |               |      |     |      |      |
+| N054   | page     | Settings |   | https://www.… |   19 |  42 |   42 |  462 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Tag    |               |      |     |      |      |
+| N055   | page     | Settings |   | https://www.… |   22 |  46 |   46 |  579 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Sched  |               |      |     |      |      |
+| N056   | page     | Settings |   | https://www.… |   25 |  50 |   50 |  442 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N057   | page     | Settings |   | https://www.… |   41 |  50 |   50 |  496 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N058   | page     | Settings |   | https://www.… |    8 |  30 |   30 |  366 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Owner  |               |      |     |      |      |
+| N059   | page     | Settings |   | https://www.… |   11 |  34 |   34 |  343 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Pendi  |               |      |     |      |      |
+| N060   | page     | Settings |   | https://www.… |   10 |  32 |   32 |  306 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Addit  |               |      |     |      |      |
+| N061   | page     | HOME |       | https://www.… |   34 |  48 |   48 |  376 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N062   | page     | Playlist |   | https://www.… |   19 |  47 |   47 |  625 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — span   |               |      |     |      |      |
+| N063   | dropdown | Playlist |   | https://www.… |   22 |  50 |   50 |  516 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — more   |               |      |     |      |      |
+| N064   | page     | Playlist |   | https://www.… |   21 |  54 |   54 |  570 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — more   |               |      |     |      |      |
+| N065   | dropdown | Playlist |   | https://www.… |   26 |  58 |   58 |  636 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Set t  |               |      |     |      |      |
+| N066   | page     | Playlist |   | https://www.… |   34 |  66 |   66 |  731 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Set t  |               |      |     |      |      |
+| N067   | page     | Schedule |   | https://www.… |    2 |  48 |   48 |  497 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N068   | page     | Channel |    | https://www.… |    1 |  48 |   48 |  504 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N069   | dropdown | Settings |   | https://www.… |   14 |  41 |   41 |  475 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Regis  |               |      |     |      |      |
+| N070   | page     | Settings |   | https://www.… |    5 |  28 |   28 |  333 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N071   | page     | Settings |   | https://www.… |   25 |  48 |   48 |  740 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N072   | page     | Settings |   | https://www.… |   13 |  35 |   35 |  565 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N073   | page     | Settings |   | https://www.… |   24 |  49 |   49 |  422 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Defau  |               |      |     |      |      |
+| N074   | page     | Settings |   | https://www.… |   16 |  41 |   41 |  378 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — User   |               |      |     |      |      |
+| N075   | dropdown | Settings |   | https://www.… |   20 |  47 |   47 |  415 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — User   |               |      |     |      |      |
+| N076   | page     | Settings |   | https://www.… |   24 |  51 |   51 |  827 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Custo  |               |      |     |      |      |
+| N077   | page     | Settings |   | https://www.… |   32 |  56 |   56 |  407 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Prese  |               |      |     |      |      |
+| N078   | page     | Settings |   | https://www.… |   47 |  58 |   58 |  505 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Mobil  |               |      |     |      |      |
+| N079   | dropdown | Schedule |   | https://www.… |    4 |  51 |   51 |  410 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — New S  |               |      |     |      |      |
+| N080   | page     | Schedule |   | https://www.… |   16 |  45 |   45 |  667 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N081   | page     | Schedule |   | https://www.… |   16 |  45 |   45 |  667 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N082   | dropdown | Channel |    | https://www.… |    3 |  51 |   51 |  423 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — New Ch |               |      |     |      |      |
+| N083   | page     | Channel |    | https://www.… |   11 |  42 |   42 |  400 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N084   | page     | Channel |    | https://www.… |    3 |  39 |   39 |  391 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — div    |               |      |     |      |      |
+| N085   | page     | Content |    | https://www.… |   21 |  59 |   59 |  583 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N086   | page     | Playlist |   | https://www.… |   18 |  59 |   59 |  550 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N087   | page     | Schedule |   | https://www.… |    1 |  39 |   39 |  401 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N088   | page     | Samsung VXT  | https://www.… |  138 | 167 |  167 | 1140 |
+|        |          | CMS          |               |      |     |      |      |
+| N089   | page     | Channel |    | https://www.… |    1 |  47 |   47 |  420 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — div —  |               |      |     |      |      |
+| N090   | page     | Schedule |   | https://www.… |   14 |  44 |   44 |  633 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N091   | dropdown | Schedule |   | https://www.… |   19 |  51 |   51 |  782 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Add C  |               |      |     |      |      |
+| N092   | dropdown | Schedule |   | https://www.… |   30 |  72 |   72 |  940 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Add C  |               |      |     |      |      |
+| N093   | page     | Schedule |   | https://www.… |   86 | 116 |  116 |  738 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — Augus  |               |      |     |      |      |
+| N094   | page     | Schedule |   | https://www.… |   17 |  47 |   47 |  696 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — span   |               |      |     |      |      |
+| N095   | dropdown | Schedule |   | https://www.… |   89 | 119 |  119 |  746 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — span   |               |      |     |      |      |
+| N096   | page     | Channel |    | https://www.… |   11 |  41 |   41 |  371 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N097   | page     | Channel |    | https://www.… |   14 |  44 |   44 |  464 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS — span   |               |      |     |      |      |
+| N098   | page     | Schedule |   | https://www.… |    1 |  47 |   47 |  404 |
+|        |          | Samsung VXT  |               |      |     |      |      |
+|        |          | CMS          |               |      |     |      |      |
+| N099   | dropdown | Samsung VXT  | https://www.… |  156 | 186 |  186 | 1798 |
+|        |          | CMS — AI     |               |      |     |      |      |
+|        |          | StudioAI     |               |      |     |      |      |
+|        |          | Stud         |               |      |     |      |      |
++-----------------------------------------------------------------------------+
+Main = actionable in the content area (excludes the header/left menu) · Act = 
+all actionable · Intr = extracted · DOM = nodes on the page.
+99 states, 291 transitions, 5187 actionable elements (2414 outside the app 
+frame). Open navgraph.mmd in VS Code or GitHub to view the map.

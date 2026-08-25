@@ -1,0 +1,136 @@
+# Crawl-only config for www.samsungvx.com.
+#
+#   qagen crawl --config samsungvx.yaml --headed
+#
+# The `token` cookie in secrets/ is a live credential. It is gitignored; treat
+# it like a password and re-export it when it expires (24h lifetime).
+
+target:
+  url: https://www.samsungvx.com/
+  depth: 100
+  same_origin_only: true
+  exclude_paths:
+    - "/logout"
+    - "/signout"
+    - "/login"
+    - "/auth/**"
+  # VXT uses UUID route segments for workspaces/places. The default rule
+  # collapses those to {id}, which is what we want -- add exceptions here if a
+  # numeric segment turns out to be a real route name rather than an id.
+  id_collapse_exceptions: []
+
+auth:
+  storage_state: ./secrets/samsungvx.json
+  # Left unset deliberately: we don't yet know a logged-in-only selector for
+  # this app, so the auth gate falls back to its login-URL heuristic. If the
+  # crawl lands on a login page, set this to something only an authenticated
+  # user sees and re-run.
+  verify_selector: null
+
+crawl:
+  max_pages: 20000
+  max_clicks: 200000
+  max_clicks_per_state: 5000
+  max_wall_clock_seconds: 42000000000000000000
+  # A real SPA needs longer to hydrate than the local fixture does. The first
+  # run against this app captured an empty <div id="root"> -- the bundle had
+  # not executed yet.
+  settle_timeout_ms: 8000
+  hydration_timeout_ms: 2500
+  stability_ms: 1200
+  # This app's shell renders a lone cookie-close button and holds still for
+  # seconds while React boots; without this we captured a 1-element state.
+  hydration_min_elements: 4
+  # Wait for the app's own spinner to disappear, then hold 5s so content that
+  # renders just behind it is captured. The grace is charged only when a loader
+  # was actually seen, so pages without one are not slowed down.
+  loader_timeout_ms: 10000
+  post_loader_wait_ms: 5000
+  loader_selectors: []
+  action_timeout_ms: 10000
+  nav_timeout_ms: 20000
+  # The persistent app frame, read off the captured DOM: the header, the two
+  # left menus (CMS and Settings), the workspace switcher, the tag explorer and
+  # the floating support chat. These are still extracted and still exercised
+  # once, but they rank below content-area actions -- so a state cut short by
+  # the budget loses furniture, not product.
+  # The app tags its own clickables for analytics, and that is the ONLY signal
+  # for controls it gives no role, no tabindex and no pointer cursor -- the
+  # profile avatar among them, which is the sole route to Settings.
+  extra_clickable_selectors:
+  - .ga-button-action-class
+  - '[ga_text_key]'
+  - '[data-ga]'
+  - '[data-analytics]'
+  - '[data-track]'
+  shell_selectors:
+  # Bare tokens, not '#id': the extractor prefers data-testid, so a selector
+  # arrives as [data-testid="navbar_li_screen"] or as #navbar_li_screen
+  # depending on the element. Substring matching catches both forms.
+  # Header controls the analytics rule surfaced. Without these they count as
+  # content, sort to the top of the reading order (y=23..31) and push the
+  # dashboard cards and their "+" buttons out of the per-state click budget.
+  - dashboard_buyplan
+  - dashboard_vxt_lab
+  - dashboard_profile
+  - header_logoImg
+  - select-wrap
+  - navbar_menuList
+  - navbar_li_
+  - settingNavbar
+  - cms_place
+  - place_wrap
+  - dashboard_workspace
+  - header_logo
+  - header_profile
+  - header_notific
+  - profile_detail
+  - profileOpera_
+  - notificationIconId
+  - icon_notific
+  - alarmId
+  - icon_vxt_labs
+  - icon_crown
+  - chatbot_start
+  - startChatBtn
+  - tagexplorer
+  - dashboard_terms
+  - dashboard_privacy
+  - dashboard_cookies
+  - dashboard_contactus
+  # Settings has eleven menu items each with its own sub-navigation; without a
+  # cap it took 43 of 63 states on the last run and /screen was never reached.
+  max_states_per_section: 10
+  probe_search: true
+
+interaction:
+  policy: safe_click            # safe_click | passive
+  # Extends the built-in destructive vocabulary rather than replacing it if you
+  # keep the defaults and add your own terms.
+  deny_text:
+    - delete
+    - remove
+    - pay
+    - purchase
+    - submit
+    - confirm
+    - logout
+    - sign out
+    - deactivate
+    - cancel subscription
+  deny_selectors:
+    - "[data-destructive]"
+    - ".btn-danger"
+  allow_selectors: []           # explicit allow beats every deny rule
+  dismiss_consent: true
+
+output:
+  dir: ./samsungvx-out03
+  formats: [graph]
+  save_page_models: true
+
+browser:
+  headless: false          # overridden by --headed too
+  viewport_width: 1100
+  viewport_height: 900
+  block_mutations: true    # read-only: every POST/PUT/PATCH/DELETE is aborted

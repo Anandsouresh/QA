@@ -1,0 +1,10 @@
+digraph qagen {
+  rankdir=LR;
+  node [shape=box, style=rounded, fontname="Helvetica", fontsize=10];
+  edge [fontname="Helvetica", fontsize=9];
+  N001 [label="HOME / Samsung VXT CMS\nhttps://www.samsungvx.com/", shape=box, peripheries=2];
+  N002 [label="vxt.samsung.com\nvxt.samsung.com", shape=note, peripheries=1];
+  N003 [label="HOME / Samsung VXT CMS\nhttps://www.samsungvx.com/", shape=box, peripheries=1];
+  N001 -> N002 [label="Click 'Contact Us'", style=dashed];
+  N001 -> N003 [label="Click 'chatbot' !", style=solid];
+}
