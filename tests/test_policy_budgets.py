@@ -514,3 +514,148 @@ class TestRestoreDoesNotAbandonTheState:
 
         src = inspect.getsource(Crawler._hard_reset)
         assert "replay" in src, "hard reset cannot return to a popup state"
+
+
+class TestStateCanonicalisation:
+    """The same screen caught mid-render must not become two states.
+
+    Real evidence: two captures of /screen fingerprinted as 4ed56555 and
+    91a1db03 -- two states -- while their screenshots were byte-identical (same
+    md5) and their anchor sets matched 214 of 214. On one run /screen became 31
+    states and the homepage 17, purely from this.
+    """
+
+    def _crawler(self, threshold=0.9):
+        from qagen.browser.crawler import Crawler
+
+        c = Crawler.__new__(Crawler)
+        c.cfg = SimpleNamespace(crawl=SimpleNamespace(state_anchor_threshold=threshold))
+        c._page_anchors = {}
+        c.log = SimpleNamespace(note=lambda *a, **k: None)
+        return c
+
+    def _page(self, fp, anchors, url="https://x.test/screen"):
+        from qagen.models import Confidence, Element, ElementKind, PageModel
+
+        els = [
+            Element(
+                ref=f"E{i}", kind=ElementKind.GENERIC_BUTTON, role="button", name=a,
+                tag="button", selector=a, selector_strategy="data-testid",
+                confidence=Confidence.HIGH,
+            )
+            for i, a in enumerate(anchors)
+        ]
+        return PageModel(
+            url=url, normalized_url=url, title="t", fingerprint=fp, elements=els
+        )
+
+    def test_identical_anchors_collapse_to_one_state(self):
+        c = self._crawler()
+        base = [f"[data-testid=\"a{i}\"]" for i in range(20)]
+        first = self._page("fp_early", base)
+        second = self._page("fp_late", base)
+        assert c._canonicalise(first) is False        # first sighting registers
+        assert c._canonicalise(second) is True        # second adopts it
+        assert second.fingerprint == "fp_early"
+
+    def test_a_few_extra_anchors_still_the_same_screen(self):
+        """Mid-render captures differ by a handful of late-arriving controls."""
+        c = self._crawler()
+        base = [f"[data-testid=\"a{i}\"]" for i in range(40)]
+        c._canonicalise(self._page("fp_early", base))
+        late = self._page("fp_late", base + ['[data-testid="a40"]', '[data-testid="a41"]'])
+        assert c._canonicalise(late) is True
+        assert late.fingerprint == "fp_early"
+
+    def test_a_genuinely_different_screen_stays_separate(self):
+        c = self._crawler()
+        c._canonicalise(self._page("fp_a", [f"[data-testid=\"a{i}\"]" for i in range(20)]))
+        other = self._page("fp_b", [f"[data-testid=\"b{i}\"]" for i in range(20)])
+        assert c._canonicalise(other) is False
+        assert other.fingerprint == "fp_b"
+
+    def test_same_anchors_on_a_different_url_stay_separate(self):
+        """Two sections can share a layout; the URL still separates them."""
+        c = self._crawler()
+        base = [f"[data-testid=\"a{i}\"]" for i in range(20)]
+        c._canonicalise(self._page("fp_screen", base, url="https://x.test/screen"))
+        other = self._page("fp_content", base, url="https://x.test/content")
+        assert c._canonicalise(other) is False
+
+    def test_a_page_with_no_stable_anchors_is_left_alone(self):
+        """Nothing dependable to compare -- do not guess."""
+        c = self._crawler()
+        page = self._page("fp_a", [])
+        assert c._canonicalise(page) is False
+        assert page.fingerprint == "fp_a"
+
+    def test_threshold_of_one_still_merges_only_exact_matches(self):
+        c = self._crawler(threshold=1.0)
+        base = [f"[data-testid=\"a{i}\"]" for i in range(10)]
+        c._canonicalise(self._page("fp_a", base))
+        near = self._page("fp_b", base + ['[data-testid="extra"]'])
+        assert c._canonicalise(near) is False        # 91% -- not identical
+        exact = self._page("fp_c", base)
+        assert c._canonicalise(exact) is True
+
+
+class TestRevealedOnlyPlanning:
+    """A popup is planned against what it revealed, not the page behind it.
+
+    Measured on a real run: the median popup state carries 49 actionable
+    elements of which only 7 are new. Planning all 49 lets the per-state click
+    budget push the real 7 out of reach entirely -- the crawler opens a menu and
+    never touches it.
+    """
+
+    def _el(self, ref, y=100, name=None):
+        from qagen.models import Confidence, Element, ElementKind
+
+        return Element(
+            ref=ref, kind=ElementKind.GENERIC_BUTTON, role="button",
+            name=name or ref, tag="button", selector=f"#{ref}",
+            selector_strategy="id", confidence=Confidence.HIGH, x=0, y=y, w=40, h=24,
+        )
+
+    def _plan(self, elements, only=frozenset(), cap=30):
+        from qagen.models import PageModel
+        from qagen.browser.crawler import Crawler
+
+        stub = SimpleNamespace(
+            cfg=SimpleNamespace(
+                crawl=SimpleNamespace(
+                    max_clicks_per_state=cap, action_order="reading",
+                    content_before_frame=True, reading_band_px=20, frame_reserve=0,
+                )
+            ),
+            _exercised={},
+            log=SimpleNamespace(note=lambda *a, **k: None),
+        )
+        page = PageModel(url="/x", normalized_url="/x", title="t", elements=elements)
+        return [e.ref for e in Crawler._plan_actions(stub, page, only=only)]
+
+    def test_only_the_revealed_controls_are_planned(self):
+        page_buttons = [self._el(f"page{i}", y=100 + i * 30) for i in range(20)]
+        menu = [self._el("menu_upload", y=400), self._el("menu_url", y=430)]
+        only = frozenset(e.identity() for e in menu)
+        assert self._plan(page_buttons + menu, only=only) == ["menu_upload", "menu_url"]
+
+    def test_the_budget_cannot_push_revealed_controls_out(self):
+        """The real bug: with a cap of 3 and the menu sorting last, an
+        unrestricted plan never reaches the menu at all."""
+        page_buttons = [self._el(f"page{i}", y=100 + i * 30) for i in range(20)]
+        menu = [self._el("menu_upload", y=900), self._el("menu_url", y=930)]
+        elements = page_buttons + menu
+        assert self._plan(elements, cap=3) == ["page0", "page1", "page2"]
+        only = frozenset(e.identity() for e in menu)
+        assert self._plan(elements, only=only, cap=3) == ["menu_upload", "menu_url"]
+
+    def test_falls_back_to_the_whole_state_when_nothing_matches(self):
+        """Never do nothing: a stale diff must not waste the state."""
+        page_buttons = [self._el(f"page{i}", y=100 + i * 30) for i in range(3)]
+        stale = frozenset({"role\x1fgone\x1f#gone"})
+        assert self._plan(page_buttons, only=stale) == ["page0", "page1", "page2"]
+
+    def test_no_restriction_plans_everything(self):
+        page_buttons = [self._el(f"page{i}", y=100 + i * 30) for i in range(3)]
+        assert self._plan(page_buttons) == ["page0", "page1", "page2"]

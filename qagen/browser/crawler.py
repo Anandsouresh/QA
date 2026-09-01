@@ -32,7 +32,7 @@ from ..models import (
 from .actionlog import ActionLog
 from .analyzer import PageAnalyzer
 from .budgets import Budgets
-from .fingerprint import normalize_url
+from .fingerprint import anchor_set, anchor_similarity, normalize_url
 from .policy import InteractionPolicy, ScopeRules
 from .session import Session
 from .shell import ShellDetector
@@ -58,6 +58,12 @@ class FrontierItem:
     #: its own, so this is the only way to enqueue one and still explore it
     #: breadth-first: navigate, re-click the trigger, and you are back inside it.
     replay: tuple[ReplayStep, ...] = ()
+    #: Element identities this item exists to exercise -- the controls the click
+    #: *revealed*, not the whole page behind them. A popup carries a median of 7
+    #: new controls among 49; planning against all 49 lets the per-state click
+    #: budget push the real 7 out of reach, and attributes page buttons to the
+    #: popup. Empty means "no restriction": plan the state normally.
+    only_identities: frozenset[str] = frozenset()
 
 
 @dataclass
@@ -115,6 +121,10 @@ class Crawler:
         #: Nodes whose action plan has already been run, so a repeat arrival
         #: cannot loop: each state is exercised exactly once per crawl.
         self._acted: set[str] = set()
+        #: normalised URL -> [(fingerprint, anchor set)] for plain page states.
+        #: Used to recognise the same screen caught at two different moments of
+        #: rendering; see _canonicalise.
+        self._page_anchors: dict[str, list[tuple[str, frozenset[str]]]] = {}
         #: Fingerprints already charged to the per-URL / per-section budgets.
         #:
         #: A popup is seen twice: once when a click reveals it, and again when
@@ -221,6 +231,9 @@ class Crawler:
 
         # 4C Observe + 4D Identify
         model = await self._analyze(page, item.depth, item.arrival_action)
+        if not item.replay:
+            # A plain page arrival. Popups are excluded -- see _canonicalise.
+            self._canonicalise(model)
         self._absorb_events(model)
 
         is_new = model.fingerprint not in self._seen
@@ -298,6 +311,54 @@ class Crawler:
         if self.cfg.crawl.probe_search and model.fingerprint not in self._searched:
             await self._probe_search(page, model, node)
 
+    def _canonicalise(self, model: PageModel) -> bool:
+        """Collapse a page state onto one we have already seen, if it is the same.
+
+        A page fingerprints from its whole element list, which is only complete
+        once the page has finished rendering -- and ``settle()`` cannot always
+        tell. So the same screen visited twice can produce two fingerprints and
+        therefore two states. Measured on a real run: ``/screen`` became 31
+        states with element counts from 32 to 165, and the homepage became 17.
+
+        Stable anchors do not have that problem. A ``data-testid`` either exists
+        or it does not; it never half-renders. Two captures of the Screen page
+        that fingerprinted differently had **identical** anchor sets (214 of
+        214) and byte-identical screenshots.
+
+        So: same URL plus near-identical anchors means the same screen, and the
+        later capture adopts the earlier fingerprint.
+
+        Applied to plain page states only. An overlay shares almost every anchor
+        with the page behind it -- a menu adding 3 anchors to 205 would look 98%
+        identical -- so collapsing those would silently erase every popup.
+
+        Returns True when the model was collapsed onto an existing state.
+        """
+        threshold = self.cfg.crawl.state_anchor_threshold
+        if threshold >= 1.0 and threshold != 1.0:
+            return False
+        anchors = anchor_set(model.elements)
+        if not anchors:
+            return False          # nothing stable to reason about; leave it alone
+
+        known = self._page_anchors.setdefault(model.normalized_url, [])
+        for fingerprint, seen in known:
+            if fingerprint == model.fingerprint:
+                return False      # already this exact state
+            score = anchor_similarity(anchors, seen)
+            if score >= threshold:
+                self.log.note(
+                    "state_merged",
+                    f"{model.normalized_url} matches an earlier capture "
+                    f"({score:.0%} of anchors); reusing {fingerprint[:10]} "
+                    f"instead of {model.fingerprint[:10]}",
+                )
+                model.fingerprint = fingerprint
+                return True
+
+        known.append((model.fingerprint, anchors))
+        return False
+
     async def _analyze(self, page: Page, depth: int, arrival: str) -> PageModel:
         """Extract, then work out which of it is the app frame.
 
@@ -363,9 +424,21 @@ class Crawler:
         key = (opened.normalized_url, tuple(s.selector for s in replay))
         if key in self._queued_replays:
             return
+        # Already explored under a different route in. Without this the same
+        # menu is queued once per chain that reaches it, and each queued copy
+        # costs a navigation plus a replay (~20s) only to report
+        # `state_duplicate` -- the loop that stalled a live run for an hour.
+        if opened.fingerprint in self._acted:
+            self.log.note(
+                "overlay_already_done",
+                f"{opened.normalized_url} via {trigger.name or trigger.role!r} "
+                f"is already exercised; not queued again",
+            )
+            return
         self._queued_replays.add(key)
         self._replay_by_fingerprint[opened.fingerprint] = replay
 
+        revealed = self._revealed(base, opened)
         self._frontier.append(
             FrontierItem(
                 url=base.url,
@@ -373,6 +446,7 @@ class Crawler:
                 arrival_action=f"Click '{trigger.name or trigger.role}'",
                 source_fingerprint=base.fingerprint,
                 replay=replay,
+                only_identities=frozenset(e.identity() for e in revealed),
             )
         )
 
@@ -412,7 +486,7 @@ class Crawler:
     async def _act_on_state(
         self, page: Page, model: PageModel, node: NavNode, item: FrontierItem
     ) -> None:
-        plan = self._plan_actions(model)
+        plan = self._plan_actions(model, only=item.only_identities)
         consecutive_failures = 0
 
         for index, el in enumerate(plan):
@@ -554,7 +628,9 @@ class Crawler:
                     SkipRecord(model.url, f"{el.role} '{el.name}'", reason)
                 )
 
-    def _plan_actions(self, model: PageModel) -> list[Element]:
+    def _plan_actions(
+        self, model: PageModel, only: frozenset[str] = frozenset()
+    ) -> list[Element]:
         """Decide the order a state is worked through, then truncate.
 
         Default is **reading order** -- top to bottom, left to right, the way a
@@ -575,6 +651,32 @@ class Crawler:
             el for el in model.elements
             if el.kind in CLICKABLE_KINDS and el.enabled and el.visible
         ]
+
+        # A popup state contains the whole page behind it. Restrict to the
+        # controls the click actually revealed -- a median of 7 among 49 on this
+        # app. Planning against all 49 lets the per-state budget push the real
+        # items out of reach, and records page buttons against the popup.
+        #
+        # The fallback matters: if nothing survives the filter (the diff was
+        # computed against a stale parent, or the click replaced content rather
+        # than adding to it) fall back to the full plan rather than silently
+        # doing nothing with the state.
+        if only:
+            restricted = [el for el in candidates if el.identity() in only]
+            if restricted:
+                self.log.note(
+                    "plan_restricted",
+                    f"{model.normalized_url}: {len(restricted)} revealed control(s) "
+                    f"of {len(candidates)} on the state",
+                )
+                candidates = restricted
+            else:
+                self.log.note(
+                    "plan_restriction_empty",
+                    f"{model.normalized_url}: none of the revealed controls are "
+                    f"present; planning the whole state instead",
+                )
+
         crawl = self.cfg.crawl
         band = crawl.reading_band_px
 
@@ -654,6 +756,11 @@ class Crawler:
             # in-page state, and we would go on to treat the next page's
             # elements as the contents of an overlay.
             after_url = after.url
+            if after_url != before_url:
+                # The click landed on another page; same rule as a frontier
+                # arrival. In-page states deliberately skip this.
+                self._canonicalise(after)
+                after_fp = after.fingerprint
 
         outcome, annotations = self._classify_outcome(
             events, before_url, after_url, before_fp, after_fp

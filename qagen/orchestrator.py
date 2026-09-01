@@ -97,6 +97,39 @@ class Orchestrator:
             crawler = Crawler(self.cfg, session)
             return await crawler.run()
 
+    async def generate_only(self, crawl: CrawlResult) -> dict[str, Any]:
+        """Run the generation half against a crawl loaded from disk.
+
+        Same code path as a full run from `_generate` onwards -- no browser is
+        started, and the graph and page models come from the previous capture.
+        """
+        out_dir = self.cfg.output.dir
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        self.manifest["mode"] = "generate-from-crawl"
+        self.manifest["auth_status"] = "not applicable (no browser)"
+
+        suite, gen_stats = self._generate(crawl)
+        graph = crawl.graph.build() if crawl.graph else NavGraph(target=self.cfg.target.url)
+        paths = crawl.graph.shortest_paths() if crawl.graph else {}
+
+        self.manifest.update(
+            {
+                "finished_at": datetime.now(timezone.utc).isoformat(),
+                "crawl": {
+                    "states_loaded": len(crawl.pages),
+                    "graph_nodes": len(graph.nodes),
+                    "graph_edges": len(graph.edges),
+                },
+                "generation": gen_stats,
+            }
+        )
+
+        written = self._write(suite, graph, paths, crawl)
+        self.manifest["outputs"] = [str(p) for p in written]
+        json_out.write_manifest(self.manifest, out_dir)
+        return self.manifest
+
     def _generate(self, crawl: CrawlResult) -> tuple[TestSuite, dict[str, Any]]:
         suite = TestSuite(target=self.cfg.target.url)
         stats: dict[str, Any] = {

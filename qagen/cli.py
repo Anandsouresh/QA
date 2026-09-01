@@ -7,6 +7,7 @@ must not cost a browser start.
 from __future__ import annotations
 
 import asyncio
+import os
 import logging
 from pathlib import Path
 from typing import Optional
@@ -17,6 +18,7 @@ from rich.table import Table
 
 from .browser.session import AuthError
 from .config import RunConfig
+from .generation.from_disk import LoadError, load_crawl
 from .orchestrator import Orchestrator
 
 app = typer.Typer(add_completion=False, help="Generate QA test cases from a live URL.")
@@ -230,6 +232,77 @@ def _graph_detail(manifest: dict, out_dir: Path) -> None:
         f"{total_act} actionable elements ({total_main} outside the app frame). "
         f"Open navgraph.mmd in VS Code or GitHub to view the map.[/]"
     )
+
+
+@app.command()
+def generate(
+    from_dir: Path = typer.Option(..., "--from", "-f", help="A finished crawl directory"),
+    config: Optional[Path] = typer.Option(None, "--config", "-c", help="YAML config file"),
+    out: Optional[Path] = typer.Option(None, "--out", "-o", help="Where to write (default: alongside the crawl)"),
+    model: Optional[str] = typer.Option(None, "--model", help="Override llm.model"),
+    cases: Optional[int] = typer.Option(None, "--cases", help="Max test cases per state"),
+    formats: str = typer.Option(
+        "markdown,json,xlsx,csv,graph", "--formats",
+        help="Comma-separated output formats",
+    ),
+    stub: bool = typer.Option(False, "--stub", help="Dry run with no API key and no cost"),
+    verbose: bool = typer.Option(False, "--verbose", "-v"),
+) -> None:
+    """Generate test cases from a crawl that already ran -- no browser, no re-crawl.
+
+    A crawl of a real app takes hours; generation takes minutes. Keeping them
+    separate means the prompt, the model or the case format can change without
+    paying for the capture again.
+    """
+    _setup_logging(verbose)
+
+    overrides: dict[str, object] = {
+        "output.dir": out or from_dir,
+        "llm.model": model,
+        "llm.max_cases_per_page": cases,
+        "llm.provider": "stub" if stub else None,
+        # A crawl-only config usually sets formats: [graph], which would write
+        # the map and silently drop every test case.
+        "output.formats": [f.strip() for f in formats.split(",") if f.strip()],
+    }
+    try:
+        cfg = RunConfig.load(config, overrides)
+    except Exception as exc:
+        console.print(f"[bold red]Config error:[/] {exc}")
+        raise typer.Exit(code=2)
+
+    try:
+        crawl_result = load_crawl(from_dir)
+    except LoadError as exc:
+        console.print(f"[bold red]Cannot read that crawl:[/] {exc}")
+        raise typer.Exit(code=2)
+
+    if not stub and cfg.llm.provider != "stub" and not os.environ.get("ANTHROPIC_API_KEY"):
+        console.print(
+            "[bold red]No ANTHROPIC_API_KEY set.[/] Export your key, or pass "
+            "--stub for a free dry run that exercises the whole pipeline."
+        )
+        raise typer.Exit(code=2)
+
+    console.print(f"[bold]Source:[/] {from_dir}  [dim]{len(crawl_result.pages)} states[/]")
+    console.print(
+        f"[bold]Provider:[/] {cfg.llm.provider}"
+        + ("  [yellow](dry run -- no API calls, placeholder text)[/]" if cfg.llm.provider == "stub" else f"  [dim]{cfg.llm.model}[/]")
+    )
+    console.print(f"[bold]Output:[/] {cfg.output.dir}\n")
+
+    try:
+        manifest = asyncio.run(Orchestrator(cfg).generate_only(crawl_result))
+    except KeyboardInterrupt:
+        console.print("[yellow]Interrupted.[/]")
+        raise typer.Exit(code=130)
+    except Exception as exc:
+        console.print(f"[bold red]Generation failed:[/] {exc}")
+        if verbose:
+            console.print_exception()
+        raise typer.Exit(code=1)
+
+    _summary(manifest, cfg.output.dir)
 
 
 @app.command()

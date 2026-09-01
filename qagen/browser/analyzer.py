@@ -161,14 +161,31 @@ class PageAnalyzer:
         # fingerprints differently every visit.
         quiet_ms = 150 if quick else self.cfg.crawl.stability_ms
         deadline = time.monotonic() + (cap_ms / 1000)
+        # A page that is still *growing* has not settled, whatever the clock
+        # says. The old loop was bounded purely by settle_timeout_ms (2s on the
+        # tuned profile), so a page still drawing at 2s was extracted half-built
+        # -- which is how one screen became 31 states with element counts from
+        # 32 to 165. While the element count keeps rising, extend the deadline;
+        # max_settle_ms is the hard stop so a polling widget cannot hang us.
+        hard_stop = time.monotonic() + (
+            min(cap_ms, 1500) if quick else self.cfg.crawl.max_settle_ms
+        ) / 1000
         previous = current
+        count = len(current.split("|")) if current else 0
         quiet_since = time.monotonic()
-        while time.monotonic() < deadline:
+        while time.monotonic() < deadline and time.monotonic() < hard_stop:
             try:
                 current = await page.evaluate(SIGNATURE_JS)
             except Exception:
                 return previous
-            if current == previous:
+            now_count = len(current.split("|")) if current else 0
+            if now_count > count:
+                # Still rendering. Reset the quiet period and buy more time.
+                count = now_count
+                previous = current
+                quiet_since = time.monotonic()
+                deadline = max(deadline, time.monotonic() + (cap_ms / 1000))
+            elif current == previous:
                 if (time.monotonic() - quiet_since) * 1000 >= quiet_ms:
                     return current
             else:

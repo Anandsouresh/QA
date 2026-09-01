@@ -140,6 +140,36 @@ def interactive_signature(
     return hashlib.sha256(body.encode("utf-8")).hexdigest()[:16]
 
 
+def anchor_set(elements: list[Element]) -> frozenset[str]:
+    """The selectors on this page that the app named on purpose.
+
+    A ``data-testid`` or a real ``id`` either exists in the DOM or it does not.
+    It does not appear halfway through rendering the way a computed element list
+    does, and it does not move when a counter ticks -- which makes it a far
+    better statement of "which screen is this" than the full element inventory.
+
+    Evidence: two captures of the same Screen page produced different
+    fingerprints (``4ed56555`` and ``91a1db03``) and therefore two states, while
+    their screenshots were byte-identical (same md5) and their anchor sets
+    matched 214 of 214.
+    """
+    return frozenset(
+        e.selector
+        for e in elements
+        if e.visible and not e.transient and e.stable_selector and e.selector
+    )
+
+
+def anchor_similarity(a: frozenset[str], b: frozenset[str]) -> float:
+    """Jaccard overlap of two anchor sets. 1.0 means identical."""
+    if not a and not b:
+        return 1.0
+    union = a | b
+    if not union:
+        return 1.0
+    return len(a & b) / len(union)
+
+
 def compute_fingerprint(
     url: str,
     elements: list[Element],

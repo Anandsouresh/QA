@@ -142,6 +142,18 @@ class CrawlConfig(BaseModel):
     #: they were always in the discarded tail -- the notification bell went
     #: unclicked on the entry page for exactly this reason.
     max_restore_failures: int = Field(default=3, ge=1)
+    #: Two page states on the same URL whose stable anchors overlap by at least
+    #: this much are the same screen caught at two moments of rendering, not two
+    #: screens. 1.0 disables the merge.
+    #:
+    #: Measured: two captures of /screen fingerprinted differently but had
+    #: identical anchor sets (214 of 214) and byte-identical screenshots. On one
+    #: run /screen became 31 states and the homepage 17, purely from this.
+    state_anchor_threshold: float = Field(default=0.9, ge=0.0, le=1.0)
+    #: Hard ceiling on settle(). The stability poll is otherwise bounded by
+    #: settle_timeout_ms, which on a slow SPA expires mid-render -- that is how a
+    #: half-drawn page reaches the extractor in the first place.
+    max_settle_ms: int = Field(default=15000, ge=0)
     action_timeout_ms: int = Field(default=8000, ge=500)
     nav_timeout_ms: int = Field(default=20000, ge=1000)
     #: A popup has no URL, so returning to it means replaying the click that
