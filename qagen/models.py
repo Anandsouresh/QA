@@ -324,6 +324,27 @@ class Element(BaseModel):
         """
         return (self.y // band, self.x)
 
+    def stable_identity(self) -> str:
+        """Identity that survives the page being redrawn.
+
+        ``identity()`` includes the selector, and on this app a quarter of
+        selectors are positional -- ``li:nth-of-type(3)``. When the list redraws
+        and the same control lands at position 2, its identity changes and it
+        looks like a control we have never seen. Measured consequence: one
+        "Export" button was queued as four separate popups, and 21 unnamed
+        ``div`` triggers produced 21 states.
+
+        So: prefer the label the app gave the control, fall back to its role and
+        name with digits normalised, and only use the raw selector when there is
+        nothing better -- which at least keeps behaviour no worse than before.
+        """
+        if self.stable_selector:
+            return f"{self.role}{self.selector}"
+        name = _normalise_name(self.name)
+        if name:
+            return f"{self.role}{name}"
+        return f"{self.role}{self.selector}"
+
     def identity(self) -> str:
         """Cross-state identity, used to exercise global chrome only once.
 

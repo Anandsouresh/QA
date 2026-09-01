@@ -142,9 +142,9 @@ class Crawler:
         #: Normalised URLs ever put on the frontier, so site chrome is not
         #: queued once per state.
         self._queued: set[str] = set()
-        #: (url, replay selectors) already queued, so the same popup is not
-        #: enqueued from every state that can open it.
-        self._queued_replays: set[tuple[str, tuple[str, ...]]] = set()
+        #: Popups already queued, keyed two ways -- by the control that opens
+        #: them and by the controls they reveal. See _enqueue_overlay.
+        self._queued_replays: set[tuple] = set()
         #: fingerprint -> the replay path that reaches it. Lets a popup opened
         #: from inside another popup carry the whole chain.
         self._replay_by_fingerprint: dict[str, tuple] = {}
@@ -421,9 +421,29 @@ class Crawler:
                 f"{opened.normalized_url} is {len(replay)} clicks deep; not queued",
             )
             return
-        key = (opened.normalized_url, tuple(s.selector for s in replay))
-        if key in self._queued_replays:
-            return
+        revealed = self._revealed(base, opened)
+
+        # Two ways the same popup arrives twice, and both must be caught.
+        #
+        # by trigger -- the same button, found at a different position. A quarter
+        #   of selectors here are positional (`li:nth-of-type(3)`), so keying on
+        #   the selector queued one "Export" button as four popups and 21
+        #   unnamed `div` triggers as 21 states.
+        # by content -- two different buttons that open the same thing. The
+        #   revealed controls are what the popup *is*; if we have queued that set
+        #   already, queuing it again buys nothing.
+        by_trigger = (opened.normalized_url, "trigger", trigger.stable_identity())
+        marks = tuple(sorted(e.stable_identity() for e in revealed))
+        by_content = (opened.normalized_url, "content", marks) if marks else None
+
+        for key in (by_trigger, by_content):
+            if key and key in self._queued_replays:
+                self.log.note(
+                    "overlay_already_queued",
+                    f"{opened.normalized_url} via {trigger.name or trigger.role!r} "
+                    f"matches a popup already queued; skipping",
+                )
+                return
         # Already explored under a different route in. Without this the same
         # menu is queued once per chain that reaches it, and each queued copy
         # costs a navigation plus a replay (~20s) only to report
@@ -435,10 +455,11 @@ class Crawler:
                 f"is already exercised; not queued again",
             )
             return
-        self._queued_replays.add(key)
+        self._queued_replays.add(by_trigger)
+        if by_content:
+            self._queued_replays.add(by_content)
         self._replay_by_fingerprint[opened.fingerprint] = replay
 
-        revealed = self._revealed(base, opened)
         self._frontier.append(
             FrontierItem(
                 url=base.url,

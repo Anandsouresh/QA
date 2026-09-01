@@ -659,3 +659,52 @@ class TestRevealedOnlyPlanning:
     def test_no_restriction_plans_everything(self):
         page_buttons = [self._el(f"page{i}", y=100 + i * 30) for i in range(3)]
         assert self._plan(page_buttons) == ["page0", "page1", "page2"]
+
+
+class TestPopupQueueDedup:
+    """The same popup must not be queued once per route that reaches it.
+
+    Measured on a real run: one "Export" button produced 4 popup states and 21
+    unnamed `div` triggers produced 21, because the queue was keyed on the
+    selector -- and a quarter of selectors here are positional, so the same
+    control looks new every time the list redraws.
+    """
+
+    def _el(self, name, selector, strategy="css-path"):
+        from qagen.models import Confidence, Element, ElementKind
+
+        return Element(
+            ref="E1", kind=ElementKind.GENERIC_BUTTON, role="button", name=name,
+            tag="div", selector=selector, selector_strategy=strategy,
+            confidence=Confidence.HIGH,
+        )
+
+    def test_same_button_at_a_different_position_is_one_popup(self):
+        """`li:nth-of-type(3)` becoming `li:nth-of-type(2)` is a redraw, not a
+        new button."""
+        a = self._el("Export", "ul > li:nth-of-type(3) > div")
+        b = self._el("Export", "ul > li:nth-of-type(2) > div")
+        assert a.identity() != b.identity()          # the old key: two buttons
+        assert a.stable_identity() == b.stable_identity()   # the new key: one
+
+    def test_a_stable_label_is_preferred_over_the_name(self):
+        el = self._el("Export", '[data-testid="export_btn"]', "data-testid")
+        assert 'data-testid="export_btn"' in el.stable_identity()
+
+    def test_digits_in_a_name_do_not_split_one_control(self):
+        """"2 of 2 selected" becoming "3 of 3 selected" is the same toolbar."""
+        a = self._el("2 of 2 selected", "div.toolbar > span")
+        b = self._el("3 of 3 selected", "div.toolbar > span:nth-of-type(2)")
+        assert a.stable_identity() == b.stable_identity()
+
+    def test_genuinely_different_buttons_stay_different(self):
+        a = self._el("Export", "div.a")
+        b = self._el("Delete", "div.b")
+        assert a.stable_identity() != b.stable_identity()
+
+    def test_unnamed_controls_fall_back_to_the_selector(self):
+        """No label and no name -- keep the old behaviour rather than merging
+        two unrelated controls into one."""
+        a = self._el("", "div.x > span:nth-of-type(1)")
+        b = self._el("", "div.y > span:nth-of-type(2)")
+        assert a.stable_identity() != b.stable_identity()

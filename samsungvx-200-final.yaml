@@ -130,7 +130,7 @@ interaction:
   allow_selectors: []
   dismiss_consent: true
 output:
-  dir: ./samsungvx-200-final03
+  dir: ./samsungvx-200-final04
   formats:
   - graph
   save_page_models: true
