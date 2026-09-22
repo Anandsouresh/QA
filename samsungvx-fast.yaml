@@ -106,3 +106,27 @@ browser:
   viewport_width: 1200
   viewport_height: 900
   block_mutations: true
+  # Looks at the shape of an otherwise-blocked POST (its path, its JSON
+  # body) and lets it through if it reads as a filter/list call rather than
+  # a write. PUT/PATCH/DELETE and any path naming an action (create, delete,
+  # sign, chat/start, ...) always stay blocked regardless of body shape --
+  # see classify_write_candidate in qagen/browser/session.py.
+  #
+  # Two endpoints on this target (.../resources, .../places) were blocked
+  # despite reading like list calls; this decides that from the real request
+  # body at crawl time instead of guessing from the path name.
+  classify_ambiguous_writes: true
+  # Once a specific endpoint has been confirmed a read (devtools, not a
+  # guess), name it here for a deterministic allow -- independent of the
+  # classifier above. Empty until something is actually confirmed.
+  # Confirmed live (not guessed): each returned a real, populated list --
+  # screens, channels, contents, programs, playlists -- at status 200, with
+  # a request body of just {"advancedSearch":[]} and the real pagination
+  # sitting in the query string (orderBy/order/start/rowsPerPage). These no
+  # longer depend on classify_ambiguous_writes re-deciding it every time.
+  safe_read_endpoints:
+  - /screens/search
+  - /contents/search
+  - /playlist/search
+  - /programs/search
+  - /channels/search

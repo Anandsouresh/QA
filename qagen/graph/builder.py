@@ -119,6 +119,54 @@ class GraphBuilder:
         )
         return node
 
+    def add_module_boundary(
+        self, page: PageModel, reason: str, triggered_by: str | None
+    ) -> NavNode:
+        """A same-origin destination outside the crawl's module restriction.
+
+        Captured once -- a real screenshot, the real element count -- so a
+        reviewer can see what the click leads to, but keyed by the
+        destination's own normalized URL rather than the shared per-origin key
+        ``add_boundary`` uses for genuine external links. Content and
+        Playlist, reached from a Screen-only crawl, must be two different
+        markers, each with its own picture -- not one shared "left the
+        module" blob with no picture at all, which is what the origin-keyed
+        boundary would otherwise collapse them into.
+        """
+        key = f"module_boundary::{page.normalized_url}"
+        existing = self._by_fingerprint.get(key)
+        if existing is not None:
+            existing.visit_count += 1
+            existing.screenshot = existing.screenshot or page.screenshot_path
+            existing.html = existing.html or page.html_path
+            return existing
+
+        self._node_seq += 1
+        node = NavNode(
+            id=f"N{self._node_seq:03d}",
+            fingerprint=key,
+            url=page.url,
+            normalized_url=page.normalized_url,
+            title=page.title or page.normalized_url,
+            depth=page.depth,
+            node_type="boundary",
+            element_count=len(page.elements),
+            actionable_count=page.actionable_count,
+            main_actionable_count=page.main_actionable_count,
+            dom_nodes=page.dom_nodes,
+            screenshot=page.screenshot_path,
+            html=page.html_path,
+        )
+        self._by_fingerprint[key] = node
+        self.graph.nodes.append(node)
+        self.graph.boundaries.append(
+            Boundary(
+                origin=page.normalized_url, url=page.url, reason=reason,
+                triggered_by=triggered_by,
+            )
+        )
+        return node
+
     def node_for(self, fingerprint: str) -> NavNode | None:
         return self._by_fingerprint.get(fingerprint)
 

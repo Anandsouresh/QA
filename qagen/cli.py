@@ -42,6 +42,11 @@ def run(
     auth: Optional[Path] = typer.Option(None, "--auth", help="storage_state / cookie JSON"),
     provider: Optional[str] = typer.Option(None, "--provider", help="claude | stub"),
     model: Optional[str] = typer.Option(None, "--model", help="LLM model id"),
+    module: Optional[str] = typer.Option(
+        None, "--module",
+        help="Restrict the crawl to one module (e.g. 'screen' -> /screen, /screen/*). "
+        "Anything reached outside it is captured once and marked as a boundary, not explored.",
+    ),
     headed: bool = typer.Option(False, "--headed", help="Run with a visible browser"),
     allow_mutations: bool = typer.Option(
         False,
@@ -64,6 +69,8 @@ def run(
         "browser.headless": False if headed else None,
         "browser.block_mutations": False if allow_mutations else None,
     }
+    if module:
+        overrides["target.include_paths"] = [f"/{module.strip('/')}", f"/{module.strip('/')}/*"]
 
     try:
         cfg = RunConfig.load(config, overrides)
@@ -78,6 +85,8 @@ def run(
         )
 
     console.print(f"[bold]Target:[/] {cfg.target.url}  [dim]depth={cfg.target.depth}[/]")
+    if module:
+        console.print(f"[bold]Module:[/] {module}  [dim]{cfg.target.include_paths}[/]")
     console.print(f"[bold]Provider:[/] {cfg.llm.provider} ({cfg.llm.model})")
     console.print(f"[bold]Output:[/] {cfg.output.dir}\n")
 
@@ -146,6 +155,11 @@ def crawl(
     depth: Optional[int] = typer.Option(None, "--depth", help="0 = single page only"),
     out: Optional[Path] = typer.Option(None, "--out", "-o", help="Output directory"),
     auth: Optional[Path] = typer.Option(None, "--auth", help="storage_state / cookie JSON"),
+    module: Optional[str] = typer.Option(
+        None, "--module",
+        help="Restrict the crawl to one module (e.g. 'screen' -> /screen, /screen/*). "
+        "Anything reached outside it is captured once and marked as a boundary, not explored.",
+    ),
     headed: bool = typer.Option(False, "--headed", help="Run with a visible browser"),
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ) -> None:
@@ -159,6 +173,8 @@ def crawl(
         "auth.storage_state": auth,
         "browser.headless": False if headed else None,
     }
+    if module:
+        overrides["target.include_paths"] = [f"/{module.strip('/')}", f"/{module.strip('/')}/*"]
 
     try:
         cfg = RunConfig.load(config, overrides)
@@ -167,6 +183,8 @@ def crawl(
         raise typer.Exit(code=2)
 
     console.print(f"[bold]Target:[/] {cfg.target.url}  [dim]depth={cfg.target.depth}[/]")
+    if module:
+        console.print(f"[bold]Module:[/] {module}  [dim]{cfg.target.include_paths}[/]")
     console.print("[bold]Mode:[/] crawl + graph only (no test-case generation)")
     console.print(f"[bold]Output:[/] {cfg.output.dir}\n")
 

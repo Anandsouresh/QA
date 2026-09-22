@@ -9,11 +9,13 @@ which is the worst kind of bug to chase.
 
 from __future__ import annotations
 
+import fnmatch
 import json
 import logging
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
+from urllib.parse import parse_qs, urlsplit
 
 from playwright.async_api import (
     Browser,
@@ -124,16 +126,163 @@ def _is_our_own_noise(text: str) -> bool:
 _TELEMETRY_HOSTS = (
     "analytics.google.com", "google-analytics.com", "googletagmanager.com",
     "doubleclick.net", "stats.g.doubleclick.net", "google.com/g/collect",
+    # Google Ads conversion pixels -- distinct from the analytics beacon
+    # above, and just as frequent. Found live: every click on one real target
+    # fired one of these, which is why they were still showing up as
+    # "blocked mutations" even after the g/collect beacon was excluded.
+    "google.com/measurement/conversion", "google.com/pagead",
     "segment.io", "segment.com", "amplitude.com", "mixpanel.com",
     "sentry.io", "bugsnag.com", "datadoghq.com", "newrelic.com",
     "hotjar.com", "fullstory.com", "clarity.ms", "intercom.io",
     "facebook.com/tr", "bat.bing.com", "clicky.com", "matomo.cloud",
+    # AWS CloudWatch RUM (Real User Monitoring), found live as a matched pair:
+    # an STS call assuming a "RUM-Monitor" role, then a data-plane call
+    # posting the collected metrics. Neither carries application data --
+    # both fire on every page load purely to report performance/errors.
+    "sts.amazonaws.com", "sts.us-east-1.amazonaws.com", "dataplane.rum.",
 )
+
+#: Hosts that issue real, temporary credentials the app needs to fetch its
+#: own protected content -- not analytics, and not safe to just drop the way
+#: telemetry is. Blocking these does not merely lose a tracking beacon: on
+#: one real target, 16-32 blocked Cognito calls showed up on a single Screen
+#: page, and Cognito's job is handing out short-lived AWS credentials for
+#: reading protected resources (thumbnails, media) -- exactly the kind of
+#: silent failure that produces a page with real items but no images. Allowed
+#: through entirely (not merely uncounted): the request reaches AWS as
+#: normal, because it does not write anything to the application itself.
+_CREDENTIAL_HOSTS = (
+    "cognito-identity.", "cognito-idp.",
+)
+
+
+def _is_credential_service(url: str) -> bool:
+    host = urlsplit(url).hostname or ""
+    return any(marker in host for marker in _CREDENTIAL_HOSTS)
 
 
 def _is_telemetry(url: str) -> bool:
     low = url.lower()
     return any(marker in low for marker in _TELEMETRY_HOSTS)
+
+
+#: Path segments that name a mutation regardless of what the body looks like.
+#: A request to ".../chat/start" or ".../screens/wall" is doing something --
+#: starting a session, creating a record -- even if its body happens to be
+#: shaped like a filter. This list is what keeps the classifier from being
+#: fooled by a write endpoint that also accepts query-shaped parameters.
+_MUTATION_PATH_WORDS = (
+    "create", "delete", "remove", "destroy", "update", "edit", "upload",
+    "publish", "cancel", "subscribe", "purchase", "checkout", "buy", "send",
+    "sign", "logout", "signout", "signup", "register", "chat/start", "wall",
+    "cases", "revoke", "archive", "merge", "transfer", "reset", "approve",
+    "confirm", "deactivate",
+)
+
+#: JSON body keys that read as "describe what to fetch", not "save this".
+#: Lower-cased before comparing, so camelCase and snake_case both match.
+_READ_BODY_KEYS = frozenset(
+    {
+        "page", "pagenumber", "pagesize", "page_size", "size", "sort",
+        "sortby", "sort_by", "sortfield", "sort_field", "filter", "filters",
+        "keyword", "search", "query", "offset", "limit", "criteria",
+        "pageindex", "page_index", "advancedsearch",
+    }
+)
+
+#: Query-string parameter names carrying the same signal, for an API that
+#: puts its filter in the JSON body but its pagination/sort in the URL --
+#: found live: `.../screens/search?orderBy=...&order=desc&start=0&rowsPerPage=50`
+#: with a body of just `{"advancedSearch":[]}`, which has no recognisable key
+#: of its own but sits behind a URL that is unmistakably a paged list call.
+_READ_QUERY_KEYS = frozenset(
+    {
+        "page", "pagenumber", "pagesize", "size", "sort", "sortby",
+        "orderby", "order", "start", "rowsperpage", "offset", "limit",
+        "keyword", "search", "query", "filter",
+    }
+)
+
+#: Path segments that are unambiguous read verbs in their own right. Checked
+#: only after the mutation-word list above has had first refusal, so a path
+#: that names both ("search-and-delete", hypothetically) still blocks.
+_READ_PATH_WORDS = ("/search", "/list", "/query")
+
+#: JSON body keys that read as "here is data to persist". Any of these
+#: outweighs a read-shaped body -- a request can carry pagination AND a
+#: field to save in the same payload.
+_WRITE_BODY_KEYS = frozenset(
+    {"name", "title", "description", "content", "value", "password", "email"}
+)
+
+
+def classify_write_candidate(
+    method: str, path: str, body_text: str | None, query_string: str | None = None
+) -> tuple[str, str]:
+    """Is a blocked request actually a read wearing a write's HTTP verb?
+
+    Informational by default -- this only changes live behaviour when
+    ``browser.classify_ambiguous_writes`` is on, and even then it never
+    reclassifies PUT/PATCH/DELETE or a path naming an explicit action.
+
+    Two patterns this rescues, both found live on the same target:
+
+    1. A POST body carrying a filter too complex for a GET query string
+       (``.../resources``, ``.../places``) -- read from the body's own keys.
+    2. A POST whose *body* is an unhelpful ``{"advancedSearch": []}`` but
+       whose *query string* carries the real pagination
+       (``.../screens/search?orderBy=...&start=0&rowsPerPage=50``) -- five of
+       these were found powering Screen, Content, Playlist, Schedule and
+       Channel's own list views. Without ``query_string``, nothing here can
+       see that signal at all.
+
+    Returns ``(label, reason)`` where label is one of "likely_write",
+    "likely_read", or "unclear". Callers should treat anything but
+    "likely_read" as a write.
+    """
+    m = method.upper()
+    low_path = path.lower()
+
+    if m in {"PUT", "PATCH", "DELETE"}:
+        return "likely_write", f"{m} conventionally edits or removes an existing resource"
+
+    if any(word in low_path for word in _MUTATION_PATH_WORDS):
+        return "likely_write", "the path names an action associated with a write"
+
+    body_keys: set[str] = set()
+    body_is_json_object = False
+    if body_text:
+        try:
+            data = json.loads(body_text)
+        except Exception:
+            data = None
+        if isinstance(data, dict):
+            body_is_json_object = True
+            body_keys = {str(k).lower() for k in data.keys()}
+
+    write_hit = sorted(body_keys & _WRITE_BODY_KEYS)
+    if write_hit:
+        return "likely_write", f"body carries field(s) that look like they are being saved: {write_hit}"
+
+    read_hit = sorted(body_keys & _READ_BODY_KEYS)
+    if read_hit:
+        return "likely_read", f"body looks like a filter/list query: {read_hit}"
+
+    if query_string:
+        query_keys = {k.lower() for k in parse_qs(query_string).keys()}
+        query_hit = sorted(query_keys & _READ_QUERY_KEYS)
+        if query_hit:
+            return "likely_read", f"query string carries list/pagination parameters: {query_hit}"
+
+    if any(word in low_path for word in _READ_PATH_WORDS):
+        return "likely_read", "the path names an explicit read action (search/list/query)"
+
+    if not body_text:
+        return "unclear", "POST with an empty body and no query signal -- no signal either way"
+    if not body_is_json_object:
+        return "unclear", "body is not a JSON object; cannot inspect its shape"
+
+    return "unclear", "body/query shape matches neither a known read nor write pattern"
 
 
 class AuthError(RuntimeError):
@@ -269,6 +418,14 @@ class Session:
     # -- handler 1: the network write-guard -------------------------------
     async def _write_guard(self, route: Route, request: Request) -> None:
         if request.method.upper() in MUTATING_METHODS:
+            if _is_credential_service(request.url):
+                # Let through entirely, unlike telemetry below: this is not
+                # noise, it is the app fetching real AWS credentials it needs
+                # to read its own protected content. Blocking it does not
+                # merely lose a tracking beacon -- it can be why a page has
+                # real items but no thumbnails.
+                await route.continue_()
+                return
             if _is_telemetry(request.url):
                 # Still aborted -- we are not putting crawl traffic in anyone's
                 # analytics -- but NOT recorded as a mutation. A GA "button_click"
@@ -278,6 +435,48 @@ class Session:
                 # than the inert click it actually was.
                 await route.abort("blockedbyclient")
                 return
+
+            parts = urlsplit(request.url)
+            path = parts.path
+
+            # 1. The explicit, deterministic allowlist. You name an endpoint
+            # once you have confirmed it is a read; nothing is unblocked
+            # without that.
+            if any(
+                fnmatch.fnmatch(path, pat) or pat in path
+                for pat in self.cfg.browser.safe_read_endpoints
+            ):
+                self.sink.network.append(
+                    EndpointObservation(method=request.method, url=request.url, blocked=False)
+                )
+                log.debug("write-guard allowed (safe_read_endpoints) %s %s",
+                          request.method, request.url)
+                await route.continue_()
+                return
+
+            # 2. The shape-based classifier, opt-in. Never touches
+            # PUT/PATCH/DELETE or a path naming an action -- see
+            # classify_write_candidate's own docstring for exactly what it
+            # can and cannot rescue.
+            if self.cfg.browser.classify_ambiguous_writes:
+                try:
+                    body = request.post_data
+                except Exception:
+                    body = None
+                label, reason = classify_write_candidate(
+                    request.method, path, body, query_string=parts.query
+                )
+                if label == "likely_read":
+                    self.sink.network.append(
+                        EndpointObservation(method=request.method, url=request.url, blocked=False)
+                    )
+                    log.debug(
+                        "write-guard allowed (classified as a read) %s %s -- %s",
+                        request.method, request.url, reason,
+                    )
+                    await route.continue_()
+                    return
+
             self.sink.blocked.append(f"{request.method} {request.url}")
             self.sink.network.append(
                 EndpointObservation(method=request.method, url=request.url, blocked=True)

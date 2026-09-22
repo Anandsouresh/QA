@@ -90,6 +90,48 @@ def run_config(fixture_server, tmp_path):
 
 
 @pytest.fixture(scope="session")
+def crawled_module_restricted(fixture_server, tmp_path_factory):
+    """A crawl restricted to index.html only -- everything else is a
+    cross-module boundary. Separate from ``crawled`` because the two configs
+    (unrestricted vs. include_paths) must not share a session-cached result.
+    """
+    from qagen.browser.crawler import Crawler
+    from qagen.browser.session import Session
+    from qagen.config import RunConfig
+
+    cfg = RunConfig.model_validate(
+        {
+            "target": {
+                "url": f"{fixture_server}/index.html",
+                "depth": 1,
+                "include_paths": ["/index.html"],
+            },
+            "crawl": {
+                "max_pages": 12,
+                "max_clicks": 60,
+                "max_states_per_url": 8,
+                "max_wall_clock_seconds": 150,
+                "settle_timeout_ms": 900,
+            },
+            "llm": {"provider": "stub"},
+            "output": {
+                "dir": str(tmp_path_factory.mktemp("crawl_module")),
+                "formats": ["graph"],
+            },
+        }
+    )
+
+    async def _run():
+        async with Session(cfg) as session:
+            await session.verify_auth()
+            crawler = Crawler(cfg, session)
+            result = await crawler.run()
+            return result, crawler.graph, crawler.budgets, cfg
+
+    return asyncio.run(_run())
+
+
+@pytest.fixture(scope="session")
 def crawled(fixture_server, tmp_path_factory):
     """Crawl the fixture app exactly once; every integration test reads this.
 

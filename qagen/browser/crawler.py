@@ -8,12 +8,13 @@ every iteration, so there is no path through this file that does not finish.
 
 from __future__ import annotations
 
+import asyncio
 import logging
 import time
 from collections import deque
 from dataclasses import dataclass, field
 from typing import Any
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
 
 from playwright.async_api import Page
 
@@ -125,6 +126,13 @@ class Crawler:
         #: Used to recognise the same screen caught at two different moments of
         #: rendering; see _canonicalise.
         self._page_anchors: dict[str, list[tuple[str, frozenset[str]]]] = {}
+        #: normalised URL -> most elements ever captured there. The yardstick
+        #: for "did this visit render properly" -- see _guard_thin_capture.
+        self._url_typical_count: dict[str, int] = {}
+        #: (base page, triggering control) -> [(fingerprint, anchor set)]. Same
+        #: idea as _page_anchors, but scoped to tab-style in-page states
+        #: (Settings) instead of full pages -- see _canonicalise_inpage.
+        self._inpage_anchors: dict[tuple[str, str], list[tuple[str, frozenset[str]]]] = {}
         #: Fingerprints already charged to the per-URL / per-section budgets.
         #:
         #: A popup is seen twice: once when a click reveals it, and again when
@@ -157,6 +165,7 @@ class Crawler:
             normalize_url(self.cfg.target.url, self.cfg.target.id_collapse_exceptions)
         )
         self._frontier.append(FrontierItem(self.cfg.target.url, 0, "initial navigation"))
+        self._seed_modules()
 
         while self._frontier and not self.budgets.exhausted:
             item = self._frontier.popleft()
@@ -231,6 +240,7 @@ class Crawler:
 
         # 4C Observe + 4D Identify
         model = await self._analyze(page, item.depth, item.arrival_action)
+        model = await self._guard_thin_capture(page, model, item.depth, item.arrival_action)
         if not item.replay:
             # A plain page arrival. Popups are excluded -- see _canonicalise.
             self._canonicalise(model)
@@ -359,6 +369,50 @@ class Crawler:
         known.append((model.fingerprint, anchors))
         return False
 
+    def _canonicalise_inpage(
+        self, base: PageModel, opened: PageModel, trigger: Element
+    ) -> bool:
+        """The same merge as ``_canonicalise``, for tab-style in-page states.
+
+        Settings is built exactly like a popup -- clicking "Plan" in the left
+        menu swaps content without touching the URL -- so it was deliberately
+        excluded from the plain-page merge above, to avoid erasing real
+        popups. But that leaves it with the plain page's own problem: the same
+        tab, caught at two different loading moments, forks into two nodes.
+        Evidence: two visits to Settings > Plan produced different
+        fingerprints while showing byte-identical screenshots and 100%
+        matching anchors.
+
+        Scoped by *which control opened it*, not just the base URL -- so the
+        Notification bell's popup and a card's "+" menu, which share the same
+        base page, are never candidates for merging with each other. Only
+        repeat visits reached by clicking the *same* control are compared.
+        """
+        threshold = self.cfg.crawl.state_anchor_threshold
+        anchors = anchor_set(opened.elements)
+        if not anchors:
+            return False
+
+        key = (base.normalized_url, trigger.stable_identity())
+        known = self._inpage_anchors.setdefault(key, [])
+        for fingerprint, seen in known:
+            if fingerprint == opened.fingerprint:
+                return False
+            score = anchor_similarity(anchors, seen)
+            if score >= threshold:
+                self.log.note(
+                    "inpage_state_merged",
+                    f"{base.normalized_url} via {trigger.name or trigger.role!r} "
+                    f"matches an earlier capture ({score:.0%} of anchors); "
+                    f"reusing {fingerprint[:10]} instead of "
+                    f"{opened.fingerprint[:10]}",
+                )
+                opened.fingerprint = fingerprint
+                return True
+
+        known.append((opened.fingerprint, anchors))
+        return False
+
     async def _analyze(self, page: Page, depth: int, arrival: str) -> PageModel:
         """Extract, then work out which of it is the app frame.
 
@@ -369,6 +423,55 @@ class Crawler:
         model = await self.analyzer.analyze(page, depth, arrival)
         self.shell.observe(model)
         self.shell.label(model)
+        return model
+
+    async def _guard_thin_capture(
+        self, page: Page, model: PageModel, depth: int, arrival: str
+    ) -> PageModel:
+        """Catch a page caught mid-render and give it one more chance.
+
+        The only signal for this before now was "fewer than
+        hydration_min_elements" -- default 1, which basically never fires. A
+        page that rendered its shell and nothing else sailed through as final.
+
+        The real yardstick is the page's own history: if a URL has shown 70
+        elements before and this visit shows 20, something raced, not the app.
+        Never fires on the first visit to a URL -- there is nothing yet to
+        compare against, and a genuinely sparse page (an empty workspace) must
+        not be endlessly retried against its own first, correct, capture.
+        """
+        threshold = self.cfg.crawl.thin_capture_threshold
+        typical = self._url_typical_count.get(model.normalized_url)
+        count = len(model.elements)
+
+        if typical is not None and typical > 0 and count < typical * threshold:
+            self.log.note(
+                "thin_capture_retry",
+                f"{model.normalized_url}: {count} elements, usually {typical}; "
+                f"waiting and re-extracting",
+            )
+            wait_s = self.cfg.crawl.thin_capture_retry_wait_ms / 1000
+            if wait_s > 0:
+                await asyncio.sleep(wait_s)
+            await self.analyzer.settle(page)
+            retried = await self._analyze(page, depth, arrival)
+            if len(retried.elements) > count:
+                self.log.note(
+                    "thin_capture_recovered",
+                    f"{model.normalized_url}: {count} -> {len(retried.elements)} "
+                    f"elements after retry",
+                )
+                model = retried
+            else:
+                self.log.note(
+                    "thin_capture_unchanged",
+                    f"{model.normalized_url}: retry did not improve on {count} "
+                    f"elements; keeping the original capture",
+                )
+
+        self._url_typical_count[model.normalized_url] = max(
+            typical or 0, len(model.elements)
+        )
         return model
 
     async def _replay(self, page: Page, item: FrontierItem) -> bool:
@@ -548,32 +651,41 @@ class Crawler:
                 consecutive_failures = 0
                 continue
 
-            # A failed restore used to end the state outright. It is the single
-            # largest source of missed coverage: on one real run the entry page
-            # had 46 elements, attempted 28, hit one failed restore and dropped
-            # the remaining 18 -- the notification bell among them, because
-            # app-frame controls are planned last and so are always in the tail
-            # that gets discarded.
-            #
-            # Escape/back/goto failing does not mean the page is unusable. It
-            # means we are somewhere unexpected. Go back deliberately and carry
-            # on with the rest of the plan.
+            # The cheap restore failing does not mean the page is unusable --
+            # it means we are somewhere unexpected. Fall back to a full
+            # reload (+ replay, for a popup) before giving up on anything.
+            if await self._hard_reset(page, model, item):
+                self.log.note("state_recovered", f"{node.id}: back after a failed restore")
+                # A successful recovery is NOT a failure. The bug this fixes:
+                # this counter used to keep climbing even when every single
+                # hard reset succeeded, because only the cheap restore's
+                # result reset it. On one real run that abandoned a state
+                # after exactly 5 actions with 88 still unattempted, even
+                # though the hard reset had not failed even once -- the cheap
+                # restore's signature match essentially never holds on this
+                # app (measured: 67 of 141 restores failed the cheap check),
+                # so five actions was all it ever took to hit the old
+                # threshold, no matter how well recovery was actually going.
+                consecutive_failures = 0
+                continue
+
+            # Both the cheap restore AND the hard reset failed for this
+            # action. This -- not a mere cheap-restore miss -- is the only
+            # thing that should count toward giving up on the state.
             consecutive_failures += 1
             if consecutive_failures >= self.cfg.crawl.max_restore_failures:
                 self.log.note(
                     "state_abandoned",
-                    f"{node.id}: {consecutive_failures} restores in a row failed; "
-                    f"{len(plan) - index - 1} action(s) not attempted",
+                    f"{node.id}: {consecutive_failures} consecutive unrecoverable "
+                    f"restore(s); {len(plan) - index - 1} action(s) not attempted",
                 )
                 return
-            if not await self._hard_reset(page, model, item):
-                self.log.note(
-                    "state_abandoned",
-                    f"{node.id}: could not return to the state; "
-                    f"{len(plan) - index - 1} action(s) not attempted",
-                )
-                return
-            self.log.note("state_recovered", f"{node.id}: back after a failed restore")
+            self.log.note(
+                "hard_reset_failed",
+                f"{node.id}: could not confirm recovery "
+                f"({consecutive_failures}/{self.cfg.crawl.max_restore_failures}); "
+                f"continuing with the plan anyway",
+            )
 
     async def _hard_reset(
         self, page: Page, model: PageModel, item: FrontierItem
@@ -585,6 +697,16 @@ class Crawler:
         the goal is to be somewhere we can keep testing from, not to reproduce
         the state byte for byte. Insisting on the latter is what made a single
         failed restore throw away the rest of the page.
+
+        The replay loop honours that same promise: a stale selector partway
+        through (a virtualised grid row that scrolled away, a per-row menu
+        that only exists while that row is selected) stops the replay at that
+        point rather than failing the whole reset. We are still on a real,
+        settled page -- the base state, if not the exact popup depth we were
+        at -- which is exactly "somewhere we can keep testing from". The
+        earlier code returned False here on the very first stale step, which
+        is what turned a single stale grid selector into a fully abandoned
+        state with dozens of untried actions.
         """
         if not self.budgets.take_navigation():
             return False
@@ -597,18 +719,27 @@ class Crawler:
             return False
 
         replay = item.replay or self._replay_of(model)
-        if replay:
-            for step in replay:
-                try:
-                    locator = page.locator(step.selector).first
-                    if await locator.count() == 0:
-                        return False
-                    await locator.click(
-                        timeout=self.cfg.crawl.action_timeout_ms, no_wait_after=True
+        for depth, step in enumerate(replay):
+            try:
+                locator = page.locator(step.selector).first
+                if await locator.count() == 0:
+                    self.log.note(
+                        "hard_reset_replay_partial",
+                        f"{step.selector} no longer resolves; landed {depth} of "
+                        f"{len(replay)} replay step(s) deep instead of the full chain",
                     )
-                    await self.analyzer.settle(page)
-                except Exception:
-                    return False
+                    break
+                await locator.click(
+                    timeout=self.cfg.crawl.action_timeout_ms, no_wait_after=True
+                )
+                await self.analyzer.settle(page)
+            except Exception as exc:
+                self.log.note(
+                    "hard_reset_replay_partial",
+                    f"{step.selector} failed to click ({exc}); landed {depth} of "
+                    f"{len(replay)} replay step(s) deep instead of the full chain",
+                )
+                break
         return True
 
     def _skip(
@@ -765,6 +896,52 @@ class Crawler:
             and cheap_after == self._cheap.get(before_fp, cheap_after)
         )
 
+        # A click that appears to do nothing is retried once, but only for a
+        # control we found by inference rather than by role/tabindex -- React
+        # attaches its handlers after hydration, so a click landing a moment
+        # early is genuinely inert the first time and genuinely not the
+        # second. Also only when the first attempt produced no side effect at
+        # all: a blocked-write attempt is a real, useful result on its own,
+        # and clicking again would just attempt the same write twice.
+        #
+        # Evidence: "Add Screen" and "New Screen Wall" both registered
+        # no_change on their one and only try, each finishing in under a
+        # second right after two *other* clicks had each taken the full 10s
+        # action timeout -- exactly the profile of a page still catching up
+        # with itself, not a button that truly does nothing.
+        no_side_effect = not (
+            events.blocked or events.dialogs or events.new_pages
+            or events.file_choosers or events.downloads
+        )
+        if unchanged and no_side_effect and (
+            el.pointer_cursor or el.kind is ElementKind.INFERRED_CLICKABLE
+        ):
+            await asyncio.sleep(0.4)
+            try:
+                retry_locator = page.locator(el.selector).first
+                if await retry_locator.count() > 0:
+                    await retry_locator.click(
+                        timeout=self.cfg.crawl.action_timeout_ms, no_wait_after=True
+                    )
+                    await self.analyzer.settle(page)
+                    if page.url != before_url:
+                        await self.analyzer.dismiss_consent(page)
+                    events = self.session.sink.drain()
+                    after_url = page.url
+                    cheap_after = await self.analyzer.signature(page)
+                    unchanged = (
+                        after_url == before_url
+                        and cheap_after == self._cheap.get(before_fp, cheap_after)
+                    )
+                    if not unchanged or events.blocked or events.dialogs:
+                        self.log.note(
+                            "inert_retry_recovered",
+                            f"{el.name or el.role!r} did nothing on the first "
+                            f"click but something on the second",
+                        )
+            except Exception:
+                pass  # the original (unchanged) result stands
+
         after: PageModel | None = None
         if unchanged:
             after_fp = before_fp
@@ -781,6 +958,16 @@ class Crawler:
                 # The click landed on another page; same rule as a frontier
                 # arrival. In-page states deliberately skip this.
                 self._canonicalise(after)
+                after_fp = after.fingerprint
+            else:
+                # Same URL, something changed on screen. Settings is built
+                # exactly like a popup -- clicking a tab swaps content without
+                # touching the URL -- so a tab caught at two different loading
+                # moments forks into two nodes the same way a full page used
+                # to. Scoped by (page, which control opened it): two DIFFERENT
+                # popups sharing a base page (Notification vs a card's "+")
+                # must never merge just because they're both in-page states.
+                self._canonicalise_inpage(model, after, el)
                 after_fp = after.fingerprint
 
         outcome, annotations = self._classify_outcome(
@@ -807,27 +994,54 @@ class Crawler:
                 target_node = known
 
             elif outcome is Outcome.NAVIGATION:
-                # Create the node so the edge has a target, but leave the state
-                # out of `_seen` so the frontier visit still explores it fully.
-                target_node = self.graph.add_state(after)
-                # Capture now rather than trusting the later visit to fill it
-                # in. That hand-off matches on fingerprint, and when the page
-                # has moved on even slightly the visit creates a *new* node --
-                # leaving this one permanently without a screenshot. That is
-                # why /screen and /content had none.
-                if not target_node.screenshot:
-                    await self._capture_artifacts(page, after, target_node.id)
-                    target_node.screenshot = after.screenshot_path
-                    target_node.html = after.html_path
-                if model.depth + 1 <= self.cfg.target.depth:
-                    self._frontier.append(
-                        FrontierItem(
-                            url=after_url,
-                            depth=model.depth + 1,
-                            arrival_action=f"Click '{el.name}'",
-                            source_fingerprint=model.fingerprint,
-                        )
+                nav_scope = self.scope.in_scope(after_url)
+                if not nav_scope.allowed and nav_scope.reason == "not in include_paths":
+                    # A module restriction, not a real exclusion like /logout.
+                    # Capture once so a reviewer can see what this leads to,
+                    # mark it, and stop -- do not explore it. Keyed by the
+                    # destination's own URL, so Content and Playlist get their
+                    # own markers rather than collapsing into one shared
+                    # "left the module" node.
+                    #
+                    # A full, unrestricted run never takes this branch: with
+                    # include_paths empty, in_scope always allows a
+                    # same-origin URL, so nothing here changes its behaviour.
+                    target_node = self.graph.add_module_boundary(
+                        after, nav_scope.reason, f"Click '{el.name or el.role}'"
                     )
+                    if not target_node.screenshot:
+                        await self._capture_artifacts(page, after, target_node.id)
+                        target_node.screenshot = after.screenshot_path
+                        target_node.html = after.html_path
+                    self.log.note(
+                        "module_boundary",
+                        f"{after.normalized_url} is outside this crawl's module; "
+                        f"captured once via {el.name or el.role!r}, not explored",
+                    )
+                    # Deliberately not queued: captured, not crawled.
+                else:
+                    # Create the node so the edge has a target, but leave the
+                    # state out of `_seen` so the frontier visit still
+                    # explores it fully.
+                    target_node = self.graph.add_state(after)
+                    # Capture now rather than trusting the later visit to fill
+                    # it in. That hand-off matches on fingerprint, and when
+                    # the page has moved on even slightly the visit creates a
+                    # *new* node -- leaving this one permanently without a
+                    # screenshot. That is why /screen and /content had none.
+                    if not target_node.screenshot:
+                        await self._capture_artifacts(page, after, target_node.id)
+                        target_node.screenshot = after.screenshot_path
+                        target_node.html = after.html_path
+                    if model.depth + 1 <= self.cfg.target.depth:
+                        self._frontier.append(
+                            FrontierItem(
+                                url=after_url,
+                                depth=model.depth + 1,
+                                arrival_action=f"Click '{el.name}'",
+                                source_fingerprint=model.fingerprint,
+                            )
+                        )
 
             else:
                 # An in-page state -- a modal, a drawer, or the anchored menu a
@@ -1145,6 +1359,27 @@ class Crawler:
             f"elements exercised across {len(self.result.pages)} states"
         )
 
+    def _seed_modules(self) -> None:
+        """Queue the known sub-pages of each module, as a floor under discovery.
+
+        Settings has 21 real sub-pages, most reached by clicking a `div` with
+        no ``href`` -- so ordinary link discovery finds them only if the
+        crawler happens to click into every one within its budget. Seeding
+        them directly means a sub-page is still queued even if discovery
+        never gets there, without replacing discovery: anything the crawler
+        finds on its own that isn't in this list is still explored normally.
+        """
+        for module, paths in self.cfg.crawl.module_seeds.items():
+            for path in paths:
+                url = urljoin(self.cfg.target.url, path)
+                key = normalize_url(url, self.cfg.target.id_collapse_exceptions)
+                if key in self._queued:
+                    continue
+                self._queued.add(key)
+                self._frontier.append(
+                    FrontierItem(url=url, depth=1, arrival_action=f"seeded ({module})")
+                )
+
     def _section_of(self, normalized_url: str) -> str:
         """The top-level area a URL belongs to: /settings/user -> 'settings'."""
         segments = [s for s in urlsplit(normalized_url).path.split("/") if s]
@@ -1174,15 +1409,19 @@ class Crawler:
             return False
 
         section = self._section_of(model.normalized_url)
+        budgets = self.cfg.crawl.module_budgets
+        cap = budgets.get(
+            section, budgets.get("default", self.cfg.crawl.max_states_per_section)
+        )
         in_section = self._per_section.get(section, 0)
-        if in_section >= self.cfg.crawl.max_states_per_section:
+        if in_section >= cap:
             self._cap_rejections["max_states_per_section"] = (
                 self._cap_rejections.get("max_states_per_section", 0) + 1
             )
             self.log.note(
                 "section_state_cap",
-                f"/{section} already has {in_section} states; leaving budget for "
-                f"sections not yet reached",
+                f"/{section} already has {in_section} states (cap {cap}); "
+                f"leaving budget for sections not yet reached",
             )
             return False
 

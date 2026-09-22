@@ -78,6 +78,19 @@ class CrawlConfig(BaseModel):
     #: took 43 of 63 states while `/screen`, `/schedule` and `/channel` were
     #: never reached at all.
     max_states_per_section: int = Field(default=12, ge=1)
+    #: Per-module override of max_states_per_section, keyed by the module name
+    #: (the URL's first path segment -- "screen", "settings", ...). A
+    #: "default" key covers any module not listed. Empty means "use
+    #: max_states_per_section for everything", the original behaviour.
+    #:
+    #: Without this, one module can starve every other one: on a real run
+    #: Settings alone took 43 of 63 states while Screen, Schedule and Channel
+    #: were never visited at all, because they all shared one cap.
+    module_budgets: dict[str, int] = Field(default_factory=dict)
+    #: Known sub-pages per module, enqueued at depth 1 alongside the entry URL.
+    #: A floor under normal link discovery, not a replacement for it -- if the
+    #: crawler's own discovery misses a sub-page, this still gets it queued.
+    module_seeds: dict[str, list[str]] = Field(default_factory=dict)
     #: Selectors (matched as substrings) belonging to the persistent app frame
     #: -- header, left menu, floating assistant. Elements inside them are still
     #: extracted and still clicked once, but they rank below content-area
@@ -154,6 +167,17 @@ class CrawlConfig(BaseModel):
     #: settle_timeout_ms, which on a slow SPA expires mid-render -- that is how a
     #: half-drawn page reaches the extractor in the first place.
     max_settle_ms: int = Field(default=15000, ge=0)
+    #: If a capture has fewer than this fraction of the elements a *previous*
+    #: visit to the same URL had, treat it as a render race rather than the
+    #: real state, and retry once. Never fires on the first visit to a URL --
+    #: there is nothing yet to compare against.
+    #:
+    #: Today's only thin-page signal is "fewer than hydration_min_elements",
+    #: which is 1 by default and so effectively never fires -- a page that
+    #: rendered half-built is accepted as final with no second look.
+    thin_capture_threshold: float = Field(default=0.5, ge=0.0, le=1.0)
+    #: Extra time to give a suspected render race before re-extracting.
+    thin_capture_retry_wait_ms: int = Field(default=2000, ge=0)
     action_timeout_ms: int = Field(default=8000, ge=500)
     nav_timeout_ms: int = Field(default=20000, ge=1000)
     #: A popup has no URL, so returning to it means replaying the click that
@@ -257,6 +281,23 @@ class BrowserConfig(BaseModel):
     #: The network write-guard. Turning this off allows real mutations against
     #: the target -- never do it on an environment you do not own.
     block_mutations: bool = True
+    #: Endpoints the guard would normally block (POST/PUT/PATCH/DELETE) but
+    #: that are actually reads -- some APIs use a request body to carry a
+    #: filter too complex for a GET query string. Matched as a substring
+    #: against the request path. Deterministic and explicit: empty by
+    #: default, so nothing is unblocked until you name an endpoint here.
+    safe_read_endpoints: list[str] = Field(default_factory=list)
+    #: Look at the shape of an otherwise-blocked POST -- its path and its
+    #: JSON body -- and let it through if it looks like a list/search read
+    #: rather than a write. Off by default, so existing targets keep today's
+    #: behaviour unless they opt in.
+    #:
+    #: Conservative by construction: PUT/PATCH/DELETE are never reclassified
+    #: (those verbs almost always edit or remove something real), and a path
+    #: naming an action ("create", "delete", "sign", "chat/start", ...) stays
+    #: blocked however its body looks. Only a POST with neither signal, whose
+    #: body reads as a filter/pagination object, is let through.
+    classify_ambiguous_writes: bool = False
     slow_mo_ms: int = 0
 
 

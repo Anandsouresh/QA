@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+from collections import deque
+from unittest.mock import AsyncMock
+
 import pytest
 
 from qagen.browser.budgets import Budgets
@@ -435,7 +438,8 @@ class TestStateChargedOnce:
         c = Crawler.__new__(Crawler)
         c.cfg = SimpleNamespace(
             crawl=SimpleNamespace(
-                max_states_per_url=per_url, max_states_per_section=99
+                max_states_per_url=per_url, max_states_per_section=99,
+                module_budgets={},
             )
         )
         c._per_url, c._per_section, c._charged, c._cap_rejections = {}, {}, set(), {}
@@ -514,6 +518,312 @@ class TestRestoreDoesNotAbandonTheState:
 
         src = inspect.getsource(Crawler._hard_reset)
         assert "replay" in src, "hard reset cannot return to a popup state"
+
+
+class TestConsecutiveFailuresResetOnHardReset:
+    """The bug found from a real crawl log: the counter that decides "give up
+    on this state" only reset on a successful CHEAP restore, never on a
+    successful hard reset. On this app the cheap restore's exact-signature
+    match rarely holds at all (measured: 67 of 141 failed in one run), so
+    every hard reset succeeding was still uncredited -- one state was
+    abandoned after exactly 5 actions with 88 still unattempted, even though
+    the hard reset had not failed even once.
+    """
+
+    def _crawler(self, max_failures=5, hard_reset_result=True):
+        from qagen.browser.crawler import Crawler
+        from qagen.models import Confidence, Element, ElementKind
+
+        c = Crawler.__new__(Crawler)
+        c.cfg = SimpleNamespace(crawl=SimpleNamespace(max_restore_failures=max_failures))
+        c.policy = SimpleNamespace(evaluate=lambda el: SimpleNamespace(allowed=True))
+        c.budgets = SimpleNamespace(exhausted=False, take_click=lambda: True)
+        c._exercised = {}
+        c.log = SimpleNamespace(
+            action=lambda *a, **k: None, note=lambda *a, **k: None,
+            restore=lambda *a, **k: None,
+        )
+        c._perform = AsyncMock()
+        c._restore = AsyncMock(return_value=False)   # cheap restore always "fails"
+        c._hard_reset = AsyncMock(return_value=hard_reset_result)
+
+        def make_el(i):
+            return Element(
+                ref=f"E{i}", kind=ElementKind.GENERIC_BUTTON, role="button", name=f"e{i}",
+                tag="button", selector=f"#e{i}", selector_strategy="id",
+                confidence=Confidence.HIGH,
+            )
+
+        c._plan = [make_el(i) for i in range(20)]
+        c._plan_actions = lambda model, only=frozenset(): c._plan
+        return c
+
+    async def _run(self, c):
+        node = SimpleNamespace(id="N001")
+        item = SimpleNamespace(only_identities=frozenset())
+        await c._act_on_state(page=None, model=None, node=node, item=item)
+
+    @pytest.mark.asyncio
+    async def test_every_action_runs_when_hard_reset_always_succeeds(self):
+        """The core fix: 20 actions, cheap restore fails every time, hard
+        reset succeeds every time -- all 20 must still be attempted, not just
+        the first max_restore_failures of them."""
+        c = self._crawler(max_failures=5, hard_reset_result=True)
+        await self._run(c)
+        assert c._perform.await_count == 20
+
+    @pytest.mark.asyncio
+    async def test_only_true_double_failures_count_toward_abandonment(self):
+        """When hard reset also fails every time, abandonment after
+        max_restore_failures is still correct and still happens -- the fix
+        does not make the crawl un-abandonable, only correctly credited."""
+        c = self._crawler(max_failures=5, hard_reset_result=False)
+        await self._run(c)
+        assert c._perform.await_count == 5
+
+    @pytest.mark.asyncio
+    async def test_a_run_of_successes_resets_the_counter_for_a_later_run_of_failures(self):
+        """4 recovered failures, then a real success, then failures again --
+        the earlier near-miss must not carry over."""
+        c = self._crawler(max_failures=5, hard_reset_result=True)
+        results = [False] * 4 + [True] + [False] * 20
+        c._restore = AsyncMock(side_effect=lambda *a, **k: results.pop(0) if results else False)
+        await self._run(c)
+        # After the True at position 5 resets the counter, it takes another
+        # full 5 failures to abandon -- so the plan runs past position 10.
+        assert c._perform.await_count > 10
+
+
+class TestInertClickRetry:
+    """A click that appears to do nothing is retried once for a
+    pointer-cursor / inferred-clickable control before it is believed --
+    React attaches handlers after hydration, so a click landing a moment
+    early is genuinely inert the first time and genuinely not the second.
+
+    Evidence: "Add Screen" and "New Screen Wall" both registered no_change on
+    their one and only attempt, each finishing in under a second right after
+    two other clicks had each taken the full 10s timeout.
+    """
+
+    def _crawler(self):
+        from qagen.browser.crawler import Crawler
+
+        c = Crawler.__new__(Crawler)
+        c.cfg = SimpleNamespace(
+            crawl=SimpleNamespace(action_timeout_ms=1000, max_settle_ms=1000)
+        )
+        c.log = SimpleNamespace(note=lambda *a, **k: None, outcome=lambda *a, **k: None)
+        c.result = SimpleNamespace(skips=[], observations=[])
+        c._cheap = {}
+        c._seen = {}
+        c.graph = SimpleNamespace(add_edge=lambda *a, **k: None)
+        c._reversibility = lambda outcome: "goto"
+        return c
+
+    def _el(self, kind, pointer_cursor=False):
+        from qagen.models import Confidence, Element
+
+        return Element(
+            ref="E1", kind=kind, role="button", name="Add Screen", tag="div",
+            selector="#addscreen", selector_strategy="data-testid",
+            confidence=Confidence.HIGH, pointer_cursor=pointer_cursor,
+        )
+
+    def _session_stub(self, blocked=None, dialogs=None):
+        empty = SimpleNamespace(
+            blocked=blocked or [], dialogs=dialogs or [], new_pages=[],
+            file_choosers=[], downloads=[],
+        )
+        return SimpleNamespace(sink=SimpleNamespace(drain=lambda: empty))
+
+    def _page_stub(self, url="https://x.test/screen"):
+        page = AsyncMock()
+        page.url = url
+        locator = AsyncMock()
+        locator.count = AsyncMock(return_value=1)
+        page.locator = lambda *a, **k: SimpleNamespace(first=locator)
+        return page, locator
+
+    @pytest.mark.asyncio
+    async def test_inert_inferred_clickable_is_retried_once(self):
+        from qagen.models import ElementKind, PageModel
+
+        c = self._crawler()
+        c.session = self._session_stub()
+        c.analyzer = SimpleNamespace(
+            settle=AsyncMock(), dismiss_consent=AsyncMock(),
+            signature=AsyncMock(return_value="same-signature"),
+        )
+        c._analyze = AsyncMock()
+        c._canonicalise = lambda *a, **k: None
+        c._canonicalise_inpage = lambda *a, **k: None
+        from qagen.models import Outcome
+
+        c._classify_outcome = lambda *a, **k: (Outcome.NO_CHANGE, [])
+
+        page, locator = self._page_stub()
+        el = self._el(ElementKind.INFERRED_CLICKABLE)
+        model = PageModel(url=page.url, normalized_url=page.url, title="t", fingerprint="fp1")
+        node = SimpleNamespace(id="N001")
+
+        await c._perform(page, model, node, el)
+
+        # One click to open the plan, one retry -- two clicks total.
+        assert locator.click.await_count == 2
+
+    @pytest.mark.asyncio
+    async def test_a_role_based_control_is_not_retried(self):
+        """A real <button> that genuinely does nothing must not be clicked
+        twice -- retrying every high-confidence control doubles the click
+        budget for no gain."""
+        from qagen.models import ElementKind, PageModel
+
+        c = self._crawler()
+        c.session = self._session_stub()
+        c.analyzer = SimpleNamespace(
+            settle=AsyncMock(), dismiss_consent=AsyncMock(),
+            signature=AsyncMock(return_value="same-signature"),
+        )
+        c._analyze = AsyncMock()
+        c._canonicalise = lambda *a, **k: None
+        c._canonicalise_inpage = lambda *a, **k: None
+        from qagen.models import Outcome
+
+        c._classify_outcome = lambda *a, **k: (Outcome.NO_CHANGE, [])
+
+        page, locator = self._page_stub()
+        el = self._el(ElementKind.GENERIC_BUTTON, pointer_cursor=False)
+        model = PageModel(url=page.url, normalized_url=page.url, title="t", fingerprint="fp1")
+        node = SimpleNamespace(id="N001")
+
+        await c._perform(page, model, node, el)
+
+        assert locator.click.await_count == 1
+
+    @pytest.mark.asyncio
+    async def test_a_blocked_write_is_not_retried(self):
+        """The first click already produced a real, useful result -- clicking
+        again would just attempt the same write a second time."""
+        from qagen.models import ElementKind, PageModel
+
+        c = self._crawler()
+        c.session = self._session_stub(blocked=["POST https://x.test/api/y"])
+        c.analyzer = SimpleNamespace(
+            settle=AsyncMock(), dismiss_consent=AsyncMock(),
+            signature=AsyncMock(return_value="same-signature"),
+        )
+        c._analyze = AsyncMock()
+        c._canonicalise = lambda *a, **k: None
+        c._canonicalise_inpage = lambda *a, **k: None
+        from qagen.models import Outcome
+
+        c._classify_outcome = lambda *a, **k: (Outcome.BLOCKED_MUTATION, [])
+
+        page, locator = self._page_stub()
+        el = self._el(ElementKind.INFERRED_CLICKABLE)
+        model = PageModel(url=page.url, normalized_url=page.url, title="t", fingerprint="fp1")
+        node = SimpleNamespace(id="N001")
+
+        await c._perform(page, model, node, el)
+
+        assert locator.click.await_count == 1
+
+
+class TestHardResetSurvivesAPartialReplay:
+    """_hard_reset's own stated goal is "somewhere we can keep testing from,
+    not the exact state" -- but the old code returned total failure the
+    instant a single replay step's selector went stale (a virtualised grid
+    row that scrolled away, a per-row menu tied to a specific row). Real
+    evidence: 10 replay_failed events in one run, several against MUI
+    DataGrid positional selectors -- each one used to cost the entire
+    remaining plan of that state.
+    """
+
+    def _crawler(self):
+        from qagen.browser.crawler import Crawler
+
+        c = Crawler.__new__(Crawler)
+        c.cfg = SimpleNamespace(crawl=SimpleNamespace(action_timeout_ms=1000))
+        c.log = SimpleNamespace(note=lambda *a, **k: None)
+        c.budgets = SimpleNamespace(take_navigation=lambda: True)
+        c.analyzer = SimpleNamespace(settle=AsyncMock(), dismiss_consent=AsyncMock())
+        c._replay_by_fingerprint = {}
+        return c
+
+    def _page_with_resolving(self, resolving_selectors):
+        from unittest.mock import MagicMock
+
+        page = AsyncMock()
+        page.goto = AsyncMock()
+
+        def locator_factory(selector):
+            loc = AsyncMock()
+            loc.count = AsyncMock(return_value=1 if selector in resolving_selectors else 0)
+            return SimpleNamespace(first=loc)
+
+        page.locator = MagicMock(side_effect=locator_factory)
+        return page
+
+    @pytest.mark.asyncio
+    async def test_a_stale_replay_step_still_returns_true(self):
+        """The step at depth 1 no longer resolves -- the old code returned
+        False here. The base page load succeeded, which is enough."""
+        from qagen.browser.crawler import ReplayStep
+        from qagen.models import PageModel
+
+        c = self._crawler()
+        page = self._page_with_resolving({"#step0"})   # step1 is gone
+        model = PageModel(url="https://x.test/screen", normalized_url="https://x.test/screen", title="t")
+        item = SimpleNamespace(
+            replay=(ReplayStep(selector="#step0", label="a"), ReplayStep(selector="#step1", label="b"))
+        )
+
+        result = await c._hard_reset(page, model, item)
+        assert result is True
+
+    @pytest.mark.asyncio
+    async def test_every_step_resolving_still_works_as_before(self):
+        from qagen.browser.crawler import ReplayStep
+        from qagen.models import PageModel
+
+        c = self._crawler()
+        page = self._page_with_resolving({"#step0", "#step1"})
+        model = PageModel(url="https://x.test/screen", normalized_url="https://x.test/screen", title="t")
+        item = SimpleNamespace(
+            replay=(ReplayStep(selector="#step0", label="a"), ReplayStep(selector="#step1", label="b"))
+        )
+
+        result = await c._hard_reset(page, model, item)
+        assert result is True
+
+    @pytest.mark.asyncio
+    async def test_the_base_navigation_itself_failing_is_still_a_real_failure(self):
+        """Leniency applies to the replay chain, not to the page failing to
+        load at all."""
+        from qagen.models import PageModel
+
+        c = self._crawler()
+        page = AsyncMock()
+        page.goto = AsyncMock(side_effect=Exception("net::ERR_CONNECTION_RESET"))
+        model = PageModel(url="https://x.test/screen", normalized_url="https://x.test/screen", title="t")
+        item = SimpleNamespace(replay=())
+
+        result = await c._hard_reset(page, model, item)
+        assert result is False
+
+    @pytest.mark.asyncio
+    async def test_no_replay_needed_is_unaffected(self):
+        """A plain page (not a popup) has nothing to replay -- must still
+        succeed once the base page loads."""
+        from qagen.models import PageModel
+
+        c = self._crawler()
+        page = self._page_with_resolving(set())
+        model = PageModel(url="https://x.test/screen", normalized_url="https://x.test/screen", title="t")
+        item = SimpleNamespace(replay=())
+
+        result = await c._hard_reset(page, model, item)
+        assert result is True
 
 
 class TestStateCanonicalisation:
@@ -708,3 +1018,258 @@ class TestPopupQueueDedup:
         a = self._el("", "div.x > span:nth-of-type(1)")
         b = self._el("", "div.y > span:nth-of-type(2)")
         assert a.stable_identity() != b.stable_identity()
+
+
+class TestInpageCanonicalisation:
+    """Settings tabs, which swap content without changing the URL, must not
+    fork into duplicate states the same way full pages used to.
+
+    Real evidence: two visits to Settings > Plan produced different
+    fingerprints while their screenshots were byte-identical and their anchor
+    sets matched 100%.
+    """
+
+    def _crawler(self, threshold=0.9):
+        from qagen.browser.crawler import Crawler
+
+        c = Crawler.__new__(Crawler)
+        c.cfg = SimpleNamespace(crawl=SimpleNamespace(state_anchor_threshold=threshold))
+        c._inpage_anchors = {}
+        c.log = SimpleNamespace(note=lambda *a, **k: None)
+        return c
+
+    def _page(self, fp, anchors, url="https://x.test/settings"):
+        from qagen.models import Confidence, Element, ElementKind, PageModel
+
+        els = [
+            Element(
+                ref=f"E{i}", kind=ElementKind.GENERIC_BUTTON, role="button", name=a,
+                tag="button", selector=a, selector_strategy="data-testid",
+                confidence=Confidence.HIGH,
+            )
+            for i, a in enumerate(anchors)
+        ]
+        return PageModel(url=url, normalized_url=url, title="t", fingerprint=fp, elements=els)
+
+    def _trigger(self, name="Plan"):
+        from qagen.models import Confidence, Element, ElementKind
+
+        safe = "".join(ch for ch in name.lower() if ch.isalnum()) or "trigger"
+        return Element(
+            ref="T1", kind=ElementKind.GENERIC_BUTTON, role="button", name=name,
+            tag="div", selector=f'[data-testid="settings_{safe}"]',
+            selector_strategy="data-testid", confidence=Confidence.HIGH,
+        )
+
+    def test_same_tab_visited_twice_merges(self):
+        c = self._crawler()
+        base = [f'[data-testid="plan_{i}"]' for i in range(15)]
+        settings = self._page("settings_fp", [])
+        first = self._page("plan_fp_1", base)
+        second = self._page("plan_fp_2", base)
+        trigger = self._trigger("Plan")
+        assert c._canonicalise_inpage(settings, first, trigger) is False
+        assert c._canonicalise_inpage(settings, second, trigger) is True
+        assert second.fingerprint == "plan_fp_1"
+
+    def test_two_different_tabs_never_merge(self):
+        """Plan and Tag share the same base page but must stay distinct."""
+        c = self._crawler()
+        settings = self._page("settings_fp", [])
+        plan = self._page("plan_fp", [f'[data-testid="x{i}"]' for i in range(10)])
+        tag = self._page("tag_fp", [f'[data-testid="x{i}"]' for i in range(10)])
+        c._canonicalise_inpage(settings, plan, self._trigger("Plan"))
+        merged = c._canonicalise_inpage(settings, tag, self._trigger("Tag"))
+        assert merged is False
+        assert tag.fingerprint == "tag_fp"
+
+    def test_two_different_popups_on_the_same_base_page_never_merge(self):
+        """The Notification bell and a card's "+" share a base page too --
+        different triggers must keep them fully separate, exactly like tabs."""
+        c = self._crawler()
+        home = self._page("home_fp", [], url="https://x.test/")
+        notif = self._page(
+            "notif_fp", [f'[data-testid="n{i}"]' for i in range(5)], url="https://x.test/"
+        )
+        addmenu = self._page(
+            "add_fp", [f'[data-testid="n{i}"]' for i in range(5)], url="https://x.test/"
+        )
+        c._canonicalise_inpage(home, notif, self._trigger("Notification"))
+        merged = c._canonicalise_inpage(home, addmenu, self._trigger("Add"))
+        assert merged is False
+
+    def test_no_stable_anchors_is_left_alone(self):
+        c = self._crawler()
+        settings = self._page("settings_fp", [])
+        page = self._page("plan_fp", [])
+        assert c._canonicalise_inpage(settings, page, self._trigger("Plan")) is False
+        assert page.fingerprint == "plan_fp"
+
+
+class TestThinCaptureRetry:
+    """A page caught mid-render gets one more chance before being accepted.
+
+    The old signal for this fired below hydration_min_elements (default 1),
+    which never happens on a real page -- so nothing retried at all.
+    """
+
+    def _crawler(self, threshold=0.5):
+        from qagen.browser.crawler import Crawler
+
+        c = Crawler.__new__(Crawler)
+        c.cfg = SimpleNamespace(
+            crawl=SimpleNamespace(
+                thin_capture_threshold=threshold, thin_capture_retry_wait_ms=0,
+            )
+        )
+        c._url_typical_count = {}
+        c.log = SimpleNamespace(note=lambda *a, **k: None)
+        c.analyzer = SimpleNamespace(settle=AsyncMock())
+        return c
+
+    def _page(self, n, url="https://x.test/screen"):
+        from qagen.models import Confidence, Element, ElementKind, PageModel
+
+        els = [
+            Element(
+                ref=f"E{i}", kind=ElementKind.GENERIC_BUTTON, role="button", name=f"e{i}",
+                tag="button", selector=f"#e{i}", selector_strategy="id",
+                confidence=Confidence.HIGH,
+            )
+            for i in range(n)
+        ]
+        return PageModel(url=url, normalized_url=url, title="t", elements=els)
+
+    @pytest.mark.asyncio
+    async def test_first_visit_is_never_retried(self):
+        """Nothing to compare against yet -- accept it and record the baseline."""
+        c = self._crawler()
+        page = self._page(3)
+        c._analyze = AsyncMock()
+        result = await c._guard_thin_capture(None, page, 0, "entry")
+        c._analyze.assert_not_called()
+        assert result is page
+        assert c._url_typical_count["https://x.test/screen"] == 3
+
+    @pytest.mark.asyncio
+    async def test_a_thin_second_visit_triggers_a_retry(self):
+        c = self._crawler(threshold=0.5)
+        c._url_typical_count["https://x.test/screen"] = 60
+        thin = self._page(10)
+        richer = self._page(55)
+        c._analyze = AsyncMock(return_value=richer)
+        result = await c._guard_thin_capture(None, thin, 0, "entry")
+        c._analyze.assert_called_once()
+        assert result is richer
+
+    @pytest.mark.asyncio
+    async def test_retry_that_does_not_improve_keeps_the_original(self):
+        c = self._crawler(threshold=0.5)
+        c._url_typical_count["https://x.test/screen"] = 60
+        thin = self._page(10)
+        still_thin = self._page(9)  # the retry itself raced too -- fewer, not more
+        c._analyze = AsyncMock(return_value=still_thin)
+        result = await c._guard_thin_capture(None, thin, 0, "entry")
+        assert result is thin
+
+    @pytest.mark.asyncio
+    async def test_a_normal_capture_is_never_retried(self):
+        c = self._crawler(threshold=0.5)
+        c._url_typical_count["https://x.test/screen"] = 60
+        normal = self._page(50)
+        c._analyze = AsyncMock()
+        result = await c._guard_thin_capture(None, normal, 0, "entry")
+        c._analyze.assert_not_called()
+        assert result is normal
+
+
+class TestModuleBudgets:
+    """A per-module budget stops one section (Settings) from starving every
+    other one, the way it did when only max_states_per_section existed."""
+
+    def _crawler(self, module_budgets=None):
+        from qagen.browser.crawler import Crawler
+
+        c = Crawler.__new__(Crawler)
+        c.cfg = SimpleNamespace(
+            crawl=SimpleNamespace(
+                max_states_per_url=200,
+                max_states_per_section=12,
+                module_budgets=module_budgets or {},
+            )
+        )
+        c._per_url = {}
+        c._per_section = {}
+        c._charged = set()
+        c._cap_rejections = {}
+        c.log = SimpleNamespace(note=lambda *a, **k: None)
+        return c
+
+    def _page(self, fp, url):
+        from qagen.models import PageModel
+
+        return PageModel(url=url, normalized_url=url, title="t", fingerprint=fp)
+
+    def test_module_budget_overrides_the_shared_cap(self):
+        c = self._crawler(module_budgets={"channel": 1})
+        assert c._url_budget_ok(self._page("fp1", "https://x.test/channel")) is True
+        assert c._url_budget_ok(self._page("fp2", "https://x.test/channel")) is False
+
+    def test_default_key_covers_unlisted_modules(self):
+        c = self._crawler(module_budgets={"settings": 50, "default": 2})
+        assert c._url_budget_ok(self._page("fp1", "https://x.test/vxtlabs")) is True
+        assert c._url_budget_ok(self._page("fp2", "https://x.test/vxtlabs")) is True
+        assert c._url_budget_ok(self._page("fp3", "https://x.test/vxtlabs")) is False
+
+    def test_settings_can_no_longer_starve_other_modules(self):
+        """The original bug: one shared cap let Settings take 43 of 63 states
+        while Screen, Schedule and Channel got zero."""
+        c = self._crawler(module_budgets={"settings": 50, "screen": 40, "default": 15})
+        for i in range(20):
+            assert c._url_budget_ok(
+                self._page(f"settings{i}", f"https://x.test/settings/{i}")
+            ) is True
+        # Settings' generous budget does not touch Screen's separate one.
+        assert c._url_budget_ok(self._page("screen1", "https://x.test/screen")) is True
+
+    def test_empty_module_budgets_falls_back_to_the_shared_cap(self):
+        """Unchanged behaviour when module_budgets is not configured at all."""
+        c = self._crawler(module_budgets={})
+        for i in range(12):
+            assert c._url_budget_ok(
+                self._page(f"fp{i}", f"https://x.test/settings/{i}")
+            ) is True
+        assert c._url_budget_ok(self._page("fp_over", "https://x.test/settings/over")) is False
+
+
+class TestModuleSeeds:
+    def _crawler(self, module_seeds=None):
+        from qagen.browser.crawler import Crawler
+
+        c = Crawler.__new__(Crawler)
+        c.cfg = SimpleNamespace(
+            target=SimpleNamespace(url="https://x.test/", id_collapse_exceptions=[]),
+            crawl=SimpleNamespace(module_seeds=module_seeds or {}),
+        )
+        c._queued = set()
+        c._frontier = deque()
+        return c
+
+    def test_seeds_are_queued_at_depth_one(self):
+        c = self._crawler({"settings": ["/settings/plan", "/settings/tag"]})
+        c._seed_modules()
+        urls = {item.url for item in c._frontier}
+        assert "https://x.test/settings/plan" in urls
+        assert "https://x.test/settings/tag" in urls
+        assert all(item.depth == 1 for item in c._frontier)
+
+    def test_seeds_are_deduped_against_already_queued(self):
+        c = self._crawler({"settings": ["/settings/plan"]})
+        c._queued.add("https://x.test/settings/plan")
+        c._seed_modules()
+        assert len(c._frontier) == 0
+
+    def test_no_seeds_configured_queues_nothing(self):
+        c = self._crawler({})
+        c._seed_modules()
+        assert len(c._frontier) == 0

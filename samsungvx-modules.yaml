@@ -1,3 +1,14 @@
+# Module-wise crawl: per-module budgets + seeded sub-pages, and cross-module
+# boundary capture (a click leading outside the crawl's module is captured
+# once and marked, not explored -- see qagen/browser/crawler.py's NAVIGATION
+# branch and GraphBuilder.add_module_boundary).
+#
+# For a SINGLE module only, pass --module on the command line instead of
+# editing this file, e.g.:
+#   python -m qagen.cli crawl --config samsungvx-modules.yaml --module screen
+# That sets target.include_paths for you and activates the boundary-capture
+# path above; leaving --module off crawls everything, using the per-module
+# budgets/seeds below to keep it balanced.
 # Run until 200 DISTINCT STATES, and stop for nothing else.
 #
 # Every other budget is lifted far out of reach, and the two silent per-URL /
@@ -21,7 +32,7 @@
 # Headless on purpose: this runs for hours and should not own your screen.
 # The write-guard stays ON -- nothing is created, edited or deleted.
 target:
-  url: https://stg.samsungvx.com/
+  url: https://stg.samsungvx.com/screen
   depth: 20
   same_origin_only: true
   exclude_paths:
@@ -103,9 +114,42 @@ crawl:
   - dashboard_privacy
   - dashboard_cookies
   - dashboard_contactus
-  # Settings has eleven menu items each with its own sub-navigation; without a
-  # cap it took 43 of 63 states on the last run and /screen was never reached.
-  max_states_per_section: 200
+  # Per-module budgets, replacing the single max_states_per_section. Without
+  # this, one module can starve every other one: Settings alone took 43 of 63
+  # states on an early run while Screen, Schedule and Channel got zero.
+  module_budgets:
+    screen: 40
+    content: 40
+    playlist: 30
+    schedule: 30
+    channel: 20
+    settings: 50
+    default: 15
+  # Known sub-pages per module, queued at depth 1 as a floor under normal link
+  # discovery -- most of these are reached by clicking a div with no href, so
+  # ordinary discovery only finds them if the crawler happens to click every
+  # one within its budget.
+  module_seeds:
+    settings:
+    - /settings/general
+    - /settings/organization
+    - /settings/workspace
+    - /settings/user
+    - /settings/plan
+    - /settings/tag
+    - /settings/event
+    - /settings/screenpreset
+    - /settings/place
+    - /settings/emergencyalert
+    - /settings/subscription
+    - /settings/edithome
+    - /settings/activitylog
+    - /settings/techinquiry
+    schedule:
+    - /schedule/create
+    playlist:
+    - /playlist/create
+    - /playlist/sync/create
   # Work through each state the way a person reads it.
   action_order: reading
   content_before_frame: true
@@ -134,7 +178,7 @@ interaction:
   allow_selectors: []
   dismiss_consent: true
 output:
-  dir: ./samsungvx-200-final05
+  dir: ./samsungvx-modules
   formats:
   - graph
   save_page_models: true

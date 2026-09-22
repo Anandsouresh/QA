@@ -371,3 +371,66 @@ class TestEndToEnd:
         reason = budgets.stop_reason or ""
         assert reason, "no stop reason recorded"
         assert "actionable elements" in reason, reason
+
+
+@requires_browser
+class TestCrossModuleBoundary:
+    """A module-restricted crawl (target.include_paths) captures a click that
+    leads outside its module once, marks it, and does not explore it -- rather
+    than either silently dropping it or fully crawling the other module
+    anyway.
+
+    The fixture's dashboard cards navigate via `location.href` on click (a
+    div, not a real <a>), which is exactly the client-side navigation path
+    that reaches Crawler._perform's NAVIGATION branch -- the place this logic
+    lives.
+    """
+
+    def test_out_of_module_click_becomes_a_boundary_node(self, crawled_module_restricted):
+        _, graph, _, _ = crawled_module_restricted
+        built = graph.build()
+        settings_boundary = [
+            n for n in built.nodes
+            if n.node_type == "boundary" and n.normalized_url.endswith("/settings.html")
+        ]
+        assert settings_boundary, [
+            (n.node_type, n.normalized_url) for n in built.nodes
+        ]
+
+    def test_the_boundary_node_has_a_real_capture(self, crawled_module_restricted):
+        """The whole point over a plain boundary marker: a real screenshot and
+        a real element count, not a blank stand-in."""
+        _, graph, _, _ = crawled_module_restricted
+        built = graph.build()
+        node = next(
+            n for n in built.nodes
+            if n.node_type == "boundary" and n.normalized_url.endswith("/settings.html")
+        )
+        assert node.screenshot, "no screenshot captured for the boundary state"
+        assert node.element_count > 0, "captured an empty page, not the real one"
+
+    def test_the_boundary_node_is_never_explored(self, crawled_module_restricted):
+        """Captured, not crawled: no outgoing edges, and it must not appear
+        among the pages the generation phase reads from."""
+        result, graph, _, _ = crawled_module_restricted
+        built = graph.build()
+        node = next(
+            n for n in built.nodes
+            if n.node_type == "boundary" and n.normalized_url.endswith("/settings.html")
+        )
+        outgoing = [e for e in built.edges if e.source == node.id]
+        assert not outgoing, outgoing
+        assert node.fingerprint not in {p.fingerprint for p in result.pages}
+
+    def test_a_full_unrestricted_crawl_is_unaffected(self, crawled):
+        """With include_paths empty, in_scope always allows a same-origin URL
+        -- this whole mechanism must never trigger on a normal run."""
+        _, graph, _, _ = crawled
+        built = graph.build()
+        settings_nodes = [
+            n for n in built.nodes if n.normalized_url.endswith("/settings.html")
+        ]
+        assert settings_nodes, "settings.html was not reached at all"
+        assert all(n.node_type != "boundary" for n in settings_nodes), [
+            (n.node_type, n.normalized_url) for n in settings_nodes
+        ]
