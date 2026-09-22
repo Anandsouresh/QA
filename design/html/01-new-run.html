@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>New run</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;width:1440px;height:900px;overflow:hidden;
+     font-family:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;background:#0E1116;color:#E7EAF0}
+.dsp{font-family:"Space Grotesk","IBM Plex Sans",sans-serif}
+.mono{font-family:"IBM Plex Mono","Consolas",monospace}
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
+h1,h2,p{margin:0}
+.card{background:#151A21;border:1px solid #232A34;border-radius:13px}
+.ell{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style></head><body>
+<div style="display:flex;width:1440px;height:900px"><div style="width:72px;flex-shrink:0;background:#11151B;border-right:1px solid #222831;display:flex;flex-direction:column;align-items:center;padding:18px 0 16px;gap:8px"><div style="width:38px;height:38px;border-radius:10px;background:#5FB98F;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#0E1116" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="12" cy="18" r="2.6"/><path d="M8.2 7.4 10.6 15.6"/><path d="M15.8 7.4 13.4 15.6"/></svg></div><button aria-label="New run" style="width:46px;height:46px;border-radius:11px;border:1px solid #2E4A3E;background:#172620;color:#5FB98F;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></button><button aria-label="Live run" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></button><button aria-label="Graph explorer" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="6" r="2.4"/><circle cx="18.5" cy="12" r="2.4"/><circle cx="5.5" cy="18" r="2.4"/><path d="M7.6 7.2 16.4 10.8"/><path d="M16.4 13.2 7.6 16.8"/></svg></button><button aria-label="Test cases" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5 6 8.5 9.5 5"/><path d="M4 17.5 6 19.5 9.5 16"/><path d="M13 7h7"/><path d="M13 18h7"/></svg></button><button aria-label="Run history" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.6V12l3 1.8"/></svg></button><div style="flex-grow:1"></div><button aria-label="Settings" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6 16.8 7.2M7.2 16.8 5.6 18.4M18.4 18.4 16.8 16.8M7.2 7.2 5.6 5.6"/></svg></button></div>
+<div style="flex-grow:1;padding:24px 30px 26px;display:flex;flex-direction:column;gap:20px;min-width:0">
+
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+    <div>
+      <h1 class="dsp" style="font-size:27px;font-weight:600;letter-spacing:-.4px;margin-bottom:5px">New run</h1>
+      <p style="font-size:13.5px;color:#9AA3B2">Crawl a live application read-only, then write grounded QA test cases from what was actually on screen.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-shrink:0">
+      <button style="height:44px;padding:0 16px;border-radius:9px;border:1px solid #2A313C;background:#171C24;color:#C3CAD6;font-size:13.5px;font-weight:500">Load config&hellip;</button>
+      <button style="height:44px;padding:0 16px;border-radius:9px;border:1px solid #2A313C;background:#171C24;color:#C3CAD6;font-size:13.5px;font-weight:500">Clone last run</button>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:22px;flex-grow:1;min-height:0">
+    <div style="flex-grow:1;display:flex;flex-direction:column;gap:13px;min-width:0">
+
+      <div class="card" style="padding:18px 20px 19px">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:15px">
+          <span class="mono" style="font-size:11px;color:#5FB98F">01</span>
+          <h2 class="dsp" style="font-size:14.5px;font-weight:600">Target &amp; session</h2>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-end">
+          <div style="flex-grow:1;min-width:0">
+            <label for="u" style="display:block;font-size:11.5px;font-weight:500;color:#7A8393;margin-bottom:6px;letter-spacing:.2px">TARGET URL</label>
+            <input id="u" type="url" value="https://stg.samsungvx.com/" class="mono" style="width:100%;height:44px;padding:0 13px;border-radius:9px;border:1px solid #2E3641;background:#0F1319;color:#E7EAF0;font-size:13px">
+          </div>
+          <div style="width:118px;flex-shrink:0">
+            <label for="d" style="display:block;font-size:11.5px;font-weight:500;color:#7A8393;margin-bottom:6px;letter-spacing:.2px">DEPTH</label>
+            <input id="d" type="number" value="20" class="mono" style="width:100%;height:44px;padding:0 13px;border-radius:9px;border:1px solid #2E3641;background:#0F1319;color:#E7EAF0;font-size:13px">
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:13px;padding:10px 12px;border-radius:9px;background:#12271E;border:1px solid #2B4A3A">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5FB98F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span style="font-size:12.5px;color:#C3CAD6">Session verified &mdash; <span class="mono" style="color:#9AA3B2">secrets/samsungvx.json</span> resolved to a logged-in user 8 seconds ago.</span>
+          <div style="flex-grow:1"></div>
+          <button style="height:30px;padding:0 12px;border-radius:7px;border:1px solid #2E3641;background:#171C24;color:#C3CAD6;font-size:12px;font-weight:500">Re-check</button>
+        </div>
+      </div>
+
+      <div class="card" style="padding:18px 20px 16px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px">
+          <span class="mono" style="font-size:11px;color:#5FB98F">02</span>
+          <h2 class="dsp" style="font-size:14.5px;font-weight:600">Modules &amp; state budget</h2>
+          <div style="flex-grow:1"></div>
+          <button style="height:30px;padding:0 12px;border-radius:7px;border:1px solid #2E3641;background:#171C24;color:#C3CAD6;font-size:12px;font-weight:500">Re-probe target</button>
+        </div>
+        <p style="font-size:12px;color:#7A8393;margin-bottom:13px">Six modules in scope from a 40-second shallow probe. A budget is a ceiling on distinct states, so one deep area cannot starve the rest.</p>
+        <div style="display:grid;grid-template-columns:150px 1fr 92px 150px;gap:0 14px;padding:0 2px 8px;border-bottom:1px solid #232A34;font-size:10.5px;font-weight:600;letter-spacing:.5px;color:#6E7784">
+          <span>MODULE</span><span>PATHS DISCOVERED</span><span style="text-align:right">STATES</span><span>SHARE</span>
+        </div>
+        <div style="display:grid;grid-template-columns:150px 1fr 92px 150px;gap:0 14px;align-items:center;padding:5px 2px;border-bottom:1px solid #1B212A"><span style="font-size:13px;font-weight:500">Screen</span><span class="mono ell" style="font-size:11.5px;color:#7A8393">/screen · /screen/{id}</span><input type="number" value="40" aria-label="State budget" class="mono" style="width:100%;height:32px;padding:0 9px;border-radius:7px;border:1px solid #2A313C;background:#0F1319;color:#E7EAF0;font-size:12.5px;text-align:right"><div style="height:7px;border-radius:4px;background:#1E242D;overflow:hidden"><div style="height:100%;width:20%;border-radius:4px;background:#5FB98F"></div></div></div><div style="display:grid;grid-template-columns:150px 1fr 92px 150px;gap:0 14px;align-items:center;padding:5px 2px;border-bottom:1px solid #1B212A"><span style="font-size:13px;font-weight:500">Content</span><span class="mono ell" style="font-size:11.5px;color:#7A8393">/content · /content/{id}</span><input type="number" value="40" aria-label="State budget" class="mono" style="width:100%;height:32px;padding:0 9px;border-radius:7px;border:1px solid #2A313C;background:#0F1319;color:#E7EAF0;font-size:12.5px;text-align:right"><div style="height:7px;border-radius:4px;background:#1E242D;overflow:hidden"><div style="height:100%;width:20%;border-radius:4px;background:#5FB98F"></div></div></div><div style="display:grid;grid-template-columns:150px 1fr 92px 150px;gap:0 14px;align-items:center;padding:5px 2px;border-bottom:1px solid #1B212A"><span style="font-size:13px;font-weight:500">Playlist</span><span class="mono ell" style="font-size:11.5px;color:#7A8393">/playlist · /playlist/create · /playlist/{id}</span><input type="number" value="30" aria-label="State budget" class="mono" style="width:100%;height:32px;padding:0 9px;border-radius:7px;border:1px solid #2A313C;background:#0F1319;color:#E7EAF0;font-size:12.5px;text-align:right"><div style="height:7px;border-radius:4px;background:#1E242D;overflow:hidden"><div style="height:100%;width:15%;border-radius:4px;background:#6E9FD4"></div></div></div><div style="display:grid;grid-template-columns:150px 1fr 92px 150px;gap:0 14px;align-items:center;padding:5px 2px;border-bottom:1px solid #1B212A"><span style="font-size:13px;font-weight:500">Schedule</span><span class="mono ell" style="font-size:11.5px;color:#7A8393">/schedule · /schedule/create · /schedule/{id}</span><input type="number" value="30" aria-label="State budget" class="mono" style="width:100%;height:32px;padding:0 9px;border-radius:7px;border:1px solid #2A313C;background:#0F1319;color:#E7EAF0;font-size:12.5px;text-align:right"><div style="height:7px;border-radius:4px;background:#1E242D;overflow:hidden"><div style="height:100%;width:15%;border-radius:4px;background:#6E9FD4"></div></div></div><div style="display:grid;grid-template-columns:150px 1fr 92px 150px;gap:0 14px;align-items:center;padding:5px 2px;border-bottom:1px solid #1B212A"><span style="font-size:13px;font-weight:500">Channel</span><span class="mono ell" style="font-size:11.5px;color:#7A8393">/channel</span><input type="number" value="20" aria-label="State budget" class="mono" style="width:100%;height:32px;padding:0 9px;border-radius:7px;border:1px solid #2A313C;background:#0F1319;color:#E7EAF0;font-size:12.5px;text-align:right"><div style="height:7px;border-radius:4px;background:#1E242D;overflow:hidden"><div style="height:100%;width:10%;border-radius:4px;background:#A98BD4"></div></div></div><div style="display:grid;grid-template-columns:150px 1fr 92px 150px;gap:0 14px;align-items:center;padding:5px 2px;border-bottom:1px solid #1B212A"><span style="font-size:13px;font-weight:500">Settings</span><span class="mono ell" style="font-size:11.5px;color:#7A8393">/settings + 20 sub-pages</span><input type="number" value="40" aria-label="State budget" class="mono" style="width:100%;height:32px;padding:0 9px;border-radius:7px;border:1px solid #2A313C;background:#0F1319;color:#E7EAF0;font-size:12.5px;text-align:right"><div style="height:7px;border-radius:4px;background:#1E242D;overflow:hidden"><div style="height:100%;width:20%;border-radius:4px;background:#D9924A"></div></div></div>
+        <div style="display:grid;grid-template-columns:150px 1fr 92px 150px;gap:0 14px;align-items:center;padding:11px 2px 0">
+          <span style="font-size:12.5px;font-weight:600;color:#9AA3B2">Total</span>
+          <span style="font-size:12px;color:#6E7784">stops at whichever comes first</span>
+          <span class="mono" style="font-size:14px;color:#5FB98F;text-align:right">200</span>
+          <span style="font-size:12px;color:#6E7784">distinct states</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:16px 20px 17px">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:13px">
+          <span class="mono" style="font-size:11px;color:#5FB98F">03</span>
+          <h2 class="dsp" style="font-size:14.5px;font-weight:600">Safety</h2>
+        </div>
+        <div style="display:flex;gap:14px">
+          <div style="flex-shrink:0;width:260px;padding:12px 14px;border-radius:10px;background:#12271E;border:1px solid #2B4A3A;display:flex;align-items:center;gap:12px">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5FB98F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.6 6.1v5.5c0 4.4 3 8.2 7.4 9.4 4.4-1.2 7.4-5 7.4-9.4V6.1z"/><path d="M9.2 12.2 11.3 14.3 15 10.6"/></svg>
+            <div>
+              <div style="font-size:13px;font-weight:600">Write-guard armed</div>
+              <div style="font-size:11.5px;color:#8FB8A2;line-height:1.45;margin-top:2px">POST, PUT, PATCH and DELETE are aborted at the route layer, then recorded.</div>
+            </div>
+          </div>
+          <div style="flex-grow:1;min-width:0">
+            <div style="font-size:11.5px;font-weight:500;color:#7A8393;margin-bottom:8px;letter-spacing:.2px">NEVER CLICKED</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px"><span class="mono" style="padding:4px 9px;border-radius:6px;background:#241A1A;border:1px solid #3D2A2A;font-size:11.5px;color:#D99A9A">delete</span><span class="mono" style="padding:4px 9px;border-radius:6px;background:#241A1A;border:1px solid #3D2A2A;font-size:11.5px;color:#D99A9A">remove</span><span class="mono" style="padding:4px 9px;border-radius:6px;background:#241A1A;border:1px solid #3D2A2A;font-size:11.5px;color:#D99A9A">pay</span><span class="mono" style="padding:4px 9px;border-radius:6px;background:#241A1A;border:1px solid #3D2A2A;font-size:11.5px;color:#D99A9A">purchase</span><span class="mono" style="padding:4px 9px;border-radius:6px;background:#241A1A;border:1px solid #3D2A2A;font-size:11.5px;color:#D99A9A">submit</span><span class="mono" style="padding:4px 9px;border-radius:6px;background:#241A1A;border:1px solid #3D2A2A;font-size:11.5px;color:#D99A9A">confirm</span><span class="mono" style="padding:4px 9px;border-radius:6px;background:#241A1A;border:1px solid #3D2A2A;font-size:11.5px;color:#D99A9A">logout</span><span class="mono" style="padding:4px 9px;border-radius:6px;background:#241A1A;border:1px solid #3D2A2A;font-size:11.5px;color:#D99A9A">deactivate</span>
+              <button style="padding:4px 10px;border-radius:6px;background:transparent;border:1px dashed #3A424E;font-size:11.5px;color:#7A8393">edit list</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex-grow:1"></div>
+    </div>
+
+    <div style="width:330px;flex-shrink:0;background:#151A21;border:1px solid #2B3340;border-radius:13px;padding:20px;display:flex;flex-direction:column">
+      <h2 class="dsp" style="font-size:15px;font-weight:600;margin-bottom:3px">Run plan</h2>
+      <p style="font-size:12px;color:#7A8393;margin-bottom:16px">Estimates from your last three runs on this host.</p>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1E242D"><span style="font-size:12.5px;color:#7A8393;flex-shrink:0">Host</span><span class="mono ell" style="font-size:12.5px;color:#D6DCE6">stg.samsungvx.com</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1E242D"><span style="font-size:12.5px;color:#7A8393;flex-shrink:0">Modules</span><span class="mono ell" style="font-size:12.5px;color:#D6DCE6">6 in scope</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1E242D"><span style="font-size:12.5px;color:#7A8393;flex-shrink:0">States</span><span class="mono ell" style="font-size:12.5px;color:#D6DCE6">200 max</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1E242D"><span style="font-size:12.5px;color:#7A8393;flex-shrink:0">Wall clock</span><span class="mono ell" style="font-size:12.5px;color:#D6DCE6">24h ceiling</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1E242D"><span style="font-size:12.5px;color:#7A8393;flex-shrink:0">Model</span><span class="mono ell" style="font-size:12.5px;color:#D6DCE6">claude-opus-5</span></div><div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1E242D"><span style="font-size:12.5px;color:#7A8393;flex-shrink:0">Output</span><span class="mono ell" style="font-size:12.5px;color:#D6DCE6">runs/2026-09-23-vx</span></div>
+      <div style="margin-top:18px;padding:13px 14px;border-radius:10px;background:#14191F;border:1px solid #242B35">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:7px">
+          <span style="font-size:12px;color:#9AA3B2">Estimated duration</span>
+          <span class="dsp" style="font-size:20px;font-weight:600;color:#5FB98F">4h 50m</span>
+        </div>
+        <div style="height:5px;border-radius:3px;background:#1E242D;overflow:hidden;margin-bottom:8px">
+          <div style="height:100%;width:72%;background:linear-gradient(90deg,#3E6F58,#5FB98F)"></div>
+        </div>
+        <p style="font-size:11.5px;line-height:1.5;color:#6E7784">Crawling is the slow half. Test-case generation runs separately in about nine minutes and can be repeated against this crawl without paying for capture again.</p>
+      </div>
+      <div style="flex-grow:1"></div>
+      <button style="width:100%;height:48px;margin-top:18px;border-radius:10px;border:none;background:#5FB98F;color:#0B1F17;font-size:14.5px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:9px" class="dsp">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="#0B1F17"><path d="M8 5.5 18.5 12 8 18.5z"/></svg>Start crawl
+      </button>
+      <button style="width:100%;height:44px;margin-top:9px;border-radius:10px;border:1px solid #2A313C;background:#171C24;color:#C3CAD6;font-size:13.5px;font-weight:500">Crawl only &mdash; skip generation</button>
+      <p style="font-size:11.5px;line-height:1.5;color:#6E7784;text-align:center;margin-top:11px">Nothing on the target is created, edited or deleted.</p>
+    </div>
+  </div>
+</div></div></body></html>

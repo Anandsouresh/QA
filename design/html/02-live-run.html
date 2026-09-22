@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Live run</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;width:1440px;height:900px;overflow:hidden;
+     font-family:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;background:#0E1116;color:#E7EAF0}
+.dsp{font-family:"Space Grotesk","IBM Plex Sans",sans-serif}
+.mono{font-family:"IBM Plex Mono","Consolas",monospace}
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
+h1,h2,p{margin:0}
+.card{background:#151A21;border:1px solid #232A34;border-radius:13px}
+.ell{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style></head><body>
+<div style="display:flex;width:1440px;height:900px"><div style="width:72px;flex-shrink:0;background:#11151B;border-right:1px solid #222831;display:flex;flex-direction:column;align-items:center;padding:18px 0 16px;gap:8px"><div style="width:38px;height:38px;border-radius:10px;background:#5FB98F;display:flex;align-items:center;justify-content:center;margin-bottom:14px"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#0E1116" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="12" cy="18" r="2.6"/><path d="M8.2 7.4 10.6 15.6"/><path d="M15.8 7.4 13.4 15.6"/></svg></div><button aria-label="New run" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></button><button aria-label="Live run" style="width:46px;height:46px;border-radius:11px;border:1px solid #2E4A3E;background:#172620;color:#5FB98F;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></button><button aria-label="Graph explorer" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="6" r="2.4"/><circle cx="18.5" cy="12" r="2.4"/><circle cx="5.5" cy="18" r="2.4"/><path d="M7.6 7.2 16.4 10.8"/><path d="M16.4 13.2 7.6 16.8"/></svg></button><button aria-label="Test cases" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5 6 8.5 9.5 5"/><path d="M4 17.5 6 19.5 9.5 16"/><path d="M13 7h7"/><path d="M13 18h7"/></svg></button><button aria-label="Run history" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.6V12l3 1.8"/></svg></button><div style="flex-grow:1"></div><button aria-label="Settings" style="width:46px;height:46px;border-radius:11px;border:1px solid transparent;background:transparent;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.2M12 18.8V21M21 12h-2.2M5.2 12H3M18.4 5.6 16.8 7.2M7.2 16.8 5.6 18.4M18.4 18.4 16.8 16.8M7.2 7.2 5.6 5.6"/></svg></button></div>
+<div style="flex-grow:1;padding:18px 22px 20px;display:flex;flex-direction:column;gap:14px;min-width:0">
+
+  <div style="display:flex;align-items:center;gap:16px;height:46px;flex-shrink:0">
+    <div style="display:flex;align-items:center;gap:8px;padding:7px 13px 7px 11px;border-radius:8px;background:#12271E;border:1px solid #2B4A3A">
+      <span style="width:8px;height:8px;border-radius:50%;background:#5FB98F;display:block"></span>
+      <span class="dsp" style="font-size:12.5px;font-weight:600;letter-spacing:.7px;color:#5FB98F">CRAWLING</span>
+    </div>
+    <div style="min-width:0">
+      <div class="mono ell" style="font-size:13px;color:#D6DCE6">stg.samsungvx.com</div>
+      <div style="font-size:11.5px;color:#6E7784">run 2026-09-23-vx &middot; depth 20 &middot; write-guard on</div>
+    </div>
+    <div style="flex-grow:1"></div><div style="text-align:right;padding-right:18px;border-right:1px solid #242B35"><div style="font-size:10.5px;letter-spacing:.5px;color:#6E7784">ELAPSED</div><div class="mono" style="font-size:15px;color:#D6DCE6;margin-top:2px">4:53:25</div></div><div style="text-align:right;padding-right:18px;border-right:1px solid #242B35"><div style="font-size:10.5px;letter-spacing:.5px;color:#6E7784">EST. LEFT</div><div class="mono" style="font-size:15px;color:#D6DCE6;margin-top:2px">2:41:10</div></div>
+    <button style="height:44px;padding:0 15px;margin-left:4px;border-radius:9px;border:1px solid #2A313C;background:#171C24;color:#C3CAD6;font-size:13px;font-weight:500;display:flex;align-items:center;gap:7px">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="5" width="3.6" height="14" rx="1"/><rect x="13.4" y="5" width="3.6" height="14" rx="1"/></svg>Pause</button>
+    <button style="height:44px;padding:0 15px;border-radius:9px;border:1px solid #4A2C2C;background:#241A1A;color:#E09A9A;font-size:13px;font-weight:500;display:flex;align-items:center;gap:7px">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>Stop &amp; keep</button>
+  </div>
+
+  <div style="display:flex;gap:14px;flex-grow:1;min-height:0">
+
+    <div style="width:616px;flex-shrink:0;display:flex;flex-direction:column;gap:14px;min-height:0">
+      <div class="card" style="padding:14px;display:flex;flex-direction:column;height:458px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:11px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#D96F6F;display:block"></span>
+          <h2 class="dsp" style="font-size:13px;font-weight:600;letter-spacing:.3px">LIVE VIEWPORT</h2>
+          <div style="flex-grow:1"></div>
+          <span class="mono" style="font-size:11px;color:#6E7784">1200 &times; 900 &middot; frame 4281</span>
+        </div>
+        <div style="flex-grow:1;border-radius:9px;overflow:hidden;border:1px solid #2A313C;display:flex;flex-direction:column;background:#0A0D12">
+          <div style="height:30px;flex-shrink:0;background:#1A1F27;border-bottom:1px solid #262D38;display:flex;align-items:center;gap:7px;padding:0 11px">
+            <span style="width:8px;height:8px;border-radius:50%;background:#3A424E;display:block"></span>
+            <span style="width:8px;height:8px;border-radius:50%;background:#3A424E;display:block"></span>
+            <span style="width:8px;height:8px;border-radius:50%;background:#3A424E;display:block"></span>
+            <span class="mono ell" style="margin-left:8px;font-size:10.5px;color:#6E7784">stg.samsungvx.com/screen</span>
+          </div>
+          <div style="flex-grow:1;position:relative;background:#12161C;padding:12px">
+            <div style="height:26px;border-radius:5px;background:#1B212A;margin-bottom:10px;display:flex;align-items:center;padding:0 10px;gap:14px">
+              <span style="width:44px;height:7px;border-radius:3px;background:#2E3641;display:block"></span>
+              <span style="width:30px;height:6px;border-radius:3px;background:#262D38;display:block"></span>
+              <span style="width:34px;height:6px;border-radius:3px;background:#262D38;display:block"></span>
+              <div style="flex-grow:1"></div>
+              <span style="width:18px;height:18px;border-radius:50%;background:#2E3641;display:block"></span>
+            </div>
+            <div style="display:flex;gap:10px;height:232px">
+              <div style="width:84px;flex-shrink:0;border-radius:5px;background:#1B212A;padding:9px 8px;display:flex;flex-direction:column;gap:9px"><span style="height:6px;border-radius:3px;background:#2E3641;width:100%;display:block"></span><span style="height:6px;border-radius:3px;background:#262D38;width:74%;display:block"></span><span style="height:6px;border-radius:3px;background:#262D38;width:86%;display:block"></span><span style="height:6px;border-radius:3px;background:#262D38;width:64%;display:block"></span><span style="height:6px;border-radius:3px;background:#262D38;width:92%;display:block"></span><span style="height:6px;border-radius:3px;background:#262D38;width:58%;display:block"></span></div>
+              <div style="flex-grow:1;display:flex;flex-direction:column;gap:10px;min-width:0">
+                <div style="display:flex;align-items:center;gap:9px">
+                  <span style="width:88px;height:11px;border-radius:3px;background:#2E3641;display:block"></span>
+                  <div style="flex-grow:1"></div>
+                  <div style="position:relative;flex-shrink:0">
+                    <span style="display:block;width:58px;height:24px;border-radius:5px;background:#1F3830;border:2px solid #5FB98F;box-shadow:0 0 0 4px rgba(95,185,143,.18)"></span>
+                    <span class="mono" style="position:absolute;top:-21px;right:0;white-space:nowrap;font-size:9.5px;padding:2px 6px;border-radius:4px;background:#5FB98F;color:#0B1F17;font-weight:500">clicking &middot; New</span>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;flex-grow:1"><div style="border-radius:6px;background:#1B212A;border:1px solid #242B35;padding:9px;display:flex;flex-direction:column;gap:6px"><span style="height:32px;border-radius:4px;background:#242B35;display:block"></span><span style="height:5px;width:78%;border-radius:3px;background:#2E3641;display:block"></span><span style="height:5px;width:48%;border-radius:3px;background:#262D38;display:block"></span></div><div style="border-radius:6px;background:#1B212A;border:1px solid #242B35;padding:9px;display:flex;flex-direction:column;gap:6px"><span style="height:32px;border-radius:4px;background:#262D38;display:block"></span><span style="height:5px;width:78%;border-radius:3px;background:#2E3641;display:block"></span><span style="height:5px;width:48%;border-radius:3px;background:#262D38;display:block"></span></div><div style="border-radius:6px;background:#1B212A;border:1px solid #242B35;padding:9px;display:flex;flex-direction:column;gap:6px"><span style="height:32px;border-radius:4px;background:#242B35;display:block"></span><span style="height:5px;width:78%;border-radius:3px;background:#2E3641;display:block"></span><span style="height:5px;width:48%;border-radius:3px;background:#262D38;display:block"></span></div><div style="border-radius:6px;background:#1B212A;border:1px solid #242B35;padding:9px;display:flex;flex-direction:column;gap:6px"><span style="height:32px;border-radius:4px;background:#262D38;display:block"></span><span style="height:5px;width:78%;border-radius:3px;background:#2E3641;display:block"></span><span style="height:5px;width:48%;border-radius:3px;background:#262D38;display:block"></span></div><div style="border-radius:6px;background:#1B212A;border:1px solid #242B35;padding:9px;display:flex;flex-direction:column;gap:6px"><span style="height:32px;border-radius:4px;background:#242B35;display:block"></span><span style="height:5px;width:78%;border-radius:3px;background:#2E3641;display:block"></span><span style="height:5px;width:48%;border-radius:3px;background:#262D38;display:block"></span></div><div style="border-radius:6px;background:#1B212A;border:1px solid #242B35;padding:9px;display:flex;flex-direction:column;gap:6px"><span style="height:32px;border-radius:4px;background:#242B35;display:block"></span><span style="height:5px;width:78%;border-radius:3px;background:#2E3641;display:block"></span><span style="height:5px;width:48%;border-radius:3px;background:#262D38;display:block"></span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:11.5px;color:#6E7784;line-height:1.45;margin-top:10px">Streamed from the crawler's own Chromium at 1 frame per second. The outlined control is the one being exercised this instant.</p>
+      </div>
+
+      <div class="card" style="padding:15px 17px 16px;flex-grow:1;display:flex;flex-direction:column;min-height:0">
+        <h2 class="dsp" style="font-size:13px;font-weight:600;letter-spacing:.3px;margin-bottom:13px">BUDGETS</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:15px"><div><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px"><span style="font-size:11px;color:#7A8393">States</span><span class="mono" style="font-size:11px;color:#6E7784">/ 200</span></div><div class="dsp" style="font-size:20px;font-weight:600;color:#5FB98F;margin-bottom:7px">116</div><div style="height:5px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:58%;border-radius:3px;background:#5FB98F"></div></div></div><div><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px"><span style="font-size:11px;color:#7A8393">Clicks</span><span class="mono" style="font-size:11px;color:#6E7784">no cap</span></div><div class="dsp" style="font-size:20px;font-weight:600;color:#6E9FD4;margin-bottom:7px">733</div><div style="height:5px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:41%;border-radius:3px;background:#6E9FD4"></div></div></div><div><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px"><span style="font-size:11px;color:#7A8393">Navigations</span><span class="mono" style="font-size:11px;color:#6E7784">no cap</span></div><div class="dsp" style="font-size:20px;font-weight:600;color:#6E9FD4;margin-bottom:7px">345</div><div style="height:5px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:33%;border-radius:3px;background:#6E9FD4"></div></div></div><div><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px"><span style="font-size:11px;color:#7A8393">Wall clock</span><span class="mono" style="font-size:11px;color:#6E7784">/ 24h</span></div><div class="dsp" style="font-size:20px;font-weight:600;color:#D9924A;margin-bottom:7px">20%</div><div style="height:5px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:20%;border-radius:3px;background:#D9924A"></div></div></div></div>
+        <div style="font-size:10.5px;font-weight:600;letter-spacing:.5px;color:#6E7784;margin-bottom:9px">STATES PER MODULE</div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 18px"><div style="display:flex;align-items:center;gap:9px"><span style="width:62px;flex-shrink:0;font-size:11.5px;color:#9AA3B2">Screen</span><div style="flex-grow:1;height:6px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:78%;border-radius:3px;background:#5FB98F"></div></div><span class="mono" style="width:42px;flex-shrink:0;text-align:right;font-size:11px;color:#7A8393">31/40</span></div><div style="display:flex;align-items:center;gap:9px"><span style="width:62px;flex-shrink:0;font-size:11.5px;color:#9AA3B2">Content</span><div style="flex-grow:1;height:6px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:60%;border-radius:3px;background:#5FB98F"></div></div><span class="mono" style="width:42px;flex-shrink:0;text-align:right;font-size:11px;color:#7A8393">24/40</span></div><div style="display:flex;align-items:center;gap:9px"><span style="width:62px;flex-shrink:0;font-size:11.5px;color:#9AA3B2">Playlist</span><div style="flex-grow:1;height:6px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:47%;border-radius:3px;background:#6E9FD4"></div></div><span class="mono" style="width:42px;flex-shrink:0;text-align:right;font-size:11px;color:#7A8393">14/30</span></div><div style="display:flex;align-items:center;gap:9px"><span style="width:62px;flex-shrink:0;font-size:11.5px;color:#9AA3B2">Schedule</span><div style="flex-grow:1;height:6px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:30%;border-radius:3px;background:#6E9FD4"></div></div><span class="mono" style="width:42px;flex-shrink:0;text-align:right;font-size:11px;color:#7A8393">9/30</span></div><div style="display:flex;align-items:center;gap:9px"><span style="width:62px;flex-shrink:0;font-size:11.5px;color:#9AA3B2">Channel</span><div style="flex-grow:1;height:6px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:100%;border-radius:3px;background:#D9924A"></div></div><span class="mono" style="width:42px;flex-shrink:0;text-align:right;font-size:11px;color:#7A8393">20/20</span></div><div style="display:flex;align-items:center;gap:9px"><span style="width:62px;flex-shrink:0;font-size:11.5px;color:#9AA3B2">Settings</span><div style="flex-grow:1;height:6px;border-radius:3px;background:#1E242D;overflow:hidden"><div style="height:100%;width:72%;border-radius:3px;background:#D9924A"></div></div><span class="mono" style="width:42px;flex-shrink:0;text-align:right;font-size:11px;color:#7A8393">18/25</span></div></div>
+        <div style="flex-grow:1"></div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:10px 12px;border-radius:9px;background:#14191F;border:1px solid #242B35">
+          <span style="width:7px;height:7px;border-radius:50%;background:#D9924A;display:block;flex-shrink:0"></span>
+          <span style="font-size:11.5px;color:#9AA3B2;line-height:1.45">Channel reached its cap at 20 states and stopped early. Every other module is still taking work from the frontier.</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="width:392px;flex-shrink:0;display:flex;flex-direction:column;gap:14px;min-height:0">
+      <div style="background:#151A21;border:1px solid #2E4A3E;border-radius:13px;padding:15px 17px 16px;flex-shrink:0;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:14%;width:30%;height:2px;background:linear-gradient(90deg,transparent,#5FB98F,transparent)"></div>
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px">
+          <h2 class="dsp" style="font-size:13px;font-weight:600;letter-spacing:.3px">NOW EXERCISING</h2>
+          <div style="flex-grow:1"></div>
+          <span class="mono" style="font-size:11.5px;color:#5FB98F">12.4s</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:11px">
+          <span class="mono" style="font-size:12px;padding:4px 8px;border-radius:6px;background:#1F3830;color:#5FB98F">N047</span>
+          <span style="font-size:12px;padding:4px 8px;border-radius:6px;background:#1B212A;color:#9AA3B2">click</span>
+          <span style="font-size:12px;padding:4px 8px;border-radius:6px;background:#1B212A;color:#9AA3B2">generic_button</span>
+        </div>
+        <div class="dsp" style="font-size:17px;font-weight:600;margin-bottom:5px">&ldquo;New&rdquo;</div>
+        <div class="mono ell" style="font-size:11.5px;color:#7A8393;margin-bottom:9px">[data-testid="dashboard_screen_newbtn"]</div>
+        <div style="font-size:11.5px;color:#6E7784">main area, top-left &middot; action 9 of 31 planned for this state</div>
+      </div>
+
+      <div class="card" style="padding:15px 17px 14px;flex-grow:1;display:flex;flex-direction:column;min-height:0">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px">
+          <h2 class="dsp" style="font-size:13px;font-weight:600;letter-spacing:.3px">MAP SO FAR</h2>
+          <div style="flex-grow:1"></div>
+          <span class="mono" style="font-size:11px;color:#6E7784">116 states &middot; 345 edges</span>
+        </div>
+        <p style="font-size:11.5px;color:#6E7784;margin-bottom:8px">Nodes appear the moment a new state is fingerprinted.</p>
+        <div style="flex-grow:1;border-radius:9px;background:#10141A;border:1px solid #1E242D;overflow:hidden;min-height:0">
+          <svg viewBox="0 0 360 400" width="100%" height="100%" fill="none" preserveAspectRatio="xMidYMid meet">
+            <g stroke="#2A323D" stroke-width="1.2">
+              <path d="M180 40 L90 108"/><path d="M180 40 L180 108"/><path d="M180 40 L270 108"/>
+              <path d="M90 108 L48 186"/><path d="M90 108 L118 186"/><path d="M180 108 L180 186"/>
+              <path d="M180 108 L232 186"/><path d="M270 108 L300 186"/><path d="M48 186 L36 266"/>
+              <path d="M118 186 L108 266"/><path d="M118 186 L162 266"/><path d="M180 186 L216 266"/>
+              <path d="M232 186 L262 266"/><path d="M300 186 L316 266"/><path d="M108 266 L86 338"/>
+              <path d="M162 266 L170 338"/><path d="M216 266 L238 338"/>
+            </g>
+            <g stroke="#2A323D" stroke-width="1.2" stroke-dasharray="3 3">
+              <path d="M36 266 L30 338"/><path d="M316 266 L308 338"/>
+            </g>
+            <g fill="#6E9FD4"><circle cx="90" cy="108" r="6"/><circle cx="180" cy="108" r="6"/><circle cx="270" cy="108" r="6"/></g>
+            <g fill="#4E5A6B">
+              <circle cx="48" cy="186" r="5"/><circle cx="118" cy="186" r="5"/><circle cx="180" cy="186" r="5"/>
+              <circle cx="232" cy="186" r="5"/><circle cx="300" cy="186" r="5"/><circle cx="36" cy="266" r="5"/>
+              <circle cx="108" cy="266" r="5"/><circle cx="162" cy="266" r="5"/><circle cx="216" cy="266" r="5"/>
+              <circle cx="262" cy="266" r="5"/><circle cx="316" cy="266" r="5"/><circle cx="86" cy="338" r="5"/>
+              <circle cx="170" cy="338" r="5"/>
+            </g>
+            <g fill="#A98BD4"><circle cx="30" cy="338" r="4.5"/><circle cx="308" cy="338" r="4.5"/></g>
+            <circle cx="180" cy="40" r="9" fill="#5FB98F"/>
+            <text x="180" y="24" fill="#7A8393" font-size="10" font-family="IBM Plex Mono, monospace" text-anchor="middle">N001 entry</text>
+            <circle cx="238" cy="338" r="7.5" fill="#5FB98F"/>
+            <circle cx="238" cy="338" r="14" stroke="#5FB98F" stroke-width="1.4" opacity=".45"/>
+            <circle cx="238" cy="338" r="21" stroke="#5FB98F" stroke-width="1" opacity=".18"/>
+            <text x="238" y="368" fill="#5FB98F" font-size="10" font-family="IBM Plex Mono, monospace" text-anchor="middle">N116 new</text>
+          </svg>
+        </div>
+        <div style="display:flex;gap:14px;margin-top:10px;flex-wrap:wrap"><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#4E5A6B;display:block"></span><span style="font-size:11px;color:#7A8393">page</span></div><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#6E9FD4;display:block"></span><span style="font-size:11px;color:#7A8393">modal</span></div><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#A98BD4;display:block"></span><span style="font-size:11px;color:#7A8393">boundary</span></div><div style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:#5FB98F;display:block"></span><span style="font-size:11px;color:#7A8393">new</span></div></div>
+      </div>
+    </div>
+
+    <div style="flex-grow:1;min-width:0;background:#151A21;border:1px solid #232A34;border-radius:13px;padding:15px 0 12px;display:flex;flex-direction:column">
+      <div style="display:flex;align-items:center;gap:8px;padding:0 15px;margin-bottom:11px">
+        <h2 class="dsp" style="font-size:13px;font-weight:600;letter-spacing:.3px">EVENTS</h2>
+        <div style="flex-grow:1"></div>
+        <button aria-label="Filter events" style="width:26px;height:26px;border-radius:6px;border:1px solid #2A313C;background:#171C24;color:#7A8393;display:flex;align-items:center;justify-content:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M7 12h10"/><path d="M10 18h4"/></svg></button>
+      </div>
+      <div style="flex-grow:1;overflow:hidden"><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17604.8</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1B212A;color:#9AA3B2">ACTION</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">N047 click generic_button 'New'</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17592.1</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1B212A;color:#7A8393">RESTORE</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">N047 ok via escape/back/goto</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17581.4</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1F3830;color:#5FB98F">OUTCOME</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">'Screens' -&gt; navigation [2.1s]</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17549.0</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1F3830;color:#5FB98F">STATE</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">N116 /screen/{id} (54 elements, 1 form)</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17548.2</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1A2733;color:#6E9FD4">OUTCOME</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">'Edit' -&gt; in_page_state (modal)</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17531.7</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#241C33;color:#A98BD4">BLOCKED</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">PUT /api/dms/screens/{guid} aborted</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17522.9</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#241A1A;color:#D99A9A">SKIP</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">'Delete' -- deny-list match</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17510.3</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1B212A;color:#9AA3B2">ACTION</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">N115 click tab 'Playback'</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17498.6</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1B212A;color:#7A8393">OUTCOME</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">'Refresh' -&gt; no_change (inert)</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17471.2</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#2A2416;color:#D9924A">DIALOG</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">confirm() recorded, then dismissed</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17455.8</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1F3830;color:#5FB98F">STATE</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">N115 /screen (49 elements, 0 forms)</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17440.1</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1B212A;color:#7A8393">DUPLICATE</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">/screen fp=a3f91c collapsed</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17429.4</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1B212A;color:#9AA3B2">NAVIGATE</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">-&gt; /screen (depth 2)</div></div><div style="padding:7px 15px;border-bottom:1px solid #1B212A;display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:7px"><span class="mono" style="font-size:10px;color:#5C6675;width:46px;flex-shrink:0">17418.0</span><span style="font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 6px;border-radius:4px;background:#1B212A;color:#7A8393">BUDGET</span></div><div class="mono ell" style="font-size:10.5px;line-height:1.5;color:#8B94A3;padding-left:53px">states=115/200 clicks=731</div></div></div>
+      <div style="padding:10px 15px 0;border-top:1px solid #232A34">
+        <div style="display:flex;align-items:center;gap:7px">
+          <span style="width:6px;height:6px;border-radius:50%;background:#5FB98F;display:block"></span>
+          <span style="font-size:11px;color:#6E7784">streaming &middot; 8,412 events</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div></body></html>
