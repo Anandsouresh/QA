@@ -8,9 +8,20 @@ application.
 qagen run --url https://app.example.com/dashboard --config site.yaml
 ```
 
+Or drive it from a browser:
+
+```
+uvicorn api.main:app --port 8000     # the control-room API
+cd Fronted && npm run dev            # the web UI
+```
+
 Design docs: [ARCHITECTURE.md](ARCHITECTURE.md) ·
 [CRAWLING_AND_EXTRACTION.md](CRAWLING_AND_EXTRACTION.md) ·
-[IMPLEMENTATION_FLOW.md](IMPLEMENTATION_FLOW.md)
+[IMPLEMENTATION_FLOW.md](IMPLEMENTATION_FLOW.md) ·
+[WEB_UI_BUILD_PROMPT.md](WEB_UI_BUILD_PROMPT.md)
+
+Web: [api/](api/) (FastAPI over this package) · [Fronted/](Fronted/) (React) ·
+[design/](design/) (the screens, as images)
 
 ---
 
@@ -208,14 +219,28 @@ catches a plausible-looking but fabricated case. A case that fails gets one
 repair round-trip, then ships flagged `needs_review` rather than being dropped
 — a flagged case a reviewer can reject beats a silently missing one.
 
+## Stopping a run
+
+A crawl runs for hours, so it can be steered from outside without being killed:
+
+```bash
+touch qagen-out/STOP      # finish the current state, then write everything
+touch qagen-out/PAUSE     # hold before the next state; delete the file to resume
+```
+
+Both are checked by the crawl itself, so a stop unwinds through the normal exit
+path and the graph, the captures and the manifest are all still written. The
+manifest records `stop_reason: "stopped by operator"`. `qagen/control.py` is the
+whole mechanism; the web API drives the same files.
+
 ## Tests
 
 ```bash
-pytest tests/ -q                          # everything (~2 min)
+pytest tests/ -q                          # everything (~6 min)
 pytest tests/ -q --ignore=tests/test_crawl_integration.py   # unit only, no browser
 ```
 
-82 tests. The integration suite runs against a checked-in fixture app that
+228 tests. The integration suite runs against a checked-in fixture app that
 deliberately contains every hazard the design claims to handle — one fixture
 element per claim, so no claim goes unverified: a modal that doesn't change the
 URL, a self-referential nav link, `target=_blank` and `window.open`, a 50-item

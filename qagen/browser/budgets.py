@@ -12,11 +12,14 @@ import time
 from dataclasses import dataclass, field
 
 from ..config import CrawlConfig
+from ..control import RunControl
 
 
 @dataclass
 class Budgets:
     cfg: CrawlConfig
+    #: Operator control via sentinel files. None when nothing supervises the run.
+    control: RunControl | None = None
     started_at: float = field(default_factory=time.monotonic)
     pages_visited: int = 0
     navigations: int = 0
@@ -72,6 +75,11 @@ class Budgets:
     def exhausted(self) -> bool:
         if self.stop_reason:
             return True
+        # Checked before the clock so an operator stop is reported as such
+        # rather than as whichever budget happened to expire in the same tick.
+        if self.control is not None and self.control.stop_requested:
+            self._stop("stopped by operator")
+            return True
         if self.elapsed >= self.cfg.max_wall_clock_seconds:
             self._stop("max_wall_clock_seconds")
             return True
@@ -91,5 +99,6 @@ class Budgets:
             "elapsed_seconds": round(self.elapsed, 1),
             "max_wall_clock_seconds": self.cfg.max_wall_clock_seconds,
             "consecutive_no_new_states": self.consecutive_no_new,
+            "paused_seconds": round(self.control.paused_seconds, 1) if self.control else 0.0,
             "stop_reason": self.stop_reason,
         }

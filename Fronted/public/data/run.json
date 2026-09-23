@@ -1,0 +1,273 @@
+{
+ "id": "2026-09-12-vx",
+ "target": "https://stg.samsungvx.com/",
+ "status": "running",
+ "started_at": "2026-09-12T07:12:01.580380+00:00",
+ "duration_seconds": 17608.5,
+ "auth_status": "ok",
+ "states_discovered": 157,
+ "graph_nodes": 175,
+ "graph_edges": 672,
+ "actionable_elements": 17186,
+ "total_elements": 17186,
+ "blocked_mutations": [
+  "POST https://cognito-identity.us-east-1.amazonaws.com/",
+  "POST https://stg.samsungvx.com/api/cms/2086D82A-42DF-413F-8B0A-69D357005135/71BDE223-F2D9-4699-A1C2-1950202AE29B/channels/search?orderBy=updated_time&order=desc&tz=Asia%2FCalcutta&start=0&rowsPerPage=50",
+  "POST https://stg.samsungvx.com/api/cms/2086D82A-42DF-413F-8B0A-69D357005135/71BDE223-F2D9-4699-A1C2-1950202AE29B/contents/approvals/search?orderBy=updated_time&order=desc&tz=Asia%2FCalcutta&pendingHide=false&rejectedHide=false&canceledHide=false&start=0&rowsPerPage=50",
+  "POST https://stg.samsungvx.com/api/cms/2086D82A-42DF-413F-8B0A-69D357005135/71BDE223-F2D9-4699-A1C2-1950202AE29B/contents/search?orderBy=updated_time&order=desc&tz=Asia%2FCalcutta&semantic=false&start=0&rowsPerPage=50",
+  "POST https://stg.samsungvx.com/api/cms/2086D82A-42DF-413F-8B0A-69D357005135/71BDE223-F2D9-4699-A1C2-1950202AE29B/playlist/search?orderBy=updated_time&order=desc&tz=Asia%2FCalcutta&start=0&rowsPerPage=50",
+  "POST https://stg.samsungvx.com/api/cms/2086D82A-42DF-413F-8B0A-69D357005135/71BDE223-F2D9-4699-A1C2-1950202AE29B/programs/search?orderBy=updated_time&order=desc&tz=Asia%2FCalcutta&start=0&rowsPerPage=50",
+  "POST https://stg.samsungvx.com/api/dms/2086D82A-42DF-413F-8B0A-69D357005135/71BDE223-F2D9-4699-A1C2-1950202AE29B/screens/search?orderBy=created_time&order=desc&tz=Asia%2FCalcutta&all=false&start=0&rowsPerPage=50",
+  "POST https://stg.samsungvx.com/api/ums/2086D82A-42DF-413F-8B0A-69D357005135/71BDE223-F2D9-4699-A1C2-1950202AE29B/chat/start",
+  "POST https://stg.samsungvx.com/api/ums/2086D82A-42DF-413F-8B0A-69D357005135/cases"
+ ],
+ "skipped_elements": [
+  {
+   "url": "https://stg.samsungvx.com/",
+   "element": "link 'Contact Us'",
+   "reason": "external origin, recorded as boundary"
+  },
+  {
+   "url": "https://stg.samsungvx.com/",
+   "element": "listitem 'Quick GlanceNo items.'",
+   "reason": "element detached before click"
+  },
+  {
+   "url": "https://stg.samsungvx.com/",
+   "element": "listitem 'StorageUsed48.00MB'",
+   "reason": "element detached before click"
+  },
+  {
+   "url": "https://stg.samsungvx.com/",
+   "element": "listitem 'Allocation 2'",
+   "reason": "element detached before click"
+  },
+  {
+   "url": "https://stg.samsungvx.com/",
+   "element": "listitem 'Used 1'",
+   "reason": "element detached before click"
+  },
+  {
+   "url": "https://stg.samsungvx.com/",
+   "element": "listitem 'Available 1'",
+   "reason": "element detached before click"
+  },
+  {
+   "url": "https://stg.samsungvx.com/terms",
+   "element": "link 'Contact Us'",
+   "reason": "external origin, recorded as boundary"
+  },
+  {
+   "url": "https://stg.samsungvx.com/terms",
+   "element": "div 'logo'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/terms",
+   "element": "img ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/terms",
+   "element": "listitem ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/terms",
+   "element": "div ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/terms",
+   "element": "listitem 'CMS DEVcmsdevsmg@gmail.comSettingsManualSign OutCMS DEVcmsdevsmg@gmail.com'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/terms",
+   "element": "button 'chatbot'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/terms",
+   "element": "div ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/privacy",
+   "element": "link 'Contact Us'",
+   "reason": "external origin, recorded as boundary"
+  },
+  {
+   "url": "https://stg.samsungvx.com/privacy",
+   "element": "div 'logo'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/privacy",
+   "element": "img ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/privacy",
+   "element": "listitem ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/privacy",
+   "element": "div ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/privacy",
+   "element": "listitem 'CMS DEVcmsdevsmg@gmail.comSettingsManualSign OutCMS DEVcmsdevsmg@gmail.com'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/privacy",
+   "element": "button 'chatbot'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/privacy",
+   "element": "div ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/cookie",
+   "element": "link 'Contact Us'",
+   "reason": "external origin, recorded as boundary"
+  },
+  {
+   "url": "https://stg.samsungvx.com/cookie",
+   "element": "div 'logo'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/cookie",
+   "element": "img ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/cookie",
+   "element": "listitem ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/cookie",
+   "element": "div ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/cookie",
+   "element": "listitem 'CMS DEVcmsdevsmg@gmail.comSettingsManualSign OutCMS DEVcmsdevsmg@gmail.com'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/cookie",
+   "element": "button 'chatbot'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/cookie",
+   "element": "div ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/euda",
+   "element": "link 'Contact Us'",
+   "reason": "external origin, recorded as boundary"
+  },
+  {
+   "url": "https://stg.samsungvx.com/euda",
+   "element": "div 'logo'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/euda",
+   "element": "img ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/euda",
+   "element": "listitem ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/euda",
+   "element": "div ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/euda",
+   "element": "listitem 'CMS DEVcmsdevsmg@gmail.comSettingsManualSign OutCMS DEVcmsdevsmg@gmail.com'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/euda",
+   "element": "button 'chatbot'",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/euda",
+   "element": "div ''",
+   "reason": "already exercised on N001"
+  },
+  {
+   "url": "https://stg.samsungvx.com/",
+   "element": "link 'Contact Us'",
+   "reason": "external origin, recorded as boundary"
+  },
+  {
+   "url": "https://stg.samsungvx.com/screen",
+   "element": "div ''",
+   "reason": "click failed: Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-testid=\\\"icon_refresh\\\"]\").first.first\n    - locator resolved to <div id=\"icon_refresh\" data-testid=\"icon_refresh\" class=\"ga-button-action-class default_icon hover\">\u2026</div>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"ellipsis _p_name_wrap_856b8_31\">\u2026</div> from <div id=\"container\" data-list=\"true\" class=\"_container_1by8g_1 _grid_1by8g_13\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"ellipsis _p_name_wrap_856b8_31\">\u2026</div> from <div id=\"container\" data-list=\"true\" class=\"_container_1by8g_1 _grid_1by8g_13\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    19 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ellipsis _p_name_wrap_856b8_31\">\u2026</div> from <div id=\"container\" data-list=\"true\" class=\"_container_1by8g_1 _grid_1by8g_13\">\u2026</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+  }
+ ],
+ "budgets": {
+  "pages_visited": 116,
+  "navigations": 345,
+  "max_pages": 200,
+  "clicks_made": 733,
+  "max_clicks": 100000,
+  "elapsed_seconds": 17605.2,
+  "max_wall_clock_seconds": 86400,
+  "consecutive_no_new_states": 0,
+  "stop_reason": "frontier empty, but 58 state(s) were recorded and never exercised (9541/16745 actionable elements exercised)"
+ },
+ "module_budgets": {
+  "Screen": 40,
+  "Content": 40,
+  "Playlist": 30,
+  "Schedule": 30,
+  "Channel": 20,
+  "Settings": 40
+ },
+ "module_states": {
+  "Home": 18,
+  "Other": 6,
+  "Screen": 14,
+  "Content": 5,
+  "Playlist": 12,
+  "Schedule": 7,
+  "Settings": 61,
+  "VXT Labs": 22,
+  "Channel": 6,
+  "Apps": 24
+ },
+ "config": {
+  "depth": 20,
+  "headless": false,
+  "block_mutations": true,
+  "model": "claude-opus-5",
+  "deny_text": [
+   "delete",
+   "remove",
+   "pay",
+   "purchase",
+   "submit",
+   "confirm",
+   "logout",
+   "sign out"
+  ]
+ }
+}

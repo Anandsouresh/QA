@@ -1,0 +1,390 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+/* ── the palette ────────────────────────────────────────────────────────────
+ *
+ * Every colour in the app resolves through one of these `--qg-*` variables, so
+ * switching theme is a single attribute on <html> and nothing has to re-render.
+ *
+ * `@theme` only aliases them, which is what makes `bg-surface`, `text-ink-2`
+ * and friends follow the theme instead of being frozen at build time. Raw hex
+ * appears exactly once, below.
+ *
+ * Dark is the default. System light applies unless the user has explicitly
+ * chosen dark; an explicit choice always wins in both directions.
+ */
+
+@theme {
+  --color-ground: var(--qg-ground);
+  --color-panel: var(--qg-panel);
+  --color-aside: var(--qg-aside);
+  --color-surface: var(--qg-surface);
+  --color-card: var(--qg-card);
+  --color-raised: var(--qg-raised);
+  --color-ghost: var(--qg-ghost);
+  --color-inset: var(--qg-inset);
+  --color-sunken: var(--qg-sunken);
+  --color-well: var(--qg-well);
+  --color-well-2: var(--qg-well-2);
+  --color-canvas: var(--qg-canvas);
+  --color-canvas-dot: var(--qg-canvas-dot);
+  --color-chrome: var(--qg-chrome);
+  --color-hover: var(--qg-hover);
+  --color-track: var(--qg-track);
+
+  --color-line: var(--qg-line);
+  --color-line-soft: var(--qg-line-soft);
+  --color-line-2: var(--qg-line-2);
+  --color-line-3: var(--qg-line-3);
+  --color-line-strong: var(--qg-line-strong);
+  --color-line-strong-2: var(--qg-line-strong-2);
+  --color-line-hover: var(--qg-line-hover);
+  --color-line-dash: var(--qg-line-dash);
+  --color-rail-line: var(--qg-rail-line);
+
+  --color-ink: var(--qg-ink);
+  --color-ink-strong: var(--qg-ink-strong);
+  --color-ink-body: var(--qg-ink-body);
+  --color-ink-2: var(--qg-ink-2);
+  --color-ink-3: var(--qg-ink-3);
+  --color-ink-4: var(--qg-ink-4);
+  --color-ink-log: var(--qg-ink-log);
+  --color-muted: var(--qg-muted);
+
+  --color-accent: var(--qg-accent);
+  --color-accent-dim: var(--qg-accent-dim);
+  --color-accent-line: var(--qg-accent-line);
+  --color-accent-deep: var(--qg-accent-deep);
+  --color-accent-ink: var(--qg-accent-ink);
+
+  --color-amber: var(--qg-amber);
+  --color-amber-ink: var(--qg-amber-ink);
+  --color-amber-deep: var(--qg-amber-deep);
+  --color-amber-dim: var(--qg-amber-dim);
+  --color-amber-line: var(--qg-amber-line);
+
+  --color-blue: var(--qg-blue);
+  --color-red: var(--qg-red);
+  --color-red-ink: var(--qg-red-ink);
+  --color-red-dim: var(--qg-red-dim);
+  --color-red-line: var(--qg-red-line);
+  --color-red-line-2: var(--qg-red-line-2);
+  --color-violet: var(--qg-violet);
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+
+:root {
+  color-scheme: dark;
+
+  --qg-ground: #0e1116;
+  --qg-panel: #11151b;
+  --qg-aside: #12161c;
+  --qg-surface: #151a21;
+  --qg-card: #161b23;
+  --qg-raised: #1b212a;
+  --qg-ghost: #171c24;
+  --qg-inset: #14191f;
+  --qg-sunken: #0f1319;
+  --qg-well: #0a0d12;
+  --qg-well-2: #10141a;
+  --qg-canvas: #0b0e13;
+  --qg-canvas-dot: #1a2029;
+  --qg-chrome: #1a1f27;
+  --qg-hover: #161b22;
+  --qg-track: #1e242d;
+
+  --qg-line: #242b35;
+  --qg-line-soft: #1b212a;
+  --qg-line-2: #232a34;
+  --qg-line-3: #262d38;
+  --qg-line-strong: #2a313c;
+  --qg-line-strong-2: #2e3641;
+  --qg-line-hover: #3a424e;
+  --qg-line-dash: #4a5464;
+  --qg-rail-line: #222831;
+
+  --qg-ink: #e7eaf0;
+  --qg-ink-strong: #d6dce6;
+  --qg-ink-body: #c3cad6;
+  --qg-ink-2: #9aa3b2;
+  --qg-ink-3: #7a8393;
+  --qg-ink-4: #6e7784;
+  --qg-ink-log: #8b94a3;
+  --qg-muted: #5c6675;
+
+  --qg-accent: #5fb98f;
+  --qg-accent-dim: #172620;
+  --qg-accent-line: #2e4a3e;
+  --qg-accent-deep: #0b1f17;
+  --qg-accent-ink: #8fb8a2;
+
+  --qg-amber: #d9924a;
+  --qg-amber-ink: #c3b08f;
+  --qg-amber-deep: #1a1206;
+  --qg-amber-dim: #2a2416;
+  --qg-amber-line: #4a3a22;
+
+  --qg-blue: #6e9fd4;
+  --qg-red: #d96f6f;
+  --qg-red-ink: #e09a9a;
+  --qg-red-dim: #241a1a;
+  --qg-red-line: #4a2c2c;
+  --qg-red-line-2: #5e3737;
+  --qg-violet: #a98bd4;
+
+  --qg-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* The light palette. Applied when the system asks for light and the user has
+   not overridden it, and whenever the user picks light outright. Accents are
+   darkened so text on a light ground still clears 4.5:1. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+
+    --qg-ground: #f3f5f8;
+    --qg-panel: #ffffff;
+    --qg-aside: #fafbfd;
+    --qg-surface: #ffffff;
+    --qg-card: #ffffff;
+    --qg-raised: #edf0f4;
+    --qg-ghost: #f2f5f8;
+    --qg-inset: #f4f6f9;
+    --qg-sunken: #f8fafc;
+    --qg-well: #e9edf2;
+    --qg-well-2: #edf1f5;
+    --qg-canvas: #eff2f6;
+    --qg-canvas-dot: #d9e0e8;
+    --qg-chrome: #ebeff4;
+    --qg-hover: #eff3f7;
+    --qg-track: #e0e6ec;
+
+    --qg-line: #dbe1e8;
+    --qg-line-soft: #e7ebf0;
+    --qg-line-2: #dfe4ea;
+    --qg-line-3: #d8dee5;
+    --qg-line-strong: #c9d1da;
+    --qg-line-strong-2: #c2cbd5;
+    --qg-line-hover: #aab5c2;
+    --qg-line-dash: #9faab8;
+    --qg-rail-line: #e0e5eb;
+
+    --qg-ink: #141820;
+    --qg-ink-strong: #222a34;
+    --qg-ink-body: #39424f;
+    --qg-ink-2: #4b5563;
+    --qg-ink-3: #5f6875;
+    --qg-ink-4: #6c7481;
+    --qg-ink-log: #525c69;
+    --qg-muted: #8a93a0;
+
+    --qg-accent: #2e8b63;
+    --qg-accent-dim: #e3f2ea;
+    --qg-accent-line: #a5d4bc;
+    --qg-accent-deep: #ffffff;
+    --qg-accent-ink: #2c6a4c;
+
+    --qg-amber: #a4661e;
+    --qg-amber-ink: #77541a;
+    --qg-amber-deep: #ffffff;
+    --qg-amber-dim: #fbf2e3;
+    --qg-amber-line: #e5d3ae;
+
+    --qg-blue: #2e6eaf;
+    --qg-red: #b23f3d;
+    --qg-red-ink: #9e3836;
+    --qg-red-dim: #fbeeee;
+    --qg-red-line: #e6c3c2;
+    --qg-red-line-2: #d9a9a8;
+    --qg-violet: #6a4a9f;
+
+    --qg-shadow: 0 1px 2px rgba(20, 30, 50, 0.08);
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --qg-ground: #f3f5f8;
+  --qg-panel: #ffffff;
+  --qg-aside: #fafbfd;
+  --qg-surface: #ffffff;
+  --qg-card: #ffffff;
+  --qg-raised: #edf0f4;
+  --qg-ghost: #f2f5f8;
+  --qg-inset: #f4f6f9;
+  --qg-sunken: #f8fafc;
+  --qg-well: #e9edf2;
+  --qg-well-2: #edf1f5;
+  --qg-canvas: #eff2f6;
+  --qg-canvas-dot: #d9e0e8;
+  --qg-chrome: #ebeff4;
+  --qg-hover: #eff3f7;
+  --qg-track: #e0e6ec;
+
+  --qg-line: #dbe1e8;
+  --qg-line-soft: #e7ebf0;
+  --qg-line-2: #dfe4ea;
+  --qg-line-3: #d8dee5;
+  --qg-line-strong: #c9d1da;
+  --qg-line-strong-2: #c2cbd5;
+  --qg-line-hover: #aab5c2;
+  --qg-line-dash: #9faab8;
+  --qg-rail-line: #e0e5eb;
+
+  --qg-ink: #141820;
+  --qg-ink-strong: #222a34;
+  --qg-ink-body: #39424f;
+  --qg-ink-2: #4b5563;
+  --qg-ink-3: #5f6875;
+  --qg-ink-4: #6c7481;
+  --qg-ink-log: #525c69;
+  --qg-muted: #8a93a0;
+
+  --qg-accent: #2e8b63;
+  --qg-accent-dim: #e3f2ea;
+  --qg-accent-line: #a5d4bc;
+  --qg-accent-deep: #ffffff;
+  --qg-accent-ink: #2c6a4c;
+
+  --qg-amber: #a4661e;
+  --qg-amber-ink: #77541a;
+  --qg-amber-deep: #ffffff;
+  --qg-amber-dim: #fbf2e3;
+  --qg-amber-line: #e5d3ae;
+
+  --qg-blue: #2e6eaf;
+  --qg-red: #b23f3d;
+  --qg-red-ink: #9e3836;
+  --qg-red-dim: #fbeeee;
+  --qg-red-line: #e6c3c2;
+  --qg-red-line-2: #d9a9a8;
+  --qg-violet: #6a4a9f;
+
+  --qg-shadow: 0 1px 2px rgba(20, 30, 50, 0.08);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--qg-ground);
+  color: var(--qg-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* ── motion, only where it carries information ─────────────────────────── */
+
+@keyframes qg-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+.qg-pulse {
+  animation: qg-pulse 1.7s ease-in-out infinite;
+}
+
+@keyframes qg-sweep {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(420%);
+  }
+}
+.qg-sweep {
+  animation: qg-sweep 2.4s linear infinite;
+}
+
+@keyframes qg-pop {
+  0% {
+    transform: scale(0.82);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.qg-pop {
+  animation: qg-pop 0.42s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qg-pulse,
+  .qg-sweep,
+  .qg-pop {
+    animation: none;
+  }
+}
+
+/* ── chrome ────────────────────────────────────────────────────────────── */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--qg-line-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--qg-line-strong);
+  border-radius: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--qg-line-hover);
+}
+
+.react-flow__attribution {
+  display: none;
+}
+.react-flow__controls-button {
+  background: var(--qg-surface);
+  border-bottom: 1px solid var(--qg-line);
+  fill: var(--qg-ink-2);
+}
+.react-flow__controls-button:hover {
+  background: var(--qg-raised);
+}
+.react-flow__edge-path {
+  stroke: var(--qg-line-strong);
+}
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: var(--qg-accent);
+}
+.react-flow__handle {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -19,6 +19,7 @@ from urllib.parse import urljoin, urlsplit
 from playwright.async_api import Page
 
 from ..config import RunConfig
+from ..control import RunControl
 from ..graph.builder import GraphBuilder
 from ..models import (
     ACTION_PRIORITY,
@@ -95,7 +96,8 @@ class Crawler:
             destructive_match=self.policy.matches_destructive_text,
             is_consent_text=self.policy.is_consent_text,
         )
-        self.budgets = Budgets(cfg.crawl)
+        self.control = RunControl(cfg.output.dir)
+        self.budgets = Budgets(cfg.crawl, control=self.control)
         self.graph = GraphBuilder(cfg.target.url)
         self.result = CrawlResult(graph=self.graph, budgets=self.budgets)
 
@@ -168,6 +170,12 @@ class Crawler:
         self._seed_modules()
 
         while self._frontier and not self.budgets.exhausted:
+            # Between states, never mid-state: pausing halfway through an
+            # action plan would leave the page somewhere the restore logic
+            # cannot reason about.
+            await self.control.wait_while_paused(on_change=self.log.note)
+            if self.budgets.exhausted:
+                break
             item = self._frontier.popleft()
             try:
                 await self._visit(item)

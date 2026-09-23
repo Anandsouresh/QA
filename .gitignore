@@ -13,3 +13,11 @@ samsungvx-200-final02/
 samsungvx-200-final03/
 samsungvx*/
 .gitignore
+
+# web layer
+# API run directories: captures, logs and session tokens
+runs/
+Fronted/node_modules/
+Fronted/dist/
+Fronted/screenshots/
+design/html/
